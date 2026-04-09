@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-i18n-title="index-title" data-i18n-meta="index-meta">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,14 +37,19 @@
       </a>
       <nav class="header-nav" id="nav">
         <ul class="nav-list">
-          <li><a href="corporativo.html">Corporativo</a></li>
-          <li><a href="residencial.html">Residencial</a></li>
-          <li><a href="lavagem.html">Higienização</a></li>
-          <li><a href="#galeria">Galeria</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a></li>
+          <li><a href="residencial.html" data-i18n="nav-residential">Residencial</a></li>
+          <li><a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a></li>
+          <li><a href="#galeria" data-i18n="nav-gallery">Galeria</a></li>
+          <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
         </ul>
       </nav>
       <a href="https://wa.me/5511986793247" class="cta-button header-cta" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="lang-toggle" id="lang-toggle" aria-label="Alternar idioma">
+        <span class="lang-pt lang-active">PT</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-en">EN</span>
+      </button>
       <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -63,18 +68,18 @@
       </div>
 
       <div class="hero-content">
-        <span class="hero-eyebrow">Controle de Luz Natural</span>
-        <h1 class="hero-title">A luz <em>certa muda tudo</em></h1>
-        <p class="hero-subtitle">
+        <span class="hero-eyebrow" data-i18n="hero-eyebrow">Controle de Luz Natural</span>
+        <h1 class="hero-title" data-i18n-html="hero-title-html">A luz <em>certa muda tudo</em></h1>
+        <p class="hero-subtitle" data-i18n="hero-subtitle">
           Quando a luz entra sem controle, o ambiente perde conforto, eficiência e durabilidade.
           A Atiye projeta soluções sob medida que ajustam exatamente como a luz se comporta em cada espaço.
         </p>
         <div class="hero-tags">
-          <span>Residencial Alto Padrão</span>
-          <span>Projetos Corporativos</span>
-          <span>Execução Precisa</span>
+          <span data-i18n="hero-tag-1">Residencial Alto Padrão</span>
+          <span data-i18n="hero-tag-2">Projetos Corporativos</span>
+          <span data-i18n="hero-tag-3">Execução Precisa</span>
         </div>
-        <a href="#contato" class="cta-button hero-cta">Solicitar orçamento</a>
+        <a href="#contato" class="cta-button hero-cta" data-i18n="hero-cta">Solicitar orçamento</a>
       </div>
 
       <div class="hero-scroll">
@@ -92,28 +97,28 @@
               <span class="stat-number" data-target="500">0</span>
               <span class="stat-suffix">+</span>
             </div>
-            <span class="stat-label">Projetos entregues</span>
+            <span class="stat-label" data-i18n="stat-projects">Projetos entregues</span>
           </div>
           <div class="stat-item">
             <div class="stat-number-wrap">
               <span class="stat-number" data-target="15000">0</span>
               <span class="stat-suffix">m²</span>
             </div>
-            <span class="stat-label">Instalados</span>
+            <span class="stat-label" data-i18n="stat-area">Instalados</span>
           </div>
           <div class="stat-item">
             <div class="stat-number-wrap">
               <span class="stat-number" data-target="2">0</span>
-              <span class="stat-suffix">anos</span>
+              <span class="stat-suffix" data-i18n="stat-warranty-suffix">anos</span>
             </div>
-            <span class="stat-label">Garantia real</span>
+            <span class="stat-label" data-i18n="stat-warranty">Garantia real</span>
           </div>
           <div class="stat-item">
             <div class="stat-number-wrap">
               <span class="stat-number" data-target="100">0</span>
               <span class="stat-suffix">%</span>
             </div>
-            <span class="stat-label">Satisfação</span>
+            <span class="stat-label" data-i18n="stat-satisfaction">Satisfação</span>
           </div>
         </div>
       </div>
@@ -124,15 +129,15 @@
       <div class="container">
         <div class="problem-content">
           <div class="problem-text reveal">
-            <span class="section-eyebrow">O problema invisível</span>
-            <h2 class="problem-lead">Você se ajustou ao problema. Sem perceber.</h2>
+            <span class="section-eyebrow" data-i18n="prob-eyebrow">O problema invisível</span>
+            <h2 class="problem-lead" data-i18n="prob-lead">Você se ajustou ao problema. Sem perceber.</h2>
             <ul class="problem-list">
-              <li>Mudar de posição para evitar reflexo na tela</li>
-              <li>Ligar o ar-condicionado mais cedo pelo calor da tarde</li>
-              <li>Acordar antes da hora por causa da luz entrando no quarto</li>
-              <li>Móveis e superfícies perdendo cor gradualmente</li>
+              <li data-i18n="prob-li-1">Mudar de posição para evitar reflexo na tela</li>
+              <li data-i18n="prob-li-2">Ligar o ar-condicionado mais cedo pelo calor da tarde</li>
+              <li data-i18n="prob-li-3">Acordar antes da hora por causa da luz entrando no quarto</li>
+              <li data-i18n="prob-li-4">Móveis e superfícies perdendo cor gradualmente</li>
             </ul>
-            <p class="problem-conclusion">
+            <p class="problem-conclusion" data-i18n-html="prob-conclusion-html">
               Isso não é rotina. É desgaste acumulado.<br>
               E tem <strong>solução técnica</strong>.
             </p>
@@ -148,28 +153,28 @@
     <section class="section positioning-section" id="posicionamento">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">A abordagem</span>
-          <h2 class="section-title">Ajustar a luz é ajustar o ambiente inteiro</h2>
-          <p class="section-subtitle">Cada projeto equilibra três variáveis ao mesmo tempo.</p>
+          <span class="section-eyebrow" data-i18n="pos-eyebrow">A abordagem</span>
+          <h2 class="section-title" data-i18n="pos-title">Ajustar a luz é ajustar o ambiente inteiro</h2>
+          <p class="section-subtitle" data-i18n="pos-subtitle">Cada projeto equilibra três variáveis ao mesmo tempo.</p>
         </div>
         <div class="factors-grid reveal">
           <div class="factor-card">
             <div class="factor-num">01</div>
-            <h3>Luminosidade</h3>
-            <p>Controle preciso da entrada de luz em cada horário e ambiente, eliminando reflexos e excesso.</p>
+            <h3 data-i18n="pos-f1-title">Luminosidade</h3>
+            <p data-i18n="pos-f1-text">Controle preciso da entrada de luz em cada horário e ambiente, eliminando reflexos e excesso.</p>
           </div>
           <div class="factor-card">
             <div class="factor-num">02</div>
-            <h3>Temperatura</h3>
-            <p>Redução de até 80% do ganho térmico solar sem bloquear a visão ou comprometer a claridade.</p>
+            <h3 data-i18n="pos-f2-title">Temperatura</h3>
+            <p data-i18n="pos-f2-text">Redução de até 80% do ganho térmico solar sem bloquear a visão ou comprometer a claridade.</p>
           </div>
           <div class="factor-card">
             <div class="factor-num">03</div>
-            <h3>Privacidade</h3>
-            <p>Proteção visual que funciona de dia e de noite, sem perder a sensação de conexão com o exterior.</p>
+            <h3 data-i18n="pos-f3-title">Privacidade</h3>
+            <p data-i18n="pos-f3-text">Proteção visual que funciona de dia e de noite, sem perder a sensação de conexão com o exterior.</p>
           </div>
         </div>
-        <p class="positioning-outro">Cada decisão de material, abertura e instalação parte desse equilíbrio.</p>
+        <p class="positioning-outro" data-i18n="pos-outro">Cada decisão de material, abertura e instalação parte desse equilíbrio.</p>
       </div>
     </section>
 
@@ -177,29 +182,29 @@
     <section class="section process-section" id="processo">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Como trabalhamos</span>
-          <h2 class="section-title">Do diagnóstico à garantia</h2>
+          <span class="section-eyebrow" data-i18n="proc-eyebrow">Como trabalhamos</span>
+          <h2 class="section-title" data-i18n="proc-title">Do diagnóstico à garantia</h2>
         </div>
         <div class="process-grid reveal">
           <div class="process-step">
             <div class="process-dot">01</div>
-            <h3>Diagnóstico</h3>
-            <p>Análise do ambiente, exposição solar, horários críticos e necessidades específicas do espaço.</p>
+            <h3 data-i18n="proc-1-title">Diagnóstico</h3>
+            <p data-i18n="proc-1-text">Análise do ambiente, exposição solar, horários críticos e necessidades específicas do espaço.</p>
           </div>
           <div class="process-step">
             <div class="process-dot">02</div>
-            <h3>Projeto</h3>
-            <p>Especificação técnica de materiais, texturas, níveis de abertura e sistemas de fixação.</p>
+            <h3 data-i18n="proc-2-title">Projeto</h3>
+            <p data-i18n="proc-2-text">Especificação técnica de materiais, texturas, níveis de abertura e sistemas de fixação.</p>
           </div>
           <div class="process-step">
             <div class="process-dot">03</div>
-            <h3>Instalação</h3>
-            <p>Execução precisa, sem interrupção da rotina e alinhada ao cronograma da obra ou reforma.</p>
+            <h3 data-i18n="proc-3-title">Instalação</h3>
+            <p data-i18n="proc-3-text">Execução precisa, sem interrupção da rotina e alinhada ao cronograma da obra ou reforma.</p>
           </div>
           <div class="process-step">
             <div class="process-dot">04</div>
-            <h3>Garantia</h3>
-            <p>Suporte ativo por 2 anos. Garantia que funciona na prática, não apenas no contrato.</p>
+            <h3 data-i18n="proc-4-title">Garantia</h3>
+            <p data-i18n="proc-4-text">Suporte ativo por 2 anos. Garantia que funciona na prática, não apenas no contrato.</p>
           </div>
         </div>
       </div>
@@ -208,25 +213,25 @@
     <!-- ── FEATURED (Residencial / Corporativo) ───────────── -->
     <section class="featured-section" id="projetos">
       <div class="section-header reveal">
-        <h2 class="section-title">Cada ambiente tem uma demanda específica</h2>
+        <h2 class="section-title" data-i18n="feat-title">Cada ambiente tem uma demanda específica</h2>
       </div>
       <div class="featured-grid">
         <a href="residencial.html" class="featured-item">
           <img src="assets/residencial/IMG_3152(1).webp" alt="Projetos residenciais Atiye" loading="lazy" width="900" height="700" />
           <div class="featured-overlay">
-            <span class="featured-label">Residencial</span>
-            <h3>Conforto no ritmo da sua vida</h3>
-            <p>Dormir melhor. Menos calor. Preservação que não aparece — mas está sempre presente.</p>
-            <span class="featured-cta">Ver projetos</span>
+            <span class="featured-label" data-i18n="feat-res-label">Residencial</span>
+            <h3 data-i18n="feat-res-title">Conforto no ritmo da sua vida</h3>
+            <p data-i18n="feat-res-text">Dormir melhor. Menos calor. Preservação que não aparece — mas está sempre presente.</p>
+            <span class="featured-cta" data-i18n="feat-res-cta">Ver projetos</span>
           </div>
         </a>
         <a href="corporativo.html" class="featured-item">
           <img src="assets/escritorio/IMG_2182(1).webp" alt="Projetos corporativos Atiye" loading="lazy" width="900" height="700" />
           <div class="featured-overlay">
-            <span class="featured-label">Corporativo</span>
-            <h3>Ambientes que eliminam interferência</h3>
-            <p>Sem reflexo. Sem calor excessivo. Performance que começa no espaço de trabalho.</p>
-            <span class="featured-cta">Ver projetos</span>
+            <span class="featured-label" data-i18n="feat-corp-label">Corporativo</span>
+            <h3 data-i18n="feat-corp-title">Ambientes que eliminam interferência</h3>
+            <p data-i18n="feat-corp-text">Sem reflexo. Sem calor excessivo. Performance que começa no espaço de trabalho.</p>
+            <span class="featured-cta" data-i18n="feat-corp-cta">Ver projetos</span>
           </div>
         </a>
       </div>
@@ -237,11 +242,11 @@
       <div class="container">
         <div class="proof-content">
           <div class="proof-text reveal">
-            <span class="section-eyebrow">Tecnologia aplicada</span>
-            <h2>Tela solar screen.<br>Não bloqueia. Controla.</h2>
-            <p>Mantém a visão para o exterior enquanto filtra até 97% da radiação UV e reduz significativamente o ganho térmico.</p>
-            <p class="proof-highlight">O ambiente fica mais fresco. Sem escurecer. Sem perder a vista.</p>
-            <p>Indicada para fachadas expostas, salas de reunião e dormitórios com exposição direta ao sol.</p>
+            <span class="section-eyebrow" data-i18n="proof-eyebrow">Tecnologia aplicada</span>
+            <h2 data-i18n-html="proof-title-html">Tela solar screen.<br>Não bloqueia. Controla.</h2>
+            <p data-i18n="proof-p1">Mantém a visão para o exterior enquanto filtra até 97% da radiação UV e reduz significativamente o ganho térmico.</p>
+            <p class="proof-highlight" data-i18n="proof-highlight">O ambiente fica mais fresco. Sem escurecer. Sem perder a vista.</p>
+            <p data-i18n="proof-p2">Indicada para fachadas expostas, salas de reunião e dormitórios com exposição direta ao sol.</p>
           </div>
           <div class="proof-visual reveal reveal-delay-2">
             <img src="assets/escritorio/IMG_1892.webp" alt="Tela Solar Screen" loading="lazy" width="600" height="480" />
@@ -254,29 +259,29 @@
     <section class="section differential-section" id="diferencial">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Por que a Atiye</span>
-          <h2 class="section-title">Compromisso com resultado, não só com entrega</h2>
+          <span class="section-eyebrow" data-i18n="diff-eyebrow">Por que a Atiye</span>
+          <h2 class="section-title" data-i18n="diff-title">Compromisso com resultado, não só com entrega</h2>
         </div>
         <div class="differential-grid reveal">
           <div class="differential-item">
             <span class="differential-number">01</span>
-            <h3>Prazo enxuto</h3>
-            <p>que acompanha sua obra</p>
+            <h3 data-i18n="diff-1-title">Prazo enxuto</h3>
+            <p data-i18n="diff-1-text">que acompanha sua obra</p>
           </div>
           <div class="differential-item">
             <span class="differential-number">02</span>
-            <h3>Custo otimizado</h3>
-            <p>para projetos em escala</p>
+            <h3 data-i18n="diff-2-title">Custo otimizado</h3>
+            <p data-i18n="diff-2-text">para projetos em escala</p>
           </div>
           <div class="differential-item">
             <span class="differential-number">03</span>
-            <h3>Suporte ativo</h3>
-            <p>depois da instalação</p>
+            <h3 data-i18n="diff-3-title">Suporte ativo</h3>
+            <p data-i18n="diff-3-text">depois da instalação</p>
           </div>
           <div class="differential-item">
             <span class="differential-number">04</span>
-            <h3>Garantia real</h3>
-            <p>2 anos aplicados na prática</p>
+            <h3 data-i18n="diff-4-title">Garantia real</h3>
+            <p data-i18n="diff-4-text">2 anos aplicados na prática</p>
           </div>
         </div>
       </div>
@@ -286,37 +291,37 @@
     <section class="social-proof-section">
       <div class="proof-strip">
         <div class="proof-item">
-          <p class="proof-quote">"Depois da instalação, o escritório ficou completamente diferente. Sem reflexo nas telas, sem calor. A equipe percebeu a diferença no mesmo dia."</p>
-          <span class="proof-author">Diretor de Operações — Empresa de Tecnologia</span>
+          <p class="proof-quote" data-i18n="sp-q1">"Depois da instalação, o escritório ficou completamente diferente. Sem reflexo nas telas, sem calor. A equipe percebeu a diferença no mesmo dia."</p>
+          <span class="proof-author" data-i18n="sp-a1">Diretor de Operações — Empresa de Tecnologia</span>
         </div>
         <div class="proof-item">
-          <p class="proof-quote">"A Atiye não vendeu uma cortina. Resolveu um problema que eu tinha há anos. O quarto agora é um espaço de descanso de verdade."</p>
-          <span class="proof-author">Arquiteta — Projeto Residencial Alto Padrão</span>
+          <p class="proof-quote" data-i18n="sp-q2">"A Atiye não vendeu uma cortina. Resolveu um problema que eu tinha há anos. O quarto agora é um espaço de descanso de verdade."</p>
+          <span class="proof-author" data-i18n="sp-a2">Arquiteta — Projeto Residencial Alto Padrão</span>
         </div>
         <div class="proof-item">
-          <p class="proof-quote">"Instalação impecável, dentro do prazo, sem nenhuma intercorrência. Exatamente o que precisávamos para entregar o projeto no prazo."</p>
-          <span class="proof-author">Gerente de Facilities — Grupo Imobiliário</span>
+          <p class="proof-quote" data-i18n="sp-q3">"Instalação impecável, dentro do prazo, sem nenhuma intercorrência. Exatamente o que precisávamos para entregar o projeto no prazo."</p>
+          <span class="proof-author" data-i18n="sp-a3">Gerente de Facilities — Grupo Imobiliário</span>
         </div>
         <div class="proof-item">
-          <p class="proof-quote">"O nível técnico é diferente de tudo que encontrei. Antes de vender, entendem o problema. Isso muda tudo no resultado final."</p>
-          <span class="proof-author">Arquiteto — Escritório de Interiores SP</span>
+          <p class="proof-quote" data-i18n="sp-q4">"O nível técnico é diferente de tudo que encontrei. Antes de vender, entendem o problema. Isso muda tudo no resultado final."</p>
+          <span class="proof-author" data-i18n="sp-a4">Arquiteto — Escritório de Interiores SP</span>
         </div>
         <!-- Clone for seamless loop -->
         <div class="proof-item">
-          <p class="proof-quote">"Depois da instalação, o escritório ficou completamente diferente. Sem reflexo nas telas, sem calor. A equipe percebeu a diferença no mesmo dia."</p>
-          <span class="proof-author">Diretor de Operações — Empresa de Tecnologia</span>
+          <p class="proof-quote" data-i18n="sp-q1">"Depois da instalação, o escritório ficou completamente diferente. Sem reflexo nas telas, sem calor. A equipe percebeu a diferença no mesmo dia."</p>
+          <span class="proof-author" data-i18n="sp-a1">Diretor de Operações — Empresa de Tecnologia</span>
         </div>
         <div class="proof-item">
-          <p class="proof-quote">"A Atiye não vendeu uma cortina. Resolveu um problema que eu tinha há anos. O quarto agora é um espaço de descanso de verdade."</p>
-          <span class="proof-author">Arquiteta — Projeto Residencial Alto Padrão</span>
+          <p class="proof-quote" data-i18n="sp-q2">"A Atiye não vendeu uma cortina. Resolveu um problema que eu tinha há anos. O quarto agora é um espaço de descanso de verdade."</p>
+          <span class="proof-author" data-i18n="sp-a2">Arquiteta — Projeto Residencial Alto Padrão</span>
         </div>
         <div class="proof-item">
-          <p class="proof-quote">"Instalação impecável, dentro do prazo, sem nenhuma intercorrência. Exatamente o que precisávamos para entregar o projeto no prazo."</p>
-          <span class="proof-author">Gerente de Facilities — Grupo Imobiliário</span>
+          <p class="proof-quote" data-i18n="sp-q3">"Instalação impecável, dentro do prazo, sem nenhuma intercorrência. Exatamente o que precisávamos para entregar o projeto no prazo."</p>
+          <span class="proof-author" data-i18n="sp-a3">Gerente de Facilities — Grupo Imobiliário</span>
         </div>
         <div class="proof-item">
-          <p class="proof-quote">"O nível técnico é diferente de tudo que encontrei. Antes de vender, entendem o problema. Isso muda tudo no resultado final."</p>
-          <span class="proof-author">Arquiteto — Escritório de Interiores SP</span>
+          <p class="proof-quote" data-i18n="sp-q4">"O nível técnico é diferente de tudo que encontrei. Antes de vender, entendem o problema. Isso muda tudo no resultado final."</p>
+          <span class="proof-author" data-i18n="sp-a4">Arquiteto — Escritório de Interiores SP</span>
         </div>
       </div>
     </section>
@@ -325,25 +330,25 @@
     <section class="section gallery-section" id="galeria">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Portfólio</span>
-          <h2 class="section-title">Projetos realizados</h2>
+          <span class="section-eyebrow" data-i18n="gal-eyebrow">Portfólio</span>
+          <h2 class="section-title" data-i18n="gal-title">Projetos realizados</h2>
         </div>
         <div class="gallery-tabs reveal">
-          <button class="gallery-tab active" data-tab="corporativo">Corporativo</button>
-          <button class="gallery-tab" data-tab="residencial">Residencial</button>
+          <button class="gallery-tab active" data-tab="corporativo" data-i18n="gal-tab-corp">Corporativo</button>
+          <button class="gallery-tab" data-tab="residencial" data-i18n="gal-tab-res">Residencial</button>
         </div>
       </div>
 
       <div class="gallery-grid gallery-facade active" id="gallery-corporativo">
-        <div class="window-item"><img src="assets/escritorio/IMG_1936.webp" alt="Projeto corporativo" loading="lazy" /><div class="window-veil"></div><div class="window-caption"><span>Escritório</span></div></div>
-        <div class="window-item"><img src="assets/escritorio/IMG_1938.webp" alt="Projeto corporativo" loading="lazy" /><div class="window-veil"></div><div class="window-caption"><span>Sala de Reunião</span></div></div>
+        <div class="window-item"><img src="assets/escritorio/IMG_1936.webp" alt="Projeto corporativo" loading="lazy" /><div class="window-veil"></div><div class="window-caption"><span data-i18n="gal-cap-office">Escritório</span></div></div>
+        <div class="window-item"><img src="assets/escritorio/IMG_1938.webp" alt="Projeto corporativo" loading="lazy" /><div class="window-veil"></div><div class="window-caption"><span data-i18n="gal-cap-meet">Sala de Reunião</span></div></div>
         <div class="window-item"><img src="assets/escritorio/IMG_1947.webp" alt="Projeto corporativo" loading="lazy" /><div class="window-veil"></div></div>
         <div class="window-item"><img src="assets/escritorio/IMG_1949.webp" alt="Projeto corporativo" loading="lazy" /><div class="window-veil"></div></div>
-        <div class="window-item"><img src="assets/escritorio/IMG_1950.webp" alt="Projeto corporativo" loading="lazy" /><div class="window-veil"></div><div class="window-caption"><span>Open Space</span></div></div>
+        <div class="window-item"><img src="assets/escritorio/IMG_1950.webp" alt="Projeto corporativo" loading="lazy" /><div class="window-veil"></div><div class="window-caption"><span data-i18n="gal-cap-open">Open Space</span></div></div>
         <div class="window-item"><img src="assets/escritorio/IMG_1955.webp" alt="Projeto corporativo" loading="lazy" /><div class="window-veil"></div></div>
         <div class="window-item"><img src="assets/escritorio/IMG_1964.webp" alt="Projeto corporativo" loading="lazy" /><div class="window-veil"></div></div>
         <div class="window-item"><img src="assets/escritorio/IMG_1967.webp" alt="Projeto corporativo" loading="lazy" /><div class="window-veil"></div></div>
-        <div class="window-item"><img src="assets/escritorio/IMG_2182(1).webp" alt="Sala de conferência" loading="lazy" /><div class="window-veil"></div><div class="window-caption"><span>Sala de Conferência</span></div></div>
+        <div class="window-item"><img src="assets/escritorio/IMG_2182(1).webp" alt="Sala de conferência" loading="lazy" /><div class="window-veil"></div><div class="window-caption"><span data-i18n="gal-cap-conf">Sala de Conferência</span></div></div>
         <div class="window-item"><img src="assets/escritorio/IMG_1892.webp" alt="Projeto corporativo" loading="lazy" /><div class="window-veil"></div></div>
         <div class="window-item"><img src="assets/escritorio/IMG_1928.webp" alt="Projeto corporativo" loading="lazy" /><div class="window-veil"></div></div>
         <div class="window-item"><img src="assets/escritorio/IMG_2029.webp" alt="Projeto corporativo" loading="lazy" /><div class="window-veil"></div></div>
@@ -354,15 +359,15 @@
       </div>
 
       <div class="gallery-grid gallery-facade" id="gallery-residencial">
-        <div class="window-item"><img src="assets/residencial/IMG_3152(1).webp" alt="Sala de estar" loading="lazy" /><div class="window-veil"></div><div class="window-caption"><span>Sala de Estar</span></div></div>
+        <div class="window-item"><img src="assets/residencial/IMG_3152(1).webp" alt="Sala de estar" loading="lazy" /><div class="window-veil"></div><div class="window-caption"><span data-i18n="gal-cap-living">Sala de Estar</span></div></div>
         <div class="window-item"><img src="assets/residencial/IMG_1788.webp" alt="Projeto residencial" loading="lazy" /><div class="window-veil"></div></div>
         <div class="window-item"><img src="assets/residencial/IMG_1791.webp" alt="Projeto residencial" loading="lazy" /><div class="window-veil"></div></div>
         <div class="window-item"><img src="assets/residencial/IMG_1792.webp" alt="Projeto residencial" loading="lazy" /><div class="window-veil"></div></div>
-        <div class="window-item"><img src="assets/residencial/IMG_3184.webp" alt="Sala de jantar" loading="lazy" /><div class="window-veil"></div><div class="window-caption"><span>Sala de Jantar</span></div></div>
+        <div class="window-item"><img src="assets/residencial/IMG_3184.webp" alt="Sala de jantar" loading="lazy" /><div class="window-veil"></div><div class="window-caption"><span data-i18n="gal-cap-dining">Sala de Jantar</span></div></div>
         <div class="window-item"><img src="assets/residencial/IMG_2235.webp" alt="Projeto residencial" loading="lazy" /><div class="window-veil"></div></div>
         <div class="window-item"><img src="assets/residencial/IMG_2238.webp" alt="Projeto residencial" loading="lazy" /><div class="window-veil"></div></div>
         <div class="window-item"><img src="assets/residencial/IMG_2969.webp" alt="Projeto residencial" loading="lazy" /><div class="window-veil"></div></div>
-        <div class="window-item"><img src="assets/residencial/IMG_3154(1).webp" alt="Varanda" loading="lazy" /><div class="window-veil"></div><div class="window-caption"><span>Varanda</span></div></div>
+        <div class="window-item"><img src="assets/residencial/IMG_3154(1).webp" alt="Varanda" loading="lazy" /><div class="window-veil"></div><div class="window-caption"><span data-i18n="gal-cap-deck">Varanda</span></div></div>
         <div class="window-item"><img src="assets/residencial/IMG_3156.webp" alt="Projeto residencial" loading="lazy" /><div class="window-veil"></div></div>
         <div class="window-item"><img src="assets/residencial/IMG_3157.webp" alt="Projeto residencial" loading="lazy" /><div class="window-veil"></div></div>
         <div class="window-item"><img src="assets/residencial/IMG_3158.webp" alt="Projeto residencial" loading="lazy" /><div class="window-veil"></div></div>
@@ -377,62 +382,62 @@
     <section class="section faq-section" id="faq">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Dúvidas frequentes</span>
-          <h2 class="section-title">Tudo que você precisa saber</h2>
+          <span class="section-eyebrow" data-i18n="faq-eyebrow">Dúvidas frequentes</span>
+          <h2 class="section-title" data-i18n="faq-title">Tudo que você precisa saber</h2>
         </div>
         <div class="faq-list reveal">
           <div class="faq-item">
             <button class="faq-question">
-              A instalação exige obras ou reformas?
+              <span data-i18n="faq-q1">A instalação exige obras ou reformas?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Não. Toda a instalação da Atiye é feita sem quebrar ou modificar a estrutura do imóvel. Utilizamos sistemas de fixação precisos que não danificam paredes, tetos ou esquadrias.</p>
+              <p data-i18n="faq-a1">Não. Toda a instalação da Atiye é feita sem quebrar ou modificar a estrutura do imóvel. Utilizamos sistemas de fixação precisos que não danificam paredes, tetos ou esquadrias.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              Quanto tempo leva a instalação?
+              <span data-i18n="faq-q2">Quanto tempo leva a instalação?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>A maioria dos projetos residenciais é concluída em 1 a 2 dias. Projetos corporativos variam conforme a metragem e complexidade, mas sempre com cronograma definido antes de começar.</p>
+              <p data-i18n="faq-a2">A maioria dos projetos residenciais é concluída em 1 a 2 dias. Projetos corporativos variam conforme a metragem e complexidade, mas sempre com cronograma definido antes de começar.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              A tela solar screen realmente reduz o calor?
+              <span data-i18n="faq-q3">A tela solar screen realmente reduz o calor?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Sim. Dependendo do material e abertura utilizada, a redução do ganho térmico pode chegar a 80%. A tela filtra a radiação solar antes que ela aquecesse o vidro — diferente de soluções que agem depois.</p>
+              <p data-i18n="faq-a3">Sim. Dependendo do material e abertura utilizada, a redução do ganho térmico pode chegar a 80%. A tela filtra a radiação solar antes que ela aquecesse o vidro — diferente de soluções que agem depois.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              Como funciona a garantia?
+              <span data-i18n="faq-q4">Como funciona a garantia?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Oferecemos 2 anos de garantia real — com suporte ativo, visita técnica quando necessário e reposição de peças sem custo. Não é só uma promessa no contrato.</p>
+              <p data-i18n="faq-a4">Oferecemos 2 anos de garantia real — com suporte ativo, visita técnica quando necessário e reposição de peças sem custo. Não é só uma promessa no contrato.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              A Atiye atende projetos fora de São Paulo?
+              <span data-i18n="faq-q5">A Atiye atende projetos fora de São Paulo?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Atendemos São Paulo e Grande SP. Para projetos corporativos de maior escala em outras regiões, consulte nossa equipe pelo WhatsApp.</p>
+              <p data-i18n="faq-a5">Atendemos São Paulo e Grande SP. Para projetos corporativos de maior escala em outras regiões, consulte nossa equipe pelo WhatsApp.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              Vocês trabalham com arquitetos e construtoras?
+              <span data-i18n="faq-q6">Vocês trabalham com arquitetos e construtoras?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Sim. Temos uma linha de atendimento dedicada para arquitetos, designers e construtoras com especificação técnica, execução alinhada ao projeto e condições diferenciadas por volume.</p>
+              <p data-i18n="faq-a6">Sim. Temos uma linha de atendimento dedicada para arquitetos, designers e construtoras com especificação técnica, execução alinhada ao projeto e condições diferenciadas por volume.</p>
             </div>
           </div>
         </div>
@@ -443,10 +448,10 @@
     <section class="section cta-section" id="contato">
       <div class="container">
         <div class="cta-content">
-          <span class="section-eyebrow">Pronto para começar</span>
-          <h2>Se a luz está errada,<br>o ambiente nunca estará certo</h2>
-          <p>Resolver isso exige mais do que escolher um tecido. Exige diagnóstico, projeto e execução precisa.</p>
-          <a href="https://wa.me/5511986793247" class="cta-button cta-main" target="_blank" rel="noopener">
+          <span class="section-eyebrow" data-i18n="cta-eyebrow">Pronto para começar</span>
+          <h2 data-i18n-html="cta-title-html">Se a luz está errada,<br>o ambiente nunca estará certo</h2>
+          <p data-i18n="cta-text">Resolver isso exige mais do que escolher um tecido. Exige diagnóstico, projeto e execução precisa.</p>
+          <a href="https://wa.me/5511986793247" class="cta-button cta-main" target="_blank" rel="noopener" data-i18n="cta-btn">
             Falar com especialista
           </a>
         </div>
@@ -461,28 +466,28 @@
       <div class="footer-content">
         <div class="footer-brand">
           <img src="assets/logo_atiye_fundo_branco.png" alt="Atiye" width="100" height="40" />
-          <p>Controle técnico da luz natural para ambientes residenciais e corporativos que exigem precisão.</p>
+          <p data-i18n="footer-tagline">Controle técnico da luz natural para ambientes residenciais e corporativos que exigem precisão.</p>
         </div>
         <div class="footer-links">
-          <h4>Soluções</h4>
-          <a href="corporativo.html">Corporativo</a>
-          <a href="residencial.html">Residencial</a>
-          <a href="lavagem.html">Higienização</a>
+          <h4 data-i18n="footer-solutions">Soluções</h4>
+          <a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a>
+          <a href="residencial.html" data-i18n="nav-residential">Residencial</a>
+          <a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a>
         </div>
         <div class="footer-contact">
-          <h4>Contato</h4>
+          <h4 data-i18n="footer-contact">Contato</h4>
           <a href="tel:+5511986793247">11 9.8679-3247</a>
           <a href="https://wa.me/5511986793247" target="_blank" rel="noopener">WhatsApp</a>
           <a href="mailto:contato@atiyecortinas.com.br">E-mail</a>
         </div>
         <div class="footer-social">
-          <h4>Redes</h4>
+          <h4 data-i18n="footer-social">Redes</h4>
           <a href="https://instagram.com/atiyecortinas" target="_blank" rel="noopener">Instagram</a>
           <a href="https://instagram.com/atiyecortinas" target="_blank" rel="noopener">@atiyecortinas</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Atiye. Todos os direitos reservados.</p>
+        <p data-i18n="footer-rights">&copy; 2026 Atiye. Todos os direitos reservados.</p>
         <a href="#">São Paulo, SP</a>
       </div>
     </div>
@@ -495,6 +500,7 @@
     </svg>
   </a>
 
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

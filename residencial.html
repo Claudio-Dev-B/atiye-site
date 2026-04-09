@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-i18n-title="res-title" data-i18n-meta="res-meta">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,14 +30,19 @@
       </a>
       <nav class="header-nav" id="nav">
         <ul class="nav-list">
-          <li><a href="corporativo.html">Corporativo</a></li>
-          <li><a href="residencial.html">Residencial</a></li>
-          <li><a href="lavagem.html">Higienização</a></li>
-          <li><a href="index.html#galeria">Galeria</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a></li>
+          <li><a href="residencial.html" data-i18n="nav-residential">Residencial</a></li>
+          <li><a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a></li>
+          <li><a href="index.html#galeria" data-i18n="nav-gallery">Galeria</a></li>
+          <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
         </ul>
       </nav>
       <a href="https://wa.me/5511986793247" class="cta-button header-cta" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="lang-toggle" id="lang-toggle" aria-label="Alternar idioma">
+        <span class="lang-pt lang-active">PT</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-en">EN</span>
+      </button>
       <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -58,16 +63,16 @@
         <div class="hero-overlay"></div>
       </div>
       <div class="hero-content">
-        <span class="hero-label">Residencial</span>
-        <h1 class="hero-title">Você não deveria se adaptar à luz da sua própria casa</h1>
-        <p class="hero-subtitle">
+        <span class="hero-label" data-i18n="res-hero-label">Residencial</span>
+        <h1 class="hero-title" data-i18n="res-hero-title">Você não deveria se adaptar à luz da sua própria casa</h1>
+        <p class="hero-subtitle" data-i18n-html="res-hero-subtitle-html">
           Acordar antes da hora. Calor acumulado no quarto. Móveis desbotando ao longo dos anos.<br>
           Tudo isso tem causa — e tem solução precisa.
         </p>
-        <p class="hero-description">
+        <p class="hero-description" data-i18n="res-hero-desc">
           A Atiye projeta controle de luz para ambientes que precisam funcionar perfeitamente para quem vive neles.
         </p>
-        <a href="#contato" class="cta-button hero-cta">Solicitar orçamento</a>
+        <a href="#contato" class="cta-button hero-cta" data-i18n="res-hero-cta">Solicitar orçamento</a>
       </div>
       <div class="hero-scroll">
         <div class="scroll-line"></div>
@@ -80,15 +85,15 @@
       <div class="container">
         <div class="problem-content">
           <div class="problem-text reveal">
-            <span class="section-eyebrow">O problema invisível</span>
-            <h2 class="problem-lead">Você já se ajustou ao problema. Sem perceber.</h2>
+            <span class="section-eyebrow" data-i18n="res-prob-eyebrow">O problema invisível</span>
+            <h2 class="problem-lead" data-i18n="res-prob-lead">Você já se ajustou ao problema. Sem perceber.</h2>
             <ul class="problem-list">
-              <li>Acorda antes do horário porque a luz entra no quarto</li>
-              <li>Liga o ar-condicionado mais cedo pelo calor da tarde</li>
-              <li>Fecha as persianas e perde a visão — ou abre e perde o conforto</li>
-              <li>Mobiliário perdendo cor gradualmente pela exposição solar</li>
+              <li data-i18n="res-prob-li1">Acorda antes do horário porque a luz entra no quarto</li>
+              <li data-i18n="res-prob-li2">Liga o ar-condicionado mais cedo pelo calor da tarde</li>
+              <li data-i18n="res-prob-li3">Fecha as persianas e perde a visão — ou abre e perde o conforto</li>
+              <li data-i18n="res-prob-li4">Mobiliário perdendo cor gradualmente pela exposição solar</li>
             </ul>
-            <p class="problem-conclusion">
+            <p class="problem-conclusion" data-i18n-html="res-prob-concl-html">
               Isso não é rotina. É desgaste acumulado.<br>
               E tem <strong>solução técnica</strong>.
             </p>
@@ -109,16 +114,16 @@
       <div class="container">
         <div class="split-content reveal">
           <div class="split-text">
-            <span class="section-label">Abordagem</span>
-            <h2>A luz precisa se ajustar à sua vida — não o contrário</h2>
-            <p>
+            <span class="section-label" data-i18n="res-sol-label">Abordagem</span>
+            <h2 data-i18n="res-sol-title">A luz precisa se ajustar à sua vida — não o contrário</h2>
+            <p data-i18n="res-sol-p1">
               Cada ambiente tem uma função. Cada horário tem uma demanda diferente.
               Um projeto de controle de luz considera tudo isso antes de especificar qualquer material.
             </p>
-            <p>
+            <p data-i18n="res-sol-p2">
               Não é sobre escolher uma persiana bonita. É sobre definir como você quer viver naquele espaço.
             </p>
-            <p class="solution-highlight">
+            <p class="solution-highlight" data-i18n="res-sol-highlight">
               Do diagnóstico ao resultado — sem improvisos.
             </p>
           </div>
@@ -137,8 +142,8 @@
     <section class="section" id="ambientes" style="background: var(--color-warm);">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Por ambiente</span>
-          <h2 class="section-title">Cada espaço, uma demanda específica</h2>
+          <span class="section-eyebrow" data-i18n="res-env-eyebrow">Por ambiente</span>
+          <h2 class="section-title" data-i18n="res-env-title">Cada espaço, uma demanda específica</h2>
         </div>
         <div class="cards-grid reveal">
           <div class="solution-card">
@@ -147,8 +152,8 @@
                 <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
               </svg>
             </div>
-            <h3>Quartos</h3>
-            <p>Bloqueio real de luz para dormir melhor. Sem calor acumulado. Controle total do horário de despertar natural.</p>
+            <h3 data-i18n="res-env1-title">Quartos</h3>
+            <p data-i18n="res-env1-text">Bloqueio real de luz para dormir melhor. Sem calor acumulado. Controle total do horário de despertar natural.</p>
           </div>
           <div class="solution-card">
             <div class="card-icon">
@@ -157,8 +162,8 @@
                 <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/>
               </svg>
             </div>
-            <h3>Salas</h3>
-            <p>Equilíbrio entre claridade e proteção. Sem reflexo na TV. Sem calor excessivo. Com vista preservada.</p>
+            <h3 data-i18n="res-env2-title">Salas</h3>
+            <p data-i18n="res-env2-text">Equilíbrio entre claridade e proteção. Sem reflexo na TV. Sem calor excessivo. Com vista preservada.</p>
           </div>
           <div class="solution-card">
             <div class="card-icon">
@@ -166,11 +171,11 @@
                 <path d="M3 12h18M3 6h18M3 18h18"/>
               </svg>
             </div>
-            <h3>Varandas</h3>
-            <p>Proteção solar sem perder a ventilação. Privacidade sem isolar. Conforto para usar o espaço o dia todo.</p>
+            <h3 data-i18n="res-env3-title">Varandas</h3>
+            <p data-i18n="res-env3-text">Proteção solar sem perder a ventilação. Privacidade sem isolar. Conforto para usar o espaço o dia todo.</p>
           </div>
         </div>
-        <p class="solution-note">Cada especificação é feita depois de entender como você usa cada ambiente.</p>
+        <p class="solution-note" data-i18n="res-env-note">Cada especificação é feita depois de entender como você usa cada ambiente.</p>
       </div>
     </section>
 
@@ -179,16 +184,16 @@
       <div class="container">
         <div class="proof-content">
           <div class="proof-text reveal">
-            <span class="section-eyebrow">Tecnologia aplicada</span>
-            <h2>Tela solar screen.<br>Não bloqueia. <em>Controla.</em></h2>
-            <p>
+            <span class="section-eyebrow" data-i18n="res-tech-eyebrow">Tecnologia aplicada</span>
+            <h2 data-i18n-html="res-tech-title-html">Tela solar screen.<br>Não bloqueia. <em>Controla.</em></h2>
+            <p data-i18n="res-tech-p1">
               Filtra até 97% da radiação UV e reduz significativamente o ganho térmico —
               sem escurecer o ambiente e sem bloquear a vista.
             </p>
-            <p class="proof-highlight">
+            <p class="proof-highlight" data-i18n="res-tech-highlight">
               O ambiente fica mais fresco e confortável. A luz do dia permanece. A vista também.
             </p>
-            <p>
+            <p data-i18n="res-tech-p2">
               Indicada para salas de estar, varandas, dormitórios com exposição direta ao sol
               e qualquer ambiente onde a temperatura ou o ofuscamento são um problema real.
             </p>
@@ -208,20 +213,20 @@
     <section class="section gallery-section" id="projetos" style="background: var(--color-warm);">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Portfólio</span>
-          <h2 class="section-title">Projetos residenciais realizados</h2>
+          <span class="section-eyebrow" data-i18n="res-gal-eyebrow">Portfólio</span>
+          <h2 class="section-title" data-i18n="res-gal-title">Projetos residenciais realizados</h2>
         </div>
       </div>
       <div class="gallery-facade gallery-landing">
         <div class="window-item">
           <img src="assets/residencial/IMG_3152(1).webp" alt="Sala de estar" loading="lazy" />
           <div class="window-veil"></div>
-          <div class="window-caption"><span>Sala de Estar</span></div>
+          <div class="window-caption"><span data-i18n="res-gal-cap1">Sala de Estar</span></div>
         </div>
         <div class="window-item">
           <img src="assets/residencial/IMG_3184.webp" alt="Sala de jantar" loading="lazy" />
           <div class="window-veil"></div>
-          <div class="window-caption"><span>Sala de Jantar</span></div>
+          <div class="window-caption"><span data-i18n="res-gal-cap2">Sala de Jantar</span></div>
         </div>
         <div class="window-item">
           <img src="assets/residencial/IMG_1791.webp" alt="Projeto residencial" loading="lazy" />
@@ -242,7 +247,7 @@
         <div class="window-item">
           <img src="assets/residencial/IMG_3154(1).webp" alt="Varanda" loading="lazy" />
           <div class="window-veil"></div>
-          <div class="window-caption"><span>Varanda</span></div>
+          <div class="window-caption"><span data-i18n="res-gal-cap3">Varanda</span></div>
         </div>
         <div class="window-item">
           <img src="assets/residencial/IMG_3464.webp" alt="Projeto residencial" loading="lazy" />
@@ -259,22 +264,22 @@
     <section class="section value-section" id="valor">
       <div class="container">
         <div class="value-content reveal">
-          <span class="section-label">O que muda na prática</span>
+          <span class="section-label" data-i18n="res-val-label">O que muda na prática</span>
           <div class="value-grid">
             <div class="value-item">
               <span class="value-icon">↑</span>
-              <h3>Qualidade de sono</h3>
-              <p>sem despertar precoce pela luz</p>
+              <h3 data-i18n="res-val1-title">Qualidade de sono</h3>
+              <p data-i18n="res-val1-text">sem despertar precoce pela luz</p>
             </div>
             <div class="value-item">
               <span class="value-icon">↓</span>
-              <h3>Temperatura</h3>
-              <p>ambiente mais fresco, menos ar-condicionado</p>
+              <h3 data-i18n="res-val2-title">Temperatura</h3>
+              <p data-i18n="res-val2-text">ambiente mais fresco, menos ar-condicionado</p>
             </div>
             <div class="value-item">
               <span class="value-icon">→</span>
-              <h3>Preservação</h3>
-              <p>mobiliário e superfícies protegidos do UV</p>
+              <h3 data-i18n="res-val3-title">Preservação</h3>
+              <p data-i18n="res-val3-text">mobiliário e superfícies protegidos do UV</p>
             </div>
           </div>
         </div>
@@ -285,18 +290,18 @@
     <section class="section offer-section" id="preco">
       <div class="container">
         <div class="offer-content reveal">
-          <span class="section-label">Investimento</span>
-          <h2>Preços a partir de</h2>
+          <span class="section-label" data-i18n="res-price-label">Investimento</span>
+          <h2 data-i18n="res-price-title">Preços a partir de</h2>
           <div class="price-cards">
             <div class="price-card">
-              <span class="price-label">Tela Solar Screen</span>
+              <span class="price-label" data-i18n="res-price1-label">Tela Solar Screen</span>
               <span class="price-value">R$189<span class="price-unit">/m²</span></span>
-              <span class="price-note">instalado e com garantia</span>
+              <span class="price-note" data-i18n="res-price1-note">instalado e com garantia</span>
             </div>
             <div class="price-card">
-              <span class="price-label">Cortinas e Persianas</span>
+              <span class="price-label" data-i18n="res-price2-label">Cortinas e Persianas</span>
               <span class="price-value">R$90<span class="price-unit">/m²</span></span>
-              <span class="price-note">sob medida, instalado</span>
+              <span class="price-note" data-i18n="res-price2-note">sob medida, instalado</span>
             </div>
           </div>
         </div>
@@ -307,53 +312,53 @@
     <section class="section faq-section" id="faq" style="background: var(--color-warm);">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Perguntas frequentes</span>
-          <h2 class="section-title">Dúvidas comuns</h2>
+          <span class="section-eyebrow" data-i18n="res-faq-eyebrow">Perguntas frequentes</span>
+          <h2 class="section-title" data-i18n="res-faq-title">Dúvidas comuns</h2>
         </div>
         <div class="faq-list reveal">
           <div class="faq-item">
             <button class="faq-question">
-              A instalação exige obras?
+              <span data-i18n="res-faq-q1">A instalação exige obras?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Não. Toda a instalação da Atiye é feita sem quebrar paredes, tetos ou esquadrias. Utilizamos sistemas de fixação precisos que não causam danos ao imóvel.</p>
+              <p data-i18n="res-faq-a1">Não. Toda a instalação da Atiye é feita sem quebrar paredes, tetos ou esquadrias. Utilizamos sistemas de fixação precisos que não causam danos ao imóvel.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              Posso solicitar orçamento por ambiente?
+              <span data-i18n="res-faq-q2">Posso solicitar orçamento por ambiente?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Sim. Atendemos desde projetos de um único ambiente até apartamentos completos. Envie uma foto e as medidas pelo WhatsApp — a partir daí fazemos o diagnóstico técnico.</p>
+              <p data-i18n="res-faq-a2">Sim. Atendemos desde projetos de um único ambiente até apartamentos completos. Envie uma foto e as medidas pelo WhatsApp — a partir daí fazemos o diagnóstico técnico.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              Quanto tempo leva a instalação?
+              <span data-i18n="res-faq-q3">Quanto tempo leva a instalação?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>A maioria dos projetos residenciais é concluída em 1 a 2 dias. O cronograma é definido antes do início, com horários que se adaptam à rotina do morador.</p>
+              <p data-i18n="res-faq-a3">A maioria dos projetos residenciais é concluída em 1 a 2 dias. O cronograma é definido antes do início, com horários que se adaptam à rotina do morador.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              A tela solar reduz a claridade do ambiente?
+              <span data-i18n="res-faq-q4">A tela solar reduz a claridade do ambiente?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Depende do nível de abertura escolhido. Com materiais de 5% de abertura ou mais, o ambiente mantém claridade natural enquanto elimina calor e reflexo. A escolha é feita de acordo com as necessidades de cada espaço.</p>
+              <p data-i18n="res-faq-a4">Depende do nível de abertura escolhido. Com materiais de 5% de abertura ou mais, o ambiente mantém claridade natural enquanto elimina calor e reflexo. A escolha é feita de acordo com as necessidades de cada espaço.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              Qual é a garantia dos produtos?
+              <span data-i18n="res-faq-q5">Qual é a garantia dos produtos?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Oferecemos 2 anos de garantia real — com suporte ativo, visita técnica e reposição de peças sem custo adicional quando necessário.</p>
+              <p data-i18n="res-faq-a5">Oferecemos 2 anos de garantia real — com suporte ativo, visita técnica e reposição de peças sem custo adicional quando necessário.</p>
             </div>
           </div>
         </div>
@@ -364,13 +369,14 @@
     <section class="section cta-section" id="contato">
       <div class="container">
         <div class="cta-content">
-          <span class="section-eyebrow">Pronto para começar</span>
-          <h2>Envie uma foto do ambiente<br>e receba uma recomendação técnica</h2>
-          <p>Sem compromisso. Atendimento direto com quem vai executar o projeto.</p>
+          <span class="section-eyebrow" data-i18n="res-cta-eyebrow">Pronto para começar</span>
+          <h2 data-i18n-html="res-cta-title-html">Envie uma foto do ambiente<br>e receba uma recomendação técnica</h2>
+          <p data-i18n="res-cta-text">Sem compromisso. Atendimento direto com quem vai executar o projeto.</p>
           <a
             href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20receber%20uma%20recomendação%20técnica%20para%20meu%20ambiente%20residencial"
             class="cta-button cta-main"
             target="_blank" rel="noopener"
+            data-i18n="res-cta-btn"
           >
             Falar no WhatsApp
           </a>
@@ -386,28 +392,28 @@
       <div class="footer-content">
         <div class="footer-brand">
           <img src="assets/logo_atiye_fundo_branco.png" alt="Atiye" width="100" height="40" />
-          <p>Controle técnico da luz natural para ambientes residenciais e corporativos que exigem precisão.</p>
+          <p data-i18n="footer-tagline">Controle técnico da luz natural para ambientes residenciais e corporativos que exigem precisão.</p>
         </div>
         <div class="footer-links">
-          <h4>Soluções</h4>
-          <a href="corporativo.html">Corporativo</a>
-          <a href="residencial.html">Residencial</a>
-          <a href="lavagem.html">Higienização</a>
+          <h4 data-i18n="footer-solutions">Soluções</h4>
+          <a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a>
+          <a href="residencial.html" data-i18n="nav-residential">Residencial</a>
+          <a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a>
         </div>
         <div class="footer-contact">
-          <h4>Contato</h4>
+          <h4 data-i18n="footer-contact">Contato</h4>
           <a href="tel:+5511986793247">11 9.8679-3247</a>
           <a href="https://wa.me/5511986793247" target="_blank" rel="noopener">WhatsApp</a>
           <a href="mailto:contato@atiyecortinas.com.br">E-mail</a>
         </div>
         <div class="footer-social">
-          <h4>Redes</h4>
+          <h4 data-i18n="footer-social">Redes</h4>
           <a href="https://instagram.com/atiyecortinas" target="_blank" rel="noopener">Instagram</a>
           <a href="https://instagram.com/atiyecortinas" target="_blank" rel="noopener">@atiyecortinas</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Atiye. Todos os direitos reservados.</p>
+        <p data-i18n="footer-rights">&copy; 2026 Atiye. Todos os direitos reservados.</p>
         <a href="#">São Paulo, SP</a>
       </div>
     </div>
@@ -420,6 +426,7 @@
     </svg>
   </a>
 
+  <script src="translations.js"></script>
   <script src="script-landing.js"></script>
 </body>
 </html>

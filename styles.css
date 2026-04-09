@@ -253,6 +253,60 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .cta-button.outline:hover { background: var(--color-ink); color: var(--color-white); }
 
+/* ── Language Toggle ─────────────────────────────────── */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 2px;
+  transition: border-color 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+  background: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.lang-toggle:hover {
+  border-color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.85);
+}
+.lang-toggle .lang-sep {
+  opacity: 0.35;
+  margin: 0 0.1rem;
+}
+.lang-toggle .lang-active {
+  color: var(--color-gold);
+  font-weight: 700;
+}
+/* On scrolled / dark header */
+.header.scrolled .lang-toggle {
+  color: rgba(255,255,255,0.5);
+  border-color: rgba(255,255,255,0.18);
+}
+.header.scrolled .lang-toggle:hover {
+  border-color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.85);
+}
+/* On landing pages (always dark header) */
+.landing-page .lang-toggle {
+  color: rgba(255,255,255,0.5);
+  border-color: rgba(255,255,255,0.18);
+}
+.landing-page .lang-toggle:hover {
+  border-color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.85);
+}
+/* On transparent header (light pages) */
+.header--transparent .lang-toggle {
+  color: rgba(255,255,255,0.6);
+  border-color: rgba(255,255,255,0.25);
+}
+
 /* ── Header ──────────────────────────────────────────── */
 .header {
   position: fixed;

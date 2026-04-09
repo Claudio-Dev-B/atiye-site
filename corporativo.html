@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-i18n-title="corp-title" data-i18n-meta="corp-meta">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,14 +30,19 @@
       </a>
       <nav class="header-nav" id="nav">
         <ul class="nav-list">
-          <li><a href="corporativo.html">Corporativo</a></li>
-          <li><a href="residencial.html">Residencial</a></li>
-          <li><a href="lavagem.html">Higienização</a></li>
-          <li><a href="index.html#galeria">Galeria</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a></li>
+          <li><a href="residencial.html" data-i18n="nav-residential">Residencial</a></li>
+          <li><a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a></li>
+          <li><a href="index.html#galeria" data-i18n="nav-gallery">Galeria</a></li>
+          <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
         </ul>
       </nav>
       <a href="https://wa.me/5511986793247" class="cta-button header-cta" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="lang-toggle" id="lang-toggle" aria-label="Alternar idioma">
+        <span class="lang-pt lang-active">PT</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-en">EN</span>
+      </button>
       <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -58,16 +63,16 @@
         <div class="hero-overlay"></div>
       </div>
       <div class="hero-content">
-        <span class="hero-label">Corporativo</span>
-        <h1 class="hero-title">Ambientes de trabalho não toleram luz descontrolada</h1>
-        <p class="hero-subtitle">
+        <span class="hero-label" data-i18n="corp-hero-label">Corporativo</span>
+        <h1 class="hero-title" data-i18n="corp-hero-title">Ambientes de trabalho não toleram luz descontrolada</h1>
+        <p class="hero-subtitle" data-i18n-html="corp-hero-subtitle-html">
           Reflexo em telas. Calor acumulado. Equipe ajustando posição o dia todo.<br>
           Isso não é detalhe — é falha de infraestrutura.
         </p>
-        <p class="hero-description">
+        <p class="hero-description" data-i18n="corp-hero-desc">
           A Atiye projeta controle de luz para empresas que precisam de padrão e previsibilidade.
         </p>
-        <a href="#contato" class="cta-button hero-cta">Solicitar orçamento corporativo</a>
+        <a href="#contato" class="cta-button hero-cta" data-i18n="corp-hero-cta">Solicitar orçamento corporativo</a>
       </div>
       <div class="hero-scroll">
         <div class="scroll-line"></div>
@@ -79,28 +84,28 @@
     <section class="section reality-section" id="realidade">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Realidade</span>
-          <h2 class="section-title">Luz descontrolada é perda de produtividade</h2>
-          <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto;">E se normaliza silenciosamente.</p>
+          <span class="section-eyebrow" data-i18n="corp-real-eyebrow">Realidade</span>
+          <h2 class="section-title" data-i18n="corp-real-title">Luz descontrolada é perda de produtividade</h2>
+          <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto;" data-i18n="corp-real-subtitle">E se normaliza silenciosamente.</p>
         </div>
         <div class="problems-grid reveal">
           <div class="problem-item">
             <span class="problem-number">01</span>
-            <h3>Reflexo que destrói o foco</h3>
-            <p>Colaboradores movendo monitores, ajustando posição, piscando mais do que o normal. Segundo a Cornell University, o desconforto visual aumenta em até 84% a incidência de fadiga e reduz o tempo de concentração contínua.</p>
+            <h3 data-i18n="corp-p1-title">Reflexo que destrói o foco</h3>
+            <p data-i18n="corp-p1-text">Colaboradores movendo monitores, ajustando posição, piscando mais do que o normal. Segundo a Cornell University, o desconforto visual aumenta em até 84% a incidência de fadiga e reduz o tempo de concentração contínua.</p>
           </div>
           <div class="problem-item">
             <span class="problem-number">02</span>
-            <h3>Temperatura que compromete o raciocínio</h3>
-            <p>Calor acumulado por fachadas envidraçadas sem controle eleva a temperatura interna e reduz a capacidade cognitiva. O World Green Building Council associa conforto térmico e luminoso a ganhos de até 20% em produtividade.</p>
+            <h3 data-i18n="corp-p2-title">Temperatura que compromete o raciocínio</h3>
+            <p data-i18n="corp-p2-text">Calor acumulado por fachadas envidraçadas sem controle eleva a temperatura interna e reduz a capacidade cognitiva. O World Green Building Council associa conforto térmico e luminoso a ganhos de até 20% em produtividade.</p>
           </div>
           <div class="problem-item">
             <span class="problem-number">03</span>
-            <h3>Ambiente sem luz natural adequada</h3>
-            <p>Harvard Business Review aponta que 47% dos trabalhadores de escritório relatam falta de luz natural — e isso afeta diretamente o estado de alerta, o humor e a qualidade do sono. O ambiente prejudica antes do trabalho começar.</p>
+            <h3 data-i18n="corp-p3-title">Ambiente sem luz natural adequada</h3>
+            <p data-i18n="corp-p3-text">Harvard Business Review aponta que 47% dos trabalhadores de escritório relatam falta de luz natural — e isso afeta diretamente o estado de alerta, o humor e a qualidade do sono. O ambiente prejudica antes do trabalho começar.</p>
           </div>
         </div>
-        <p class="reality-conclusion">Esses números têm endereço: o ambiente onde sua equipe trabalha.</p>
+        <p class="reality-conclusion" data-i18n="corp-real-concl">Esses números têm endereço: o ambiente onde sua equipe trabalha.</p>
       </div>
     </section>
 
@@ -110,17 +115,17 @@
         <div class="landing-stats-grid">
           <div class="landing-stat-item">
             <span class="landing-stat-value">84%</span>
-            <span class="landing-stat-label">menos fadiga visual com iluminação controlada</span>
+            <span class="landing-stat-label" data-i18n="corp-stat1-label">menos fadiga visual com iluminação controlada</span>
             <span class="landing-stat-source">Cornell University</span>
           </div>
           <div class="landing-stat-item">
             <span class="landing-stat-value">+20%</span>
-            <span class="landing-stat-label">de produtividade em ambientes com conforto luminoso</span>
+            <span class="landing-stat-label" data-i18n="corp-stat2-label">de produtividade em ambientes com conforto luminoso</span>
             <span class="landing-stat-source">World Green Building Council</span>
           </div>
           <div class="landing-stat-item">
             <span class="landing-stat-value">47%</span>
-            <span class="landing-stat-label">dos trabalhadores sem luz natural adequada</span>
+            <span class="landing-stat-label" data-i18n="corp-stat3-label">dos trabalhadores sem luz natural adequada</span>
             <span class="landing-stat-source">Harvard Business Review</span>
           </div>
         </div>
@@ -132,16 +137,16 @@
       <div class="container">
         <div class="split-content reverse reveal">
           <div class="split-text">
-            <span class="section-label">Solução</span>
-            <h2>Controle de luz que protege o desempenho da equipe</h2>
+            <span class="section-label" data-i18n="corp-sol-label">Solução</span>
+            <h2 data-i18n="corp-sol-title">Controle de luz que protege o desempenho da equipe</h2>
             <ul class="solution-list">
-              <li>Eliminação de reflexo em telas e superfícies de trabalho</li>
-              <li>Redução de até 80% do ganho térmico solar por fachada</li>
-              <li>Distribuição equilibrada de luz natural sem ofuscamento</li>
-              <li>Padronização entre ambientes, andares e turnos</li>
-              <li>Execução integrada ao cronograma de obra ou reforma</li>
+              <li data-i18n="corp-sol-li1">Eliminação de reflexo em telas e superfícies de trabalho</li>
+              <li data-i18n="corp-sol-li2">Redução de até 80% do ganho térmico solar por fachada</li>
+              <li data-i18n="corp-sol-li3">Distribuição equilibrada de luz natural sem ofuscamento</li>
+              <li data-i18n="corp-sol-li4">Padronização entre ambientes, andares e turnos</li>
+              <li data-i18n="corp-sol-li5">Execução integrada ao cronograma de obra ou reforma</li>
             </ul>
-            <p class="solution-highlight">
+            <p class="solution-highlight" data-i18n="corp-sol-highlight">
               Cada especificação parte da análise do ambiente. Não de catálogo.
             </p>
           </div>
@@ -160,8 +165,8 @@
     <section class="section" id="produtos" style="background: var(--color-warm);">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Produtos</span>
-          <h2 class="section-title">Cada ambiente, a solução certa</h2>
+          <span class="section-eyebrow" data-i18n="corp-prod-eyebrow">Produtos</span>
+          <h2 class="section-title" data-i18n="corp-prod-title">Cada ambiente, a solução certa</h2>
         </div>
         <div class="cards-grid reveal">
           <div class="solution-card">
@@ -171,8 +176,8 @@
                 <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
               </svg>
             </div>
-            <h3>Tela Solar Screen</h3>
-            <p>Filtra radiação UV, reduz calor e elimina reflexos mantendo visibilidade para o exterior. Ideal para fachadas expostas.</p>
+            <h3 data-i18n="corp-prod1-title">Tela Solar Screen</h3>
+            <p data-i18n="corp-prod1-text">Filtra radiação UV, reduz calor e elimina reflexos mantendo visibilidade para o exterior. Ideal para fachadas expostas.</p>
           </div>
           <div class="solution-card">
             <div class="card-icon">
@@ -181,8 +186,8 @@
                 <path d="M3 9h18M9 21V9"/>
               </svg>
             </div>
-            <h3>Persiana Rolô</h3>
-            <p>Controle preciso da entrada de luz em ambientes que exigem diferentes configurações ao longo do dia.</p>
+            <h3 data-i18n="corp-prod2-title">Persiana Rolô</h3>
+            <p data-i18n="corp-prod2-text">Controle preciso da entrada de luz em ambientes que exigem diferentes configurações ao longo do dia.</p>
           </div>
           <div class="solution-card">
             <div class="card-icon">
@@ -190,11 +195,11 @@
                 <path d="M21 3H3v18h18V3zM3 9h18M3 15h18M9 3v18M15 3v18"/>
               </svg>
             </div>
-            <h3>Double Vision</h3>
-            <p>Tecido dupla camada que permite controle alternado entre claridade total e privacidade completa — sem troca de persiana.</p>
+            <h3 data-i18n="corp-prod3-title">Double Vision</h3>
+            <p data-i18n="corp-prod3-text">Tecido dupla camada que permite controle alternado entre claridade total e privacidade completa — sem troca de persiana.</p>
           </div>
         </div>
-        <p class="solution-note">Linha técnica selecionada por performance — não apenas por estética.</p>
+        <p class="solution-note" data-i18n="corp-prod-note">Linha técnica selecionada por performance — não apenas por estética.</p>
       </div>
     </section>
 
@@ -202,29 +207,29 @@
     <section class="section process-section" id="processo">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Como trabalhamos</span>
-          <h2 class="section-title">Do diagnóstico à garantia</h2>
+          <span class="section-eyebrow" data-i18n="corp-proc-eyebrow">Como trabalhamos</span>
+          <h2 class="section-title" data-i18n="corp-proc-title">Do diagnóstico à garantia</h2>
         </div>
         <div class="process-grid reveal">
           <div class="process-step">
             <div class="process-dot">01</div>
-            <h3>Diagnóstico</h3>
-            <p>Análise técnica do ambiente: exposição solar, função de cada espaço, horários críticos e metas de conforto.</p>
+            <h3 data-i18n="corp-proc-1-title">Diagnóstico</h3>
+            <p data-i18n="corp-proc-1-text">Análise técnica do ambiente: exposição solar, função de cada espaço, horários críticos e metas de conforto.</p>
           </div>
           <div class="process-step">
             <div class="process-dot">02</div>
-            <h3>Especificação</h3>
-            <p>Definição de materiais, abertura de tecido, sistemas de fixação e cronograma integrado ao projeto de obra.</p>
+            <h3 data-i18n="corp-proc-2-title">Especificação</h3>
+            <p data-i18n="corp-proc-2-text">Definição de materiais, abertura de tecido, sistemas de fixação e cronograma integrado ao projeto de obra.</p>
           </div>
           <div class="process-step">
             <div class="process-dot">03</div>
-            <h3>Execução</h3>
-            <p>Instalação precisa, equipe técnica, sem interrupção das operações e dentro do prazo acordado.</p>
+            <h3 data-i18n="corp-proc-3-title">Execução</h3>
+            <p data-i18n="corp-proc-3-text">Instalação precisa, equipe técnica, sem interrupção das operações e dentro do prazo acordado.</p>
           </div>
           <div class="process-step">
             <div class="process-dot">04</div>
-            <h3>Pós-instalação</h3>
-            <p>2 anos de garantia real. Suporte ativo, visita técnica quando necessário, reposição sem custo.</p>
+            <h3 data-i18n="corp-proc-4-title">Pós-instalação</h3>
+            <p data-i18n="corp-proc-4-text">2 anos de garantia real. Suporte ativo, visita técnica quando necessário, reposição sem custo.</p>
           </div>
         </div>
       </div>
@@ -234,13 +239,13 @@
     <section class="section authority-section" id="autoridade">
       <div class="container">
         <div class="authority-content reveal">
-          <span class="section-label">Atendimento técnico direto</span>
-          <h2>Para quem decide o projeto</h2>
+          <span class="section-label" data-i18n="corp-auth-label">Atendimento técnico direto</span>
+          <h2 data-i18n="corp-auth-title">Para quem decide o projeto</h2>
           <div class="authority-targets">
-            <div class="target-item">Engenharia</div>
-            <div class="target-item">Arquitetura</div>
-            <div class="target-item">Facilities</div>
-            <div class="target-item">Construtoras</div>
+            <div class="target-item" data-i18n="corp-target-1">Engenharia</div>
+            <div class="target-item" data-i18n="corp-target-2">Arquitetura</div>
+            <div class="target-item" data-i18n="corp-target-3">Facilities</div>
+            <div class="target-item" data-i18n="corp-target-4">Construtoras</div>
           </div>
         </div>
       </div>
@@ -250,20 +255,20 @@
     <section class="section gallery-section" id="projetos">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Portfólio</span>
-          <h2 class="section-title">Projetos corporativos realizados</h2>
+          <span class="section-eyebrow" data-i18n="corp-gal-eyebrow">Portfólio</span>
+          <h2 class="section-title" data-i18n="corp-gal-title">Projetos corporativos realizados</h2>
         </div>
       </div>
       <div class="gallery-facade gallery-landing">
         <div class="window-item">
           <img src="assets/escritorio/IMG_1936.webp" alt="Projeto corporativo" loading="lazy" />
           <div class="window-veil"></div>
-          <div class="window-caption"><span>Escritório</span></div>
+          <div class="window-caption"><span data-i18n="corp-gal-cap1">Escritório</span></div>
         </div>
         <div class="window-item">
           <img src="assets/escritorio/IMG_2233.webp" alt="Sala corporativa" loading="lazy" />
           <div class="window-veil"></div>
-          <div class="window-caption"><span>Sala de Reunião</span></div>
+          <div class="window-caption"><span data-i18n="corp-gal-cap2">Sala de Reunião</span></div>
         </div>
         <div class="window-item">
           <img src="assets/escritorio/IMG_1947.webp" alt="Projeto corporativo" loading="lazy" />
@@ -272,7 +277,7 @@
         <div class="window-item">
           <img src="assets/escritorio/IMG_1950.webp" alt="Open space" loading="lazy" />
           <div class="window-veil"></div>
-          <div class="window-caption"><span>Open Space</span></div>
+          <div class="window-caption"><span data-i18n="corp-gal-cap3">Open Space</span></div>
         </div>
         <div class="window-item">
           <img src="assets/escritorio/IMG_1955.webp" alt="Projeto corporativo" loading="lazy" />
@@ -285,7 +290,7 @@
         <div class="window-item">
           <img src="assets/escritorio/IMG_2182(1).webp" alt="Sala de conferência" loading="lazy" />
           <div class="window-veil"></div>
-          <div class="window-caption"><span>Conferência</span></div>
+          <div class="window-caption"><span data-i18n="corp-gal-cap4">Conferência</span></div>
         </div>
         <div class="window-item">
           <img src="assets/escritorio/IMG_1938.webp" alt="Projeto corporativo" loading="lazy" />
@@ -302,17 +307,17 @@
     <section class="section" id="depoimentos" style="background: var(--color-white);">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Depoimentos</span>
-          <h2 class="section-title">Quem já resolveu o problema</h2>
+          <span class="section-eyebrow" data-i18n="corp-dep-eyebrow">Depoimentos</span>
+          <h2 class="section-title" data-i18n="corp-dep-title">Quem já resolveu o problema</h2>
         </div>
         <div class="testimonial-grid reveal">
           <div class="testimonial-item">
-            <p class="testimonial-quote">Depois da instalação, o escritório ficou completamente diferente. Sem reflexo nas telas, sem calor. A equipe percebeu a diferença no mesmo dia.</p>
-            <span class="testimonial-author">Diretor de Operações — Empresa de Tecnologia, SP</span>
+            <p class="testimonial-quote" data-i18n="corp-dep-q1">Depois da instalação, o escritório ficou completamente diferente. Sem reflexo nas telas, sem calor. A equipe percebeu a diferença no mesmo dia.</p>
+            <span class="testimonial-author" data-i18n="corp-dep-a1">Diretor de Operações — Empresa de Tecnologia, SP</span>
           </div>
           <div class="testimonial-item">
-            <p class="testimonial-quote">Instalação impecável, dentro do prazo, sem nenhuma intercorrência. Exatamente o que precisávamos para entregar o projeto ao cliente.</p>
-            <span class="testimonial-author">Gerente de Facilities — Grupo Imobiliário</span>
+            <p class="testimonial-quote" data-i18n="corp-dep-q2">Instalação impecável, dentro do prazo, sem nenhuma intercorrência. Exatamente o que precisávamos para entregar o projeto ao cliente.</p>
+            <span class="testimonial-author" data-i18n="corp-dep-a2">Gerente de Facilities — Grupo Imobiliário</span>
           </div>
         </div>
       </div>
@@ -322,12 +327,12 @@
     <section class="section economy-section" id="economia">
       <div class="container">
         <div class="economy-content reveal">
-          <span class="section-label">Escala</span>
-          <h2>Projetos acima de 50m² com otimização de custo por escala</h2>
+          <span class="section-label" data-i18n="corp-econ-label">Escala</span>
+          <h2 data-i18n="corp-econ-title">Projetos acima de 50m² com otimização de custo por escala</h2>
           <div class="price-tag">
             <span class="price-value">R$135</span>
             <span class="price-unit">/m²</span>
-            <span class="price-note">a partir de</span>
+            <span class="price-note" data-i18n="corp-econ-from">a partir de</span>
           </div>
         </div>
       </div>
@@ -337,53 +342,53 @@
     <section class="section faq-section" id="faq" style="background: var(--color-white);">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Perguntas frequentes</span>
-          <h2 class="section-title">Tudo que você precisa saber</h2>
+          <span class="section-eyebrow" data-i18n="corp-faq-eyebrow">Perguntas frequentes</span>
+          <h2 class="section-title" data-i18n="corp-faq-title">Tudo que você precisa saber</h2>
         </div>
         <div class="faq-list reveal">
           <div class="faq-item">
             <button class="faq-question">
-              A Atiye atende projetos de grande escala?
+              <span data-i18n="corp-faq-q1">A Atiye atende projetos de grande escala?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Sim. Temos capacidade para projetos corporativos com múltiplos andares e ambientes. Quanto maior o projeto, mais eficiente fica a logística e o custo por m². Atendemos construtoras, incorporadoras e gestores de facilities.</p>
+              <p data-i18n="corp-faq-a1">Sim. Temos capacidade para projetos corporativos com múltiplos andares e ambientes. Quanto maior o projeto, mais eficiente fica a logística e o custo por m². Atendemos construtoras, incorporadoras e gestores de facilities.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              É possível alinhar a instalação ao cronograma da obra?
+              <span data-i18n="corp-faq-q2">É possível alinhar a instalação ao cronograma da obra?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Sempre. A integração ao cronograma de obra faz parte do nosso processo. Trabalhamos com o gestor de projeto para definir o momento certo de entrada, sem atrasar etapas anteriores nem ser atrasado por elas.</p>
+              <p data-i18n="corp-faq-a2">Sempre. A integração ao cronograma de obra faz parte do nosso processo. Trabalhamos com o gestor de projeto para definir o momento certo de entrada, sem atrasar etapas anteriores nem ser atrasado por elas.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              Vocês fornecem especificação técnica para projeto de arquitetura?
+              <span data-i18n="corp-faq-q3">Vocês fornecem especificação técnica para projeto de arquitetura?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Sim. Fornecemos memorial descritivo, ficha técnica dos materiais e orientação para compatibilização com o projeto arquitetônico. Atendemos diretamente arquitetos e engenheiros responsáveis pelo projeto.</p>
+              <p data-i18n="corp-faq-a3">Sim. Fornecemos memorial descritivo, ficha técnica dos materiais e orientação para compatibilização com o projeto arquitetônico. Atendemos diretamente arquitetos e engenheiros responsáveis pelo projeto.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              Qual é o prazo médio para projetos corporativos?
+              <span data-i18n="corp-faq-q4">Qual é o prazo médio para projetos corporativos?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Depende da escala. Projetos de até 200m² geralmente são concluídos em 3 a 5 dias úteis de instalação. Para projetos maiores, definimos um cronograma faseado que minimiza impacto na operação da empresa.</p>
+              <p data-i18n="corp-faq-a4">Depende da escala. Projetos de até 200m² geralmente são concluídos em 3 a 5 dias úteis de instalação. Para projetos maiores, definimos um cronograma faseado que minimiza impacto na operação da empresa.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              A tela solar screen prejudica a visibilidade para o exterior?
+              <span data-i18n="corp-faq-q5">A tela solar screen prejudica a visibilidade para o exterior?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Não. Pelo contrário — a tela solar reduz o ofuscamento causado pela luz direta, o que melhora a visibilidade do interior para o exterior. A escolha do nível de abertura define o equilíbrio entre transparência e privacidade.</p>
+              <p data-i18n="corp-faq-a5">Não. Pelo contrário — a tela solar reduz o ofuscamento causado pela luz direta, o que melhora a visibilidade do interior para o exterior. A escolha do nível de abertura define o equilíbrio entre transparência e privacidade.</p>
             </div>
           </div>
         </div>
@@ -394,13 +399,14 @@
     <section class="section cta-section" id="contato">
       <div class="container">
         <div class="cta-content">
-          <span class="section-eyebrow">Pronto para começar</span>
-          <h2>Envie a metragem ou planta<br>e receba um direcionamento técnico</h2>
-          <p>Atendimento direto com quem vai executar o projeto.</p>
+          <span class="section-eyebrow" data-i18n="corp-cta-eyebrow">Pronto para começar</span>
+          <h2 data-i18n-html="corp-cta-title-html">Envie a metragem ou planta<br>e receba um direcionamento técnico</h2>
+          <p data-i18n="corp-cta-text">Atendimento direto com quem vai executar o projeto.</p>
           <a
             href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20direcionamento%20técnico%20para%20meu%20projeto%20corporativo"
             class="cta-button cta-main"
             target="_blank" rel="noopener"
+            data-i18n="corp-cta-btn"
           >
             Falar com especialista
           </a>
@@ -416,28 +422,28 @@
       <div class="footer-content">
         <div class="footer-brand">
           <img src="assets/logo_atiye_fundo_branco.png" alt="Atiye" width="100" height="40" />
-          <p>Controle técnico da luz natural para ambientes residenciais e corporativos que exigem precisão.</p>
+          <p data-i18n="footer-tagline">Controle técnico da luz natural para ambientes residenciais e corporativos que exigem precisão.</p>
         </div>
         <div class="footer-links">
-          <h4>Soluções</h4>
-          <a href="corporativo.html">Corporativo</a>
-          <a href="residencial.html">Residencial</a>
-          <a href="lavagem.html">Higienização</a>
+          <h4 data-i18n="footer-solutions">Soluções</h4>
+          <a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a>
+          <a href="residencial.html" data-i18n="nav-residential">Residencial</a>
+          <a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a>
         </div>
         <div class="footer-contact">
-          <h4>Contato</h4>
+          <h4 data-i18n="footer-contact">Contato</h4>
           <a href="tel:+5511986793247">11 9.8679-3247</a>
           <a href="https://wa.me/5511986793247" target="_blank" rel="noopener">WhatsApp</a>
           <a href="mailto:contato@atiyecortinas.com.br">E-mail</a>
         </div>
         <div class="footer-social">
-          <h4>Redes</h4>
+          <h4 data-i18n="footer-social">Redes</h4>
           <a href="https://instagram.com/atiyecortinas" target="_blank" rel="noopener">Instagram</a>
           <a href="https://instagram.com/atiyecortinas" target="_blank" rel="noopener">@atiyecortinas</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Atiye. Todos os direitos reservados.</p>
+        <p data-i18n="footer-rights">&copy; 2026 Atiye. Todos os direitos reservados.</p>
         <a href="#">São Paulo, SP</a>
       </div>
     </div>
@@ -450,6 +456,7 @@
     </svg>
   </a>
 
+  <script src="translations.js"></script>
   <script src="script-landing.js"></script>
 </body>
 </html>

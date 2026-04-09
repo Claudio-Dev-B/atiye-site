@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-i18n-title="lav-title" data-i18n-meta="lav-meta">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,14 +30,19 @@
       </a>
       <nav class="header-nav" id="nav">
         <ul class="nav-list">
-          <li><a href="corporativo.html">Corporativo</a></li>
-          <li><a href="residencial.html">Residencial</a></li>
-          <li><a href="lavagem.html">Higienização</a></li>
-          <li><a href="index.html#galeria">Galeria</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a></li>
+          <li><a href="residencial.html" data-i18n="nav-residential">Residencial</a></li>
+          <li><a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a></li>
+          <li><a href="index.html#galeria" data-i18n="nav-gallery">Galeria</a></li>
+          <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
         </ul>
       </nav>
       <a href="https://wa.me/5511986793247" class="cta-button header-cta" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="lang-toggle" id="lang-toggle" aria-label="Alternar idioma">
+        <span class="lang-pt lang-active">PT</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-en">EN</span>
+      </button>
       <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -58,16 +63,16 @@
         <div class="hero-overlay"></div>
       </div>
       <div class="hero-content">
-        <span class="hero-label">Higienização</span>
-        <h1 class="hero-title">Sua persiana não está limpa.<br><em>Só parece.</em></h1>
-        <p class="hero-subtitle">
+        <span class="hero-label" data-i18n="lav-hero-label">Higienização</span>
+        <h1 class="hero-title" data-i18n-html="lav-hero-title-html">Sua persiana não está limpa.<br><em>Só parece.</em></h1>
+        <p class="hero-subtitle" data-i18n="lav-hero-subtitle">
           O que se acumula nas camadas do tecido não é visível no dia a dia.
           Mas está presente — e piora com o tempo.
         </p>
-        <p class="hero-description">
+        <p class="hero-description" data-i18n="lav-hero-desc">
           A Atiye faz a remoção completa sem danificar o material.
         </p>
-        <a href="#contato" class="cta-button hero-cta">Agendar higienização</a>
+        <a href="#contato" class="cta-button hero-cta" data-i18n="lav-hero-cta">Agendar higienização</a>
       </div>
       <div class="hero-scroll">
         <div class="scroll-line"></div>
@@ -79,8 +84,8 @@
     <section class="section problem-section" id="problema">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">O problema</span>
-          <h2 class="section-title">O que se acumula ao longo do tempo</h2>
+          <span class="section-eyebrow" data-i18n="lav-prob-eyebrow">O problema</span>
+          <h2 class="section-title" data-i18n="lav-prob-title">O que se acumula ao longo do tempo</h2>
         </div>
         <div class="problems-grid reveal">
           <div class="problem-item">
@@ -90,8 +95,8 @@
                 <path d="M21 21H3M9 21V9M15 21v-6"/>
               </svg>
             </div>
-            <h3>Poeira acumulada</h3>
-            <p>Partículas finas que se depositam nas camadas do tecido e não saem com limpeza doméstica convencional.</p>
+            <h3 data-i18n="lav-p1-title">Poeira acumulada</h3>
+            <p data-i18n="lav-p1-text">Partículas finas que se depositam nas camadas do tecido e não saem com limpeza doméstica convencional.</p>
           </div>
           <div class="problem-item">
             <div class="problem-icon">
@@ -99,8 +104,8 @@
                 <path d="M12 2v6M12 16v6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M16 12h6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/>
               </svg>
             </div>
-            <h3>Odores que persistem</h3>
-            <p>Cheiros que permeiam o ambiente sem origem aparente. Com frequência, a persiana é o foco — e não é percebida.</p>
+            <h3 data-i18n="lav-p2-title">Odores que persistem</h3>
+            <p data-i18n="lav-p2-text">Cheiros que permeiam o ambiente sem origem aparente. Com frequência, a persiana é o foco — e não é percebida.</p>
           </div>
           <div class="problem-item">
             <div class="problem-icon">
@@ -108,11 +113,11 @@
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
               </svg>
             </div>
-            <h3>Degradação silenciosa</h3>
-            <p>Aparência que se deteriora lentamente. Tecido perdendo estrutura. Material comprometido antes do prazo esperado.</p>
+            <h3 data-i18n="lav-p3-title">Degradação silenciosa</h3>
+            <p data-i18n="lav-p3-text">Aparência que se deteriora lentamente. Tecido perdendo estrutura. Material comprometido antes do prazo esperado.</p>
           </div>
         </div>
-        <p class="problem-conclusion">Limpeza doméstica não alcança isso. Precisa de processo técnico.</p>
+        <p class="problem-conclusion" data-i18n="lav-prob-concl">Limpeza doméstica não alcança isso. Precisa de processo técnico.</p>
       </div>
     </section>
 
@@ -120,36 +125,36 @@
     <section class="section solution-section" id="processo">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Como funciona</span>
-          <h2 class="section-title">Lavagem técnica com preservação total</h2>
+          <span class="section-eyebrow" data-i18n="lav-proc-eyebrow">Como funciona</span>
+          <h2 class="section-title" data-i18n="lav-proc-title">Lavagem técnica com preservação total</h2>
         </div>
         <div class="solution-steps reveal">
           <div class="step-item">
             <span class="step-number">01</span>
             <div class="step-content">
-              <h3>Coleta e avaliação</h3>
-              <p>Retiramos as persianas no local. Identificamos o material e o nível de contaminação para definir o processo correto.</p>
+              <h3 data-i18n="lav-step1-title">Coleta e avaliação</h3>
+              <p data-i18n="lav-step1-text">Retiramos as persianas no local. Identificamos o material e o nível de contaminação para definir o processo correto.</p>
             </div>
           </div>
           <div class="step-item">
             <span class="step-number">02</span>
             <div class="step-content">
-              <h3>Lavagem técnica específica</h3>
-              <p>Cada tipo de tecido recebe o tratamento adequado. Produtos compatíveis, temperatura controlada, processo que não danifica o material.</p>
+              <h3 data-i18n="lav-step2-title">Lavagem técnica específica</h3>
+              <p data-i18n="lav-step2-text">Cada tipo de tecido recebe o tratamento adequado. Produtos compatíveis, temperatura controlada, processo que não danifica o material.</p>
             </div>
           </div>
           <div class="step-item">
             <span class="step-number">03</span>
             <div class="step-content">
-              <h3>Secagem e controle de qualidade</h3>
-              <p>Secagem controlada que evita deformação, mofo ou perda de estrutura. Verificação visual antes do retorno.</p>
+              <h3 data-i18n="lav-step3-title">Secagem e controle de qualidade</h3>
+              <p data-i18n="lav-step3-text">Secagem controlada que evita deformação, mofo ou perda de estrutura. Verificação visual antes do retorno.</p>
             </div>
           </div>
           <div class="step-item">
             <span class="step-number">04</span>
             <div class="step-content">
-              <h3>Reinstalação e entrega</h3>
-              <p>Devolvemos e reinsatalamos no local. Persiana limpa, estrutura preservada, ambiente sem odores.</p>
+              <h3 data-i18n="lav-step4-title">Reinstalação e entrega</h3>
+              <p data-i18n="lav-step4-text">Devolvemos e reinstalamos no local. Persiana limpa, estrutura preservada, ambiente sem odores.</p>
             </div>
           </div>
         </div>
@@ -160,25 +165,25 @@
     <section class="section" id="diferenciais" style="background: var(--color-warm);">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Por que a Atiye</span>
-          <h2 class="section-title">Mais do que lavar</h2>
+          <span class="section-eyebrow" data-i18n="lav-diff-eyebrow">Por que a Atiye</span>
+          <h2 class="section-title" data-i18n="lav-diff-title">Mais do que lavar</h2>
         </div>
         <div class="split-content reveal">
           <div class="split-text">
-            <h2>Quem instalou, sabe cuidar</h2>
-            <p>
+            <h2 data-i18n="lav-diff-sub">Quem instalou, sabe cuidar</h2>
+            <p data-i18n="lav-diff-p1">
               A Atiye não é uma lavanderia. É uma empresa técnica que entende como cada
               material se comporta — porque trabalha com esse material todos os dias.
             </p>
-            <p>
+            <p data-i18n="lav-diff-p2">
               Isso significa saber exatamente o que pode e o que não pode ser feito com cada tecido,
               sem arriscar o que o cliente investiu na instalação.
             </p>
             <ul class="solution-list">
-              <li>Sem riscos de encolhimento ou deformação</li>
-              <li>Sem danos à estrutura de suporte</li>
-              <li>Resultado limpo e duradouro</li>
-              <li>Coleta e entrega no local</li>
+              <li data-i18n="lav-diff-li1">Sem riscos de encolhimento ou deformação</li>
+              <li data-i18n="lav-diff-li2">Sem danos à estrutura de suporte</li>
+              <li data-i18n="lav-diff-li3">Resultado limpo e duradouro</li>
+              <li data-i18n="lav-diff-li4">Coleta e entrega no local</li>
             </ul>
           </div>
           <div class="split-visual">
@@ -196,44 +201,44 @@
     <section class="section faq-section" id="faq" style="background: var(--color-warm);">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Dúvidas frequentes</span>
-          <h2 class="section-title">Antes de agendar</h2>
+          <span class="section-eyebrow" data-i18n="lav-faq-eyebrow">Dúvidas frequentes</span>
+          <h2 class="section-title" data-i18n="lav-faq-title">Antes de agendar</h2>
         </div>
         <div class="faq-list reveal">
           <div class="faq-item">
             <button class="faq-question">
-              Com que frequência devo higienizar as persianas?
+              <span data-i18n="lav-faq-q1">Com que frequência devo higienizar as persianas?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Em ambientes residenciais normais, recomendamos higienização a cada 12 a 18 meses. Em ambientes com maior circulação de ar, próximos a vias movimentadas ou com animais, o ideal é a cada 6 a 12 meses.</p>
+              <p data-i18n="lav-faq-a1">Em ambientes residenciais normais, recomendamos higienização a cada 12 a 18 meses. Em ambientes com maior circulação de ar, próximos a vias movimentadas ou com animais, o ideal é a cada 6 a 12 meses.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              Vocês fazem a coleta?
+              <span data-i18n="lav-faq-q2">Vocês fazem a coleta?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Sim. Nossa equipe vai até o local, retira as persianas, realiza o processo técnico e faz a reinstalação. Sem necessidade de deslocamento por parte do cliente.</p>
+              <p data-i18n="lav-faq-a2">Sim. Nossa equipe vai até o local, retira as persianas, realiza o processo técnico e faz a reinstalação. Sem necessidade de deslocamento por parte do cliente.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              Todos os tipos de persiana podem ser lavados?
+              <span data-i18n="lav-faq-q3">Todos os tipos de persiana podem ser lavados?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>A maioria dos tipos pode, mas o processo varia conforme o material. Telas solares, rolô em tecido, double vision e persianas verticais têm processos distintos. Na avaliação inicial identificamos o processo correto para cada peça.</p>
+              <p data-i18n="lav-faq-a3">A maioria dos tipos pode, mas o processo varia conforme o material. Telas solares, rolô em tecido, double vision e persianas verticais têm processos distintos. Na avaliação inicial identificamos o processo correto para cada peça.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              Qual é o prazo entre coleta e reinstalação?
+              <span data-i18n="lav-faq-q4">Qual é o prazo entre coleta e reinstalação?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Em média de 3 a 5 dias úteis. Dependendo da quantidade de peças e do tipo de material, pode variar. Informamos o prazo exato no momento do agendamento.</p>
+              <p data-i18n="lav-faq-a4">Em média de 3 a 5 dias úteis. Dependendo da quantidade de peças e do tipo de material, pode variar. Informamos o prazo exato no momento do agendamento.</p>
             </div>
           </div>
         </div>
@@ -244,13 +249,14 @@
     <section class="section cta-section" id="contato">
       <div class="container">
         <div class="cta-content">
-          <span class="section-eyebrow">Agende agora</span>
-          <h2>Coleta, lavagem técnica<br>e reinstalação</h2>
-          <p>Sem complicação. Enviamos disponibilidade de datas pelo WhatsApp.</p>
+          <span class="section-eyebrow" data-i18n="lav-cta-eyebrow">Agende agora</span>
+          <h2 data-i18n-html="lav-cta-title-html">Coleta, lavagem técnica<br>e reinstalação</h2>
+          <p data-i18n="lav-cta-text">Sem complicação. Enviamos disponibilidade de datas pelo WhatsApp.</p>
           <a
             href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20agendar%20a%20higienização%20das%20minhas%20persianas"
             class="cta-button cta-main"
             target="_blank" rel="noopener"
+            data-i18n="lav-cta-btn"
           >
             Agendar pelo WhatsApp
           </a>
@@ -266,28 +272,28 @@
       <div class="footer-content">
         <div class="footer-brand">
           <img src="assets/logo_atiye_fundo_branco.png" alt="Atiye" width="100" height="40" />
-          <p>Controle técnico da luz natural para ambientes residenciais e corporativos que exigem precisão.</p>
+          <p data-i18n="footer-tagline">Controle técnico da luz natural para ambientes residenciais e corporativos que exigem precisão.</p>
         </div>
         <div class="footer-links">
-          <h4>Soluções</h4>
-          <a href="corporativo.html">Corporativo</a>
-          <a href="residencial.html">Residencial</a>
-          <a href="lavagem.html">Higienização</a>
+          <h4 data-i18n="footer-solutions">Soluções</h4>
+          <a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a>
+          <a href="residencial.html" data-i18n="nav-residential">Residencial</a>
+          <a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a>
         </div>
         <div class="footer-contact">
-          <h4>Contato</h4>
+          <h4 data-i18n="footer-contact">Contato</h4>
           <a href="tel:+5511986793247">11 9.8679-3247</a>
           <a href="https://wa.me/5511986793247" target="_blank" rel="noopener">WhatsApp</a>
           <a href="mailto:contato@atiyecortinas.com.br">E-mail</a>
         </div>
         <div class="footer-social">
-          <h4>Redes</h4>
+          <h4 data-i18n="footer-social">Redes</h4>
           <a href="https://instagram.com/atiyecortinas" target="_blank" rel="noopener">Instagram</a>
           <a href="https://instagram.com/atiyecortinas" target="_blank" rel="noopener">@atiyecortinas</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Atiye. Todos os direitos reservados.</p>
+        <p data-i18n="footer-rights">&copy; 2026 Atiye. Todos os direitos reservados.</p>
         <a href="#">São Paulo, SP</a>
       </div>
     </div>
@@ -300,6 +306,7 @@
     </svg>
   </a>
 
+  <script src="translations.js"></script>
   <script src="script-landing.js"></script>
 </body>
 </html>
