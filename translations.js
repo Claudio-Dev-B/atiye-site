@@ -244,7 +244,7 @@
       'corp-faq-q3': 'Vocês fornecem especificação técnica para projeto de arquitetura?',
       'corp-faq-a3': 'Sim. Fornecemos memorial descritivo, ficha técnica dos materiais e orientação para compatibilização com o projeto arquitetônico. Atendemos diretamente arquitetos e engenheiros responsáveis pelo projeto.',
       'corp-faq-q4': 'Qual é o prazo médio para projetos corporativos?',
-      'corp-faq-a4': 'Depende da escala. Projetos de até 200m² geralmente são concluídos em até 7 dias úteis de instalação. Para projetos maiores, definimos um cronograma faseado que minimiza impacto na operação da empresa.',
+      'corp-faq-a4': 'Depende da escala. Projetos de até 200m² geralmente são concluídos em até 7 dias úteis. Para projetos maiores, definimos um cronograma faseado que minimiza impacto na operação da empresa.',
       'corp-faq-q5': 'A tela solar screen prejudica a visibilidade para o exterior?',
       'corp-faq-a5': 'Não. Pelo contrário — a tela solar reduz o ofuscamento causado pela luz direta, o que melhora a visibilidade do interior para o exterior. A escolha do nível de abertura define o equilíbrio entre transparência e privacidade.',
 
@@ -258,7 +258,7 @@
          ══════════════════════════════════════════════════ */
       'res-hero-label':         'Residencial',
       'res-hero-title':         'Você não deveria se adaptar à luz da sua própria casa',
-      'res-hero-subtitle-html': 'Acordar antes da hora. Calor acumulado no quarto. Móveis desbotando ao longo dos anos.<br>Tudo isso tem causa — e tem solução precisa.',
+      'res-hero-subtitle-html': 'Acordar antes da hora. Calor acumulado no quarto. Móveis desbotando ao longo dos anos.<br>Tudo isso tem causa, e tem a solução certa..',
       'res-hero-desc':          'A Atiye projeta controle de luz para ambientes que precisam funcionar perfeitamente para quem vive neles.',
       'res-hero-cta':           'Solicitar orçamento',
 
