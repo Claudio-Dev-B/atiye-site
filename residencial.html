@@ -210,54 +210,53 @@
     </section>
 
     <!-- ── GALERIA ─────────────────────────────────────────── -->
-    <section class="section gallery-section" id="projetos" style="background: var(--color-warm);">
-      <div class="container">
-        <div class="section-header center reveal">
-          <span class="section-eyebrow" data-i18n="res-gal-eyebrow">Portfólio</span>
-          <h2 class="section-title" data-i18n="res-gal-title">Projetos residenciais realizados</h2>
+    <section class="cinematic-gallery" id="projetos" style="background: var(--color-warm);">
+
+      <div class="cg-header">
+        <div class="container">
+          <div class="cg-title-row">
+            <div>
+              <span class="section-eyebrow cg-eyebrow" data-i18n="res-gal-eyebrow">Portfólio</span>
+              <h2 class="section-title cg-title" data-i18n="res-gal-title">Projetos residenciais realizados</h2>
+            </div>
+            <div class="cg-controls">
+              <div class="cg-nav">
+                <button class="cg-prev" aria-label="Anterior">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="cg-counter"><span class="cg-cur">01</span><span class="cg-sep"> / </span><span class="cg-tot">09</span></div>
+                <button class="cg-next" aria-label="Próximo">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="gallery-facade gallery-landing">
-        <div class="window-item">
-          <img src="assets/residencial/IMG_3152(1).webp" alt="Sala de estar" loading="lazy" />
-          <div class="window-veil"></div>
-          <div class="window-caption"><span data-i18n="res-gal-cap1">Sala de Estar</span></div>
-        </div>
-        <div class="window-item">
-          <img src="assets/residencial/IMG_3184.webp" alt="Sala de jantar" loading="lazy" />
-          <div class="window-veil"></div>
-          <div class="window-caption"><span data-i18n="res-gal-cap2">Sala de Jantar</span></div>
-        </div>
-        <div class="window-item">
-          <img src="assets/residencial/IMG_1791.webp" alt="Projeto residencial" loading="lazy" />
-          <div class="window-veil"></div>
-        </div>
-        <div class="window-item">
-          <img src="assets/residencial/IMG_2969.webp" alt="Projeto residencial" loading="lazy" />
-          <div class="window-veil"></div>
-        </div>
-        <div class="window-item">
-          <img src="assets/residencial/IMG_3157.webp" alt="Projeto residencial" loading="lazy" />
-          <div class="window-veil"></div>
-        </div>
-        <div class="window-item">
-          <img src="assets/residencial/IMG_3160.webp" alt="Projeto residencial" loading="lazy" />
-          <div class="window-veil"></div>
-        </div>
-        <div class="window-item">
-          <img src="assets/residencial/IMG_3154(1).webp" alt="Varanda" loading="lazy" />
-          <div class="window-veil"></div>
-          <div class="window-caption"><span data-i18n="res-gal-cap3">Varanda</span></div>
-        </div>
-        <div class="window-item">
-          <img src="assets/residencial/IMG_3464.webp" alt="Projeto residencial" loading="lazy" />
-          <div class="window-veil"></div>
-        </div>
-        <div class="window-item">
-          <img src="assets/residencial/IMG_3469.webp" alt="Projeto residencial" loading="lazy" />
-          <div class="window-veil"></div>
+
+      <div class="cg-stage" id="cg-stage">
+        <div class="cg-reel active" id="cg-reel-main">
+          <div class="cg-track" id="cg-track-main">
+            <div class="cg-slide active"><img src="assets/residencial/IMG_3152(1).webp" alt="Sala de Estar" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_3184.webp" alt="Sala de Jantar" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_1791.webp" alt="Residência" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_2969.webp" alt="Residência" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_3157.webp" alt="Projeto Residencial" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_3160.webp" alt="Projeto Residencial" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_3154(1).webp" alt="Varanda" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_3464.webp" alt="Residencial Alto Padrão" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_3469.webp" alt="Sala Integrada" loading="lazy"/></div>
+          </div>
         </div>
       </div>
+
+      <div class="cg-footer">
+        <div class="container">
+          <div class="cg-progress"><div class="cg-progress-fill" id="cg-progress-fill"></div></div>
+          <p class="cg-hint">Arraste ou use as setas para navegar · Clique para ampliar</p>
+        </div>
+      </div>
+
     </section>
 
     <!-- ── VALORES ─────────────────────────────────────────── -->

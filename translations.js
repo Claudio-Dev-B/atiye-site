@@ -244,7 +244,7 @@
       'corp-faq-q3': 'Vocês fornecem especificação técnica para projeto de arquitetura?',
       'corp-faq-a3': 'Sim. Fornecemos memorial descritivo, ficha técnica dos materiais e orientação para compatibilização com o projeto arquitetônico. Atendemos diretamente arquitetos e engenheiros responsáveis pelo projeto.',
       'corp-faq-q4': 'Qual é o prazo médio para projetos corporativos?',
-      'corp-faq-a4': 'Depende da escala. Projetos de até 200m² geralmente são concluídos em 3 a 5 dias úteis de instalação. Para projetos maiores, definimos um cronograma faseado que minimiza impacto na operação da empresa.',
+      'corp-faq-a4': 'Depende da escala. Projetos de até 200m² geralmente são concluídos em até 7 dias úteis de instalação. Para projetos maiores, definimos um cronograma faseado que minimiza impacto na operação da empresa.',
       'corp-faq-q5': 'A tela solar screen prejudica a visibilidade para o exterior?',
       'corp-faq-a5': 'Não. Pelo contrário — a tela solar reduz o ofuscamento causado pela luz direta, o que melhora a visibilidade do interior para o exterior. A escolha do nível de abertura define o equilíbrio entre transparência e privacidade.',
 
@@ -380,12 +380,34 @@
       'lav-faq-q3': 'Todos os tipos de persiana podem ser lavados?',
       'lav-faq-a3': 'A maioria dos tipos pode, mas o processo varia conforme o material. Telas solares, rolô em tecido, double vision e persianas verticais têm processos distintos. Na avaliação inicial identificamos o processo correto para cada peça.',
       'lav-faq-q4': 'Qual é o prazo entre coleta e reinstalação?',
-      'lav-faq-a4': 'Em média de 3 a 5 dias úteis. Dependendo da quantidade de peças e do tipo de material, pode variar. Informamos o prazo exato no momento do agendamento.',
+      'lav-faq-a4': 'Em até 7 dias úteis. Dependendo da quantidade de peças e do tipo de material, pode variar. Confirmamos o prazo exato no agendamento.',
 
       'lav-cta-eyebrow':    'Agende agora',
       'lav-cta-title-html': 'Coleta, lavagem técnica<br>e reinstalação',
       'lav-cta-text':       'Sem complicação. Enviamos disponibilidade de datas pelo WhatsApp.',
       'lav-cta-btn':        'Agendar pelo WhatsApp',
+
+      /* ── INDEX — Fabric Curtains ──────────────────────── */
+      'fabric-eyebrow':    'Acabamento exclusivo',
+      'fabric-title':      'Cortinas de tecido sob medida',
+      'fabric-desc':       'Cada peça é desenvolvida com medidas precisas e tecido especificado para o ambiente — garantindo caimento impecável, durabilidade e resultado fiel ao projeto.',
+      'fabric-li1':        'Blackout e voil sob medida',
+      'fabric-li2':        'Trilhos e varões personalizados',
+      'fabric-li3':        'Adaptados ao projeto do arquiteto',
+      'fabric-li4':        'Instalação limpa, sem obras',
+      'fabric-cta':        'Solicitar orçamento',
+
+      /* ── INDEX — Wash Section ─────────────────────────── */
+      'wash-eyebrow':      'Manutenção técnica',
+      'wash-title':        'Lavagem técnica de persianas',
+      'wash-desc':         'Com o tempo, persianas acumulam sujeira invisível que compromete a qualidade do ar e a aparência do ambiente. A higienização técnica remove tudo sem danificar o material.',
+      'wash-step1-title':  'Remoção profunda',
+      'wash-step1-text':   'Ácaros, fungos e poeira eliminados com segurança',
+      'wash-step2-title':  'Processo por material',
+      'wash-step2-text':   'Técnica adaptada a cada tipo de persiana',
+      'wash-step3-title':  'Secagem controlada',
+      'wash-step3-text':   'Sem deformação, sem encolhimento, sem surpresas',
+      'wash-cta':          'Solicitar higienização',
     },
 
     /* ══════════════════════════════════════════════════════════
@@ -612,7 +634,7 @@
       'corp-faq-q3': 'Do you provide technical specifications for architectural projects?',
       'corp-faq-a3': 'Yes. We provide descriptive documentation, material data sheets, and guidance for compatibility with the architectural project. We work directly with architects and engineers responsible for the project.',
       'corp-faq-q4': 'What is the average timeline for corporate projects?',
-      'corp-faq-a4': 'It depends on scale. Projects up to 200m² are typically completed in 3 to 5 business days of installation. For larger projects, we define a phased schedule that minimizes impact on company operations.',
+      'corp-faq-a4': 'It depends on scale. Projects up to 200m² are typically completed in up to 7 business days of installation. For larger projects, we define a phased schedule that minimizes impact on company operations.',
       'corp-faq-q5': 'Does solar screen fabric affect visibility to the outside?',
       'corp-faq-a5': "No. On the contrary — solar screen reduces the glare caused by direct light, which actually improves visibility from inside to outside. The choice of opening level defines the balance between transparency and privacy.",
 
@@ -744,12 +766,34 @@
       'lav-faq-q3': 'Can all types of blinds be washed?',
       'lav-faq-a3': 'Most types can, but the process varies by material. Solar screens, fabric rollers, double vision, and vertical blinds each have distinct processes. We identify the correct process for each piece in the initial assessment.',
       'lav-faq-q4': 'How long between collection and reinstallation?',
-      'lav-faq-a4': 'On average 3 to 5 business days. This may vary depending on the number of pieces and material type. We confirm the exact timeline at the time of scheduling.',
+      'lav-faq-a4': 'Up to 7 business days. This may vary depending on the number of pieces and material type. We confirm the exact timeline at scheduling.',
 
       'lav-cta-eyebrow':    'Schedule now',
       'lav-cta-title-html': 'Collection, technical washing<br>and reinstallation',
       'lav-cta-text':       'No hassle. We send available dates via WhatsApp.',
       'lav-cta-btn':        'Schedule via WhatsApp',
+
+      /* ── INDEX — Fabric Curtains ──────────────────────── */
+      'fabric-eyebrow':    'Exclusive finish',
+      'fabric-title':      'Custom fabric curtains',
+      'fabric-desc':       'Each piece is developed with precise measurements and fabric specified for the environment — ensuring impeccable drape, durability, and results faithful to the project.',
+      'fabric-li1':        'Custom blackout and voile',
+      'fabric-li2':        'Custom tracks and rods',
+      'fabric-li3':        "Adapted to the architect's project",
+      'fabric-li4':        'Clean installation, no construction work',
+      'fabric-cta':        'Request a quote',
+
+      /* ── INDEX — Wash Section ─────────────────────────── */
+      'wash-eyebrow':      'Technical maintenance',
+      'wash-title':        'Technical blind washing',
+      'wash-desc':         'Over time, blinds accumulate invisible dirt that compromises air quality and the appearance of the space. Technical cleaning removes it all without damaging the material.',
+      'wash-step1-title':  'Deep removal',
+      'wash-step1-text':   'Mites, fungi, and dust safely eliminated',
+      'wash-step2-title':  'Material-specific process',
+      'wash-step2-text':   'Technique adapted for each type of blind',
+      'wash-step3-title':  'Controlled drying',
+      'wash-step3-text':   'No deformation, no shrinkage, no surprises',
+      'wash-cta':          'Schedule cleaning',
     }
   };
 

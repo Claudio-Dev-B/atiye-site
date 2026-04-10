@@ -8,6 +8,9 @@
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
+  /* ── Gallery drag-move tracker (shared with lightbox) ── */
+  var cgDragMoved  = false;
+
   /* ── Preloader ───────────────────────────────────────── */
   const preloader = $("#preloader");
 
@@ -233,6 +236,151 @@
     });
   });
 
+  /* ── Cinematic Gallery ─────────────────────────────────── */
+  (function initCinematicGallery() {
+    var cgStage = $("#cg-stage");
+    if (!cgStage) return;
+
+    var cgActiveReel = "corporativo";
+    var cgReelData   = {};
+    var cgIsDragging = false;
+    var cgDragStartX = 0;
+    var cgDragStartT = 0;
+
+    /* Build reel state */
+    $$(".cg-reel", cgStage).forEach(function (reel) {
+      var id     = reel.id.replace("cg-reel-", "");
+      var track  = reel.querySelector(".cg-track");
+      var slides = $$(".cg-slide", reel);
+      cgReelData[id] = { reel: reel, track: track, slides: slides, current: 0, translate: 0 };
+      slides.forEach(function (s, i) { s.classList.toggle("active", i === 0); });
+    });
+
+    function fmt(n) { return String(n + 1).padStart(2, "0"); }
+
+    function slideW(state) {
+      var s = state.slides[0];
+      return s ? s.offsetWidth + 6 : 0;
+    }
+
+    function cgUpdateUI(state) {
+      state.slides.forEach(function (s, i) {
+        s.classList.toggle("active", i === state.current);
+      });
+      var cur  = $(".cg-cur");
+      var tot  = $(".cg-tot");
+      var fill = $("#cg-progress-fill");
+      if (cur)  cur.textContent  = fmt(state.current);
+      if (tot)  tot.textContent  = fmt(state.slides.length - 1);
+      if (fill) fill.style.width = ((state.current + 1) / state.slides.length * 100) + "%";
+    }
+
+    function cgMoveTo(idx) {
+      var state = cgReelData[cgActiveReel];
+      if (!state) return;
+      state.current  = Math.max(0, Math.min(idx, state.slides.length - 1));
+      var sw         = slideW(state);
+      state.translate = -state.current * sw;
+      state.track.style.transition = "transform 0.75s cubic-bezier(0.16,1,0.3,1)";
+      state.track.style.transform  = "translateX(" + state.translate + "px)";
+      cgUpdateUI(state);
+    }
+
+    /* Arrow buttons */
+    var cgPrev = $(".cg-prev");
+    var cgNext = $(".cg-next");
+    if (cgPrev) cgPrev.addEventListener("click", function () { cgMoveTo(cgReelData[cgActiveReel].current - 1); });
+    if (cgNext) cgNext.addEventListener("click", function () { cgMoveTo(cgReelData[cgActiveReel].current + 1); });
+
+    /* Category tabs */
+    $$(".cg-cat").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var cat = this.dataset.cat;
+        if (cat === cgActiveReel) return;
+        $$(".cg-cat").forEach(function (b) { b.classList.remove("active"); });
+        this.classList.add("active");
+        var old = cgReelData[cgActiveReel];
+        if (old) old.reel.classList.remove("active");
+        cgActiveReel = cat;
+        var next = cgReelData[cat];
+        if (next) {
+          next.reel.classList.add("active");
+          next.current   = 0;
+          next.translate = 0;
+          next.track.style.transition = "none";
+          next.track.style.transform  = "translateX(0)";
+          cgUpdateUI(next);
+        }
+      });
+    });
+
+    /* Drag / swipe */
+    cgStage.addEventListener("mousedown", function (e) {
+      if (e.target.closest(".cg-prev, .cg-next")) return;
+      cgIsDragging = true;
+      cgDragMoved  = false;
+      cgDragStartX = e.clientX;
+      cgDragStartT = (cgReelData[cgActiveReel] || {}).translate || 0;
+      var st = cgReelData[cgActiveReel];
+      if (st) st.track.style.transition = "none";
+    });
+
+    cgStage.addEventListener("touchstart", function (e) {
+      if (e.target.closest(".cg-prev, .cg-next")) return;
+      cgIsDragging = true;
+      cgDragMoved  = false;
+      cgDragStartX = e.touches[0].clientX;
+      cgDragStartT = (cgReelData[cgActiveReel] || {}).translate || 0;
+      var st = cgReelData[cgActiveReel];
+      if (st) st.track.style.transition = "none";
+    }, { passive: true });
+
+    window.addEventListener("mousemove", function (e) {
+      if (!cgIsDragging) return;
+      var diff = e.clientX - cgDragStartX;
+      if (Math.abs(diff) > 5) cgDragMoved = true;
+      var st = cgReelData[cgActiveReel];
+      if (!st) return;
+      st.translate = cgDragStartT + diff;
+      st.track.style.transform = "translateX(" + st.translate + "px)";
+    });
+
+    window.addEventListener("touchmove", function (e) {
+      if (!cgIsDragging) return;
+      var diff = e.touches[0].clientX - cgDragStartX;
+      if (Math.abs(diff) > 5) cgDragMoved = true;
+      var st = cgReelData[cgActiveReel];
+      if (!st) return;
+      st.translate = cgDragStartT + diff;
+      st.track.style.transform = "translateX(" + st.translate + "px)";
+    }, { passive: false });
+
+    function onUp() {
+      if (!cgIsDragging) return;
+      cgIsDragging = false;
+      var st = cgReelData[cgActiveReel];
+      if (!st) return;
+      var sw = slideW(st);
+      if (sw > 0) cgMoveTo(Math.round(-st.translate / sw));
+    }
+
+    window.addEventListener("mouseup",  onUp);
+    window.addEventListener("touchend", onUp);
+
+    /* Keyboard (only when gallery is in viewport) */
+    document.addEventListener("keydown", function (e) {
+      var gal = $("#galeria");
+      if (!gal) return;
+      var r = gal.getBoundingClientRect();
+      if (r.top > window.innerHeight || r.bottom < 0) return;
+      if (e.key === "ArrowLeft")  cgMoveTo(cgReelData[cgActiveReel].current - 1);
+      if (e.key === "ArrowRight") cgMoveTo(cgReelData[cgActiveReel].current + 1);
+    });
+
+    /* Init */
+    Object.keys(cgReelData).forEach(function (id) { cgUpdateUI(cgReelData[id]); });
+  })();
+
   /* ── FAQ Accordion ───────────────────────────────────── */
   $$(".faq-question").forEach(function (btn) {
     btn.addEventListener("click", function () {
@@ -322,6 +470,15 @@
       const img = item.querySelector("img");
       if (!img) return;
       item.addEventListener("click", function () {
+        openLB(img.src, img.alt);
+      });
+    });
+
+    $$(".cg-slide").forEach(function (slide) {
+      const img = slide.querySelector("img");
+      if (!img) return;
+      slide.addEventListener("click", function () {
+        if (cgDragMoved) return;
         openLB(img.src, img.alt);
       });
     });
