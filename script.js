@@ -236,63 +236,75 @@
     });
   });
 
-  /* ── Cinematic Gallery ─────────────────────────────────── */
+  /* ── Cinematic Gallery (transform-based) ──────────────── */
   (function initCinematicGallery() {
-    var cgStage = $("#cg-stage");
-    if (!cgStage) return;
+    if (!document.querySelector(".cinematic-gallery")) return;
 
-    var cgActiveReel = "corporativo";
+    var cgActiveReel = null;
     var cgReelData   = {};
-    var cgIsDragging = false;
-    var cgDragStartX = 0;
-    var cgDragStartT = 0;
 
-    /* Build reel state */
-    $$(".cg-reel", cgStage).forEach(function (reel) {
+    /* ── Build reel registry ─────────────────────────────── */
+    $$(".cg-reel").forEach(function (reel) {
       var id     = reel.id.replace("cg-reel-", "");
       var track  = reel.querySelector(".cg-track");
       var slides = $$(".cg-slide", reel);
       cgReelData[id] = { reel: reel, track: track, slides: slides, current: 0, translate: 0 };
       slides.forEach(function (s, i) { s.classList.toggle("active", i === 0); });
+      if (reel.classList.contains("active") && !cgActiveReel) cgActiveReel = id;
     });
+    if (!cgActiveReel) {
+      var k = Object.keys(cgReelData);
+      if (k.length) cgActiveReel = k[0];
+    }
 
     function fmt(n) { return String(n + 1).padStart(2, "0"); }
 
+    /* slideW: pixel width of one slide + its gap */
     function slideW(state) {
       var s = state.slides[0];
-      return s ? s.offsetWidth + 6 : 0;
+      return s ? s.getBoundingClientRect().width + 6 : 0;
     }
 
-    function cgUpdateUI(state) {
+    function cgUpdateUI(id) {
+      var state = cgReelData[id];
+      if (!state) return;
       state.slides.forEach(function (s, i) {
         s.classList.toggle("active", i === state.current);
       });
-      var cur  = $(".cg-cur");
-      var tot  = $(".cg-tot");
+      $$(".cg-cur").forEach(function (el) { el.textContent = fmt(state.current); });
+      $$(".cg-tot").forEach(function (el) { el.textContent = fmt(state.slides.length - 1); });
       var fill = $("#cg-progress-fill");
-      if (cur)  cur.textContent  = fmt(state.current);
-      if (tot)  tot.textContent  = fmt(state.slides.length - 1);
       if (fill) fill.style.width = ((state.current + 1) / state.slides.length * 100) + "%";
     }
 
-    function cgMoveTo(idx) {
+    /* ── Core navigation ─────────────────────────────────── */
+    function cgMoveTo(idx, animate) {
       var state = cgReelData[cgActiveReel];
       if (!state) return;
-      state.current  = Math.max(0, Math.min(idx, state.slides.length - 1));
+      idx = Math.max(0, Math.min(idx, state.slides.length - 1));
+      state.current  = idx;
       var sw         = slideW(state);
-      state.translate = -state.current * sw;
-      state.track.style.transition = "transform 0.75s cubic-bezier(0.16,1,0.3,1)";
-      state.track.style.transform  = "translateX(" + state.translate + "px)";
-      cgUpdateUI(state);
+      state.translate = -(idx * sw);
+      state.track.style.transition = (animate === false)
+        ? "none"
+        : "transform 0.72s cubic-bezier(0.16,1,0.3,1)";
+      state.track.style.transform = "translateX(" + state.translate + "px)";
+      cgUpdateUI(cgActiveReel);
     }
 
-    /* Arrow buttons */
-    var cgPrev = $(".cg-prev");
-    var cgNext = $(".cg-next");
-    if (cgPrev) cgPrev.addEventListener("click", function () { cgMoveTo(cgReelData[cgActiveReel].current - 1); });
-    if (cgNext) cgNext.addEventListener("click", function () { cgMoveTo(cgReelData[cgActiveReel].current + 1); });
+    /* ── Arrow buttons ───────────────────────────────────── */
+    $$(".cg-prev").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        cgMoveTo(cgReelData[cgActiveReel].current - 1, true);
+      });
+    });
+    $$(".cg-next").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        cgMoveTo(cgReelData[cgActiveReel].current + 1, true);
+      });
+    });
 
-    /* Category tabs */
+    /* ── Category tabs (index.html) ──────────────────────── */
     $$(".cg-cat").forEach(function (btn) {
       btn.addEventListener("click", function () {
         var cat = this.dataset.cat;
@@ -309,76 +321,90 @@
           next.translate = 0;
           next.track.style.transition = "none";
           next.track.style.transform  = "translateX(0)";
-          cgUpdateUI(next);
+          cgUpdateUI(cat);
         }
       });
     });
 
-    /* Drag / swipe */
-    cgStage.addEventListener("mousedown", function (e) {
-      if (e.target.closest(".cg-prev, .cg-next")) return;
+    /* ── Drag / swipe ────────────────────────────────────── */
+    var cgIsDragging  = false;
+    var cgDragStartX  = 0;
+    var cgDragStartT  = 0;
+    var cgDragLastX   = 0;
+    var cgDragLastMs  = 0;
+    var cgVelocity    = 0;
+
+    function onStart(x) {
+      var st = cgReelData[cgActiveReel];
+      if (!st) return;
       cgIsDragging = true;
       cgDragMoved  = false;
-      cgDragStartX = e.clientX;
-      cgDragStartT = (cgReelData[cgActiveReel] || {}).translate || 0;
-      var st = cgReelData[cgActiveReel];
-      if (st) st.track.style.transition = "none";
-    });
+      cgDragStartX = x;
+      cgDragStartT = st.translate;
+      cgDragLastX  = x;
+      cgDragLastMs = Date.now();
+      cgVelocity   = 0;
+      st.track.style.transition = "none";
+    }
 
-    cgStage.addEventListener("touchstart", function (e) {
-      if (e.target.closest(".cg-prev, .cg-next")) return;
-      cgIsDragging = true;
-      cgDragMoved  = false;
-      cgDragStartX = e.touches[0].clientX;
-      cgDragStartT = (cgReelData[cgActiveReel] || {}).translate || 0;
-      var st = cgReelData[cgActiveReel];
-      if (st) st.track.style.transition = "none";
-    }, { passive: true });
-
-    window.addEventListener("mousemove", function (e) {
+    function onMove(x) {
       if (!cgIsDragging) return;
-      var diff = e.clientX - cgDragStartX;
+      var now  = Date.now();
+      var dt   = now - cgDragLastMs;
+      if (dt > 0) cgVelocity = (x - cgDragLastX) / dt;
+      cgDragLastX  = x;
+      cgDragLastMs = now;
+      var diff = x - cgDragStartX;
       if (Math.abs(diff) > 5) cgDragMoved = true;
       var st = cgReelData[cgActiveReel];
       if (!st) return;
       st.translate = cgDragStartT + diff;
       st.track.style.transform = "translateX(" + st.translate + "px)";
-    });
+    }
 
-    window.addEventListener("touchmove", function (e) {
-      if (!cgIsDragging) return;
-      var diff = e.touches[0].clientX - cgDragStartX;
-      if (Math.abs(diff) > 5) cgDragMoved = true;
-      var st = cgReelData[cgActiveReel];
-      if (!st) return;
-      st.translate = cgDragStartT + diff;
-      st.track.style.transform = "translateX(" + st.translate + "px)";
-    }, { passive: false });
-
-    function onUp() {
+    function onEnd() {
       if (!cgIsDragging) return;
       cgIsDragging = false;
       var st = cgReelData[cgActiveReel];
       if (!st) return;
       var sw = slideW(st);
-      if (sw > 0) cgMoveTo(Math.round(-st.translate / sw));
+      if (sw <= 0) return;
+      /* Apply a small momentum kick before snapping to nearest slide */
+      var projected = st.translate + cgVelocity * 120;
+      cgMoveTo(Math.round(-projected / sw), true);
     }
 
-    window.addEventListener("mouseup",  onUp);
-    window.addEventListener("touchend", onUp);
+    /* Attach per-track so only the visible track reacts */
+    Object.keys(cgReelData).forEach(function (id) {
+      var track = cgReelData[id].track;
+      track.addEventListener("mousedown",  function (e) {
+        if (e.button !== 0) return;
+        onStart(e.clientX);
+      });
+      track.addEventListener("touchstart", function (e) {
+        onStart(e.touches[0].clientX);
+      }, { passive: true });
+    });
 
-    /* Keyboard (only when gallery is in viewport) */
+    window.addEventListener("mousemove", function (e) { onMove(e.clientX); });
+    window.addEventListener("touchmove", function (e) {
+      if (cgIsDragging) onMove(e.touches[0].clientX);
+    }, { passive: true });
+    window.addEventListener("mouseup",  onEnd);
+    window.addEventListener("touchend", onEnd);
+
+    /* ── Keyboard ────────────────────────────────────────── */
     document.addEventListener("keydown", function (e) {
-      var gal = $("#galeria");
+      var gal = document.querySelector(".cinematic-gallery");
       if (!gal) return;
       var r = gal.getBoundingClientRect();
       if (r.top > window.innerHeight || r.bottom < 0) return;
-      if (e.key === "ArrowLeft")  cgMoveTo(cgReelData[cgActiveReel].current - 1);
-      if (e.key === "ArrowRight") cgMoveTo(cgReelData[cgActiveReel].current + 1);
+      if (e.key === "ArrowLeft")  cgMoveTo(cgReelData[cgActiveReel].current - 1, true);
+      if (e.key === "ArrowRight") cgMoveTo(cgReelData[cgActiveReel].current + 1, true);
     });
 
-    /* Init */
-    Object.keys(cgReelData).forEach(function (id) { cgUpdateUI(cgReelData[id]); });
+    /* ── Init ────────────────────────────────────────────── */
+    Object.keys(cgReelData).forEach(function (id) { cgUpdateUI(id); });
   })();
 
   /* ── FAQ Accordion ───────────────────────────────────── */

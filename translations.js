@@ -140,13 +140,13 @@
       'faq-q1': 'A instalação exige obras ou reformas?',
       'faq-a1': 'Não. Toda a instalação da Atiye é feita sem quebrar ou modificar a estrutura do imóvel. Utilizamos sistemas de fixação precisos que não danificam paredes, tetos ou esquadrias.',
       'faq-q2': 'Quanto tempo leva a instalação?',
-      'faq-a2': 'A maioria dos projetos residenciais é concluída em 1 a 2 dias. Projetos corporativos variam conforme a metragem e complexidade, mas sempre com cronograma definido antes de começar.',
+      'faq-a2': 'A maioria dos projetos residenciais é concluída em até 7 dias. Projetos corporativos variam conforme a metragem e complexidade, mas sempre com cronograma definido antes de começar.',
       'faq-q3': 'A tela solar screen realmente reduz o calor?',
       'faq-a3': 'Sim. Dependendo do material e abertura utilizada, a redução do ganho térmico pode chegar a 80%. A tela filtra a radiação solar antes que ela aquecesse o vidro — diferente de soluções que agem depois.',
       'faq-q4': 'Como funciona a garantia?',
       'faq-a4': 'Oferecemos 2 anos de garantia real — com suporte ativo, visita técnica quando necessário e reposição de peças sem custo. Não é só uma promessa no contrato.',
       'faq-q5': 'A Atiye atende projetos fora de São Paulo?',
-      'faq-a5': 'Atendemos São Paulo e Grande SP. Para projetos corporativos de maior escala em outras regiões, consulte nossa equipe pelo WhatsApp.',
+      'faq-a5': 'Atendemos São Paulo e São Sebastião. Para projetos corporativos de maior escala em outras regiões, consulte nossa equipe pelo WhatsApp.',
       'faq-q6': 'Vocês trabalham com arquitetos e construtoras?',
       'faq-a6': 'Sim. Temos uma linha de atendimento dedicada para arquitetos, designers e construtoras com especificação técnica, execução alinhada ao projeto e condições diferenciadas por volume.',
 
@@ -161,7 +161,7 @@
          ══════════════════════════════════════════════════ */
       'corp-hero-label':          'Corporativo',
       'corp-hero-title':          'Ambientes de trabalho não toleram luz descontrolada',
-      'corp-hero-subtitle-html':  'Reflexo em telas. Calor acumulado. Equipe ajustando posição o dia todo.<br>Isso não é detalhe — é falha de infraestrutura.',
+      'corp-hero-subtitle-html':  'Reflexo em telas. Calor acumulado. Equipe ajustando posição o dia todo.<br>Isso não é detalhe, é falha de infraestrutura.',
       'corp-hero-desc':           'A Atiye projeta controle de luz para empresas que precisam de padrão e previsibilidade.',
       'corp-hero-cta':            'Solicitar orçamento corporativo',
 
@@ -197,7 +197,7 @@
       'corp-prod2-text':   'Controle preciso da entrada de luz em ambientes que exigem diferentes configurações ao longo do dia.',
       'corp-prod3-title':  'Double Vision',
       'corp-prod3-text':   'Tecido dupla camada que permite controle alternado entre claridade total e privacidade completa — sem troca de persiana.',
-      'corp-prod-note':    'Linha técnica selecionada por performance — não apenas por estética.',
+      'corp-prod-note':    'Linha técnica selecionada por performance .',
 
       'corp-proc-eyebrow': 'Como trabalhamos',
       'corp-proc-title':   'Do diagnóstico à garantia',
@@ -320,7 +320,7 @@
       'res-faq-q2': 'Posso solicitar orçamento por ambiente?',
       'res-faq-a2': 'Sim. Atendemos desde projetos de um único ambiente até apartamentos completos. Envie uma foto e as medidas pelo WhatsApp — a partir daí fazemos o diagnóstico técnico.',
       'res-faq-q3': 'Quanto tempo leva a instalação?',
-      'res-faq-a3': 'A maioria dos projetos residenciais é concluída em 1 a 2 dias. O cronograma é definido antes do início, com horários que se adaptam à rotina do morador.',
+      'res-faq-a3': 'A maioria dos projetos residenciais é concluída em até 7 dias. O cronograma é definido antes do início, com horários que se adaptam à rotina do morador.',
       'res-faq-q4': 'A tela solar reduz a claridade do ambiente?',
       'res-faq-a4': 'Depende do nível de abertura escolhido. Com materiais de 5% de abertura ou mais, o ambiente mantém claridade natural enquanto elimina calor e reflexo. A escolha é feita de acordo com as necessidades de cada espaço.',
       'res-faq-q5': 'Qual é a garantia dos produtos?',

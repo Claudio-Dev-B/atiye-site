@@ -369,6 +369,21 @@
       if (e.key === "ArrowRight") cgMoveTo(cgReelData[cgActiveReel].current + 1);
     });
 
+    var cgWheelAccum = 0;
+    var cgWheelTimer = null;
+    cgStage.addEventListener("wheel", function (e) {
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+      e.preventDefault();
+      cgWheelAccum += e.deltaX;
+      if (cgWheelTimer) clearTimeout(cgWheelTimer);
+      cgWheelTimer = setTimeout(function () { cgWheelAccum = 0; }, 300);
+      if (Math.abs(cgWheelAccum) > 60) {
+        var dir = cgWheelAccum > 0 ? 1 : -1;
+        cgWheelAccum = 0;
+        cgMoveTo(cgReelData[cgActiveReel].current + dir);
+      }
+    }, { passive: false });
+
     Object.keys(cgReelData).forEach(function (id) { cgUpdateUI(cgReelData[id]); });
   })();
 

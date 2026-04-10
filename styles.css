@@ -2584,11 +2584,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Stage & Reels */
 .cg-stage { position: relative; overflow: hidden; }
 
-.cg-reel { display: none; cursor: grab; }
-.cg-reel:active { cursor: grabbing; }
+.cg-reel { display: none; }
 .cg-reel.active { display: block; }
 
-/* Track */
+/* Track — transform-based navigation */
 .cg-track {
   display: flex;
   gap: 6px;
@@ -2596,7 +2595,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   will-change: transform;
   user-select: none;
   -webkit-user-select: none;
+  touch-action: pan-y;   /* browser owns vertical scroll; JS owns horizontal */
+  cursor: grab;
 }
+.cg-track:active { cursor: grabbing; }
+
+/* Mobile nav — shown on mobile only */
+.cg-nav--mobile { display: none; }
 
 /* Slides */
 .cg-slide {
@@ -2609,45 +2614,29 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   cursor: zoom-in;
 }
 
+/* ─── Brighten effect ───────────────────────────────────
+   Inactive slides sit in darkness (closed window).
+   The active slide brightens to full — light entering.
+   On desktop, hovering a dark slide previews the lift. */
 .cg-slide img {
   width: 100%; height: 100%;
   object-fit: cover;
-  transition: transform 0.9s var(--ease-out-quart), filter 0.5s ease;
-  filter: saturate(0.55) brightness(0.65);
+  transition: filter 0.7s ease, transform 0.9s var(--ease-out-quart);
+  filter: saturate(0.4) brightness(0.5);
   pointer-events: none;
   display: block;
 }
 
 .cg-slide.active img {
   filter: saturate(1) brightness(1);
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
-/* Light beam sweep */
-.cg-slide-beam {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    108deg,
-    transparent 20%,
-    rgba(255,248,210,0.10) 50%,
-    transparent 80%
-  );
-  opacity: 0;
-  pointer-events: none;
-  z-index: 1;
-  transform: translateX(-110%) skewX(-8deg);
-}
-
-.cg-slide.active .cg-slide-beam {
-  animation: cgBeam 4s var(--ease-in-out) infinite 0.5s;
-}
-
-@keyframes cgBeam {
-  0%   { transform: translateX(-110%) skewX(-8deg); opacity: 0; }
-  10%  { opacity: 1; }
-  90%  { opacity: 1; }
-  100% { transform: translateX(110%) skewX(-8deg); opacity: 0; }
+@media (hover: hover) {
+  .cg-slide:not(.active):hover img {
+    filter: saturate(0.7) brightness(0.75);
+    transform: scale(1.015);
+  }
 }
 
 /* Slide caption */
@@ -2660,7 +2649,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: rgba(255,255,255,0);
-  z-index: 2;
+  z-index: 3;
   transition: color 0.5s ease 0.2s;
   text-shadow: 0 1px 8px rgba(0,0,0,0.4);
 }
@@ -2708,9 +2697,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     gap: 1.2rem;
   }
 
+  /* On mobile: hide top nav, show bottom nav */
+  .cg-nav--desktop { display: none; }
+  .cg-nav--mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
   .cg-controls {
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   .cg-hint { display: none; }
