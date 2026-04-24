@@ -36,9 +36,8 @@
       'hero-title':         'Controle de luz, conforto e sofisticação em cada detalhe',
       'hero-title-html':    'Controle de luz, conforto e sofisticação em <em>cada detalhe</em>',
       'hero-subtitle':      'Soluções sob medida em persianas e cortinas que unem desempenho técnico e estética impecável.',
-      'hero-tag-1':         'Residencial Alto Padrão',
+      'hero-tag-1':         'Projetos Residenciais',
       'hero-tag-2':         'Projetos Corporativos',
-      'hero-tag-3':         'Execução Precisa',
       'hero-cta':           'Solicitar orçamento',
 
       /* ── INDEX — Value Proposition ───────────────────── */
@@ -595,9 +594,8 @@
       'hero-title':        'Light control, comfort and sophistication in every detail',
       'hero-title-html':   'Light control, comfort and sophistication in <em>every detail</em>',
       'hero-subtitle':     'Custom solutions in blinds and curtains that combine technical performance and impeccable aesthetics.',
-      'hero-tag-1':        'Premium Residential',
+      'hero-tag-1':        'Residential Projects',
       'hero-tag-2':        'Corporate Projects',
-      'hero-tag-3':        'Precise Execution',
       'hero-cta':          'Request a quote',
 
       /* ── INDEX — Value Proposition ───────────────────── */

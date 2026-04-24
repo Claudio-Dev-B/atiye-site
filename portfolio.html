@@ -684,6 +684,32 @@
 
       .lightbox-nav { display: none; }
       .cat-hero-grid { grid-template-columns: repeat(2, 1fr); }
+
+      /* ── Mobile scroll performance fixes ──────────────── */
+      /* backdrop-filter + position:sticky = jank no iOS */
+      .cat-nav-wrap {
+        background: rgba(13,13,13,0.98);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+      }
+
+      /* 8s transform transition trava o scroll */
+      .ps-hero-img {
+        transition: opacity 0.3s ease;
+        transform: none !important;
+        will-change: auto;
+      }
+      .product-section:hover .ps-hero-img { transform: none; }
+
+      /* filter: grayscale força compositing em cada frame */
+      .cat-hero-grid-img {
+        filter: none;
+        will-change: auto;
+      }
+
+      /* Desativa hover zoom nas fotos no touch */
+      .split-visual:hover img { transform: none; }
+      .photo-item:hover img   { transform: none; }
     }
 
     @media (max-width: 480px) {
