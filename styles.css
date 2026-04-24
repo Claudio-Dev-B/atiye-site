@@ -79,7 +79,8 @@ body {
   line-height: 1.65;
   color: var(--color-text);
   background-color: var(--color-white);
-  overflow-x: hidden;
+  /* clip não cria scroll container (evita jank no Android) */
+  overflow-x: clip;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -1559,6 +1560,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   mix-blend-mode: screen;
   transform: rotate(-12deg) translateX(-30vw);
   transform-origin: top center;
+}
+
+@media (max-width: 768px) {
+  /* Desativa o page-light no mobile: position:fixed com transform
+     em cada scroll força recomposição de GPU layer a cada frame */
+  .page-light { display: none; }
 }
 
 /* ── Section Entry Light Flash ───────────────────────── */
