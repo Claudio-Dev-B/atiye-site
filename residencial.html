@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Atiye Residencial — Controle de luz para ambientes de alto padrão. Persianas e cortinas sob medida para quartos, salas e varandas." />
+  <meta name="description" content="Atiye Residencial: Controle de luz para ambientes de alto padrão. Persianas e cortinas sob medida para quartos, salas e varandas." />
   <title>Residencial | Atiye</title>
 
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -25,15 +25,15 @@
   <!-- Header -->
   <header class="header" id="header">
     <div class="header-container">
-      <a href="index.html" class="logo" aria-label="Atiye — Home">
+      <a href="index.html" class="logo" aria-label="Atiye Home">
         <img src="assets/logo_atiye_fundo_branco.png" alt="Atiye" width="100" height="40" />
       </a>
       <nav class="header-nav" id="nav">
         <ul class="nav-list">
           <li><a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a></li>
           <li><a href="residencial.html" data-i18n="nav-residential">Residencial</a></li>
+          <li><a href="portfolio.html" data-i18n="nav-portfolio">Portfólio</a></li>
           <li><a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a></li>
-
           <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
         </ul>
       </nav>
@@ -80,17 +80,65 @@
       </div>
     </section>
 
+    <!-- ── DESIGN & DECORAÇÃO ────────────────────────────── -->
+    <section class="section res-design-section" id="design">
+      <div class="container">
+        <div class="res-design-inner">
+          <div class="res-design-text reveal">
+            <span class="section-eyebrow" data-i18n="res-design-eyebrow">Design & Decoração</span>
+            <h2 data-i18n="res-design-title">Cada detalhe conta. A persiana também.</h2>
+            <p data-i18n="res-design-p1">
+              Do quarto ao living, da varanda ao home office: cada espaço tem uma personalidade.
+              Nossas soluções são desenvolvidas para se integrar à decoração e elevar o resultado final do projeto,
+              combinando estética refinada com conforto real e controle preciso da luz.
+            </p>
+            <p data-i18n="res-design-p2">
+              Trabalhamos com arquitetos, decoradores e diretamente com o morador para garantir que função e estética
+              caminhem juntas, sem concessões em nenhum dos dois lados.
+            </p>
+          </div>
+          <div class="mini-carousel reveal" id="miniCarousel">
+            <div class="mc-viewport">
+              <div class="mc-track" id="mcTrack">
+                <div class="mc-slide">
+                  <img src="assets/residencial/Persiana-Romana.webp" alt="Persiana Romana" loading="lazy" />
+                </div>
+                <div class="mc-slide">
+                  <img src="assets/residencial/IMG_1792.webp" alt="Projeto residencial Atiye" loading="lazy" />
+                </div>
+                <div class="mc-slide">
+                  <img src="assets/residencial/Rolô-Blackout-_2_.webp" alt="Rolô Blackout" loading="lazy" />
+                </div>
+              </div>
+            </div>
+            <div class="mc-nav">
+              <button class="mc-btn" id="mcPrev" aria-label="Anterior">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <div class="mc-dots">
+                <span class="mc-dot active"></span>
+                <span class="mc-dot"></span>
+                <span class="mc-dot"></span>
+              </div>
+              <button class="mc-btn" id="mcNext" aria-label="Próximo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ── PROBLEMA ───────────────────────────────────────── -->
     <section class="section problem-section" id="problema">
       <div class="container">
         <div class="problem-content">
           <div class="problem-text reveal">
-            <span class="section-eyebrow" data-i18n="res-prob-eyebrow">O problema invisível</span>
             <h2 class="problem-lead" data-i18n="res-prob-lead">Você já se ajustou ao problema. Sem perceber.</h2>
             <ul class="problem-list">
               <li data-i18n="res-prob-li1">Acorda antes do horário porque a luz entra no quarto</li>
               <li data-i18n="res-prob-li2">Liga o ar-condicionado mais cedo pelo calor da tarde</li>
-              <li data-i18n="res-prob-li3">Fecha as persianas e perde a visão — ou abre e perde o conforto</li>
+              <li data-i18n="res-prob-li3">Fecha as persianas e perde a visão, ou abre e perde o conforto</li>
               <li data-i18n="res-prob-li4">Mobiliário perdendo cor gradualmente pela exposição solar</li>
             </ul>
             <p class="problem-conclusion" data-i18n-html="res-prob-concl-html">
@@ -114,8 +162,7 @@
       <div class="container">
         <div class="split-content reveal">
           <div class="split-text">
-            <span class="section-label" data-i18n="res-sol-label">Abordagem</span>
-            <h2 data-i18n="res-sol-title">A luz precisa se ajustar à sua vida — não o contrário</h2>
+            <h2 data-i18n="res-sol-title">A luz precisa se ajustar à sua vida, não o contrário</h2>
             <p data-i18n="res-sol-p1">
               Cada ambiente tem uma função. Cada horário tem uma demanda diferente.
               Um projeto de controle de luz considera tudo isso antes de especificar qualquer material.
@@ -124,12 +171,12 @@
               Não é sobre escolher uma persiana bonita. É sobre definir como você quer viver naquele espaço.
             </p>
             <p class="solution-highlight" data-i18n="res-sol-highlight">
-              Do diagnóstico ao resultado — sem improvisos.
+              Do diagnóstico ao resultado, sem improvisos.
             </p>
           </div>
           <div class="split-visual">
             <img
-              src="assets/residencial/IMG_3161.webp"
+              src="assets/residencial/IMG_3184.webp"
               alt="Sala de jantar com luz controlada"
               loading="lazy" width="600" height="500"
             />
@@ -146,48 +193,46 @@
           <h2 class="section-title" data-i18n="res-env-title">Cada espaço, uma demanda específica</h2>
         </div>
         <div class="cards-grid reveal">
-          <div class="solution-card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-              </svg>
+          <div class="solution-card solution-card--photo">
+            <div class="card-photo">
+              <img src="assets/residencial/IMG_2049.webp" alt="Quarto com persiana blackout" loading="lazy" />
             </div>
-            <h3 data-i18n="res-env1-title">Quartos</h3>
-            <p data-i18n="res-env1-text">Bloqueio real de luz para dormir melhor. Sem calor acumulado. Controle total do horário de despertar natural.</p>
+            <div class="card-body">
+              <h3 data-i18n="res-env1-title">Quartos</h3>
+              <p data-i18n="res-env1-text">Bloqueio real de luz para dormir melhor. Sem calor acumulado. Controle total do horário de despertar natural.</p>
+            </div>
           </div>
-          <div class="solution-card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="12" r="5"/>
-                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/>
-              </svg>
+          <div class="solution-card solution-card--photo">
+            <div class="card-photo">
+              <img src="assets/residencial/IMG_3171.webp" alt="Sala com controle de luz" loading="lazy" />
             </div>
-            <h3 data-i18n="res-env2-title">Salas</h3>
-            <p data-i18n="res-env2-text">Equilíbrio entre claridade e proteção. Sem reflexo na TV. Sem calor excessivo. Com vista preservada.</p>
+            <div class="card-body">
+              <h3 data-i18n="res-env2-title">Salas</h3>
+              <p data-i18n="res-env2-text">Equilíbrio entre claridade e proteção. Sem reflexo na TV. Sem calor excessivo. Com vista preservada.</p>
+            </div>
           </div>
-          <div class="solution-card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M3 12h18M3 6h18M3 18h18"/>
-              </svg>
+          <div class="solution-card solution-card--photo">
+            <div class="card-photo">
+              <img src="assets/residencial/IMG_3154.webp" alt="Varanda com persiana solar" loading="lazy" />
             </div>
-            <h3 data-i18n="res-env3-title">Varandas</h3>
-            <p data-i18n="res-env3-text">Proteção solar sem perder a ventilação. Privacidade sem isolar. Conforto para usar o espaço o dia todo.</p>
+            <div class="card-body">
+              <h3 data-i18n="res-env3-title">Varandas</h3>
+              <p data-i18n="res-env3-text">Proteção solar sem perder a ventilação. Privacidade sem isolar. Conforto para usar o espaço o dia todo.</p>
+            </div>
           </div>
         </div>
         <p class="solution-note" data-i18n="res-env-note">Cada especificação é feita depois de entender como você usa cada ambiente.</p>
       </div>
     </section>
 
-    <!-- ── TECNOLOGIA (Solar Screen) ─────────────────────── -->
+    <!-- ── TELA SOLAR SCREEN ──────────────────────────────── -->
     <section class="section proof-section" id="tecnologia">
       <div class="container">
         <div class="proof-content">
           <div class="proof-text reveal">
-            <span class="section-eyebrow" data-i18n="res-tech-eyebrow">Tecnologia aplicada</span>
             <h2 data-i18n-html="res-tech-title-html">Tela solar screen.<br>Não bloqueia. <em>Controla.</em></h2>
             <p data-i18n="res-tech-p1">
-              Filtra até 97% da radiação UV e reduz significativamente o ganho térmico —
+              Filtra até 97% da radiação UV e reduz significativamente o ganho térmico,
               sem escurecer o ambiente e sem bloquear a vista.
             </p>
             <p class="proof-highlight" data-i18n="res-tech-highlight">
@@ -200,8 +245,89 @@
           </div>
           <div class="proof-visual reveal reveal-delay-2">
             <img
-              src="assets/residencial/IMG_3185.webp"
+              src="assets/residencial/IMG_3152.webp"
               alt="Tela Solar Screen residencial"
+              loading="lazy" width="600" height="480"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PERSIANA DE MADEIRA ────────────────────────────── -->
+    <section class="section proof-section" id="persiana-madeira" style="background: var(--color-warm);">
+      <div class="container">
+        <div class="proof-content proof-content--reverse">
+          <div class="proof-text reveal">
+            <span class="section-eyebrow" data-i18n="res-wood-eyebrow">Persiana de Madeira</span>
+            <h2 data-i18n="res-wood-title">O charme natural que valoriza qualquer projeto</h2>
+            <p data-i18n="res-wood-p1">
+              A textura e o calor da madeira criam ambientes únicos e sofisticados. Cada lâmina é
+              selecionada para garantir homogeneidade visual e durabilidade, do dormitório ao escritório doméstico.
+              Um detalhe que arquitetos e decoradores escolhem pelo impacto estético imediato.
+            </p>
+            <p class="proof-highlight" data-i18n="res-wood-highlight">
+              Design atemporal com controle de luz preciso.
+            </p>
+          </div>
+          <div class="proof-visual reveal reveal-delay-2">
+            <img
+              src="assets/residencial/IMG_3161.webp"
+              alt="Persiana de Madeira residencial"
+              loading="lazy" width="600" height="480"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CORTINAS DE TECIDO ─────────────────────────────── -->
+    <section class="section proof-section" id="cortinas-tecido">
+      <div class="container">
+        <div class="proof-content">
+          <div class="proof-text reveal">
+            <span class="section-eyebrow" data-i18n="res-fabric-eyebrow">Cortinas de Tecido</span>
+            <h2 data-i18n="res-fabric-title">Leveza e elegância que moldam o ambiente</h2>
+            <p data-i18n="res-fabric-p1">
+              Tecidos cuidadosamente selecionados para difundir a luz suavemente, criar privacidade sem
+              bloquear o espaço e adicionar volume e textura ao projeto de interiores. Do sheer transparente
+              ao blackout total, sempre com acabamento impecável e caimento preciso.
+            </p>
+            <p class="proof-highlight" data-i18n="res-fabric-highlight">
+              Elegância que complementa qualquer estilo, do contemporâneo ao clássico.
+            </p>
+          </div>
+          <div class="proof-visual reveal reveal-delay-2">
+            <img
+              src="assets/residencial/IMG_3163.webp"
+              alt="Cortinas de tecido residencial"
+              loading="lazy" width="600" height="480"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DOUBLE VISION ──────────────────────────────────── -->
+    <section class="section proof-section" id="double-vision-res" style="background: var(--color-warm);">
+      <div class="container">
+        <div class="proof-content proof-content--reverse">
+          <div class="proof-text reveal">
+            <span class="section-eyebrow" data-i18n="res-dv-eyebrow">Double Vision</span>
+            <h2 data-i18n="res-dv-title">Luz controlada sem abrir mão da claridade</h2>
+            <p data-i18n="res-dv-p1">
+              O sistema de dupla camada permite ajuste preciso entre luminosidade total e privacidade completa,
+              sem trocar de persiana. Visual limpo, moderno e altamente funcional para salas, suítes e ambientes
+              que demandam versatilidade ao longo do dia.
+            </p>
+            <p class="proof-highlight" data-i18n="res-dv-highlight">
+              Versatilidade estética para ambientes que exigem o melhor dos dois mundos.
+            </p>
+          </div>
+          <div class="proof-visual reveal reveal-delay-2">
+            <img
+              src="assets/residencial/IMG_3156.webp"
+              alt="Double Vision residencial"
               loading="lazy" width="600" height="480"
             />
           </div>
@@ -357,7 +483,7 @@
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p data-i18n="res-faq-a2">Sim. Atendemos desde projetos de um único ambiente até apartamentos completos. Envie uma foto e as medidas pelo WhatsApp — a partir daí fazemos o diagnóstico técnico.</p>
+              <p data-i18n="res-faq-a2">Sim. Atendemos desde projetos de um único ambiente até apartamentos completos. Envie uma foto e as medidas pelo WhatsApp e a partir daí fazemos o diagnóstico técnico.</p>
             </div>
           </div>
           <div class="faq-item">
@@ -384,7 +510,7 @@
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p data-i18n="res-faq-a5">Oferecemos 2 anos de garantia real — com suporte ativo, visita técnica e reposição de peças sem custo adicional quando necessário.</p>
+              <p data-i18n="res-faq-a5">Oferecemos 2 anos de garantia real, com suporte ativo, visita técnica e reposição de peças sem custo adicional quando necessário.</p>
             </div>
           </div>
         </div>
@@ -451,6 +577,23 @@
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
   </a>
+
+  <script>
+    (function () {
+      var track = document.getElementById('mcTrack');
+      if (!track) return;
+      var dots = document.querySelectorAll('.mc-dot');
+      var cur = 0, total = track.children.length;
+      function goTo(i) {
+        cur = ((i % total) + total) % total;
+        track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+        dots.forEach(function (d, j) { d.classList.toggle('active', j === cur); });
+      }
+      document.getElementById('mcPrev').addEventListener('click', function () { goTo(cur - 1); });
+      document.getElementById('mcNext').addEventListener('click', function () { goTo(cur + 1); });
+      setInterval(function () { goTo(cur + 1); }, 4500);
+    })();
+  </script>
 
   <script src="translations.js"></script>
   <script src="script-landing.js"></script>
