@@ -231,3 +231,571 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ══════════════════════════════════════════════════════════
+   Corporate Cases Section
+   ══════════════════════════════════════════════════════════ */
+
+.corp-cases {
+  background: var(--color-ink);
+  overflow: hidden;
+}
+
+/* ── Intro ─────────────────────────────────────────────── */
+.cc-intro {
+  padding: var(--spacing-3xl) var(--container-padding) var(--spacing-2xl);
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.cc-eyebrow {
+  color: var(--color-gold) !important;
+}
+
+.cc-intro-row {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--spacing-2xl);
+  margin-top: var(--spacing-sm);
+}
+
+.cc-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+  font-weight: 300;
+  color: var(--color-white);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+
+.cc-intro-text {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.75;
+  max-width: 360px;
+  padding-bottom: 0.25rem;
+}
+
+/* ── Grid ──────────────────────────────────────────────── */
+.cc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  background: #0a0a0a;
+}
+
+/* ── Card ──────────────────────────────────────────────── */
+.cc-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 4 / 3;
+  background: #111;
+}
+
+.cc-card--hero {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 7;
+}
+
+/* Background media */
+.cc-card-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.cc-card-bg img,
+.cc-card-bg video {
+  width: 100%;
+  height: 115%;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+  transition: transform 1.2s cubic-bezier(0.16,1,0.3,1);
+}
+
+.cc-card:hover .cc-card-bg img,
+.cc-card:hover .cc-card-bg video {
+  transform: scale(1.06);
+}
+
+/* Overlay */
+.cc-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(0,0,0,0.05) 0%,
+    rgba(0,0,0,0.22) 40%,
+    rgba(0,0,0,0.78) 100%
+  );
+  transition: background 0.6s;
+}
+
+.cc-card:hover .cc-card-overlay {
+  background: linear-gradient(
+    160deg,
+    rgba(0,0,0,0.12) 0%,
+    rgba(0,0,0,0.38) 40%,
+    rgba(0,0,0,0.9) 100%
+  );
+}
+
+/* Body */
+.cc-card-body {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.75rem 2rem;
+  z-index: 2;
+}
+
+.cc-card-meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.cc-num {
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(255,255,255,0.06);
+  letter-spacing: -0.02em;
+  transition: color 0.4s;
+  user-select: none;
+}
+
+.cc-card:hover .cc-num {
+  color: rgba(255,255,255,0.13);
+}
+
+.cc-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.cc-logo {
+  height: 22px;
+  width: auto;
+  max-width: 76px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.65;
+  transition: opacity 0.3s;
+}
+
+.cc-logo--sm {
+  height: 17px;
+  opacity: 0.5;
+}
+
+.cc-card:hover .cc-logo    { opacity: 0.9; }
+.cc-card:hover .cc-logo--sm{ opacity: 0.7; }
+
+.cc-logo-sep {
+  width: 1px;
+  height: 14px;
+  background: rgba(255,255,255,0.18);
+  flex-shrink: 0;
+}
+
+/* Card foot */
+.cc-card-foot {
+  transform: translateY(6px);
+  transition: transform 0.55s cubic-bezier(0.16,1,0.3,1);
+}
+
+.cc-card:hover .cc-card-foot {
+  transform: translateY(0);
+}
+
+.cc-card-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.65rem);
+  font-weight: 400;
+  color: var(--color-white);
+  letter-spacing: 0.01em;
+  margin-bottom: 0.6rem;
+}
+
+.cc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.cc-tag {
+  display: inline-block;
+  padding: 0.18rem 0.6rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(4px);
+}
+
+.cc-tag--hl {
+  background: rgba(196,168,122,0.16);
+  border-color: rgba(196,168,122,0.32);
+  color: var(--color-gold-light);
+}
+
+/* Open button */
+.cc-open {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.4rem;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem 0.4rem 0.55rem;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.16);
+  color: rgba(255,255,255,0.7);
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.3s, transform 0.3s cubic-bezier(0.16,1,0.3,1), background 0.2s;
+  backdrop-filter: blur(8px);
+}
+
+.cc-open svg {
+  width: 13px;
+  height: 13px;
+  transition: transform 0.3s;
+}
+
+.cc-card:hover .cc-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cc-open:hover {
+  background: rgba(255,255,255,0.18) !important;
+}
+
+.cc-open:hover svg {
+  transform: translateX(3px);
+}
+
+/* ── Modal ─────────────────────────────────────────────── */
+.cc-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.cc-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(3,3,3,0.93);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  cursor: pointer;
+}
+
+.cc-modal-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.cc-modal-wrap > * { pointer-events: all; }
+
+.cc-modal-close {
+  position: fixed;
+  top: 1.4rem;
+  right: 1.6rem;
+  z-index: 9996;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255,255,255,0.75);
+  transition: background 0.2s, color 0.2s;
+}
+
+.cc-modal-close svg { width: 17px; height: 17px; }
+.cc-modal-close:hover { background: rgba(255,255,255,0.16); color: #fff; }
+
+.cc-modal-layout {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Info sidebar */
+.cc-modal-info {
+  width: 290px;
+  min-width: 260px;
+  flex-shrink: 0;
+  padding: 4.5rem 2.25rem 2.25rem;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: rgba(0,0,0,0.25);
+}
+
+.cc-mi-num {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.cc-mi-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.cc-mi-logo {
+  height: 26px;
+  width: auto;
+  max-width: 88px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+
+.cc-mi-sep {
+  width: 1px;
+  height: 18px;
+  background: rgba(255,255,255,0.18);
+}
+
+.cc-mi-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--color-white);
+  margin-bottom: 0.35rem;
+  line-height: 1.2;
+}
+
+.cc-mi-contractor {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 1.2rem;
+}
+
+.cc-mi-specs {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 1.2rem;
+}
+
+/* Viewer */
+.cc-modal-viewer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cc-viewer-stage {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.cc-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.cc-slide img,
+.cc-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cc-viewer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.65rem 1rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.5);
+  flex-shrink: 0;
+}
+
+.cc-viewer-prev,
+.cc-viewer-next {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255,255,255,0.65);
+  transition: background 0.2s, opacity 0.25s;
+}
+
+.cc-viewer-prev:hover,
+.cc-viewer-next:hover { background: rgba(255,255,255,0.14); color: #fff; }
+
+.cc-viewer-prev svg,
+.cc-viewer-next svg { width: 15px; height: 15px; }
+
+.cc-viewer-count {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.35);
+  min-width: 48px;
+  text-align: center;
+}
+
+/* Thumbnails */
+.cc-viewer-thumbs {
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  background: #000;
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex-shrink: 0;
+  max-height: 70px;
+}
+
+.cc-viewer-thumbs::-webkit-scrollbar { display: none; }
+
+.cc-thumb {
+  flex-shrink: 0;
+  width: 90px;
+  height: 64px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  opacity: 0.38;
+  transition: border-color 0.2s, opacity 0.2s;
+}
+
+.cc-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cc-thumb.active,
+.cc-thumb:hover {
+  border-color: var(--color-gold);
+  opacity: 1;
+}
+
+/* ── Clients marquee: real logos ───────────────────────── */
+.client-logo-item img {
+  height: 26px;
+  width: auto;
+  max-width: 110px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.45;
+  transition: opacity 0.3s, filter 0.3s;
+  display: block;
+}
+
+.client-logo-item:hover img {
+  filter: grayscale(0);
+  opacity: 0.8;
+}
+
+/* ── Responsive: Corporate Cases ───────────────────────── */
+@media (max-width: 900px) {
+  .cc-card--hero { aspect-ratio: 16 / 9; }
+}
+
+@media (max-width: 768px) {
+  .cc-intro-row {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+  }
+
+  .cc-grid {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .cc-card--hero {
+    grid-column: 1;
+    aspect-ratio: 4 / 3;
+  }
+
+  .cc-card-body { padding: 1.25rem 1.5rem; }
+
+  .cc-num { font-size: 3rem; }
+
+  .cc-card-name { font-size: 1.15rem; }
+
+  .cc-open { opacity: 1; transform: translateY(0); }
+
+  /* Modal mobile */
+  .cc-modal-layout { flex-direction: column; }
+
+  .cc-modal-info {
+    width: 100%;
+    min-width: unset;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 3.5rem 1.5rem 1.25rem;
+    max-height: 38vh;
+    overflow-y: auto;
+    justify-content: flex-start;
+  }
+
+  .cc-mi-num { font-size: 3rem; margin-bottom: 0.75rem; }
+
+  .cc-viewer-thumbs { max-height: 54px; }
+
+  .cc-thumb { width: 72px; height: 50px; }
+}
