@@ -38,12 +38,12 @@
       position: absolute; inset: 0;
       width: 100%; height: 100%;
       object-fit: cover;
-      object-position: center center;
+      object-position: right center;
       border-radius: 0 !important;
     }
     @media (max-width: 768px) {
       .hero-visual .hero-video {
-        object-position: 80% center;
+        object-position: left center;
       }
     }
 
@@ -434,6 +434,7 @@
     <section id="produtos">
 
       <div class="prod-section-header reveal">
+        <span class="section-eyebrow" data-i18n="corp-prod-eyebrow">Produtos</span>
         <h2 class="section-title" data-i18n="corp-prod-title">Persianas Ideais para Obras Corporativas</h2>
       </div>
 
@@ -635,7 +636,7 @@
               <h3 class="cc-card-name">B3 — Bolsa de Valores</h3>
               <div class="cc-tags">
                 <span class="cc-tag cc-tag--hl">+400 m²</span>
-                <span class="cc-tag">Rolô Solar Screen 3%</span>
+                <span class="cc-tag" data-i18n="cc-tag-screen3">Rolô Solar Screen 3%</span>
               </div>
             </div>
           </div>
@@ -664,7 +665,7 @@
               <h3 class="cc-card-name">FIAP</h3>
               <div class="cc-tags">
                 <span class="cc-tag cc-tag--hl">138 m²</span>
-                <span class="cc-tag">Rolô Solar Screen</span>
+                <span class="cc-tag" data-i18n="cc-tag-screen">Rolô Solar Screen</span>
               </div>
             </div>
           </div>
@@ -693,7 +694,7 @@
               <h3 class="cc-card-name">Shopee</h3>
               <div class="cc-tags">
                 <span class="cc-tag cc-tag--hl">65 m²</span>
-                <span class="cc-tag">Rolô Solar Screen 3%</span>
+                <span class="cc-tag" data-i18n="cc-tag-screen3">Rolô Solar Screen 3%</span>
               </div>
             </div>
           </div>
@@ -720,7 +721,7 @@
               <h3 class="cc-card-name">Bulla</h3>
               <div class="cc-tags">
                 <span class="cc-tag cc-tag--hl">305 m²</span>
-                <span class="cc-tag">Rolô Solar Screen</span>
+                <span class="cc-tag" data-i18n="cc-tag-screen">Rolô Solar Screen</span>
               </div>
             </div>
           </div>
@@ -752,7 +753,7 @@
               <h3 class="cc-card-name">Medcof</h3>
               <div class="cc-tags">
                 <span class="cc-tag cc-tag--hl">232 m² + 52 m²</span>
-                <span class="cc-tag">Screen · Blackout · Wave Linho</span>
+                <span class="cc-tag" data-i18n="cc-tag-multi">Screen · Blackout · Wave Linho</span>
               </div>
             </div>
           </div>
@@ -768,7 +769,7 @@
       <div class="cc-modal" id="cc-modal" aria-hidden="true">
         <div class="cc-modal-backdrop" id="cc-modal-backdrop"></div>
         <div class="cc-modal-wrap">
-          <button class="cc-modal-close" id="cc-modal-close" aria-label="Fechar">
+          <button class="cc-modal-close" id="cc-modal-close" aria-label="Fechar" data-i18n-aria-label="cc-modal-close">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
           </button>
           <div class="cc-modal-layout">
@@ -776,11 +777,11 @@
             <div class="cc-modal-viewer">
               <div class="cc-viewer-stage" id="cc-viewer-stage"></div>
               <div class="cc-viewer-nav">
-                <button class="cc-viewer-prev" id="cc-viewer-prev" aria-label="Anterior">
+                <button class="cc-viewer-prev" id="cc-viewer-prev" aria-label="Anterior" data-i18n-aria-label="cc-modal-prev">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
                 </button>
                 <span class="cc-viewer-count" id="cc-viewer-count"></span>
-                <button class="cc-viewer-next" id="cc-viewer-next" aria-label="Próximo">
+                <button class="cc-viewer-next" id="cc-viewer-next" aria-label="Próximo" data-i18n-aria-label="cc-modal-next">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </button>
               </div>
@@ -1138,11 +1139,13 @@
 
     /* ── Project Data ──────────────────────────────────── */
     var BASE = "assets/escritorio/projetos corporativos/";
+    function tc(key) { return (window.atiyeT && window.atiyeT.t(key)) || key; }
+
     var CASES = [
       {
         num: "01", title: "B3 — Bolsa de Valores",
         contractor: "Construtora T60",
-        specs: "+400 m² de Persianas Rolô Tela Solar Screen 3%",
+        specsKey: "cc-case-0-specs",
         clientLogo:     BASE + "Logo-B3-positivo.png",
         contractorLogo: BASE + "logo contrutora Trezentos60.png",
         media: [
@@ -1154,7 +1157,7 @@
       {
         num: "02", title: "FIAP",
         contractor: "Certo Engenharia",
-        specs: "138 m² de Persianas Rolô Tela Solar Screen",
+        specsKey: "cc-case-1-specs",
         clientLogo:     BASE + "fiap logotipo.webp",
         contractorLogo: BASE + "certoengenharia_logo.jpg",
         media: [1,2,3,4,5,6,7,8,9,10].map(function(n){
@@ -1164,7 +1167,7 @@
       {
         num: "03", title: "Shopee",
         contractor: "Certo Engenharia",
-        specs: "65 m² de Persianas Rolô Tela Solar Screen 3%",
+        specsKey: "cc-case-2-specs",
         clientLogo:     BASE + "shopee_logo.png",
         contractorLogo: BASE + "certoengenharia_logo.jpg",
         media: [1,2,3,4].map(function(n){
@@ -1174,7 +1177,7 @@
       {
         num: "04", title: "Bulla",
         contractor: "Construtora T60",
-        specs: "305 m² de Persianas Rolô Tela Solar Screen",
+        specsKey: "cc-case-3-specs",
         clientLogo:     null,
         contractorLogo: BASE + "logo contrutora Trezentos60.png",
         media: [
@@ -1188,7 +1191,7 @@
       {
         num: "05", title: "Medcof",
         contractor: "Construtora T60",
-        specs: "232 m² Rolô Solar Screen 3% + Blackout · 52 m² Cortina Wave Tecido Linho",
+        specsKey: "cc-case-4-specs",
         clientLogo:     BASE + "logo-novo-medcof.png",
         contractorLogo: BASE + "logo contrutora Trezentos60.png",
         media: [
@@ -1288,7 +1291,7 @@
         (logos ? '<div class="cc-mi-logos">'+logos+'</div>' : "")+
         '<h3 class="cc-mi-title">'+c.title+'</h3>'+
         '<p class="cc-mi-contractor">'+c.contractor+'</p>'+
-        '<p class="cc-mi-specs">'+c.specs+'</p>';
+        '<p class="cc-mi-specs">'+tc(c.specsKey)+'</p>';
 
       buildSlides(c.media);
       buildThumbs(c.media);

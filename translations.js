@@ -298,6 +298,23 @@
       'corp-cta-text':       'Nossa equipe retornará com uma proposta técnica adequada ao seu empreendimento.',
       'corp-cta-btn':        'Falar com especialista no WhatsApp',
 
+      /* ── cc-cards tags ────────────────────────────────── */
+      'cc-tag-screen3':   'Rolô Solar Screen 3%',
+      'cc-tag-screen':    'Rolô Solar Screen',
+      'cc-tag-multi':     'Screen · Blackout · Wave Linho',
+
+      /* ── Modal controls ───────────────────────────────── */
+      'cc-modal-close':   'Fechar',
+      'cc-modal-prev':    'Anterior',
+      'cc-modal-next':    'Próximo',
+
+      /* ── CASES modal specs ────────────────────────────── */
+      'cc-case-0-specs':  '+400 m² de Persianas Rolô Tela Solar Screen 3%',
+      'cc-case-1-specs':  '138 m² de Persianas Rolô Tela Solar Screen',
+      'cc-case-2-specs':  '65 m² de Persianas Rolô Tela Solar Screen 3%',
+      'cc-case-3-specs':  '305 m² de Persianas Rolô Tela Solar Screen',
+      'cc-case-4-specs':  '232 m² Rolô Solar Screen 3% + Blackout · 52 m² Cortina Wave Tecido Linho',
+
       /* ══════════════════════════════════════════════════════
          RESIDENCIAL
          ══════════════════════════════════════════════════ */
@@ -832,6 +849,23 @@
       'corp-cta-text':     'Our team will get back to you with a technical proposal tailored to your development.',
       'corp-cta-btn':      'Talk to a specialist on WhatsApp',
 
+      /* ── cc-cards tags ────────────────────────────────── */
+      'cc-tag-screen3':   'Solar Screen 3%',
+      'cc-tag-screen':    'Solar Screen',
+      'cc-tag-multi':     'Screen · Blackout · Wave Linen',
+
+      /* ── Modal controls ───────────────────────────────── */
+      'cc-modal-close':   'Close',
+      'cc-modal-prev':    'Previous',
+      'cc-modal-next':    'Next',
+
+      /* ── CASES modal specs ────────────────────────────── */
+      'cc-case-0-specs':  '+400 m² Solar Screen Roller Blind 3%',
+      'cc-case-1-specs':  '138 m² Solar Screen Roller Blind',
+      'cc-case-2-specs':  '65 m² Solar Screen Roller Blind 3%',
+      'cc-case-3-specs':  '305 m² Solar Screen Roller Blind',
+      'cc-case-4-specs':  '232 m² Solar Screen 3% + Blackout · 52 m² Wave Linen Fabric Curtain',
+
       /* RESIDENCIAL */
       'res-hero-label':         'Residential',
       'res-hero-title':         "You shouldn't have to adapt to the light in your own home",
@@ -1138,6 +1172,12 @@
     var titleKey = document.documentElement.dataset.i18nTitle;
     if (titleKey) document.title = t(titleKey);
 
+    /* aria-label */
+    document.querySelectorAll('[data-i18n-aria-label]').forEach(function (el) {
+      var val = t(el.getAttribute('data-i18n-aria-label'));
+      if (val) el.setAttribute('aria-label', val);
+    });
+
     /* html lang */
     document.documentElement.lang = lang;
 
@@ -1167,5 +1207,8 @@
   } else {
     init();
   }
+
+  /* ── Public API ───────────────────────────────────────── */
+  window.atiyeT = { t: t, getLang: function () { return lang; } };
 
 })();
