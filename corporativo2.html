@@ -299,6 +299,46 @@
     .amb-tag:hover { color: var(--ink); }
     .amb-tag:not(:last-child)::after { content: ' —'; opacity: 0.25; }
 
+    /* ── Mobile: 3 faixas marquee ── */
+    .amb-marquee-wrap { display: none; }
+
+    @media (max-width: 640px) {
+      .amb-tags { display: none; }
+      .amb-marquee-wrap {
+        display: flex; flex-direction: column; gap: 0.9rem;
+        overflow: hidden;
+        /* fade nas bordas */
+        mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      }
+      .amb-row {
+        display: flex; gap: 1.2rem;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .amb-row-inner {
+        display: flex; gap: 1.2rem;
+        flex-shrink: 0;
+        animation: amb-scroll 18s linear infinite;
+      }
+      .amb-row:nth-child(2) .amb-row-inner { animation-duration: 22s; animation-direction: reverse; }
+      .amb-row:nth-child(3) .amb-row-inner { animation-duration: 15s; }
+      @keyframes amb-scroll {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+      }
+      .amb-pill {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.15rem; font-weight: 300;
+        color: rgba(13,13,13,0.55);
+        padding: 0.35rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: 100px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+    }
+
     /* ══════════════════════════════════════════════════
        PRODUTOS  (info + scroll-driven horizontal gallery)
     ══════════════════════════════════════════════════ */
@@ -790,8 +830,39 @@
     @media (max-width: 900px) {
       .overview-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .ov-label { display: none; }
-      .overview-images { grid-template-columns: 1fr 1fr; }
-      .ov-img-a { margin-top: 0; }
+
+      /* ── Mobile: imagem como fundo da seção ── */
+      .overview {
+        position: relative;
+        overflow: hidden;
+      }
+      .overview-images {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+      .ov-img-a { display: none; }
+      .ov-img-b {
+        position: absolute; inset: 0;
+        width: 100%; height: 120%;
+        aspect-ratio: unset;
+        border-radius: 0;
+        margin-top: 0;
+      }
+      .ov-img-b img {
+        width: 100%; height: 100%;
+        object-fit: cover; object-position: center;
+      }
+      /* overlay escuro sobre a foto para o texto ser legível */
+      .overview-images::after {
+        content: '';
+        position: absolute; inset: 0;
+        background: rgba(247,244,239,0.82);
+      }
+      /* texto fica acima do fundo */
+      .overview-grid {
+        position: relative; z-index: 1;
+      }
       .prod-panel, .prod-panel:nth-child(even) {
         grid-template-columns: 1fr;
         height: auto;
@@ -875,8 +946,7 @@
           <a href="#contato" class="pill-btn">Solicitar orçamento</a>
         </div>
         <div class="hero-right">
-          <p>Soluções completas em Persianas Rolô Tela Solar e Blackout para escritórios, lajes corporativas e ambientes empresariais.</p>
-          <p style="font-size:0.78rem;color:rgba(255,255,255,0.45);">Atendimento especializado para construtoras, gerenciadoras, arquitetos e empresas de engenharia.</p>
+          <p>Soluções completas em Persianas Rolô Tela Solar e Blackout para escritórios, lajes corporativas e ambientes empresariais. Atendimento especializado para construtoras, gerenciadoras, arquitetos e empresas de engenharia.</p>
         </div>
       </div>
       <div class="scroll-indicator" id="scrollHint">
@@ -968,6 +1038,52 @@
         <span class="amb-tag">Retrofit Corporativo</span>
         <span class="amb-tag">Projetos Turnkey</span>
         <span class="amb-tag">Projetos Fit Out</span>
+      </div>
+
+      <!-- Mobile: 3 faixas marquee -->
+      <div class="amb-marquee-wrap">
+        <!-- Faixa 1 → -->
+        <div class="amb-row">
+          <div class="amb-row-inner">
+            <span class="amb-pill">Escritórios Corporativos</span>
+            <span class="amb-pill">Salas de Reunião</span>
+            <span class="amb-pill">Projetos Turnkey</span>
+            <span class="amb-pill">Coworkings</span>
+            <!-- duplicado para loop perfeito -->
+            <span class="amb-pill">Escritórios Corporativos</span>
+            <span class="amb-pill">Salas de Reunião</span>
+            <span class="amb-pill">Projetos Turnkey</span>
+            <span class="amb-pill">Coworkings</span>
+          </div>
+        </div>
+        <!-- Faixa 2 ← -->
+        <div class="amb-row">
+          <div class="amb-row-inner">
+            <span class="amb-pill">Lajes Comerciais</span>
+            <span class="amb-pill">Retrofit Corporativo</span>
+            <span class="amb-pill">Centros Empresariais</span>
+            <span class="amb-pill">Consultórios</span>
+            <!-- duplicado -->
+            <span class="amb-pill">Lajes Comerciais</span>
+            <span class="amb-pill">Retrofit Corporativo</span>
+            <span class="amb-pill">Centros Empresariais</span>
+            <span class="amb-pill">Consultórios</span>
+          </div>
+        </div>
+        <!-- Faixa 3 → mais rápida -->
+        <div class="amb-row">
+          <div class="amb-row-inner">
+            <span class="amb-pill">Projetos Fit Out</span>
+            <span class="amb-pill">Espaços Administrativos</span>
+            <span class="amb-pill">Projetos Turnkey</span>
+            <span class="amb-pill">Lajes Comerciais</span>
+            <!-- duplicado -->
+            <span class="amb-pill">Projetos Fit Out</span>
+            <span class="amb-pill">Espaços Administrativos</span>
+            <span class="amb-pill">Projetos Turnkey</span>
+            <span class="amb-pill">Lajes Comerciais</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1420,11 +1536,17 @@
     reveal('.ov-body > *',   { y: 24, duration: 0.8, stagger: 0.14 }, { trigger: '.ov-body', start: 'top 84%' });
     reveal('.ov-img-a',      { y: 50, duration: 1 },   { trigger: '.overview-images', start: 'top 84%' });
     reveal('.ov-img-b',      { y: 30, duration: 1 },   { trigger: '.overview-images', start: 'top 84%' });
-    /* parallax images (scrub — não usa toggleActions) */
-    gsap.to('.ov-img-a img', { yPercent: 8, ease: 'none',
-      scrollTrigger: { trigger: '.overview', start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
-    gsap.to('.ov-img-b img', { yPercent: -8, ease: 'none',
-      scrollTrigger: { trigger: '.overview', start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
+    /* parallax images — desktop: nas duas imagens; mobile: fundo da seção */
+    if (window.innerWidth > 900) {
+      gsap.to('.ov-img-a img', { yPercent: 8, ease: 'none',
+        scrollTrigger: { trigger: '.overview', start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
+      gsap.to('.ov-img-b img', { yPercent: -8, ease: 'none',
+        scrollTrigger: { trigger: '.overview', start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
+    } else {
+      /* Mobile: parallax leve na imagem de fundo */
+      gsap.to('.ov-img-b', { yPercent: -12, ease: 'none',
+        scrollTrigger: { trigger: '.overview', start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
+    }
 
     /* ── 4. PROC CARDS ── */
     var procCards = document.querySelectorAll('.proc-card');
