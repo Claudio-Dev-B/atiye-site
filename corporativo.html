@@ -943,7 +943,7 @@
       scrollTrigger: {
         trigger: scene,
         start: "center center",
-        end: "+=" + ((N + 1) * PX),
+        end: "+=" + ((N - 1) * PX),
         pin: stage,
         pinSpacing: true,
         scrub: 0.9,
@@ -970,7 +970,7 @@
     // Último slide → strip sobe por cima da última imagem
     var last = N - 1;
     if (strip) {
-      tl.to(strip, { yPercent: 0, duration: 0.8, ease: "power3.out" }, last + 0.4);
+      tl.to(strip, { yPercent: 0, duration: 0.3, ease: "power3.out" }, last - 0.6);
     }
   }());
   </script>
