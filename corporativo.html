@@ -15,6 +15,282 @@
 
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="styles-landing.css" />
+  <style>
+    /* ── Hero Scroll Snap + Sticky ── */
+    html {
+      scroll-snap-type: y proximity;
+    }
+    #hero {
+      position: sticky;
+      top: 0;
+      z-index: 0;
+      height: 100svh;
+      scroll-snap-align: start;
+    }
+    #realidade {
+      position: relative;
+      z-index: 1;
+      scroll-snap-align: start;
+    }
+
+    /* ── Hero video ── */
+    .hero-visual .hero-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: 0 !important;
+    }
+    @media (max-width: 768px) {
+      .hero-visual .hero-video {
+        object-position: 80% center;
+      }
+    }
+
+    /* ── Trust sticky-scroll ── */
+    .trust-section {
+      background: var(--color-warm, #f5f1ec);
+      padding: 4rem 3vw 3vh;
+    }
+
+    .trust-pre-heading {
+      text-align: center;
+      padding: 0 8vw 2.5rem;
+    }
+    .trust-pre-heading h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 2.8vw, 2.8rem);
+      font-weight: 400;
+      color: var(--color-text, #1a1a1a);
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .trust-scene {
+      position: relative;
+      /* height calculada por JS (GSAP pinSpacing) */
+    }
+
+    .trust-stage {
+      position: relative;
+      height: 82vh;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow:
+        0 30px 100px rgba(0,0,0,0.8),
+        0 0 0 1px rgba(255,255,255,0.06);
+      will-change: transform;
+    }
+
+    /* Backgrounds */
+    .trust-bgs { position: absolute; inset: 0; }
+    .trust-bg  {
+      position: absolute; inset: 0;
+      opacity: 0;
+      transition: none;
+    }
+    .trust-bg:first-child { opacity: 1; }
+    .trust-bg img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 0 !important;
+      display: block;
+    }
+
+    .trust-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.60) 0%,
+        rgba(0,0,0,0.18) 35%,
+        rgba(0,0,0,0.18) 60%,
+        rgba(0,0,0,0.65) 100%
+      );
+      z-index: 1;
+    }
+
+    /* Centro: itens */
+    .trust-center {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 2;
+    }
+    .trust-item {
+      position: absolute;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.3rem;
+      text-align: center;
+      padding: 0 6vw;
+      opacity: 0;
+      will-change: opacity, transform;
+      pointer-events: none;
+    }
+    .trust-item:first-child { opacity: 1; }
+
+.trust-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 7vw, 7.5rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      display: block;
+    }
+
+    /* Faixa inferior */
+    .trust-strip {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 3;
+      background: rgba(8,8,8,0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 2.2rem 8vw 2.4rem;
+      display: flex; gap: 4rem; align-items: flex-start;
+      transform: translateY(100%);
+      will-change: transform;
+    }
+    .trust-strip p {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.88rem;
+      line-height: 1.75;
+      margin: 0; flex: 1;
+    }
+    .trust-strip-quote {
+      font-weight: 500 !important;
+      color: rgba(255,255,255,0.92) !important;
+      border-left: 2px solid var(--color-accent, #b8975a);
+      padding-left: 1.2rem !important;
+    }
+
+    @media (max-width: 768px) {
+      .trust-section { padding: 2vh 2vw; }
+      .trust-stage   { height: 78vh; border-radius: 10px; }
+      .trust-label   { font-size: clamp(2rem, 10vw, 4rem); }
+      .trust-strip   { flex-direction: column; gap: 1rem; padding: 1.6rem 5vw; }
+      .trust-strip p { font-size: 0.82rem; }
+    }
+
+    /* ── Produtos scroll reveal ── */
+    #produtos { background: #0a0a0a; }
+
+    .prod-section-header {
+      text-align: center;
+      padding: 5rem var(--container-padding, 5vw) 3rem;
+      background: var(--color-warm, #f5f1ec);
+    }
+
+    /* Stage pinado pelo GSAP */
+    #prod-stage {
+      position: relative;
+      width: 100%;
+      height: 100svh;
+      overflow: hidden;
+    }
+
+    /* Backgrounds empilhados */
+    .prod-bg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 0 !important;
+      display: block;
+      z-index: 0;
+    }
+
+    /* Info: título esquerda + desc direita, base da tela */
+    .prod-info-block {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 15;
+      padding: 6rem 6vw 4rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 3rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .prod-info-block h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4.5vw, 5rem);
+      font-weight: 300;
+      color: #fff;
+      margin: 0;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.4);
+    }
+    .prod-info-block p {
+      font-size: clamp(0.82rem, 1vw, 1rem);
+      color: rgba(255,255,255,0.78);
+      line-height: 1.75;
+      margin: 0;
+      max-width: 340px;
+      text-align: right;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+      flex-shrink: 0;
+    }
+
+    /* Cards flutuantes — landscape, centrados */
+    .prod-float-card {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: clamp(300px, 62vw, 900px);
+      aspect-ratio: 16/9;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 28px 70px rgba(0,0,0,0.65);
+      z-index: 10;
+      will-change: transform;
+    }
+    .prod-float-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 0 !important;
+    }
+
+    @media (max-width: 768px) {
+      .prod-float-card { width: 88vw; }
+      .prod-info-block { flex-direction: column; gap: 1rem; }
+      .prod-info-block p { text-align: left; }
+      .prod-info-block h2 { font-size: clamp(1.8rem, 8vw, 3rem); }
+    }
+
+    .prod-counter-cur {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .prod-info {
+        padding: 0 5vw;
+        max-width: 55vw;
+      }
+      .prod-num { font-size: 3.5rem; }
+      .prod-name { font-size: 1.5rem; }
+      .prod-desc { display: none; }
+      .prod-cards-wrap {
+        width: 72vw;
+        height: 50vh;
+      }
+    }
+
+    /* ── Scroll indicator animado ── */
+    #hero .hero-scroll {
+      cursor: pointer;
+    }
+    #hero .hero-scroll .scroll-line {
+      animation: scrollBounce 1.6s ease-in-out infinite;
+    }
+    @keyframes scrollBounce {
+      0%, 100% { transform: scaleY(1); transform-origin: top; }
+      50%       { transform: scaleY(1.5); transform-origin: top; }
+    }
+  </style>
 </head>
 <body class="landing-page">
 
@@ -54,23 +330,25 @@
     <!-- ── HERO ──────────────────────────────────────────── -->
     <section class="hero landing-hero" id="hero">
       <div class="hero-visual">
-        <img
-          src="assets/escritorio/IMG_2183.webp"
-          alt="Ambiente corporativo com controle de luz"
-          loading="eager"
-          width="1920" height="1080"
-        />
+        <video
+          class="hero-video"
+          src="assets/escritorio/hero_banner.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
         <div class="hero-overlay"></div>
       </div>
       <div class="hero-content">
         <span class="hero-label" data-i18n="corp-hero-label">Corporativo</span>
-        <h1 class="hero-title" data-i18n="corp-hero-title">Ambientes de trabalho não toleram luz descontrolada</h1>
-        <p class="hero-subtitle" data-i18n-html="corp-hero-subtitle-html">
-          Reflexo em telas. Calor acumulado. Equipe ajustando posição o dia todo.<br>
-          Isso não é detalhe, é falha de infraestrutura.
+        <h1 class="hero-title" data-i18n="corp-hero-title">Persianas Corporativas para Obras Turnkey e Fit Out</h1>
+        <p class="hero-subtitle" data-i18n="corp-hero-subtitle">
+          Soluções completas em Persianas Rolô Tela Solar e Blackout para escritórios, lajes corporativas e ambientes empresariais.
         </p>
         <p class="hero-description" data-i18n="corp-hero-desc">
-          A Atiye projeta controle de luz para empresas que precisam de padrão e previsibilidade.
+          Atendimento especializado para construtoras, gerenciadoras, arquitetos e empresas de engenharia.
         </p>
         <a href="#contato" class="cta-button hero-cta" data-i18n="corp-hero-cta">Solicitar orçamento</a>
       </div>
@@ -80,376 +358,256 @@
       </div>
     </section>
 
-    <!-- ── REALIDADE (Problemas) ──────────────────────────── -->
-    <section class="section reality-section" id="realidade">
+    <!-- ── CONFIANÇA / CHECKLIST STICKY ─────────────────────── -->
+    <section id="realidade" class="trust-section">
+
+      <!-- Heading FORA do card -->
+      <div class="trust-pre-heading">
+        <h2 data-i18n="corp-trust-title">Sua obra precisa de fornecedores que entregam no prazo.</h2>
+      </div>
+
+      <div class="trust-scene" id="trust-scene">
+        <div class="trust-stage" id="trust-stage">
+
+          <!-- Backgrounds empilhados (5 imagens) -->
+          <div class="trust-bgs">
+            <div class="trust-bg"><img src="assets/1.webp" alt="Medição técnica" loading="eager" /></div>
+            <div class="trust-bg"><img src="assets/2.webp" alt="Fabricação sob medida" loading="lazy" /></div>
+            <div class="trust-bg"><img src="assets/3.webp" alt="Instalação profissional" loading="lazy" /></div>
+            <div class="trust-bg"><img src="assets/4.webp" alt="Cronograma alinhado" loading="lazy" /></div>
+            <div class="trust-bg"><img src="assets/5.webp" alt="Garantia e pós-venda" loading="lazy" /></div>
+          </div>
+          <div class="trust-overlay"></div>
+
+          <!-- Itens centralizados (grandes) -->
+          <div class="trust-center">
+            <div class="trust-item">
+<span class="trust-label" data-i18n="corp-hero-check1">Medição Técnica</span>
+            </div>
+            <div class="trust-item">
+<span class="trust-label" data-i18n="corp-hero-check2">Fabricação Sob Medida</span>
+            </div>
+            <div class="trust-item">
+<span class="trust-label" data-i18n="corp-hero-check3">Instalação Profissional</span>
+            </div>
+            <div class="trust-item">
+<span class="trust-label" data-i18n="corp-hero-check4">Cronograma Alinhado à Obra</span>
+            </div>
+            <div class="trust-item">
+<span class="trust-label" data-i18n="corp-hero-check5">Garantia e Pós-venda</span>
+            </div>
+          </div>
+
+          <!-- Faixa inferior (entra com GSAP no último slide) -->
+          <div class="trust-strip" id="trust-strip">
+            <p data-i18n="corp-trust-p1">Sabemos que atrasos impactam todo o cronograma da obra. Por isso a ATIYE atua com foco em planejamento, agilidade, comunicação transparente, instalação limpa e organizada e cumprimento de cronogramas.</p>
+            <p class="trust-strip-quote" data-i18n="corp-trust-quote">Enquanto outros fornecedores entregam apenas persianas, nós entregamos tranquilidade para sua equipe de obra.</p>
+          </div>
+
+        </div><!-- /.trust-stage -->
+      </div><!-- /.trust-scene -->
+    </section>
+
+    <!-- ── ESPECIALISTAS ─────────────────────────────────── -->
+    <section class="landing-stats" id="especialistas">
+      <div class="container">
+        <div class="section-header center reveal" style="margin-bottom:2rem;">
+          <span class="section-eyebrow" style="color:rgba(255,255,255,0.7);" data-i18n="corp-spec-label">Atuação</span>
+          <h2 class="section-title" style="color:#fff;" data-i18n="corp-spec-title">Especialistas em Ambientes Corporativos</h2>
+        </div>
+        <div class="corp-ambientes-tags reveal" style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.65rem 1rem;">
+          <span class="corp-amb-tag" data-i18n="corp-amb-1">Escritórios Corporativos</span>
+          <span class="corp-amb-tag" data-i18n="corp-amb-2">Lajes Comerciais</span>
+          <span class="corp-amb-tag" data-i18n="corp-amb-3">Coworkings</span>
+          <span class="corp-amb-tag" data-i18n="corp-amb-4">Salas de Reunião</span>
+          <span class="corp-amb-tag" data-i18n="corp-amb-5">Consultórios</span>
+          <span class="corp-amb-tag" data-i18n="corp-amb-6">Centros Empresariais</span>
+          <span class="corp-amb-tag" data-i18n="corp-amb-7">Espaços Administrativos</span>
+          <span class="corp-amb-tag" data-i18n="corp-amb-8">Retrofit Corporativo</span>
+          <span class="corp-amb-tag" data-i18n="corp-amb-9">Projetos Turnkey</span>
+          <span class="corp-amb-tag" data-i18n="corp-amb-10">Projetos Fit Out</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PERSIANAS IDEAIS ───────────────────────────────── -->
+    <section id="produtos">
+
+      <div class="prod-section-header reveal">
+        <h2 class="section-title" data-i18n="corp-prod-title">Persianas Ideais para Obras Corporativas</h2>
+      </div>
+
+      <div id="prod-showcase">
+        <div id="prod-stage">
+
+          <!-- Backgrounds empilhados -->
+          <img class="prod-bg" id="prod-bg-1" src="assets/catalogo/Rolô Tela Solar Screen 4.webp" alt="Rolô Tela Solar Screen" loading="eager" />
+          <img class="prod-bg" id="prod-bg-2" src="assets/catalogo/Rolô Blackout 6.webp" alt="Rolô Blackout" loading="lazy" style="opacity:0;" />
+
+          <!-- Info Solar Screen -->
+          <div class="prod-info-block" id="prod-info-1">
+            <h2 data-i18n="corp-screen-title">Rolô Tela Solar Screen</h2>
+            <p data-i18n="corp-screen-desc">Controle solar eficiente mantendo a entrada de luz natural. Redução do calor, conforto visual, economia de energia e visual moderno.</p>
+          </div>
+
+          <!-- Info Blackout -->
+          <div class="prod-info-block" id="prod-info-2" style="opacity:0;">
+            <h2 data-i18n="corp-blackout-title">Rolô Blackout</h2>
+            <p data-i18n="corp-blackout-desc">Privacidade e bloqueio luminoso para salas de reunião, auditórios, salas de treinamento e áreas multimídia.</p>
+          </div>
+
+          <!-- Cards landscape que passam pela tela -->
+          <div class="prod-float-card" id="pc-s1"><img src="assets/catalogo/Rolô Tela Solar Screen.webp" alt="Solar Screen 1" loading="lazy" /></div>
+          <div class="prod-float-card" id="pc-s2"><img src="assets/catalogo/Rolô Tela Solar Screen (2).webp" alt="Solar Screen 2" loading="lazy" /></div>
+          <div class="prod-float-card" id="pc-b1"><img src="assets/catalogo/Rolô-Blackout-3.webp" alt="Blackout 1" loading="lazy" /></div>
+          <div class="prod-float-card" id="pc-b2"><img src="assets/catalogo/Rolô Blackout.webp" alt="Blackout 2" loading="lazy" /></div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── POR QUE A ATIYE ────────────────────────────────── -->
+    <section class="section corp-values-section" id="diferenciais" style="background: var(--color-surface);position:relative;z-index:1;">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow" data-i18n="corp-real-eyebrow">Realidade</span>
-          <h2 class="section-title" data-i18n="corp-real-title">Luz descontrolada é perda de produtividade</h2>
-          <p class="section-subtitle" style="text-align:center;margin-left:auto;margin-right:auto;" data-i18n="corp-real-subtitle">E se normaliza silenciosamente.</p>
+          <span class="section-eyebrow" data-i18n="corp-val-eyebrow">Diferenciais</span>
+          <h2 class="section-title" data-i18n="corp-val-title">Por que Construtoras e Empresas Escolhem a ATIYE?</h2>
         </div>
-        <div class="problems-grid reveal">
-          <div class="problem-item">
-            <div class="problem-item-img">
-              <img src="assets/escritorio/IMG_1967.webp" alt="Reflexo em telas de trabalho" loading="lazy" />
-            </div>
-            <span class="problem-number">01</span>
-            <h3 data-i18n="corp-p1-title">Reflexo que destrói o foco</h3>
-            <p data-i18n="corp-p1-text">Colaboradores movendo monitores, ajustando posição, piscando mais do que o normal. Segundo a Cornell University, o desconforto visual aumenta em até 84% a incidência de fadiga e reduz o tempo de concentração contínua.</p>
-          </div>
-          <div class="problem-item">
-            <div class="problem-item-img">
-              <img src="assets/escritorio/IMG_1950.webp" alt="Calor acumulado em escritório" loading="lazy" />
-            </div>
-            <span class="problem-number">02</span>
-            <h3 data-i18n="corp-p2-title">Temperatura que compromete o raciocínio</h3>
-            <p data-i18n="corp-p2-text">Calor acumulado por fachadas envidraçadas sem controle eleva a temperatura interna e reduz a capacidade cognitiva. O World Green Building Council associa conforto térmico e luminoso a ganhos de até 20% em produtividade.</p>
-          </div>
-          <div class="problem-item">
-            <div class="problem-item-img">
-              <img src="assets/escritorio/IMG_1892.webp" alt="Ambiente sem luz natural adequada" loading="lazy" />
-            </div>
-            <span class="problem-number">03</span>
-            <h3 data-i18n="corp-p3-title">Ambiente sem luz natural adequada</h3>
-            <p data-i18n="corp-p3-text">Harvard Business Review aponta que 47% dos trabalhadores de escritório relatam falta de luz natural, e isso afeta diretamente o estado de alerta, o humor e a qualidade do sono. O ambiente prejudica antes do trabalho começar.</p>
-          </div>
-          <div class="problem-item">
-            <div class="problem-item-img">
-              <img src="assets/escritorio/IMG_2182.webp" alt="Custo energético com ar-condicionado" loading="lazy" />
-            </div>
-            <span class="problem-number">04</span>
-            <h3 data-i18n="corp-p4-title">Custo energético fora de controle</h3>
-            <p data-i18n="corp-p4-text">Fachadas envidraçadas sem proteção solar forçam o ar-condicionado a trabalhar no limite. Estudos indicam que o controle solar adequado pode reduzir em até 30% o consumo de energia de climatização, com impacto direto no orçamento da empresa.</p>
-          </div>
-        </div>
-        <p class="reality-conclusion" data-i18n="corp-real-concl">Esses números têm endereço: o ambiente onde sua equipe trabalha.</p>
-      </div>
-    </section>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;" class="reveal">
 
-    <!-- ── DADOS (Stats) ─────────────────────────────────── -->
-    <section class="landing-stats" id="dados">
-      <div class="container">
-        <div class="landing-stats-grid">
-          <div class="landing-stat-item">
-            <span class="landing-stat-value">84%</span>
-            <span class="landing-stat-label" data-i18n="corp-stat1-label">menos fadiga visual com iluminação controlada</span>
-            <span class="landing-stat-source">Cornell University</span>
+          <!-- Card 1 -->
+          <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 8px 32px rgba(0,0,0,0.22);">
+            <img src="assets/escritorio/IMG_1928.webp" alt="Experiência em obras corporativas" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 35%,rgba(0,0,0,0.72) 100%);"></div>
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem 1.5rem 1.75rem;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;">
+              <h3 style="color:#fff;font-size:1.2rem;font-weight:700;margin:0;line-height:1.3;text-shadow:0 1px 4px rgba(0,0,0,0.4);text-align:center;text-align:center;" data-i18n="corp-diff1-title">Experiência em obras corporativas</h3>
+            </div>
           </div>
-          <div class="landing-stat-item">
-            <span class="landing-stat-value">+20%</span>
-            <span class="landing-stat-label" data-i18n="corp-stat2-label">de produtividade em ambientes com conforto luminoso</span>
-            <span class="landing-stat-source">World Green Building Council</span>
+
+          <!-- Card 2 -->
+          <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 8px 32px rgba(0,0,0,0.22);">
+            <img src="assets/catalogo/Rolô-Blackout-5.webp" alt="Atendimento Especializado" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 35%,rgba(0,0,0,0.72) 100%);"></div>
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem 1.5rem 1.75rem;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;">
+              <h3 style="color:#fff;font-size:1.2rem;font-weight:700;margin:0;line-height:1.3;text-shadow:0 1px 4px rgba(0,0,0,0.4);text-align:center;" data-i18n="corp-diff2-title">Atendimento especializado</h3>
+            </div>
           </div>
-          <div class="landing-stat-item">
-            <span class="landing-stat-value">47%</span>
-            <span class="landing-stat-label" data-i18n="corp-stat3-label">dos trabalhadores sem luz natural adequada</span>
-            <span class="landing-stat-source">Harvard Business Review</span>
+
+          <!-- Card 3 -->
+          <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 8px 32px rgba(0,0,0,0.22);">
+            <img src="assets/catalogo/Persiana Double Vision (2).webp" alt="Cumprimento de prazos" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 35%,rgba(0,0,0,0.72) 100%);"></div>
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem 1.5rem 1.75rem;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;">
+              <h3 style="color:#fff;font-size:1.2rem;font-weight:700;margin:0;line-height:1.3;text-shadow:0 1px 4px rgba(0,0,0,0.4);text-align:center;" data-i18n="corp-diff3-title">Cumprimento de prazos</h3>
+            </div>
           </div>
-          <div class="landing-stat-item">
-            <span class="landing-stat-value">↓30%</span>
-            <span class="landing-stat-label" data-i18n="corp-stat4-label">de redução nos custos com ar-condicionado</span>
-            <span class="landing-stat-source">Projetos Atiye</span>
+
+          <!-- Card 4 -->
+          <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 8px 32px rgba(0,0,0,0.22);">
+            <img src="assets/escritorio/IMG_3181.webp" alt="Acabamento premium" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 35%,rgba(0,0,0,0.72) 100%);"></div>
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem 1.5rem 1.75rem;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;">
+              <h3 style="color:#fff;font-size:1.2rem;font-weight:700;margin:0;line-height:1.3;text-shadow:0 1px 4px rgba(0,0,0,0.4);text-align:center;" data-i18n="corp-diff4-title">Acabamento premium</h3>
+            </div>
           </div>
+
+          <!-- Card 5 -->
+          <div style="position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;box-shadow:0 8px 32px rgba(0,0,0,0.22);">
+            <img src="assets/catalogo/Persiana Horizontal de Alumínio 2.webp" alt="Equipe especializada" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 35%,rgba(0,0,0,0.72) 100%);"></div>
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem 1.5rem 1.75rem;background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;">
+              <h3 style="color:#fff;font-size:1.2rem;font-weight:700;margin:0;line-height:1.3;text-shadow:0 1px 4px rgba(0,0,0,0.4);text-align:center;" data-i18n="corp-diff5-title">Equipe especializada</h3>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ── SOLUÇÃO (Split) ────────────────────────────────── -->
-    <section class="section solution-section" id="solucao">
-      <div class="container">
-        <div class="split-content reverse reveal">
-          <div class="split-text">
-            <span class="section-label" data-i18n="corp-sol-label">Solução</span>
-            <h2 data-i18n="corp-sol-title">Controle de luz que protege o desempenho da equipe</h2>
-            <ul class="solution-list">
-              <li data-i18n="corp-sol-li1">Eliminação de reflexo em telas e superfícies de trabalho</li>
-              <li data-i18n="corp-sol-li2">Redução de até 80% do ganho térmico solar por fachada</li>
-              <li data-i18n="corp-sol-li3">Distribuição equilibrada de luz natural sem ofuscamento</li>
-              <li data-i18n="corp-sol-li4">Padronização entre ambientes, andares e turnos</li>
-              <li data-i18n="corp-sol-li5">Execução integrada ao cronograma de obra ou reforma</li>
-            </ul>
-            <p class="solution-highlight" data-i18n="corp-sol-highlight">
-              Cada especificação parte da análise do ambiente. Não de catálogo.
-            </p>
-          </div>
-          <div class="split-visual">
-            <img
-              src="assets/escritorio/IMG_2182.webp"
-              alt="Controle de luz corporativo"
-              loading="lazy" width="600" height="480"
-            />
-          </div>
+    <!-- ── OBRAS EXIGEM PARCEIROS CONFIÁVEIS ─────────────── -->
+    <div id="parceiros-scene" style="position:relative;z-index:2;">
+
+      <!-- Cartão fullscreen que sobe por cima da seção anterior -->
+      <div id="parceiros-card" style="
+        position:sticky;top:0;
+        width:100%;height:100svh;
+        overflow:hidden;
+        border-radius:0;
+        will-change:transform;
+      ">
+        <!-- Foto de fundo -->
+        <img src="assets/escritorio/IMG_3155.webp" alt="Obras corporativas Atiye"
+          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
+
+        <!-- Gradiente escuro -->
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.65) 100%);"></div>
+
+        <!-- Texto centralizado -->
+        <div id="parceiros-text" style="
+          position:absolute;inset:0;
+          display:flex;flex-direction:column;
+          align-items:center;justify-content:center;
+          text-align:center;padding:2rem 8vw;
+        ">
+          <h2 style="
+            font-family:'Cormorant Garamond',serif;
+            font-size:clamp(2.4rem,5.5vw,5.5rem);
+            font-weight:400;color:#fff;
+            line-height:1.1;margin:0 0 1.5rem;
+            letter-spacing:-0.02em;
+            text-shadow:0 2px 20px rgba(0,0,0,0.5);
+          " data-i18n="corp-proc-title">Obras Exigem Parceiros Confiáveis</h2>
+          <p style="
+            font-size:clamp(1rem,1.4vw,1.25rem);
+            color:rgba(255,255,255,0.85);
+            max-width:640px;line-height:1.7;margin:0;
+            text-shadow:0 1px 8px rgba(0,0,0,0.4);
+          " data-i18n="corp-proc-subtitle">Quando a persiana é instalada corretamente: o cliente final fica satisfeito, o cronograma é preservado, a entrega ocorre sem retrabalho e o ambiente ganha conforto térmico e visual.</p>
         </div>
       </div>
-    </section>
 
-    <!-- ── PRODUTOS ───────────────────────────────────────── -->
-    <section class="section" id="produtos" style="background: var(--color-warm);">
-      <div class="container">
-        <div class="section-header center reveal">
-          <span class="section-eyebrow" data-i18n="corp-prod-eyebrow">Produtos</span>
-          <h2 class="section-title" data-i18n="corp-prod-title">Cada ambiente, a solução certa</h2>
-        </div>
-        <div class="cards-grid corp-prod-grid reveal">
-          <a href="portfolio.html#rolo-screen" class="solution-card solution-card--photo">
-            <div class="card-photo">
-              <img src="assets/catalogo/Rolô Tela Solar Screen.webp" alt="Tela Solar Screen" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3 data-i18n="corp-prod1-title">Tela Solar Screen</h3>
-              <p data-i18n="corp-prod1-text">Filtra radiação UV, reduz calor e elimina reflexos mantendo visibilidade para o exterior. Ideal para fachadas expostas.</p>
-            </div>
-          </a>
-          <a href="portfolio.html#rolo-blackout" class="solution-card solution-card--photo">
-            <div class="card-photo">
-              <img src="assets/catalogo/Rolô Blackout.webp" alt="Persiana Rolô Blackout" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3 data-i18n="corp-prod2-title">Persiana Rolô Blackout</h3>
-              <p data-i18n="corp-prod2-text">Controle preciso da entrada de luz em ambientes que exigem diferentes configurações ao longo do dia.</p>
-            </div>
-          </a>
-          <a href="portfolio.html#double-vision" class="solution-card solution-card--photo">
-            <div class="card-photo">
-              <img src="assets/catalogo/Persiana Double Vision 1.webp" alt="Double Vision" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3 data-i18n="corp-prod3-title">Double Vision</h3>
-              <p data-i18n="corp-prod3-text">Tecido dupla camada que permite controle alternado entre claridade total e privacidade completa, sem troca de persiana.</p>
-            </div>
-          </a>
-          <a href="portfolio.html#cortinas" class="solution-card solution-card--photo">
-            <div class="card-photo">
-              <img src="assets/escritorio/IMG_1947.webp" alt="Cortinas para ambientes corporativos" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3 data-i18n="corp-prod4-title">Cortinas</h3>
-              <p data-i18n="corp-prod4-text">Elegância e funcionalidade para salas de reunião e recepções. Tecidos técnicos que difundem a luz criando ambientes aconchegantes e produtivos.</p>
-            </div>
-          </a>
-          <a href="portfolio.html#persiana-aluminio" class="solution-card solution-card--photo">
-            <div class="card-photo">
-              <img src="assets/catalogo/Persiana Horizontal de Alumínio.webp" alt="Persiana Horizontal de Alumínio" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3 data-i18n="corp-prod5-title">Persiana de Alumínio</h3>
-              <p data-i18n="corp-prod5-text">Lâminas resistentes à umidade e de fácil higienização. Durabilidade para ambientes de alto tráfego como escritórios, clínicas e comércios.</p>
-            </div>
-          </a>
-          <a href="portfolio.html#persiana-romana" class="solution-card solution-card--photo">
-            <div class="card-photo">
-              <img src="assets/catalogo/Persiana-Romana.webp" alt="Persiana Romana" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3 data-i18n="corp-prod6-title">Persiana Romana</h3>
-              <p data-i18n="corp-prod6-text">Recolhimento em gomos com tecidos translúcidos ou blackout. Elegância e textura para recepções, salas executivas e ambientes que exigem sofisticação.</p>
-            </div>
-          </a>
-        </div>
-        <p class="solution-note" data-i18n="corp-prod-note">Linha técnica selecionada por performance.</p>
-      </div>
-    </section>
+      <!-- Espaçador que cria a "altura de scroll" para o pin -->
+      <div style="height:50vh;"></div>
 
-    <!-- ── DIFERENCIAIS CORPORATIVOS ───────────────────────── -->
-    <section class="section corp-values-section" id="diferenciais" style="background: var(--color-surface);">
+    </div>
+
+    <!-- ── CLIENTES ────────────────────────────────────────── -->
+    <section class="section clients-section" id="clientes" style="background:var(--color-surface);position:relative;z-index:3;">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow" data-i18n="corp-val-eyebrow">Diferenciais Técnicos</span>
-          <h2 class="section-title" data-i18n="corp-val-title">A ATIYE transforma controle de luz em performance, conforto e valorização do seu ambiente corporativo.</h2>
-        </div>
-        <div class="corp-values-grid reveal">
-
-          <div class="corp-value-card">
-            <div class="corp-value-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-              </svg>
-            </div>
-            <h3 data-i18n="corp-perf-title">Performance e Eficiência Energética</h3>
-            <p class="corp-value-quote" data-i18n="corp-perf-quote">Mais do que estética, nossas soluções atuam diretamente na eficiência do ambiente.</p>
-            <ul class="corp-value-list">
-              <li data-i18n="corp-perf-li1">Redução significativa da carga térmica (menos uso de ar-condicionado)</li>
-              <li data-i18n="corp-perf-li2">Controle de ofuscamento em estações de trabalho</li>
-              <li data-i18n="corp-perf-li3">Melhora no conforto visual e produtividade</li>
-            </ul>
-          </div>
-
-          <div class="corp-value-card">
-            <div class="corp-value-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <path d="M3 9h18M9 21V9"/>
-              </svg>
-            </div>
-            <h3 data-i18n="corp-ident-title">Padronização e Identidade Corporativa</h3>
-            <p class="corp-value-quote" data-i18n="corp-ident-quote">Garantimos uniformidade visual em todos os ambientes, reforçando a identidade da empresa.</p>
-            <ul class="corp-value-list">
-              <li data-i18n="corp-ident-li1">Mesma linguagem estética em toda a operação</li>
-              <li data-i18n="corp-ident-li2">Alinhamento com projetos arquitetônicos</li>
-              <li data-i18n="corp-ident-li3">Integração com fachadas e interiores</li>
-            </ul>
-          </div>
-
-          <div class="corp-value-card">
-            <div class="corp-value-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
-              </svg>
-            </div>
-            <h3 data-i18n="corp-scale-title">Soluções Sob Medida para Grandes Vãos</h3>
-            <p class="corp-value-quote" data-i18n="corp-scale-quote">Projetos pensados para atender desde salas executivas até grandes fachadas envidraçadas.</p>
-            <ul class="corp-value-list">
-              <li data-i18n="corp-scale-li1">Persianas rolô para grandes dimensões</li>
-              <li data-i18n="corp-scale-li2">Motorização e automação</li>
-              <li data-i18n="corp-scale-li3">Integração com sistemas inteligentes</li>
-            </ul>
-          </div>
-
-          <div class="corp-value-card">
-            <div class="corp-value-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-            </div>
-            <h3 data-i18n="corp-dur-title">Durabilidade e Baixa Manutenção</h3>
-            <p class="corp-value-quote" data-i18n="corp-dur-quote">Produtos desenvolvidos para alta performance e uso contínuo.</p>
-            <ul class="corp-value-list">
-              <li data-i18n="corp-dur-li1">Materiais técnicos de alta resistência</li>
-              <li data-i18n="corp-dur-li2">Fácil limpeza e manutenção</li>
-              <li data-i18n="corp-dur-li3">Longa vida útil</li>
-            </ul>
-          </div>
-
-          <div class="corp-value-card">
-            <div class="corp-value-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="12" r="5"/>
-                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-              </svg>
-            </div>
-            <h3 data-i18n="corp-lum-title">Controle Total de Luminosidade</h3>
-            <p class="corp-value-quote" data-i18n="corp-lum-quote">Ambientes preparados para qualquer situação de uso.</p>
-            <ul class="corp-value-list">
-              <li data-i18n="corp-lum-li1">Screen para luz natural controlada</li>
-              <li data-i18n="corp-lum-li2">Blackout para salas de reunião e projeção</li>
-              <li data-i18n="corp-lum-li3">Double vision para ajuste dinâmico</li>
-            </ul>
-          </div>
-
-          <div class="corp-value-card">
-            <div class="corp-value-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
-            </div>
-            <h3 data-i18n="corp-arch-title">Valorização do Projeto Arquitetônico</h3>
-            <p class="corp-value-quote" data-i18n="corp-arch-quote">Trabalhamos como extensão do projeto do arquiteto.</p>
-            <ul class="corp-value-list">
-              <li data-i18n="corp-arch-li1">Integração com design de interiores</li>
-              <li data-i18n="corp-arch-li2">Acabamentos sofisticados</li>
-              <li data-i18n="corp-arch-li3">Soluções que valorizam o ambiente</li>
-            </ul>
-          </div>
-
-          <div class="corp-value-card">
-            <div class="corp-value-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-            </div>
-            <h3 data-i18n="corp-time-title">Agilidade e Compromisso com Prazos</h3>
-            <p class="corp-value-quote" data-i18n="corp-time-quote">Entendemos o ritmo de obras corporativas e entregamos com precisão.</p>
-            <ul class="corp-value-list">
-              <li data-i18n="corp-time-li1">Planejamento alinhado com cronograma da obra</li>
-              <li data-i18n="corp-time-li2">Instalação eficiente</li>
-              <li data-i18n="corp-time-li3">Suporte técnico dedicado</li>
-            </ul>
-          </div>
-
-          <div class="corp-value-card">
-            <div class="corp-value-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-              </svg>
-            </div>
-            <h3 data-i18n="corp-consult-title">Atendimento Especializado</h3>
-            <p class="corp-value-quote" data-i18n="corp-consult-quote">Não vendemos apenas produtos. Entregamos soluções técnicas completas.</p>
-            <ul class="corp-value-list">
-              <li data-i18n="corp-consult-li1">Consultoria na escolha dos materiais</li>
-              <li data-i18n="corp-consult-li2">Suporte para arquitetos e engenheiros</li>
-              <li data-i18n="corp-consult-li3">Acompanhamento do projeto</li>
-            </ul>
-          </div>
-
+          <span class="section-eyebrow" data-i18n="corp-clients-eyebrow">Empresas que confiam na Atiye</span>
+          <h2 class="section-title" data-i18n="corp-clients-title">Quem já transformou seus ambientes</h2>
         </div>
       </div>
-    </section>
-
-    <!-- ── PROCESSO ───────────────────────────────────────── -->
-    <section class="section process-section" id="processo">
-      <div class="container">
-        <div class="section-header center reveal">
-          <span class="section-eyebrow" data-i18n="corp-proc-eyebrow">Como trabalhamos</span>
-          <h2 class="section-title" data-i18n="corp-proc-title">Do diagnóstico à garantia</h2>
-        </div>
-        <div class="process-grid reveal">
-          <div class="process-step">
-            <div class="process-dot">01</div>
-            <h3 data-i18n="corp-proc-1-title">Diagnóstico</h3>
-            <p data-i18n="corp-proc-1-text">Análise técnica do ambiente: exposição solar, função de cada espaço, horários críticos e metas de conforto.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-dot">02</div>
-            <h3 data-i18n="corp-proc-2-title">Especificação</h3>
-            <p data-i18n="corp-proc-2-text">Definição de materiais, abertura de tecido, sistemas de fixação e cronograma integrado ao projeto de obra.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-dot">03</div>
-            <h3 data-i18n="corp-proc-3-title">Execução</h3>
-            <p data-i18n="corp-proc-3-text">Instalação precisa, equipe técnica, sem interrupção das operações e dentro do prazo acordado.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-dot">04</div>
-            <h3 data-i18n="corp-proc-4-title">Pós-instalação</h3>
-            <p data-i18n="corp-proc-4-text">2 anos de garantia real. Suporte ativo, visita técnica quando necessário, reposição sem custo.</p>
-          </div>
+      <div class="clients-marquee">
+        <div class="clients-track">
+          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/Logo-B3-positivo.png" alt="B3" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/fiap%20logotipo.webp" alt="FIAP" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/shopee_logo.png" alt="Shopee" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/logo-novo-medcof.png" alt="Medcof" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/certoengenharia_logo.jpg" alt="Certo Engenharia" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/logo%20contrutora%20Trezentos60.png" alt="T60" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/Logo-B3-positivo.png" alt="B3" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/fiap%20logotipo.webp" alt="FIAP" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/shopee_logo.png" alt="Shopee" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/logo-novo-medcof.png" alt="Medcof" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/certoengenharia_logo.jpg" alt="Certo Engenharia" loading="lazy"></div>
+          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/logo%20contrutora%20Trezentos60.png" alt="T60" loading="lazy"></div>
         </div>
       </div>
+      <p class="clients-note reveal" style="text-align:center;font-size:0.78rem;color:var(--color-muted);margin-top:2rem;" data-i18n="corp-clients-note">+500 projetos entregues em São Paulo e região</p>
     </section>
 
-    <!-- ── AUTORIDADE ─────────────────────────────────────── -->
-    <section class="section authority-section" id="autoridade">
-      <div class="container">
-        <div class="authority-split">
-          <div class="authority-content reveal">
-            <span class="section-label" data-i18n="corp-auth-label">Atendimento técnico direto</span>
-            <h2 data-i18n="corp-auth-title">Para quem decide o projeto</h2>
-            <div class="authority-targets">
-              <div class="target-item" data-i18n="corp-target-1">Engenharia</div>
-              <div class="target-item" data-i18n="corp-target-2">Arquitetura</div>
-              <div class="target-item" data-i18n="corp-target-3">Facilities</div>
-              <div class="target-item" data-i18n="corp-target-4">Construtoras</div>
-            </div>
-          </div>
-          <div class="authority-visual reveal reveal-delay-2">
-            <img src="assets/escritorio/IMG_1968.webp" alt="Projeto corporativo Atiye" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ── PROJETOS REALIZADOS ─────────────────────────────── -->
     <section class="corp-cases" id="projetos">
 
       <div class="cc-intro container">
-        <span class="section-eyebrow cc-eyebrow">Cases</span>
+        <span class="section-eyebrow cc-eyebrow" data-i18n="cc-cases-eyebrow">Cases</span>
         <div class="cc-intro-row">
-          <h2 class="cc-section-title">Projetos<br>realizados</h2>
-          <p class="cc-intro-text">Obras corporativas entregues com precisão técnica, dentro do prazo e integradas ao cronograma construtivo em São Paulo.</p>
+          <h2 class="cc-section-title" data-i18n-html="cc-cases-title-html">Projetos<br>realizados</h2>
+          <p class="cc-intro-text" data-i18n="cc-cases-intro">Obras corporativas entregues com precisão técnica, dentro do prazo e integradas ao cronograma construtivo em São Paulo.</p>
         </div>
       </div>
 
@@ -482,7 +640,7 @@
             </div>
           </div>
           <button class="cc-open" aria-label="Ver galeria">
-            <span>Ver galeria</span>
+            <span data-i18n="cc-view-gallery">Ver galeria</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
         </article>
@@ -511,7 +669,7 @@
             </div>
           </div>
           <button class="cc-open" aria-label="Ver galeria">
-            <span>Ver galeria</span>
+            <span data-i18n="cc-view-gallery">Ver galeria</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
         </article>
@@ -540,7 +698,7 @@
             </div>
           </div>
           <button class="cc-open" aria-label="Ver galeria">
-            <span>Ver galeria</span>
+            <span data-i18n="cc-view-gallery">Ver galeria</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
         </article>
@@ -567,7 +725,7 @@
             </div>
           </div>
           <button class="cc-open" aria-label="Ver galeria">
-            <span>Ver galeria</span>
+            <span data-i18n="cc-view-gallery">Ver galeria</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
         </article>
@@ -599,7 +757,7 @@
             </div>
           </div>
           <button class="cc-open" aria-label="Ver galeria">
-            <span>Ver galeria</span>
+            <span data-i18n="cc-view-gallery">Ver galeria</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
         </article>
@@ -632,69 +790,6 @@
         </div>
       </div>
 
-    </section>
-
-    <!-- ── DEPOIMENTOS ────────────────────────────────────── -->
-    <section class="section" id="depoimentos" style="background: var(--color-white);">
-      <div class="container">
-        <div class="section-header center reveal">
-          <span class="section-eyebrow" data-i18n="corp-dep-eyebrow">Depoimentos</span>
-          <h2 class="section-title" data-i18n="corp-dep-title">Quem já resolveu o problema</h2>
-        </div>
-        <div class="testimonial-grid reveal">
-          <div class="testimonial-item">
-            <p class="testimonial-quote" data-i18n="corp-dep-q1">Depois da instalação, o escritório ficou completamente diferente. Sem reflexo nas telas, sem calor. A equipe percebeu a diferença no mesmo dia.</p>
-            <span class="testimonial-author" data-i18n="corp-dep-a1">Diretor de Operações, Empresa de Tecnologia, SP</span>
-          </div>
-          <div class="testimonial-item">
-            <p class="testimonial-quote" data-i18n="corp-dep-q2">Instalação impecável, dentro do prazo, sem nenhuma intercorrência. Exatamente o que precisávamos para entregar o projeto ao cliente.</p>
-            <span class="testimonial-author" data-i18n="corp-dep-a2">Gerente de Facilities, Grupo Imobiliário</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── CLIENTES ──────────────────────────────────────── -->
-    <section class="section clients-section" id="clientes" style="background: var(--color-surface);">
-      <div class="container">
-        <div class="section-header center reveal">
-          <span class="section-eyebrow" data-i18n="corp-clients-eyebrow">Empresas que confiam na Atiye</span>
-          <h2 class="section-title" data-i18n="corp-clients-title">Quem já transformou seus ambientes</h2>
-        </div>
-      </div>
-      <div class="clients-marquee">
-        <div class="clients-track">
-          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/Logo-B3-positivo.png" alt="B3" loading="lazy"></div>
-          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/fiap%20logotipo.webp" alt="FIAP" loading="lazy"></div>
-          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/shopee_logo.png" alt="Shopee" loading="lazy"></div>
-          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/logo-novo-medcof.png" alt="Medcof" loading="lazy"></div>
-          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/certoengenharia_logo.jpg" alt="Certo Engenharia" loading="lazy"></div>
-          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/logo%20contrutora%20Trezentos60.png" alt="T60" loading="lazy"></div>
-          <!-- Duplicate for seamless loop -->
-          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/Logo-B3-positivo.png" alt="B3" loading="lazy"></div>
-          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/fiap%20logotipo.webp" alt="FIAP" loading="lazy"></div>
-          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/shopee_logo.png" alt="Shopee" loading="lazy"></div>
-          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/logo-novo-medcof.png" alt="Medcof" loading="lazy"></div>
-          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/certoengenharia_logo.jpg" alt="Certo Engenharia" loading="lazy"></div>
-          <div class="client-logo-item"><img src="assets/escritorio/projetos%20corporativos/logo%20contrutora%20Trezentos60.png" alt="T60" loading="lazy"></div>
-        </div>
-      </div>
-      <p class="clients-note reveal" style="text-align:center; font-size:0.78rem; color:var(--color-muted); margin-top:2rem;" data-i18n="corp-clients-note">+500 projetos entregues em São Paulo e região</p>
-    </section>
-
-    <!-- ── ECONOMIA ───────────────────────────────────────── -->
-    <section class="section economy-section" id="economia">
-      <div class="container">
-        <div class="economy-content reveal">
-          <span class="section-label" data-i18n="corp-econ-label">Escala</span>
-          <h2 data-i18n="corp-econ-title">Projetos acima de 50m² com otimização de custo por escala</h2>
-          <div class="price-tag">
-            <span class="price-value">R$135</span>
-            <span class="price-unit">/m²</span>
-            <span class="price-note" data-i18n="corp-econ-from">a partir de</span>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- ── FAQ ────────────────────────────────────────────── -->
@@ -758,16 +853,16 @@
     <section class="section cta-section" id="contato">
       <div class="container">
         <div class="cta-content">
-          <span class="section-eyebrow" data-i18n="corp-cta-eyebrow">Pronto para começar</span>
-          <h2 data-i18n-html="corp-cta-title-html">Envie a metragem ou planta<br>e receba um direcionamento técnico</h2>
-          <p data-i18n="corp-cta-text">Atendimento direto com quem vai executar o projeto.</p>
+          <span class="section-eyebrow" data-i18n="corp-cta-eyebrow">Solicite um Orçamento</span>
+          <h2 data-i18n="corp-cta-title">Envie seu projeto, memorial descritivo ou quantitativo.</h2>
+          <p data-i18n="corp-cta-text">Nossa equipe retornará com uma proposta técnica adequada ao seu empreendimento.</p>
           <a
-            href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20direcionamento%20técnico%20para%20meu%20projeto%20corporativo"
+            href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20projeto%20corporativo"
             class="cta-button cta-main"
             target="_blank" rel="noopener"
             data-i18n="corp-cta-btn"
           >
-            Falar com especialista
+            Falar com especialista no WhatsApp
           </a>
         </div>
       </div>
@@ -817,8 +912,222 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
   <script src="translations.js"></script>
   <script src="script-landing.js"></script>
+
+  <!-- ── Trust sticky-scroll GSAP ────────────────────────── -->
+  <script>
+  (function () {
+    if (typeof gsap === "undefined") return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    var scene = document.getElementById("trust-scene");
+    var stage = document.getElementById("trust-stage");
+    if (!scene || !stage) return;
+
+    var bgs   = stage.querySelectorAll(".trust-bg");
+    var items = stage.querySelectorAll(".trust-item");
+    var strip = document.getElementById("trust-strip");
+    var N     = items.length; // 5
+    var PX    = 750;          // px de scroll por slide
+
+    // Estado inicial
+    gsap.set(bgs,   { opacity: 0 });
+    gsap.set(bgs[0],{ opacity: 1 });
+    gsap.set(items, { opacity: 0, y: 50 });
+    gsap.set(items[0], { opacity: 1, y: 0 });
+    if (strip) gsap.set(strip, { yPercent: 100 });
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: scene,
+        start: "center center",
+        end: "+=" + ((N + 1) * PX),
+        pin: stage,
+        pinSpacing: true,
+        scrub: 0.9,
+        anticipatePin: 1
+      }
+    });
+
+    // Slide 0→1, 1→2 ... (N-1) slides
+    for (var i = 0; i < N - 1; i++) {
+      var t = i; // posição na timeline
+      // fade out item atual
+      tl.to(items[i], { opacity: 0, y: -40, duration: 0.4 }, t);
+      // fade out bg atual, fade in próximo
+      tl.to(bgs[i],   { opacity: 0, duration: 0.5 }, t + 0.1);
+      tl.to(bgs[i+1], { opacity: 1, duration: 0.5 }, t + 0.1);
+      // fade in próximo item
+      tl.fromTo(items[i+1],
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 0.5 },
+        t + 0.3
+      );
+    }
+
+    // Último slide → strip sobe por cima da última imagem
+    var last = N - 1;
+    if (strip) {
+      tl.to(strip, { yPercent: 0, duration: 0.8, ease: "power3.out" }, last + 0.4);
+    }
+  }());
+  </script>
+
+  <!-- ── Produtos scroll-reveal GSAP ──────────────────────── -->
+  <script>
+  (function () {
+    if (typeof gsap === "undefined") return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    var showcase = document.getElementById("prod-showcase");
+    var stage    = document.getElementById("prod-stage");
+    var bg1      = document.getElementById("prod-bg-1");
+    var bg2      = document.getElementById("prod-bg-2");
+    var info1    = document.getElementById("prod-info-1");
+    var info2    = document.getElementById("prod-info-2");
+    var cards    = ["pc-s1","pc-s2","pc-b1","pc-b2"].map(function(id){ return document.getElementById(id); });
+    if (!stage || !cards[0]) return;
+
+    var H = stage.offsetHeight;          /* viewport height */
+    var cardH = cards[0].offsetHeight || H * 0.35;
+
+    /* Posição inicial de todos os cards: abaixo da tela, centrado em X */
+    cards.forEach(function(c) {
+      gsap.set(c, { xPercent: -50, y: H + 20, opacity: 0 });
+    });
+
+    var scrollLen = H * 5.5; /* distância total de scroll */
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: showcase,
+        start: "top top",
+        end: "+=" + scrollLen,
+        pin: stage,
+        scrub: 1.2,
+        anticipatePin: 1
+      }
+    });
+
+    /* ── Fase 1: card Solar 1 entra e sai pelo topo ── */
+    tl.to(cards[0], { y: H * 0.28, opacity: 1, ease: "none", duration: 0.8 }, 0);
+    tl.to(cards[0], { y: -cardH - 40, opacity: 1, ease: "none", duration: 0.9 }, 0.8);
+
+    /* ── Fase 2: card Solar 2 entra e sai ── */
+    tl.to(cards[1], { y: H * 0.28, opacity: 1, ease: "none", duration: 0.8 }, 1.1);
+    tl.to(cards[1], { y: -cardH - 40, opacity: 1, ease: "none", duration: 0.9 }, 1.9);
+
+    /* ── Transição: bg1 esmaece, bg2 revela; info1→info2 ── */
+    tl.to(bg1,   { opacity: 0, duration: 0.7 }, 2.4);
+    tl.to(bg2,   { opacity: 1, duration: 0.7 }, 2.4);
+    tl.to(info1, { opacity: 0, duration: 0.4 }, 2.4);
+    tl.to(info2, { opacity: 1, duration: 0.4 }, 2.7);
+
+    /* ── Fase 3: card Blackout 1 entra e sai ── */
+    tl.to(cards[2], { y: H * 0.28, opacity: 1, ease: "none", duration: 0.8 }, 3.1);
+    tl.to(cards[2], { y: -cardH - 40, opacity: 1, ease: "none", duration: 0.9 }, 3.9);
+
+    /* ── Fase 4: card Blackout 2 entra e sai ── */
+    tl.to(cards[3], { y: H * 0.28, opacity: 1, ease: "none", duration: 0.8 }, 4.2);
+    tl.to(cards[3], { y: -cardH - 40, opacity: 1, ease: "none", duration: 0.9 }, 5.0);
+
+  }());
+  </script>
+
+  <!-- ── Parceiros card scroll-over GSAP ─────────────────── -->
+  <script>
+  (function () {
+    if (typeof gsap === "undefined") return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    var scene = document.getElementById("parceiros-scene");
+    var card  = document.getElementById("parceiros-card");
+    var text  = document.getElementById("parceiros-text");
+    if (!scene || !card) return;
+
+    /* Cartão começa deslocado para baixo e sobe ao entrar na viewport */
+    gsap.fromTo(card,
+      { yPercent: 8, scale: 0.97, borderRadius: "24px" },
+      {
+        yPercent: 0, scale: 1, borderRadius: "0px",
+        ease: "none",
+        scrollTrigger: {
+          trigger: scene,
+          start: "top bottom",
+          end: "top top",
+          scrub: 1
+        }
+      }
+    );
+
+    /* Texto faz leve fade-in no mesmo movimento */
+    gsap.fromTo(text,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1, y: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: scene,
+          start: "top 70%",
+          end: "top top",
+          scrub: 1
+        }
+      }
+    );
+  }());
+  </script>
+
+  <!-- ── Hero scroll-to-next GSAP ────────────────────────── -->
+  <script>
+  (function () {
+    if (typeof gsap === "undefined") return;
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+    var hero       = document.getElementById("hero");
+    var scrollBtn  = hero ? hero.querySelector(".hero-scroll") : null;
+    var nextSection = hero ? hero.nextElementSibling : null;
+
+    /* Parallax leve no vídeo ao rolar */
+    if (hero) {
+      gsap.to(hero.querySelector(".hero-visual"), {
+        yPercent: 20,
+        ease: "none",
+        scrollTrigger: {
+          trigger: hero,
+          start: "top top",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+
+      /* Fade-out do conteúdo da hero ao rolar */
+      gsap.to(hero.querySelector(".hero-content"), {
+        opacity: 0,
+        y: -60,
+        ease: "none",
+        scrollTrigger: {
+          trigger: hero,
+          start: "20% top",
+          end: "70% top",
+          scrub: true
+        }
+      });
+    }
+
+    /* Clique no indicador de scroll desce suavemente para a próxima seção */
+    if (scrollBtn && nextSection) {
+      scrollBtn.addEventListener("click", function () {
+        gsap.to(window, {
+          scrollTo: { y: nextSection, offsetY: 0 },
+          duration: 1.2,
+          ease: "power2.inOut"
+        });
+      });
+    }
+  }());
+  </script>
 
   <!-- ── Corporate Cases: GSAP + Modal ──────────────────── -->
   <script>
