@@ -1,601 +1,1158 @@
 <!doctype html>
-<html lang="pt-BR" data-i18n-title="res-title" data-i18n-meta="res-meta">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Atiye Residencial: Controle de luz para ambientes de alto padrão. Persianas e cortinas sob medida para quartos, salas e varandas." />
+  <meta name="description" content="Persianas sob medida com instalação profissional. Atendimento rápido, medição técnica e instalação especializada." />
   <title>Residencial | Atiye</title>
-
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-
+  <link rel="icon" href="assets/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Inter', sans-serif; color: #3a3a3a; overflow-x: clip; background: #fff; line-height: 1.65; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; border: none; background: none; cursor: pointer; }
 
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="styles-landing.css" />
+    :root {
+      --ink:     #0d0d0d;
+      --text:    #3a3a3a;
+      --muted:   #888;
+      --warm:    #f7f4ef;
+      --surface: #fafaf8;
+      --border:  #e6e2db;
+      --gold:    #c4a87a;
+      --card-dk: #0b2320;
+      --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; height: 2px; width: 0%;
+      background: var(--gold); z-index: 9999; transition: width 0.1s linear;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 0.9rem 3.5vw;
+      display: flex; justify-content: space-between; align-items: center;
+      transition: background 0.5s ease, padding 0.4s ease, box-shadow 0.4s ease;
+    }
+    .site-header.scrolled {
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(20px);
+      padding: 0.6rem 3.5vw; box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    }
+    .header-logo img { width: 130px; height: auto; filter: brightness(0) invert(1); transition: filter 0.5s ease; }
+    .site-header.scrolled .header-logo img { filter: brightness(0); }
+    .header-right { display: flex; align-items: center; gap: 2rem; }
+    .header-wa {
+      display: inline-flex; border: 1px solid rgba(255,255,255,0.45); border-radius: 100px;
+      padding: 0.5rem 1.2rem; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #fff; transition: all 0.4s ease;
+    }
+    .site-header.scrolled .header-wa { border-color: var(--ink); color: var(--ink); }
+    .header-wa:hover { background: #fff; color: var(--ink); }
+    .site-header.scrolled .header-wa:hover { background: var(--ink); color: #fff; }
+    .menu-btn { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: #fff; transition: color 0.5s ease; }
+    .site-header.scrolled .menu-btn { color: var(--ink); }
+
+    /* ── NAV OVERLAY ── */
+    .nav-overlay {
+      position: fixed; inset: 0; z-index: 500; background: var(--card-dk);
+      display: flex; flex-direction: column; padding: 2.5rem 5vw;
+      opacity: 0; pointer-events: none; transition: opacity 0.45s var(--ease-expo);
+    }
+    .nav-overlay.open { opacity: 1; pointer-events: all; }
+    .nav-close-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem; }
+    .nav-logo-overlay img { width: 80px; filter: brightness(0) invert(1); }
+    .nav-close-btn { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.55); transition: color 0.3s; }
+    .nav-close-btn:hover { color: #fff; }
+    .nav-links { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 0.25rem; }
+    .nav-links a {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5vw, 4.5rem);
+      font-weight: 300; color: rgba(255,255,255,0.75); line-height: 1.25;
+      transition: color 0.3s, transform 0.3s; display: inline-block;
+    }
+    .nav-links a:hover { color: #fff; transform: translateX(8px); }
+    .nav-footer {
+      border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;
+      display: flex; justify-content: space-between; font-size: 0.75rem; color: rgba(255,255,255,0.35);
+    }
+
+    /* ── HERO ── */
+    .hero { position: relative; width: 100vw; height: 100vh; min-height: 100svh; overflow: hidden; background: #111; margin: 0; padding: 0; }
+    .hero img.hero-bg {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center; will-change: transform;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.08) 35%, rgba(0,0,0,0.65) 100%);
+    }
+    .hero-content {
+      position: absolute; bottom: 8vh; left: 5vw; right: 5vw; z-index: 2;
+      display: flex; justify-content: space-between; align-items: flex-end; gap: 3rem;
+    }
+    .hero-left { max-width: 640px; }
+    .hero-eyebrow {
+      display: block; font-size: 0.7rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.5vw, 5rem);
+      font-weight: 300; color: #fff; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 1.5rem;
+    }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+    .hero-pill {
+      font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 0.3rem 0.9rem; border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 100px; color: rgba(255,255,255,0.75);
+    }
+    .hero-right { max-width: 340px; text-align: right; }
+    .hero-right p { font-size: 0.88rem; color: rgba(255,255,255,0.72); line-height: 1.75; }
+    .pill-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 1px solid currentColor; border-radius: 100px;
+      padding: 0.72rem 1.8rem; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: #fff; white-space: nowrap; transition: background 0.3s, color 0.3s;
+    }
+    .pill-btn:hover { background: #fff; color: var(--ink); }
+    .pill-btn.dark { color: var(--ink); }
+    .pill-btn.dark:hover { background: var(--ink); color: #fff; }
+    .scroll-indicator {
+      position: absolute; bottom: 3vh; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      color: rgba(255,255,255,0.45); font-size: 0.62rem; letter-spacing: 0.2em;
+      text-transform: uppercase; cursor: pointer; z-index: 2;
+    }
+    .scroll-line { width: 1px; height: 40px; background: rgba(255,255,255,0.35); animation: sbounce 1.8s ease-in-out infinite; transform-origin: top; }
+    @keyframes sbounce { 0%,100%{transform:scaleY(1)} 50%{transform:scaleY(1.6)} }
+
+    /* ── OVERVIEW ── */
+    .overview { background: var(--warm); padding: 9rem 5vw; }
+    .overview-grid { display: grid; grid-template-columns: 1fr 0.3fr 1fr; gap: 4rem; margin-bottom: 6rem; align-items: start; }
+    .ov-heading h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.2vw, 3.4rem); font-weight: 400; color: var(--ink); line-height: 1.2; }
+    .ov-label { font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); padding-top: 0.6rem; }
+    .ov-body p { font-size: 1.05rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+    .overview-images { display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.5rem; align-items: end; }
+    .ov-img { border-radius: 4px; overflow: hidden; }
+    .ov-img-a { aspect-ratio: 3/4; margin-top: 5rem; }
+    .ov-img-b { aspect-ratio: 4/3; }
+    .ov-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+    .ov-img:hover img { transform: scale(1.04); }
+
+    /* ── COMO FUNCIONA ── */
+    .como-funciona {
+      background: #fff; padding: 9rem 5vw 14rem;
+      position: relative; z-index: 1;
+    }
+    .cf-title-row { text-align: center; margin-bottom: 6rem; }
+    .cf-title {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 4.5vw, 5rem);
+      font-weight: 300; color: var(--ink); line-height: 1.05; letter-spacing: -0.02em;
+    }
+    .cf-cards-col { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+    .cf-card {
+      display: flex; align-items: center; gap: 2.5rem;
+      padding: 2.8rem 0; border-bottom: 1px solid var(--border);
+      opacity: 0; transform: translateY(50px);
+    }
+    .cf-card:first-child { border-top: 1px solid var(--border); }
+    .cf-card-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 300;
+      color: var(--gold); line-height: 1; flex-shrink: 0; width: 80px; text-align: right;
+    }
+    .cf-card h3 {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 2.2vw, 2rem);
+      font-weight: 300; color: var(--ink); line-height: 1.2;
+    }
+    .cf-cta { text-align: center; margin-top: 4rem; }
+
+    /* ── DIFERENCIAIS ── */
+    .diferenciais { background: var(--ink); padding: 8rem 5vw; }
+    .dif-header { margin-bottom: 5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .dif-eyebrow { display: block; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+    .dif-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.8vw, 4rem); font-weight: 300; color: #fff; line-height: 1.1; letter-spacing: -0.02em; }
+    .dif-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+    .dif-card { position: relative; aspect-ratio: 3/4; overflow: hidden; border-radius: 6px; }
+    .dif-card img { position: absolute; inset: 0; width: 100%; height: 110%; object-fit: cover; transition: transform 0.8s var(--ease-expo); will-change: transform; }
+    .dif-card:hover img { transform: scale(1.08); }
+    .dif-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.88) 100%); }
+    .dif-card-body { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 2rem 1.4rem 1.6rem; }
+    .dif-card-num { display: block; font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .dif-card-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 1.6vw, 1.5rem); font-weight: 300; color: #fff; line-height: 1.2; }
+    .dif-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.5s var(--ease-expo); z-index: 3; }
+    .dif-card:hover::before { transform: scaleX(1); }
+
+    /* ── DIF FAN CAROUSEL ── */
+    .dif-fan-section {
+      background: #fff; padding: 8rem 0 10rem;
+      position: relative; overflow: hidden;
+    }
+    .dif-fan-title {
+      text-align: center; padding: 0 5vw 5rem;
+    }
+    .dif-fan-title h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 4.5vw, 5.5rem);
+      font-weight: 300; color: var(--ink);
+      line-height: 1.1; letter-spacing: -0.02em;
+    }
+    .dif-fan-viewport {
+      position: relative; height: 600px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .dif-fan-card {
+      position: absolute; width: 300px; height: 490px;
+      border-radius: 22px; overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.22);
+      will-change: transform; cursor: pointer;
+      transform-origin: center center;
+    }
+    .dif-fan-card img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+    .dif-fan-card-label {
+      position: absolute; inset: 0; z-index: 2;
+      display: flex; align-items: center; justify-content: center;
+      padding: 2rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 300; color: #fff; line-height: 1.2;
+      text-align: center;
+    }
+    @media (max-width: 640px) {
+      .dif-fan-card { width: 190px; height: 310px; }
+      .dif-fan-viewport { height: 420px; }
+      .dif-fan-card-label { font-size: 1.1rem; }
+    }
+
+    /* ── PRODUTOS — título grande + gallery slide ── */
+    .prod-title-section {
+      background: var(--ink); padding: 7rem 5vw;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .prod-title-eyebrow { display: block; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .prod-main-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6.5vw, 7.5rem);
+      font-weight: 300; color: #fff;
+      line-height: 1.0; letter-spacing: -0.03em;
+    }
+    /* Gallery auto-slide */
+    .prod-gallery-item { position: absolute; inset: 0; opacity: 0; transition: opacity 1.1s ease; }
+    .prod-gallery-item.active { opacity: 1; }
+    .prod-gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+    .prod-gallery-dots {
+      position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 0.4rem; z-index: 5;
+    }
+    .prod-gallery-dot {
+      width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.35);
+      transition: background 0.4s, transform 0.4s; cursor: pointer;
+    }
+    .prod-gallery-dot.active { background: #fff; transform: scale(1.3); }
+
+    /* ── PRODUTOS ── */
+    .produtos { background: var(--warm); }
+    .prod-panel {
+      display: grid; grid-template-columns: 1fr 1.5fr; height: 100svh;
+      position: sticky; top: 0; overflow: hidden;
+    }
+    .prod-panel:nth-child(1) { z-index: 1; }
+    .prod-panel:nth-child(2) { z-index: 2; }
+    .prod-panel:nth-child(3) { z-index: 3; }
+    .prod-panel:nth-child(4) { z-index: 4; }
+    .prod-panel:nth-child(even) { grid-template-columns: 1.5fr 1fr; }
+    .prod-panel:nth-child(even) .prod-info { order: 2; }
+    .prod-panel:nth-child(even) .prod-gallery { order: 1; }
+    .prod-info { display: flex; flex-direction: column; justify-content: center; padding: 6rem 5vw; position: relative; z-index: 1; background: var(--warm); }
+    .prod-eyebrow { display: block; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .prod-info h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 4vw, 4rem); font-weight: 300; color: var(--ink); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+    .prod-info p { font-size: 1rem; line-height: 1.8; color: var(--text); max-width: 360px; margin-bottom: 2.5rem; }
+    .prod-gallery { position: relative; overflow: hidden; }
+    .prod-gallery-item { position: absolute; inset: 0; }
+    .prod-gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+    .prod-gallery-item:hover img { transform: scale(1.04); }
+
+    /* ── GALERIA — carousel ── */
+    .galeria {
+      background: #fff; padding: 8rem 0 7rem;
+      position: relative; z-index: 2;
+      border-radius: 24px 24px 0 0;
+      box-shadow: 0 -12px 48px rgba(0,0,0,0.10);
+    }
+    .gal-hd { text-align: center; margin-bottom: 4rem; padding: 0 5vw 2rem; border-bottom: 1px solid var(--border); }
+    .gal-hd h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 4vw, 4rem); font-weight: 300; color: var(--ink); line-height: 1.1; letter-spacing: -0.02em; }
+
+    .carousel-viewport { overflow: hidden; width: 100%; position: relative; }
+    .carousel-track {
+      display: flex; gap: 18px;
+      padding: 1.5rem 5vw 2.5rem;
+      width: max-content; will-change: transform;
+      cursor: grab; user-select: none;
+    }
+    .carousel-track.dragging { cursor: grabbing; }
+    .carousel-item {
+      width: 370px; height: 370px; flex-shrink: 0;
+      overflow: hidden; border-radius: 6px;
+      transition: filter 0.55s ease, transform 0.55s ease, box-shadow 0.55s ease;
+      filter: brightness(0.38) saturate(0.5);
+      transform: scale(0.94);
+    }
+    .carousel-item.active {
+      filter: brightness(1) saturate(1);
+      transform: scale(1);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+    }
+    .carousel-item img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+
+    .carousel-nav {
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; padding: 2rem 5vw 0;
+    }
+    .car-btn {
+      width: 48px; height: 48px; border-radius: 50%;
+      border: 1px solid var(--border); background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: background 0.3s, border-color 0.3s;
+      font-size: 1.1rem; color: var(--ink);
+    }
+    .car-btn:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .car-counter { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); min-width: 60px; text-align: center; }
+
+    @media (max-width: 640px) {
+      .carousel-item { width: 270px; height: 270px; }
+    }
+
+    /* ── RESULTADOS ── */
+    .resultados-section { background: var(--warm); padding: 8rem 5vw; }
+    .resultados-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; max-width: 1300px; margin: 0 auto; }
+    .res-img { border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; }
+    .res-img img { width: 100%; height: 100%; object-fit: cover; }
+    .res-text .eyebrow { display: block; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .res-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 4rem); font-weight: 300; color: var(--ink); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+    .res-text p { font-size: 1.05rem; line-height: 1.8; color: var(--text); }
+
+    /* ── CTA ── */
+    .cta-section { position: relative; min-height: 75vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .cta-bg { position: absolute; inset: 0; width: 100%; height: 115%; object-fit: cover; will-change: transform; }
+    .cta-section::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.68)); }
+    .cta-inner { position: relative; z-index: 1; text-align: center; padding: 4rem 5vw; max-width: 700px; }
+    .cta-inner .eyebrow { display: block; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(255,255,255,0.58); margin-bottom: 1.5rem; }
+    .cta-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 4.5rem); font-weight: 300; color: #fff; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 2.5rem; }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--surface); padding: 8rem 5vw; }
+    .faq-hd { margin-bottom: 4rem; }
+    .faq-hd .eyebrow { display: block; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .faq-hd h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 3rem); font-weight: 400; color: var(--ink); line-height: 1.2; }
+    .faq-list { max-width: 780px; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.8rem 0; font-size: 0.95rem; font-weight: 500; color: var(--ink); text-align: left; gap: 2rem; transition: color 0.3s; }
+    .faq-q:hover { color: var(--gold); }
+    .faq-icon { width: 18px; height: 18px; flex-shrink: 0; position: relative; }
+    .faq-icon::before, .faq-icon::after { content: ''; position: absolute; background: currentColor; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+    .faq-icon::before { width: 14px; height: 1px; }
+    .faq-icon::after { width: 1px; height: 14px; transition: transform 0.4s ease; }
+    .faq-item.open .faq-icon::after { transform: translate(-50%,-50%) rotate(90deg); }
+    .faq-ans { max-height: 0; overflow: hidden; transition: max-height 0.5s ease, padding 0.4s ease; }
+    .faq-item.open .faq-ans { max-height: 300px; padding-bottom: 1.5rem; }
+    .faq-ans p { font-size: 0.92rem; line-height: 1.82; color: var(--muted); }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--ink); padding: 6rem 5vw 3rem; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
+    .footer-brand img { width: 80px; margin-bottom: 1.5rem; filter: brightness(0) invert(1); }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.72; color: rgba(255,255,255,0.5); max-width: 260px; }
+    .footer-col h4 { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 1.5rem; }
+    .footer-col a { display: block; font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-bottom: 0.75rem; transition: color 0.3s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 2rem; display: flex; justify-content: space-between; font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+
+    /* ── WA FLOAT ── */
+    .wa-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 100; width: 52px; height: 52px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.38); transition: transform 0.3s, box-shadow 0.3s; }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.52); }
+    .wa-float svg { width: 26px; height: 26px; fill: #fff; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .overview-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .ov-label { display: none; }
+      .overview { position: relative; overflow: hidden; }
+      .overview-images { position: absolute; inset: 0; z-index: 0; }
+      .ov-img-a { display: none; }
+      .ov-img-b { position: absolute; inset: 0; width: 100%; height: 120%; aspect-ratio: unset; border-radius: 0; margin-top: 0; }
+      .ov-img-b img { width: 100%; height: 100%; object-fit: cover; }
+      .overview-images::after { content: ''; position: absolute; inset: 0; background: rgba(247,244,239,0.82); }
+      .overview-grid { position: relative; z-index: 1; }
+      .prod-panel, .prod-panel:nth-child(even) { grid-template-columns: 1fr; height: auto; }
+      .prod-panel:nth-child(even) .prod-info { order: 1; }
+      .prod-panel:nth-child(even) .prod-gallery { order: 2; }
+      .prod-info { padding: 3rem 6vw; }
+      .prod-gallery { height: 60vw; min-height: 260px; }
+      .prod-gallery-item { width: 80%; }
+      .dif-grid { grid-template-columns: repeat(3, 1fr); }
+      .resultados-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+    @media (max-width: 640px) {
+      .hero-content { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+      .hero-right { text-align: left; max-width: 100%; }
+      .hero h1 { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+      .proc-card h2 { font-size: clamp(3rem, 13vw, 6rem); }
+      .dif-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-brand { grid-column: auto; }
+      .site-header { padding: 1.2rem 5vw; }
+      .nav-links a { font-size: clamp(1.8rem, 8vw, 3rem); }
+    }
+  </style>
 </head>
-<body class="landing-page">
+<body>
 
-  <!-- Custom Cursor -->
-  <div id="cursorDot"  class="cursor-dot"></div>
-  <div id="cursorRing" class="cursor-ring"></div>
+  <div id="scroll-progress"></div>
 
-  <!-- Header -->
-  <header class="header" id="header">
-    <div class="header-container">
-      <a href="index.html" class="logo" aria-label="Atiye Home">
-        <img src="assets/logo_atiye_fundo_branco.png" alt="Atiye" width="100" height="40" />
-      </a>
-      <nav class="header-nav" id="nav">
-        <ul class="nav-list">
-          <li><a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a></li>
-          <li><a href="residencial.html" data-i18n="nav-residential">Residencial</a></li>
-          <li><a href="portfolio.html" data-i18n="nav-portfolio">Portfólio</a></li>
-          <li><a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a></li>
-          <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
-        </ul>
-      </nav>
-      <a href="https://wa.me/5511986793247" class="cta-button header-cta" target="_blank" rel="noopener">WhatsApp</a>
-      <button class="lang-toggle" id="lang-toggle" aria-label="Alternar idioma">
-        <span class="lang-pt lang-active">PT</span>
-        <span class="lang-sep">|</span>
-        <span class="lang-en">EN</span>
-      </button>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+  <header class="site-header" id="header">
+    <a href="index.html" class="header-logo">
+      <img src="assets/logo_atiye_fundo_branco.png" alt="Atiye" width="90" height="36" />
+    </a>
+    <div class="header-right">
+      <a href="https://wa.me/5511986793247" class="header-wa" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">MENU</button>
     </div>
   </header>
 
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true">
+    <div class="nav-close-row">
+      <a href="index.html" class="nav-logo-overlay">
+        <img src="assets/logo_atiye_fundo_branco.png" alt="Atiye" width="80" height="32" />
+      </a>
+      <button class="nav-close-btn" id="navClose">FECHAR ×</button>
+    </div>
+    <nav class="nav-links">
+      <a href="corporativo2.html">Corporativo</a>
+      <a href="residencial.html">Residencial</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a href="lavagem.html">Higienização</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="nav-footer">
+      <span>© 2026 Atiye</span>
+      <span>São Paulo, SP</span>
+      <span>11 9.8679-3247</span>
+    </div>
+  </div>
+
   <main>
 
-    <!-- ── HERO ──────────────────────────────────────────── -->
-    <section class="hero landing-hero" id="hero">
-      <div class="hero-visual">
-        <img
-          src="assets/residencial/IMG_3152(1).webp"
-          alt="Sala de estar com controle de luz"
-          loading="eager"
-          width="1920" height="1080"
-        />
-        <div class="hero-overlay"></div>
-      </div>
+    <!-- 1. HERO -->
+    <section class="hero" id="hero">
+      <img class="hero-bg" src="assets/residencial/hero_residencial.webp" alt="Persianas residenciais Atiye" loading="eager" width="1920" height="1080" />
+      <div class="hero-overlay"></div>
       <div class="hero-content">
-        <span class="hero-label" data-i18n="res-hero-label">Residencial</span>
-        <h1 class="hero-title" data-i18n="res-hero-title">Você não deveria se adaptar à luz da sua própria casa</h1>
-        <p class="hero-subtitle" data-i18n-html="res-hero-subtitle-html">
-          Acordar antes da hora. Calor acumulado no quarto. Móveis desbotando ao longo dos anos.<br>
-          Tudo isso tem causa, e tem a solução certa..
-        </p>
-        <p class="hero-description" data-i18n="res-hero-desc">
-          A Atiye projeta controle de luz para ambientes que precisam funcionar perfeitamente para quem vive neles.
-        </p>
-        <a href="#contato" class="cta-button hero-cta" data-i18n="res-hero-cta">Solicitar orçamento</a>
+        <div class="hero-left">
+          <span class="hero-eyebrow">Residencial</span>
+          <h1>Persianas Sob Medida com Instalação Profissional</h1>
+          <div class="hero-pills">
+            <span class="hero-pill">Atendimento rápido</span>
+            <span class="hero-pill">Medição técnica</span>
+            <span class="hero-pill">Instalação especializada</span>
+          </div>
+          <a href="#contato" class="pill-btn">Quero meu orçamento</a>
+        </div>
+        <div class="hero-right">
+          <p>Transforme seu ambiente com conforto, privacidade e sofisticação</p>
+        </div>
       </div>
-      <div class="hero-scroll">
+      <div class="scroll-indicator" id="scrollHint">
         <div class="scroll-line"></div>
         <span>Scroll</span>
       </div>
     </section>
 
-    <!-- ── DESIGN & DECORAÇÃO ────────────────────────────── -->
-    <section class="section res-design-section" id="design">
-      <div class="container">
-        <div class="res-design-inner">
-          <div class="res-design-text reveal">
-            <span class="section-eyebrow" data-i18n="res-design-eyebrow">Design & Decoração</span>
-            <h2 data-i18n="res-design-title">Cada detalhe conta. A persiana também.</h2>
-            <p data-i18n="res-design-p1">
-              Do quarto ao living, da varanda ao home office: cada espaço tem uma personalidade.
-              Nossas soluções são desenvolvidas para se integrar à decoração e elevar o resultado final do projeto,
-              combinando estética refinada com conforto real e controle preciso da luz.
-            </p>
-            <p data-i18n="res-design-p2">
-              Trabalhamos com arquitetos, decoradores e diretamente com o morador para garantir que função e estética
-              caminhem juntas, sem concessões em nenhum dos dois lados.
-            </p>
-          </div>
-          <div class="mini-carousel reveal" id="miniCarousel">
-            <div class="mc-viewport">
-              <div class="mc-track" id="mcTrack">
-                <div class="mc-slide">
-                  <img src="assets/residencial/Persiana-Romana.webp" alt="Persiana Romana" loading="lazy" />
-                </div>
-                <div class="mc-slide">
-                  <img src="assets/residencial/IMG_1792.webp" alt="Projeto residencial Atiye" loading="lazy" />
-                </div>
-                <div class="mc-slide">
-                  <img src="assets/residencial/Rolô-Blackout-_2_.webp" alt="Rolô Blackout" loading="lazy" />
-                </div>
-              </div>
-            </div>
-            <div class="mc-nav">
-              <button class="mc-btn" id="mcPrev" aria-label="Anterior">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
-              </button>
-              <div class="mc-dots">
-                <span class="mc-dot active"></span>
-                <span class="mc-dot"></span>
-                <span class="mc-dot"></span>
-              </div>
-              <button class="mc-btn" id="mcNext" aria-label="Próximo">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6"/></svg>
-              </button>
-            </div>
-          </div>
+    <!-- 2. MAIS CONFORTO E ELEGÂNCIA -->
+    <section class="overview" id="overview">
+      <div class="overview-grid">
+        <div class="ov-heading">
+          <h2>Mais Conforto e Elegância para o seu Ambiente</h2>
+        </div>
+        <div class="ov-body">
+          <p>As persianas certas podem transformar completamente seu ambiente, proporcionando controle da luminosidade, redução do calor interno, mais privacidade, proteção dos móveis e valorização do imóvel.</p>
+          <a href="#contato" class="pill-btn dark">Solicitar orçamento</a>
+        </div>
+      </div>
+      <div class="overview-images">
+        <div class="ov-img ov-img-a">
+          <img src="assets/residencial/IMG_3162.webp" alt="Persiana residencial" loading="lazy" />
+        </div>
+        <div class="ov-img ov-img-b">
+          <img src="assets/residencial/IMG_3152.webp" alt="Sala com controle de luz" loading="lazy" />
         </div>
       </div>
     </section>
 
-    <!-- ── PROBLEMA ───────────────────────────────────────── -->
-    <section class="section problem-section" id="problema">
-      <div class="container">
-        <div class="problem-content">
-          <div class="problem-text reveal">
-            <h2 class="problem-lead" data-i18n="res-prob-lead">Você já se ajustou ao problema. Sem perceber.</h2>
-            <ul class="problem-list">
-              <li data-i18n="res-prob-li1">Acorda antes do horário porque a luz entra no quarto</li>
-              <li data-i18n="res-prob-li2">Liga o ar-condicionado mais cedo pelo calor da tarde</li>
-              <li data-i18n="res-prob-li3">Fecha as persianas e perde a visão, ou abre e perde o conforto</li>
-              <li data-i18n="res-prob-li4">Mobiliário perdendo cor gradualmente pela exposição solar</li>
-            </ul>
-            <p class="problem-conclusion" data-i18n-html="res-prob-concl-html">
-              Isso não é rotina. É desgaste acumulado.<br>
-              E tem <strong>solução técnica</strong>.
-            </p>
-          </div>
-          <div class="problem-visual reveal reveal-delay-2">
-            <img
-              src="assets/residencial/IMG_3167.webp"
-              alt="Ambiente residencial com controle de luz"
-              loading="lazy" width="600" height="520"
-            />
-          </div>
+    <!-- 3. POR QUE ESCOLHER A ATIYE -->
+    <section class="dif-fan-section" id="diferenciais">
+      <div class="dif-fan-title">
+        <h2>Por que Escolher a Atiye<br>Cortinas e Persianas?</h2>
+      </div>
+      <div class="dif-fan-viewport" id="difFanViewport">
+        <div class="dif-fan-card">
+          <img src="assets/residencial/IMG_1788.webp" alt="Atendimento Personalizado" loading="lazy" />
+          <div class="dif-fan-card-label">Atendimento<br>Personalizado</div>
+        </div>
+        <div class="dif-fan-card">
+          <img src="assets/residencial/persiana_madeira.webp" alt="Produtos Sob Medida" loading="lazy" />
+          <div class="dif-fan-card-label">Produtos<br>Sob Medida</div>
+        </div>
+        <div class="dif-fan-card">
+          <img src="assets/residencial/IMG_3464.webp" alt="Qualidade Superior" loading="lazy" />
+          <div class="dif-fan-card-label">Qualidade<br>Superior</div>
+        </div>
+        <div class="dif-fan-card">
+          <img src="assets/residencial/persiana_rolo.webp" alt="Instalação Profissional" loading="lazy" />
+          <div class="dif-fan-card-label">Instalação<br>Profissional</div>
+        </div>
+        <div class="dif-fan-card">
+          <img src="assets/residencial/IMG_3163.webp" alt="Garantia e Segurança" loading="lazy" />
+          <div class="dif-fan-card-label">Garantia<br>e Segurança</div>
         </div>
       </div>
     </section>
 
-    <!-- ── SOLUÇÃO (Split) ────────────────────────────────── -->
-    <section class="section identification-section" id="solucao">
-      <div class="container">
-        <div class="split-content reveal">
-          <div class="split-text">
-            <h2 data-i18n="res-sol-title">A luz precisa se ajustar à sua vida, não o contrário</h2>
-            <p data-i18n="res-sol-p1">
-              Cada ambiente tem uma função. Cada horário tem uma demanda diferente.
-              Um projeto de controle de luz considera tudo isso antes de especificar qualquer material.
-            </p>
-            <p data-i18n="res-sol-p2">
-              Não é sobre escolher uma persiana bonita. É sobre definir como você quer viver naquele espaço.
-            </p>
-            <p class="solution-highlight" data-i18n="res-sol-highlight">
-              Do diagnóstico ao resultado, sem improvisos.
-            </p>
-          </div>
-          <div class="split-visual">
-            <img
-              src="assets/residencial/IMG_3184.webp"
-              alt="Sala de jantar com luz controlada"
-              loading="lazy" width="600" height="500"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- 4. NOSSAS PRINCIPAIS SOLUÇÕES -->
+    <div class="prod-title-section">
+      <span class="prod-title-eyebrow">Produtos</span>
+      <h2 class="prod-main-title">Nossas Principais<br>Soluções</h2>
+    </div>
 
-    <!-- ── AMBIENTES ──────────────────────────────────────── -->
-    <section class="section" id="ambientes" style="background: var(--color-warm);">
-      <div class="container">
-        <div class="section-header center reveal">
-          <span class="section-eyebrow" data-i18n="res-env-eyebrow">Por ambiente</span>
-          <h2 class="section-title" data-i18n="res-env-title">Cada espaço, uma demanda específica</h2>
-        </div>
-        <div class="cards-grid reveal">
-          <div class="solution-card solution-card--photo">
-            <div class="card-photo">
-              <img src="assets/residencial/IMG_2049.webp" alt="Quarto com persiana blackout" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3 data-i18n="res-env1-title">Quartos</h3>
-              <p data-i18n="res-env1-text">Bloqueio real de luz para dormir melhor. Sem calor acumulado. Controle total do horário de despertar natural.</p>
-            </div>
-          </div>
-          <div class="solution-card solution-card--photo">
-            <div class="card-photo">
-              <img src="assets/residencial/IMG_3171.webp" alt="Sala com controle de luz" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3 data-i18n="res-env2-title">Salas</h3>
-              <p data-i18n="res-env2-text">Equilíbrio entre claridade e proteção. Sem reflexo na TV. Sem calor excessivo. Com vista preservada.</p>
-            </div>
-          </div>
-          <div class="solution-card solution-card--photo">
-            <div class="card-photo">
-              <img src="assets/residencial/IMG_3154.webp" alt="Varanda com persiana solar" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3 data-i18n="res-env3-title">Varandas</h3>
-              <p data-i18n="res-env3-text">Proteção solar sem perder a ventilação. Privacidade sem isolar. Conforto para usar o espaço o dia todo.</p>
-            </div>
-          </div>
-        </div>
-        <p class="solution-note" data-i18n="res-env-note">Cada especificação é feita depois de entender como você usa cada ambiente.</p>
-      </div>
-    </section>
+    <section id="produtos" class="produtos">
 
-    <!-- ── TELA SOLAR SCREEN ──────────────────────────────── -->
-    <section class="section proof-section" id="tecnologia">
-      <div class="container">
-        <div class="proof-content">
-          <div class="proof-text reveal">
-            <h2 data-i18n-html="res-tech-title-html">Tela solar screen.<br>Não bloqueia. <em>Controla.</em></h2>
-            <p data-i18n="res-tech-p1">
-              Filtra até 97% da radiação UV e reduz significativamente o ganho térmico,
-              sem escurecer o ambiente e sem bloquear a vista.
-            </p>
-            <p class="proof-highlight" data-i18n="res-tech-highlight">
-              O ambiente fica mais fresco e confortável. A luz do dia permanece. A vista também.
-            </p>
-            <p data-i18n="res-tech-p2">
-              Indicada para salas de estar, varandas, dormitórios com exposição direta ao sol
-              e qualquer ambiente onde a temperatura ou o ofuscamento são um problema real.
-            </p>
-          </div>
-          <div class="proof-visual reveal reveal-delay-2">
-            <img
-              src="assets/residencial/IMG_3152.webp"
-              alt="Tela Solar Screen residencial"
-              loading="lazy" width="600" height="480"
-            />
-          </div>
+      <div class="prod-panel">
+        <div class="prod-info">
+          <h2>Persiana<br>Rolô</h2>
+          <p>Moderna, elegante e fácil de operar.</p>
+          <a href="#contato" class="pill-btn dark">Solicitar orçamento</a>
         </div>
-      </div>
-    </section>
-
-    <!-- ── PERSIANA DE MADEIRA ────────────────────────────── -->
-    <section class="section proof-section" id="persiana-madeira" style="background: var(--color-warm);">
-      <div class="container">
-        <div class="proof-content proof-content--reverse">
-          <div class="proof-text reveal">
-            <span class="section-eyebrow" data-i18n="res-wood-eyebrow">Persiana de Madeira</span>
-            <h2 data-i18n="res-wood-title">O charme natural que valoriza qualquer projeto</h2>
-            <p data-i18n="res-wood-p1">
-              A textura e o calor da madeira criam ambientes únicos e sofisticados. Cada lâmina é
-              selecionada para garantir homogeneidade visual e durabilidade, do dormitório ao escritório doméstico.
-              Um detalhe que arquitetos e decoradores escolhem pelo impacto estético imediato.
-            </p>
-            <p class="proof-highlight" data-i18n="res-wood-highlight">
-              Design atemporal com controle de luz preciso.
-            </p>
-          </div>
-          <div class="proof-visual reveal reveal-delay-2">
-            <img
-              src="assets/residencial/IMG_3161.webp"
-              alt="Persiana de Madeira residencial"
-              loading="lazy" width="600" height="480"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── CORTINAS DE TECIDO ─────────────────────────────── -->
-    <section class="section proof-section" id="cortinas-tecido">
-      <div class="container">
-        <div class="proof-content">
-          <div class="proof-text reveal">
-            <span class="section-eyebrow" data-i18n="res-fabric-eyebrow">Cortinas de Tecido</span>
-            <h2 data-i18n="res-fabric-title">Leveza e elegância que moldam o ambiente</h2>
-            <p data-i18n="res-fabric-p1">
-              Tecidos cuidadosamente selecionados para difundir a luz suavemente, criar privacidade sem
-              bloquear o espaço e adicionar volume e textura ao projeto de interiores. Do sheer transparente
-              ao blackout total, sempre com acabamento impecável e caimento preciso.
-            </p>
-            <p class="proof-highlight" data-i18n="res-fabric-highlight">
-              Elegância que complementa qualquer estilo, do contemporâneo ao clássico.
-            </p>
-          </div>
-          <div class="proof-visual reveal reveal-delay-2">
-            <img
-              src="assets/residencial/IMG_3163.webp"
-              alt="Cortinas de tecido residencial"
-              loading="lazy" width="600" height="480"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── DOUBLE VISION ──────────────────────────────────── -->
-    <section class="section proof-section" id="double-vision-res" style="background: var(--color-warm);">
-      <div class="container">
-        <div class="proof-content proof-content--reverse">
-          <div class="proof-text reveal">
-            <span class="section-eyebrow" data-i18n="res-dv-eyebrow">Double Vision</span>
-            <h2 data-i18n="res-dv-title">Luz controlada sem abrir mão da claridade</h2>
-            <p data-i18n="res-dv-p1">
-              O sistema de dupla camada permite ajuste preciso entre luminosidade total e privacidade completa,
-              sem trocar de persiana. Visual limpo, moderno e altamente funcional para salas, suítes e ambientes
-              que demandam versatilidade ao longo do dia.
-            </p>
-            <p class="proof-highlight" data-i18n="res-dv-highlight">
-              Versatilidade estética para ambientes que exigem o melhor dos dois mundos.
-            </p>
-          </div>
-          <div class="proof-visual reveal reveal-delay-2">
-            <img
-              src="assets/residencial/IMG_3156.webp"
-              alt="Double Vision residencial"
-              loading="lazy" width="600" height="480"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── GALERIA ─────────────────────────────────────────── -->
-    <section class="cinematic-gallery" id="projetos">
-
-      <div class="cg-header">
-        <div class="container">
-          <div class="cg-title-row">
-            <div>
-              <span class="section-eyebrow cg-eyebrow" data-i18n="res-gal-eyebrow">Portfólio</span>
-              <h2 class="section-title cg-title" data-i18n="res-gal-title">Projetos residenciais realizados</h2>
-            </div>
-            <div class="cg-controls">
-              <div class="cg-nav">
-                <button class="cg-prev" aria-label="Anterior">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-                </button>
-                <div class="cg-counter"><span class="cg-cur">01</span><span class="cg-sep"> / </span><span class="cg-tot">09</span></div>
-                <button class="cg-next" aria-label="Próximo">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
+        <div class="prod-gallery" data-gallery>
+          <div class="prod-gallery-item active"><img src="assets/residencial/Persiana-Romana.webp" alt="Persiana Rolô" loading="lazy" /></div>
+          <div class="prod-gallery-item"><img src="assets/residencial/persiana_rolo.webp" alt="Persiana Rolô" loading="lazy" /></div>
+          <div class="prod-gallery-item"><img src="assets/residencial/persiana_rolo_2.webp" alt="Persiana Rolô" loading="lazy" /></div>
+          <div class="prod-gallery-dots"></div>
         </div>
       </div>
 
-      <div class="cg-stage" id="cg-stage">
-        <div class="cg-reel active" id="cg-reel-main">
-          <div class="cg-track" id="cg-track-main">
-            <div class="cg-slide active"><img src="assets/residencial/IMG_1788.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_1791.webp" alt="Residência" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_1792.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_2238.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_2969.webp" alt="Residência" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3152.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3152(1).webp" alt="Sala de Estar" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3153.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3154.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3156.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3157.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3158.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3160.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3161.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3162.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3163.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3164.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3165.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3166.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3167.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3168.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3169.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3170.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3171.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3172.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3173.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3174.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3176.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3177.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3178.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3184.webp" alt="Sala de Jantar" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3185.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3464.webp" alt="Residencial Alto Padrão" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3465.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3468.webp" alt="Projeto Residencial" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3469.webp" alt="Sala Integrada" loading="lazy"/></div>
-          </div>
+      <div class="prod-panel">
+        <div class="prod-info">
+          <h2>Persiana<br>Tela Solar</h2>
+          <p>Reduz o calor e mantém a vista externa.</p>
+          <a href="#contato" class="pill-btn dark">Solicitar orçamento</a>
+        </div>
+        <div class="prod-gallery" data-gallery>
+          <div class="prod-gallery-item active"><img src="assets/residencial/rolo_solar.webp" alt="Tela Solar" loading="lazy" /></div>
+          <div class="prod-gallery-item"><img src="assets/residencial/rolo_solar_2.webp" alt="Tela Solar" loading="lazy" /></div>
+          <div class="prod-gallery-item"><img src="assets/residencial/rolo_solar_3.webp" alt="Tela Solar" loading="lazy" /></div>
+          <div class="prod-gallery-item"><img src="assets/residencial/rolo_double_vision.webp" alt="Tela Solar Double Vision" loading="lazy" /></div>
+          <div class="prod-gallery-dots"></div>
         </div>
       </div>
 
-      <div class="cg-footer">
-        <div class="container">
-          <div class="cg-progress"><div class="cg-progress-fill" id="cg-progress-fill"></div></div>
-          <p class="cg-hint" data-i18n="gal-hint">Arraste ou use as setas para navegar · Clique para ampliar</p>
+      <div class="prod-panel">
+        <div class="prod-info">
+          <h2>Persiana<br>Blackout</h2>
+          <p>Máximo bloqueio da luminosidade.</p>
+          <a href="#contato" class="pill-btn dark">Solicitar orçamento</a>
+        </div>
+        <div class="prod-gallery" data-gallery>
+          <div class="prod-gallery-item active"><img src="assets/residencial/Rolô-Blackout-_2_.webp" alt="Blackout" loading="lazy" /></div>
+          <div class="prod-gallery-item"><img src="assets/residencial/Persiana_Blackout.webp" alt="Blackout" loading="lazy" /></div>
+          <div class="prod-gallery-item"><img src="assets/residencial/blackout_3.png" alt="Blackout" loading="lazy" /></div>
+          <div class="prod-gallery-dots"></div>
+        </div>
+      </div>
+
+      <div class="prod-panel">
+        <div class="prod-info">
+          <h2>Cortinas<br>Sob Medida</h2>
+          <p>Elegância e aconchego para qualquer ambiente.</p>
+          <a href="#contato" class="pill-btn dark">Solicitar orçamento</a>
+        </div>
+        <div class="prod-gallery" data-gallery>
+          <div class="prod-gallery-item active"><img src="assets/residencial/cortina.webp" alt="Cortinas" loading="lazy" /></div>
+          <div class="prod-gallery-item"><img src="assets/residencial/cortina_2.webp" alt="Cortinas" loading="lazy" /></div>
+          <div class="prod-gallery-item"><img src="assets/residencial/cortina_3.webp" alt="Cortinas" loading="lazy" /></div>
+          <div class="prod-gallery-item"><img src="assets/residencial/cortina_4.webp" alt="Cortinas" loading="lazy" /></div>
+          <div class="prod-gallery-dots"></div>
         </div>
       </div>
 
     </section>
 
-    <!-- ── VALORES ─────────────────────────────────────────── -->
-    <section class="section value-section" id="valor">
-      <div class="container">
-        <div class="value-content reveal">
-          <span class="section-label" data-i18n="res-val-label">O que muda na prática</span>
-          <div class="value-grid">
-            <div class="value-item">
-              <span class="value-icon">↑</span>
-              <h3 data-i18n="res-val1-title">Qualidade de sono</h3>
-              <p data-i18n="res-val1-text">sem despertar precoce pela luz</p>
-            </div>
-            <div class="value-item">
-              <span class="value-icon">↓</span>
-              <h3 data-i18n="res-val2-title">Temperatura</h3>
-              <p data-i18n="res-val2-text">ambiente mais fresco, menos ar-condicionado</p>
-            </div>
-            <div class="value-item">
-              <span class="value-icon">→</span>
-              <h3 data-i18n="res-val3-title">Preservação</h3>
-              <p data-i18n="res-val3-text">mobiliário e superfícies protegidos do UV</p>
-            </div>
-          </div>
+    <!-- 5. COMO FUNCIONA -->
+    <section id="processo" class="como-funciona">
+      <div class="cf-title-row">
+        <h2 class="cf-title">Como<br>Funciona?</h2>
+      </div>
+      <div class="cf-cards-col">
+        <div class="cf-card">
+          <span class="cf-card-num">01</span>
+          <h3>Solicite seu orçamento</h3>
+        </div>
+        <div class="cf-card">
+          <span class="cf-card-num">02</span>
+          <h3>Agende uma visita</h3>
+        </div>
+        <div class="cf-card">
+          <span class="cf-card-num">03</span>
+          <h3>Escolha seu modelo</h3>
+        </div>
+        <div class="cf-card">
+          <span class="cf-card-num">04</span>
+          <h3>Instalação profissional</h3>
+        </div>
+      </div>
+      <div class="cf-cta">
+        <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20ambiente%20residencial" class="pill-btn dark" target="_blank" rel="noopener">Solicitar Orçamento</a>
+      </div>
+    </section>
+
+    <!-- 6. GALERIA -->
+    <section class="galeria" id="projetos">
+      <div class="gal-hd">
+        <h2>Projetos<br>Realizados</h2>
+      </div>
+      <div class="carousel-viewport" id="carouselViewport">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-item"><img src="assets/residencial/IMG_3152.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/rolo_solar_2.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/cortina.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_1788.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_1791.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_3184.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/rolo_solar.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_3160.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_3162.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/cortina_2.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/persiana_rolo.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/persiana_rolo_2.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_3468.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_3168.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_3169.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/Persiana_Blackout.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/persiana_madeira_2.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/cortina_3.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/cortina_4.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_3465.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/persiana_madeira_3.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_3174.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_3176.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_3177.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/persiana_madeira_4.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_3185.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_3464.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_3469.webp" alt="Projeto residencial" loading="lazy" /></div>
+          <div class="carousel-item"><img src="assets/residencial/IMG_1792.webp" alt="Projeto residencial" loading="lazy" /></div>
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <button class="car-btn car-prev" aria-label="Anterior">&#8592;</button>
+        <span class="car-counter" id="carCounter">1 / 29</span>
+        <button class="car-btn car-next" aria-label="Próximo">&#8594;</button>
+      </div>
+    </section>
+
+    <!-- 7. RESULTADOS -->
+    <section class="resultados-section" id="resultados">
+      <div class="resultados-inner">
+        <div class="res-img">
+          <img src="assets/residencial/IMG_3169.webp" alt="Resultados residenciais" loading="lazy" />
+        </div>
+        <div class="res-text">
+          <span class="eyebrow">Resultado</span>
+          <h2>Resultados que Você Percebe Imediatamente</h2>
+          <p>Ambientes mais confortáveis, menos calor, mais privacidade, decoração sofisticada e valorização do imóvel.</p>
         </div>
       </div>
     </section>
 
-    <!-- ── PREÇOS ─────────────────────────────────────────── -->
-    <section class="section offer-section" id="preco">
-      <div class="container">
-        <div class="offer-content reveal">
-          <span class="section-label" data-i18n="res-price-label">Investimento</span>
-          <h2 data-i18n="res-price-title">Preços a partir de</h2>
-          <div class="price-cards">
-            <div class="price-card">
-              <span class="price-label" data-i18n="res-price1-label">Tela Solar Screen</span>
-              <span class="price-value">R$189<span class="price-unit">/m²</span></span>
-              <span class="price-note" data-i18n="res-price1-note">instalado e com garantia</span>
-            </div>
-            <div class="price-card">
-              <span class="price-label" data-i18n="res-price2-label">Cortinas e Persianas</span>
-              <span class="price-value">R$90<span class="price-unit">/m²</span></span>
-              <span class="price-note" data-i18n="res-price2-note">sob medida, instalado</span>
-            </div>
-          </div>
-        </div>
+    <!-- 8. OFERTA ESPECIAL / CTA -->
+    <section class="cta-section" id="contato">
+      <img src="assets/residencial/IMG_3185.webp" alt="Atiye Residencial" class="cta-bg" />
+      <div class="cta-inner">
+        <span class="eyebrow">Oferta Especial</span>
+        <h2>Solicite seu orçamento hoje mesmo e receba uma proposta personalizada.</h2>
+        <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20ambiente%20residencial"
+          class="pill-btn" target="_blank" rel="noopener">
+          Falar no WhatsApp
+        </a>
       </div>
     </section>
 
-    <!-- ── FAQ ────────────────────────────────────────────── -->
-    <section class="section faq-section" id="faq" style="background: var(--color-warm);">
-      <div class="container">
-        <div class="section-header center reveal">
-          <span class="section-eyebrow" data-i18n="res-faq-eyebrow">Perguntas frequentes</span>
-          <h2 class="section-title" data-i18n="res-faq-title">Dúvidas comuns</h2>
-        </div>
-        <div class="faq-list reveal">
-          <div class="faq-item">
-            <button class="faq-question">
-              <span data-i18n="res-faq-q1">A instalação exige obras?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <p data-i18n="res-faq-a1">Não. Toda a instalação da Atiye é feita sem quebrar paredes, tetos ou esquadrias. Utilizamos sistemas de fixação precisos que não causam danos ao imóvel.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              <span data-i18n="res-faq-q2">Posso solicitar orçamento por ambiente?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <p data-i18n="res-faq-a2">Sim. Atendemos desde projetos de um único ambiente até apartamentos completos. Envie uma foto e as medidas pelo WhatsApp e a partir daí fazemos o diagnóstico técnico.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              <span data-i18n="res-faq-q3">Quanto tempo leva a instalação?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <p data-i18n="res-faq-a3">A maioria dos projetos residenciais é concluída em até 7 dias. O cronograma é definido antes do início, com horários que se adaptam à rotina do morador.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              <span data-i18n="res-faq-q4">A tela solar reduz a claridade do ambiente?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <p data-i18n="res-faq-a4">Depende do nível de abertura escolhido. Com materiais de 5% de abertura ou mais, o ambiente mantém claridade natural enquanto elimina calor e reflexo. A escolha é feita de acordo com as necessidades de cada espaço.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              <span data-i18n="res-faq-q5">Qual é a garantia dos produtos?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <p data-i18n="res-faq-a5">Oferecemos 2 anos de garantia real, com suporte ativo, visita técnica e reposição de peças sem custo adicional quando necessário.</p>
-            </div>
-          </div>
-        </div>
+    <!-- 9. FAQ -->
+    <section class="faq-section" id="faq">
+      <div class="faq-hd">
+        <span class="eyebrow">Perguntas frequentes</span>
+        <h2>Tudo que você precisa saber</h2>
       </div>
-    </section>
-
-    <!-- ── CTA FINAL ──────────────────────────────────────── -->
-    <section class="section cta-section" id="contato">
-      <div class="container">
-        <div class="cta-content">
-          <span class="section-eyebrow" data-i18n="res-cta-eyebrow">Pronto para começar</span>
-          <h2 data-i18n-html="res-cta-title-html">Envie uma foto do ambiente<br>e receba uma recomendação técnica</h2>
-          <p data-i18n="res-cta-text">Sem compromisso. Atendimento direto com quem vai executar o projeto.</p>
-          <a
-            href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20receber%20uma%20recomendação%20técnica%20para%20meu%20ambiente%20residencial"
-            class="cta-button cta-main"
-            target="_blank" rel="noopener"
-            data-i18n="res-cta-btn"
-          >
-            Falar no WhatsApp
-          </a>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q"><span>A instalação exige obras?</span><span class="faq-icon"></span></button>
+          <div class="faq-ans"><p>Não. Toda a instalação da Atiye é feita sem quebrar paredes, tetos ou esquadrias. Utilizamos sistemas de fixação precisos que não causam danos ao imóvel.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Posso solicitar orçamento por ambiente?</span><span class="faq-icon"></span></button>
+          <div class="faq-ans"><p>Sim. Atendemos desde projetos de um único ambiente até apartamentos completos. Envie uma foto e as medidas pelo WhatsApp e a partir daí fazemos o diagnóstico técnico.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Quanto tempo leva a instalação?</span><span class="faq-icon"></span></button>
+          <div class="faq-ans"><p>A maioria dos projetos residenciais é concluída em até 7 dias. O cronograma é definido antes do início, com horários que se adaptam à rotina do morador.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>A tela solar reduz a claridade do ambiente?</span><span class="faq-icon"></span></button>
+          <div class="faq-ans"><p>Depende do nível de abertura escolhido. Com materiais de 5% de abertura ou mais, o ambiente mantém claridade natural enquanto elimina calor e reflexo. A escolha é feita de acordo com as necessidades de cada espaço.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Qual é a garantia dos produtos?</span><span class="faq-icon"></span></button>
+          <div class="faq-ans"><p>Oferecemos 2 anos de garantia real, com suporte ativo, visita técnica e reposição de peças sem custo adicional quando necessário.</p></div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <img src="assets/logo_atiye_fundo_branco.png" alt="Atiye" width="100" height="40" />
-          <p data-i18n="footer-tagline">Controle técnico da luz natural para ambientes residenciais e corporativos que exigem precisão.</p>
-        </div>
-        <div class="footer-links">
-          <h4 data-i18n="footer-solutions">Soluções</h4>
-          <a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a>
-          <a href="residencial.html" data-i18n="nav-residential">Residencial</a>
-          <a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a>
-        </div>
-        <div class="footer-contact">
-          <h4 data-i18n="footer-contact">Contato</h4>
-          <a href="tel:+5511986793247">11 9.8679-3247</a>
-          <a href="https://wa.me/5511986793247" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="mailto:contato@atiyecortinas.com.br"></a>
-        </div>
-        <div class="footer-social">
-          <h4 data-i18n="footer-social">Redes</h4>
-          <a href="https://instagram.com/atiyecortinas" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://instagram.com/atiyecortinas" target="_blank" rel="noopener">@atiyecortinas</a>
-        </div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo_atiye_fundo_branco.png" alt="Atiye" width="80" height="32" />
+        <p>Controle técnico da luz natural para ambientes residenciais e corporativos que exigem precisão.</p>
       </div>
-      <div class="footer-bottom">
-        <p data-i18n="footer-rights">&copy; 2026 Atiye. Todos os direitos reservados.</p>
-        <a href="#">São Paulo, SP</a>
+      <div class="footer-col">
+        <h4>Soluções</h4>
+        <a href="corporativo2.html">Corporativo</a>
+        <a href="residencial.html">Residencial</a>
+        <a href="lavagem.html">Higienização</a>
+        <a href="portfolio.html">Portfólio</a>
       </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="tel:+5511986793247">11 9.8679-3247</a>
+        <a href="https://wa.me/5511986793247" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:atiyepersianas@gmail.com">atiyepersianas@gmail.com</a>
+      </div>
+      <div class="footer-col">
+        <h4>Redes</h4>
+        <a href="https://instagram.com/atiyecortinas" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://instagram.com/atiyecortinas" target="_blank" rel="noopener">@atiyecortinas</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Atiye. Todos os direitos reservados.</p>
+      <a href="#">São Paulo, SP</a>
     </div>
   </footer>
 
-  <!-- WhatsApp Float -->
-  <a href="https://wa.me/5511986793247" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
+  <a href="https://wa.me/5511986793247" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
   <script>
-    (function () {
-      var track = document.getElementById('mcTrack');
-      if (!track) return;
-      var dots = document.querySelectorAll('.mc-dot');
-      var cur = 0, total = track.children.length;
-      function goTo(i) {
-        cur = ((i % total) + total) % total;
-        track.style.transform = 'translateX(-' + (cur * 100) + '%)';
-        dots.forEach(function (d, j) { d.classList.toggle('active', j === cur); });
-      }
-      document.getElementById('mcPrev').addEventListener('click', function () { goTo(cur - 1); });
-      document.getElementById('mcNext').addEventListener('click', function () { goTo(cur + 1); });
-      setInterval(function () { goTo(cur + 1); }, 4500);
-    })();
-  </script>
+  (function () {
+    'use strict';
 
-  <script src="translations.js"></script>
-  <script src="script-landing.js"></script>
+    var header     = document.getElementById('header');
+    var menuBtn    = document.getElementById('menuBtn');
+    var navOverlay = document.getElementById('navOverlay');
+    var navClose   = document.getElementById('navClose');
+    var scrollBar  = document.getElementById('scroll-progress');
+
+    window.addEventListener('scroll', function () {
+      var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+      if (scrollBar) scrollBar.style.width = pct + '%';
+      header.classList.toggle('scrolled', window.scrollY > 80);
+    }, { passive: true });
+
+    menuBtn.addEventListener('click', function () {
+      navOverlay.classList.add('open');
+      navOverlay.removeAttribute('aria-hidden');
+      document.body.style.overflow = 'hidden';
+    });
+    function closeNav() {
+      navOverlay.classList.remove('open');
+      navOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    navClose.addEventListener('click', closeNav);
+    navOverlay.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
+
+    var scrollHint = document.getElementById('scrollHint');
+    if (scrollHint) {
+      scrollHint.addEventListener('click', function () {
+        if (typeof gsap !== 'undefined') gsap.to(window, { scrollTo: '#overview', duration: 1.2, ease: 'power2.inOut' });
+        else document.getElementById('overview').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.parentElement;
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(function (i) { i.classList.remove('open'); });
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    if (typeof gsap === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+    function reveal(targets, vars, stVars) {
+      var defaults = { autoAlpha: 0, y: 30, duration: 0.85, ease: 'power3.out', stagger: vars.stagger || 0 };
+      var props = Object.assign({}, defaults, vars);
+      var st = Object.assign({ start: 'top 88%', toggleActions: 'play none none reset', invalidateOnRefresh: true }, stVars || {});
+      props.scrollTrigger = st;
+      return gsap.from(targets, props);
+    }
+
+    /* Hero load */
+    gsap.set(['.hero-eyebrow','.hero h1','.hero-pills','.hero .pill-btn','.hero-right','.scroll-indicator'], { autoAlpha: 0 });
+    gsap.set('.hero h1', { y: 40 }); gsap.set('.hero-eyebrow', { y: 20 }); gsap.set('.hero-pills', { y: 20 }); gsap.set('.hero .pill-btn', { y: 20 }); gsap.set('.hero-right', { x: 30 });
+    var heroTl = gsap.timeline({ delay: 0.25 });
+    heroTl
+      .to('.hero-eyebrow',     { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power3.out' })
+      .to('.hero h1',          { autoAlpha: 1, y: 0, duration: 0.9, ease: 'power3.out' }, '-=0.4')
+      .to('.hero-pills',       { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.5')
+      .to('.hero .pill-btn',   { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.4')
+      .to('.hero-right',       { autoAlpha: 1, x: 0, duration: 0.7, ease: 'power3.out' }, '-=0.6')
+      .to('.scroll-indicator', { autoAlpha: 1, duration: 0.6 }, '-=0.3');
+
+    /* Hero parallax */
+    var heroBg = document.querySelector('.hero-bg');
+    if (heroBg) gsap.to(heroBg, { yPercent: 22, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
+    gsap.to('.hero-content', { autoAlpha: 0, y: -60, ease: 'none', scrollTrigger: { trigger: '.hero', start: '15% top', end: '65% top', scrub: true, invalidateOnRefresh: true } });
+
+    /* Overview */
+    reveal('.ov-heading h2', { y: 30, duration: 0.9 }, { trigger: '.ov-heading', start: 'top 84%' });
+    reveal('.ov-body > *',   { y: 24, duration: 0.8, stagger: 0.14 }, { trigger: '.ov-body', start: 'top 84%' });
+    reveal('.ov-img-a', { y: 50, duration: 1 }, { trigger: '.overview-images', start: 'top 84%' });
+    reveal('.ov-img-b', { y: 30, duration: 1 }, { trigger: '.overview-images', start: 'top 84%' });
+    if (window.innerWidth > 900) {
+      gsap.to('.ov-img-a img', { yPercent: 8,  ease: 'none', scrollTrigger: { trigger: '.overview', start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
+      gsap.to('.ov-img-b img', { yPercent: -8, ease: 'none', scrollTrigger: { trigger: '.overview', start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
+    }
+
+    /* Como Funciona — pin: ativa só quando o fundo da seção (CTA) está visível */
+    ScrollTrigger.create({
+      trigger: '#processo',
+      start: 'bottom bottom',
+      end: function () { return '+=' + document.querySelector('.galeria').offsetHeight; },
+      pin: true,
+      pinSpacing: false,
+      invalidateOnRefresh: true
+    });
+
+    /* Como Funciona — título e cards com scroll reveal individual */
+    reveal('.cf-title', { y: 40, duration: 1 }, { trigger: '.cf-title-row', start: 'top 82%' });
+    document.querySelectorAll('.cf-card').forEach(function (card) {
+      gsap.fromTo(card,
+        { autoAlpha: 0, y: 50 },
+        { autoAlpha: 1, y: 0, duration: 0.9, ease: 'power3.out',
+          scrollTrigger: { trigger: card, start: 'top 82%', toggleActions: 'play none none reset', invalidateOnRefresh: true }
+        }
+      );
+    });
+
+    /* Diferenciais — título reveal */
+    reveal('.dif-fan-title h2', { y: 50, scale: 0.95, duration: 1.2 }, { trigger: '.dif-fan-title', start: 'top 78%' });
+
+    /* Diferenciais — fan carousel infinito */
+    (function () {
+      var section  = document.getElementById('diferenciais');
+      var viewport = document.getElementById('difFanViewport');
+      if (!section || !viewport) return;
+
+      var cards = Array.prototype.slice.call(viewport.querySelectorAll('.dif-fan-card'));
+      var N = cards.length;
+      var offset = 0, targetOffset = 0;
+      var isActive = false;
+
+      var isMobile    = window.innerWidth < 640;
+      /*
+       * Carrossel em arco circular:
+       * – R define o raio do arco (calibrado para tela 1536px)
+       * – ANGLE_STEP é o ângulo entre cards adjacentes (em rad)
+       * – pos ±1: visível com sobreposição ao central
+       * – pos ±2: quase fora da tela nas bordas
+       */
+      var R           = isMobile ? 460 : 920;
+      var ANGLE_STEP  = 0.48;   /* ~27.5° por card */
+      var ROT_FACTOR  = 0.55;   /* quanto o card inclina relativamente ao ângulo */
+      var Y_COMPRESS  = 0.48;   /* arc vertical: mais pronunciado nas laterais */
+      var AUTO_SPEED  = 0.0028; /* velocidade do giro automático esq→dir */
+
+      function renderCards() {
+        cards.forEach(function (card, i) {
+          var pos    = ((i - offset) % N + N * 100) % N;
+          if (pos > N / 2) pos -= N;
+
+          var angle  = pos * ANGLE_STEP;
+          var x      = R * Math.sin(angle);
+          var y      = R * (1 - Math.cos(angle)) * Y_COMPRESS;
+          var rotate = (angle * (180 / Math.PI)) * ROT_FACTOR;
+          var scale  = Math.max(0.55, 1 - Math.abs(pos) * 0.12);
+          var z      = N - Math.abs(Math.round(pos));
+
+          gsap.set(card, { x: x, y: y, rotation: rotate, scale: scale, zIndex: z });
+        });
+      }
+
+      /* Detecta quando a seção está ativa */
+      var obs = new IntersectionObserver(function (entries) {
+        isActive = entries[0].intersectionRatio >= 0.35;
+      }, { threshold: [0, 0.35, 0.65, 1] });
+      obs.observe(section);
+
+      /* Scroll acelera o carrossel (mais lento) */
+      window.addEventListener('wheel', function (e) {
+        if (!isActive) return;
+        targetOffset += e.deltaY * 0.002;
+      }, { passive: true });
+
+      /* Touch support */
+      var touchStartY = 0;
+      section.addEventListener('touchstart', function (e) { touchStartY = e.touches[0].clientY; }, { passive: true });
+      section.addEventListener('touchmove', function (e) {
+        var dy = touchStartY - e.touches[0].clientY;
+        touchStartY = e.touches[0].clientY;
+        targetOffset += dy * 0.012;
+      }, { passive: true });
+
+      /* Click num card para centralizar */
+      cards.forEach(function (card, i) {
+        card.addEventListener('click', function () {
+          var pos = ((i - offset) % N + N * 100) % N;
+          if (pos > N / 2) pos -= N;
+          targetOffset += pos;
+        });
+      });
+
+      /* GSAP ticker — auto-movimento esq→dir + scroll acelera */
+      gsap.ticker.add(function () {
+        targetOffset -= AUTO_SPEED;
+        offset += (targetOffset - offset) * 0.035;
+        renderCards();
+      });
+
+      /* Reveal inicial */
+      gsap.from(cards, {
+        autoAlpha: 0, y: 80, stagger: 0.12, duration: 1, ease: 'power3.out',
+        scrollTrigger: { trigger: section, start: 'top 75%', toggleActions: 'play none none reset' }
+      });
+
+      renderCards();
+    }());
+
+    /* Produtos — auto-slide gallery */
+    document.querySelectorAll('[data-gallery]').forEach(function (gallery) {
+      var items = gallery.querySelectorAll('.prod-gallery-item:not(.prod-gallery-dots)');
+      var dotsContainer = gallery.querySelector('.prod-gallery-dots');
+      var current = 0;
+      /* build dots */
+      items.forEach(function (_, i) {
+        var dot = document.createElement('span');
+        dot.className = 'prod-gallery-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', function () { goTo(i); });
+        dotsContainer.appendChild(dot);
+      });
+      function goTo(idx) {
+        items[current].classList.remove('active');
+        dotsContainer.children[current].classList.remove('active');
+        current = (idx + items.length) % items.length;
+        items[current].classList.add('active');
+        dotsContainer.children[current].classList.add('active');
+      }
+      setInterval(function () { goTo(current + 1); }, 3800);
+    });
+
+    /* Produtos — reveals e parallax */
+    document.querySelectorAll('.prod-panel').forEach(function (panel, i) {
+      var fromX = i % 2 === 0 ? -40 : 40;
+      reveal(panel.querySelectorAll('.prod-info > *'), { x: fromX, y: 0, duration: 0.9, stagger: 0.13 }, { trigger: panel, start: 'top 80%' });
+    });
+
+    /* Título NOSSAS PRINCIPAIS SOLUÇÕES */
+    reveal('.prod-title-eyebrow', { y: 20, duration: 0.7 }, { trigger: '.prod-title-section', start: 'top 80%' });
+    gsap.from('.prod-main-title', {
+      autoAlpha: 0, y: 80, scale: 0.92, duration: 1.3, ease: 'power3.out',
+      scrollTrigger: { trigger: '.prod-title-section', start: 'top 72%', toggleActions: 'play none none reset', invalidateOnRefresh: true }
+    });
+
+    /* Galeria — header reveal */
+    reveal('.gal-hd h2', { y: 24, duration: 0.8 }, { trigger: '.gal-hd', start: 'top 86%' });
+
+    /* Galeria — carrossel GSAP */
+    (function () {
+      var viewport = document.getElementById('carouselViewport');
+      var track    = document.getElementById('carouselTrack');
+      var counter  = document.getElementById('carCounter');
+      if (!viewport || !track) return;
+
+      var items    = Array.prototype.slice.call(track.querySelectorAll('.carousel-item'));
+      var GAP      = 18;
+      var trackX   = 0;
+      var isDragging = false;
+      var startPointer = 0, startTrackX = 0, lastPointer = 0, velocity = 0;
+      var activeIndex = 0;
+
+      function getItemW() { return items[0] ? items[0].offsetWidth + GAP : 388; }
+      function getMinX()  { return -(track.scrollWidth - viewport.offsetWidth); }
+
+      function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+      /* — active highlight — */
+      function updateActive() {
+        var vpRect  = viewport.getBoundingClientRect();
+        var vpCx    = vpRect.left + vpRect.width / 2;
+        var best = 0, bestDist = Infinity;
+        items.forEach(function (item, i) {
+          var r  = item.getBoundingClientRect();
+          var cx = r.left + r.width / 2;
+          var d  = Math.abs(cx - vpCx);
+          if (d < bestDist) { bestDist = d; best = i; }
+        });
+        if (best !== activeIndex) {
+          activeIndex = best;
+          items.forEach(function (item, i) { item.classList.toggle('active', i === best); });
+          if (counter) counter.textContent = (best + 1) + ' / ' + items.length;
+        }
+      }
+
+      /* — snap to nearest — */
+      function snapToNearest() {
+        var vpRect = viewport.getBoundingClientRect();
+        var vpCx   = vpRect.left + vpRect.width / 2;
+        var best = items[0], bestDist = Infinity;
+        items.forEach(function (item) {
+          var r  = item.getBoundingClientRect();
+          var cx = r.left + r.width / 2;
+          var d  = Math.abs(cx - vpCx);
+          if (d < bestDist) { bestDist = d; best = item; }
+        });
+        var bRect  = best.getBoundingClientRect();
+        var bCx    = bRect.left + bRect.width / 2;
+        var target = clamp(trackX - (bCx - vpCx), getMinX(), 0);
+        gsap.to(track, { x: target, duration: 0.45, ease: 'power3.out',
+          onUpdate: updateActive,
+          onComplete: function () { trackX = target; }
+        });
+      }
+
+      /* — drag — */
+      function pointerX(e) { return e.touches ? e.touches[0].clientX : e.clientX; }
+
+      function onDown(e) {
+        isDragging = true;
+        startPointer = pointerX(e);
+        startTrackX  = trackX;
+        lastPointer  = startPointer;
+        velocity     = 0;
+        track.classList.add('dragging');
+        gsap.killTweensOf(track);
+        document.addEventListener('mousemove', onMove);
+        document.addEventListener('mouseup',   onUp);
+        document.addEventListener('touchmove', onMove, { passive: false });
+        document.addEventListener('touchend',  onUp);
+      }
+
+      function onMove(e) {
+        if (!isDragging) return;
+        var px = pointerX(e);
+        velocity = px - lastPointer;
+        lastPointer = px;
+        var newX = clamp(startTrackX + (px - startPointer), getMinX(), 0);
+        trackX = newX;
+        gsap.set(track, { x: newX });
+        updateActive();
+        if (e.cancelable) e.preventDefault();
+      }
+
+      function onUp() {
+        if (!isDragging) return;
+        isDragging = false;
+        track.classList.remove('dragging');
+        document.removeEventListener('mousemove', onMove);
+        document.removeEventListener('mouseup',   onUp);
+        document.removeEventListener('touchmove', onMove);
+        document.removeEventListener('touchend',  onUp);
+        /* momentum suave */
+        var momentum = velocity * 5;
+        var target   = clamp(trackX + momentum, getMinX(), 0);
+        gsap.to(track, { x: target, duration: 0.7, ease: 'power3.out',
+          onUpdate: updateActive,
+          onComplete: function () { trackX = target; snapToNearest(); }
+        });
+      }
+
+      track.addEventListener('mousedown',  onDown);
+      track.addEventListener('touchstart', onDown, { passive: true });
+
+      /* — botões — */
+      function navigateTo(idx) {
+        idx = clamp(idx, 0, items.length - 1);
+        var vpCx = viewport.offsetWidth / 2;
+        var itemW = getItemW();
+        /* centro do item idx relativo ao track origin */
+        var itemCx = items[idx].offsetLeft + items[idx].offsetWidth / 2;
+        var target = clamp(vpCx - itemCx, getMinX(), 0);
+        trackX = target;
+        gsap.to(track, { x: target, duration: 0.65, ease: 'power3.out', onUpdate: updateActive });
+      }
+
+      document.querySelector('.car-prev').addEventListener('click', function () { navigateTo(activeIndex - 1); });
+      document.querySelector('.car-next').addEventListener('click', function () { navigateTo(activeIndex + 1); });
+
+      /* — reveal da seção — */
+      gsap.from('.carousel-viewport', {
+        autoAlpha: 0, y: 40, duration: 1, ease: 'power3.out',
+        scrollTrigger: { trigger: '.carousel-viewport', start: 'top 88%', toggleActions: 'play none none reset' }
+      });
+
+      /* init — ativa o primeiro item diretamente */
+      items[0].classList.add('active');
+      if (counter) counter.textContent = '1 / ' + items.length;
+
+      /* re-checa ao scrollar para a seção (quando fica visível) */
+      ScrollTrigger.create({
+        trigger: '.galeria',
+        start: 'top 80%',
+        once: true,
+        onEnter: function () { updateActive(); }
+      });
+    }());
+
+    /* CTA parallax */
+    var ctaBg = document.querySelector('.cta-bg');
+    if (ctaBg) gsap.fromTo(ctaBg, { yPercent: -12, scale: 1.08 }, { yPercent: 10, scale: 1, ease: 'none', scrollTrigger: { trigger: '.cta-section', start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true } });
+    reveal('.cta-inner > *', { y: 35, stagger: 0.12 }, { trigger: '.cta-inner', start: 'top 78%' });
+
+    /* FAQ + Footer */
+    reveal('.faq-hd > *', { y: 20, stagger: 0.1 }, { trigger: '.faq-hd', start: 'top 87%' });
+    reveal('.faq-item',   { y: 18, stagger: 0.08, duration: 0.6 }, { trigger: '.faq-list', start: 'top 86%' });
+    reveal('.footer-grid > *', { y: 30, stagger: 0.1 }, { trigger: '.footer-grid', start: 'top 90%' });
+
+    function doRefresh() { ScrollTrigger.refresh(true); }
+    if (document.readyState === 'complete') { doRefresh(); setTimeout(doRefresh, 600); }
+    else { window.addEventListener('load', function () { doRefresh(); setTimeout(doRefresh, 600); }); }
+
+  }());
+  </script>
 </body>
 </html>
