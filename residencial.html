@@ -356,14 +356,38 @@
       .footer-brand { grid-column: 1 / -1; }
     }
     @media (max-width: 640px) {
-      .dif-strip-grid { grid-template-columns: 1fr; }
-      .dif-item { border-left: none; border-top: 1px solid var(--border); padding: 1.2rem 0.5rem; }
-      .dif-item:first-child { border-top: none; }
+      /* Porque Escolher a Atiye — cards lado a lado em faixa horizontal */
+      .dif-strip-grid {
+        display: flex; flex-direction: row; overflow-x: auto;
+        gap: 0.75rem; padding: 0 1rem 0.5rem; scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .dif-strip-grid::-webkit-scrollbar { display: none; }
+      .dif-item {
+        flex: 0 0 auto; min-width: 130px; max-width: 150px;
+        flex-direction: column; align-items: center; text-align: center;
+        border-left: none; border-top: none;
+        border: 1px solid var(--border); border-radius: 6px;
+        padding: 1.2rem 0.75rem; gap: 0.6rem;
+        scroll-snap-align: start; background: #fff;
+      }
+      .dif-item:first-child { border: 1px solid var(--border); }
+
+      /* Mais Conforto e Elegância — título maior */
+      .overview .section-title { font-size: clamp(2rem, 7vw, 2.6rem); }
+
+      /* Como Funciona — conteúdo centralizado */
+      .cf-grid { grid-template-columns: 1fr; }
+      .cf-step {
+        border-left: none; border-top: 1px solid var(--border);
+        padding: 1.2rem 0.5rem;
+        flex-direction: column; align-items: center; text-align: center; gap: 0.6rem;
+      }
+      .cf-step:first-child { border-top: none; }
+      .cf-step div { display: flex; flex-direction: column; align-items: center; }
+
       .prod-grid { grid-template-columns: 1fr; }
       .gal-grid { grid-template-columns: repeat(2, 1fr); }
-      .cf-grid { grid-template-columns: 1fr; }
-      .cf-step { border-left: none; border-top: 1px solid var(--border); padding: 1.2rem 0.5rem; }
-      .cf-step:first-child { border-top: none; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-brand { grid-column: auto; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; }
