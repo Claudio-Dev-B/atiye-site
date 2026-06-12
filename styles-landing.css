@@ -738,15 +738,7 @@
   width: auto;
   max-width: 110px;
   object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.45;
-  transition: opacity 0.3s, filter 0.3s;
   display: block;
-}
-
-.client-logo-item:hover img {
-  filter: grayscale(0);
-  opacity: 0.8;
 }
 
 /* ── Responsive: Corporate Cases ───────────────────────── */
