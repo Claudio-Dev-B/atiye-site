@@ -1685,6 +1685,23 @@
           strip.style.cursor = 'grab';
         });
 
+        /* Touch drag */
+        var touchStartX = 0, touchStartPos = 0;
+        strip.addEventListener('touchstart', function (e) {
+          touchStartX = e.touches[0].clientX;
+          touchStartPos = pos;
+          paused = true;
+        }, { passive: true });
+        strip.addEventListener('touchmove', function (e) {
+          var delta = touchStartX - e.touches[0].clientX;
+          var hw = getHalfWidth();
+          if (hw > 0) pos = ((touchStartPos + delta) % hw + hw) % hw;
+          track.style.transform = 'translateX(-' + pos + 'px)';
+        }, { passive: true });
+        strip.addEventListener('touchend', function () {
+          paused = false;
+        }, { passive: true });
+
         raf = requestAnimationFrame(tick);
       });
 
@@ -1698,6 +1715,19 @@
         if (e.key === 'ArrowLeft')  navigateLightbox(-1);
         if (e.key === 'ArrowRight') navigateLightbox(1);
       });
+
+      /* Touch swipe no lightbox */
+      var lbTouchX = 0;
+      var lbImgWrap = document.querySelector('.lightbox-img-wrap');
+      if (lbImgWrap) {
+        lbImgWrap.addEventListener('touchstart', function (e) {
+          lbTouchX = e.touches[0].clientX;
+        }, { passive: true });
+        lbImgWrap.addEventListener('touchend', function (e) {
+          var d = lbTouchX - e.changedTouches[0].clientX;
+          if (Math.abs(d) > 40) navigateLightbox(d > 0 ? 1 : -1);
+        }, { passive: true });
+      }
 
       /* ── Catalog Nav: scroll-spy + click scroll ─────── */
       var navItems = Array.from(document.querySelectorAll('.cat-nav-item'));
