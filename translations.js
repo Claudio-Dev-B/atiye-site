@@ -415,7 +415,7 @@
 
       /* ── RESIDENCIAL v2 (residencial.html) ───────────────── */
       'res2-hero-eyebrow':      'Residencial',
-      'res2-hero-title':        'Persianas Sob Medida com Instalação Profissional',
+      'res2-hero-title':        'Persianas e Cortinas Sob Medida com Instalação Profissional',
       'res2-hero-pill-1':       'Atendimento rápido',
       'res2-hero-pill-2':       'Medição técnica',
       'res2-hero-pill-3':       'Instalação especializada',
@@ -1007,7 +1007,7 @@
 
       /* ── RESIDENCIAL v2 (residencial.html) ───────────────── */
       'res2-hero-eyebrow':      'Residential',
-      'res2-hero-title':        'Custom Blinds with Professional Installation',
+      'res2-hero-title':        'Custom Blinds and Curtains with Professional Installation',
       'res2-hero-pill-1':       'Fast service',
       'res2-hero-pill-2':       'Technical measurement',
       'res2-hero-pill-3':       'Specialized installation',
