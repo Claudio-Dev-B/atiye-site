@@ -76,8 +76,8 @@
           A Atiye projeta soluções sob medida que ajustam exatamente como a luz se comporta em cada espaço.
         </p>
         <div class="hero-tags">
-          <span data-i18n="hero-tag-1">Projetos Residenciais</span>
-          <span data-i18n="hero-tag-2">Projetos Corporativos</span>
+          <a href="residencial.html" class="hero-tag-link" data-i18n="hero-tag-1">Projetos Residenciais</a>
+          <a href="corporativo.html" class="hero-tag-link" data-i18n="hero-tag-2">Projetos Corporativos</a>
         </div>
         <a href="#contato" class="cta-button hero-cta" data-i18n="hero-cta">Solicitar orçamento</a>
       </div>
@@ -98,8 +98,14 @@
         </div>
         <div class="value-split reveal">
           <div class="value-image-col">
-            <div class="value-image-single">
-              <img src="assets/residencial/IMG_3152(1).webp" alt="Ambiente residencial com controle de luz" loading="lazy" />
+            <div class="value-image-rotator" id="val-rotator" style="position:relative;overflow:hidden;border-radius:2px;cursor:pointer;" title="Clique para ver a próxima">
+              <img src="assets/escritorio/IMG_3181.webp"         alt="Projeto corporativo Atiye" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 0.7s ease;" />
+              <img src="assets/escritorio/IMG_3155.webp"         alt="Projeto corporativo Atiye" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.7s ease;" loading="lazy" />
+              <img src="assets/escritorio/IMG_2239.webp"         alt="Projeto corporativo Atiye" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.7s ease;" loading="lazy" />
+              <img src="assets/residencial/persiana_madeira_3.webp" alt="Persiana de madeira Atiye" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.7s ease;" loading="lazy" />
+              <img src="assets/residencial/persiana_rolo.webp"   alt="Rolô Atiye"                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.7s ease;" loading="lazy" />
+              <!-- placeholder para manter a altura do container -->
+              <img src="assets/escritorio/IMG_3181.webp" alt="" style="width:100%;height:100%;object-fit:cover;visibility:hidden;" aria-hidden="true" />
             </div>
           </div>
           <div class="value-benefits">
@@ -289,7 +295,7 @@
       </div>
       <div class="featured-grid">
         <a href="residencial.html" class="featured-item">
-          <img src="assets/residencial/IMG_3152(1).webp" alt="Projetos residenciais Atiye" loading="lazy" width="900" height="700" />
+          <img src="assets/residencial/IMG_3152.webp" alt="Projetos residenciais Atiye" loading="lazy" width="900" height="700" />
           <div class="featured-overlay">
             <span class="featured-label" data-i18n="feat-res-label">Residencial</span>
             <h3 data-i18n="feat-res-title">Conforto no ritmo da sua vida</h3>
@@ -616,15 +622,15 @@
 
         <div class="cg-reel" id="cg-reel-residencial">
           <div class="cg-track" id="cg-track-residencial">
-            <div class="cg-slide active"><img src="assets/residencial/IMG_3152(1).webp" alt="Sala de Estar" loading="lazy"/></div>
+            <div class="cg-slide active"><img src="assets/residencial/IMG_3152.webp" alt="Sala de Estar" loading="lazy"/></div>
             <div class="cg-slide"><img src="assets/residencial/IMG_1788.webp" alt="Residência" loading="lazy"/></div>
             <div class="cg-slide"><img src="assets/residencial/IMG_3184.webp" alt="Sala de Jantar" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3170.webp" alt="Quarto Principal" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_2969.webp" alt="Residência" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3154.webp" alt="Varanda" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3156.webp" alt="Alto Padrão" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3157.webp" alt="Apartamento" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3158.webp" alt="Suite" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_3169.webp" alt="Quarto Principal" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_3160.webp" alt="Residência" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_3161.webp" alt="Varanda" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_3162.webp" alt="Alto Padrão" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_3163.webp" alt="Apartamento" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_3168.webp" alt="Suite" loading="lazy"/></div>
             <div class="cg-slide"><img src="assets/residencial/IMG_3464.webp" alt="Residencial Alto Padrão" loading="lazy"/></div>
             <div class="cg-slide"><img src="assets/residencial/IMG_3469.webp" alt="Sala Integrada" loading="lazy"/></div>
           </div>
@@ -775,5 +781,32 @@
 
   <script src="translations.js"></script>
   <script src="script.js"></script>
+
+  <script>
+    /* ── Rotador de imagem — seção valor ── */
+    (function () {
+      var rotator = document.getElementById('val-rotator');
+      if (!rotator) return;
+      var imgs = Array.from(rotator.querySelectorAll('img:not([aria-hidden])'));
+      var current = 0;
+      var interval;
+
+      function goTo(idx) {
+        imgs[current].style.opacity = '0';
+        current = (idx + imgs.length) % imgs.length;
+        imgs[current].style.opacity = '1';
+      }
+
+      function next() { goTo(current + 1); }
+
+      rotator.addEventListener('click', function () {
+        next();
+        clearInterval(interval);
+        interval = setInterval(next, 4000);
+      });
+
+      interval = setInterval(next, 4000);
+    }());
+  </script>
 </body>
 </html>
