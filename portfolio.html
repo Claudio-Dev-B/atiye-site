@@ -15,9 +15,9 @@
   <link rel="stylesheet" href="styles-landing.css" />
 
   <style>
-    /* ══════════════════════════════════════════════════════
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        CATÁLOGO TÉCNICO — Portfolio Page Styles
-    ══════════════════════════════════════════════════════ */
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
     /* ── Page Hero ─────────────────────────────────────── */
     .cat-hero {
@@ -27,7 +27,7 @@
       display: flex;
       align-items: flex-end;
       overflow: hidden;
-      background: #0d0d0d;
+      background: #d8cfc4;
     }
 
     .cat-hero-grid {
@@ -42,21 +42,21 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.38;
+      opacity: 0.88;
       transition: opacity 0.4s ease;
-      filter: grayscale(20%);
+      filter: brightness(1.05) saturate(0.95);
     }
 
-    .cat-hero-grid-img:hover { opacity: 0.55; }
+    .cat-hero-grid-img:hover { opacity: 1; }
 
     .cat-hero-overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(
         160deg,
-        rgba(13,13,13,0.55) 0%,
-        rgba(13,13,13,0.25) 40%,
-        rgba(13,13,13,0.85) 100%
+        rgba(255,255,255,0.08) 0%,
+        rgba(255,255,255,0.0) 35%,
+        rgba(10,8,5,0.72) 100%
       );
     }
 
@@ -90,6 +90,7 @@
       max-width: 820px;
       opacity: 0;
       animation: catFadeUp 0.9s 0.35s var(--ease-out-expo) forwards;
+      text-shadow: 0 2px 28px rgba(8,6,3,0.75), 0 1px 6px rgba(8,6,3,0.55);
     }
 
     .cat-hero-title em {
@@ -101,11 +102,12 @@
       margin-top: 1.5rem;
       font-size: 0.95rem;
       font-weight: 300;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.85);
       max-width: 480px;
       line-height: 1.75;
       opacity: 0;
       animation: catFadeUp 0.9s 0.5s var(--ease-out-expo) forwards;
+      text-shadow: 0 1px 14px rgba(8,6,3,0.7);
     }
 
     .cat-hero-scroll {
@@ -139,8 +141,9 @@
 
     /* ── Intro Stats Bar ────────────────────────────────── */
     .cat-stats-bar {
-      background: var(--color-ink);
+      background: #faf8f5;
       padding: 0;
+      border-bottom: 1px solid rgba(26,24,20,0.08);
     }
 
     .cat-stats-inner {
@@ -155,21 +158,21 @@
 
     .cat-stats-text {
       padding: 2.5rem 0;
-      border-right: 1px solid rgba(255,255,255,0.08);
+      border-right: 1px solid rgba(26,24,20,0.1);
     }
 
     .cat-stats-text h2 {
       font-family: var(--font-display);
       font-size: clamp(1.3rem, 2vw, 1.75rem);
       font-weight: 300;
-      color: var(--color-white);
+      color: var(--color-ink);
       line-height: 1.3;
     }
 
     .cat-stats-text p {
       margin-top: 0.35rem;
       font-size: 0.82rem;
-      color: rgba(255,255,255,0.4);
+      color: rgba(26,24,20,0.45);
       letter-spacing: 0.03em;
     }
 
@@ -195,7 +198,7 @@
       font-weight: 600;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
+      color: rgba(26,24,20,0.4);
     }
 
     /* ── Filter Navigation ──────────────────────────────── */
@@ -203,10 +206,10 @@
       position: sticky;
       top: var(--header-height);
       z-index: 90;
-      background: rgba(13,13,13,0.97);
+      background: rgba(250,248,245,0.97);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(26,24,20,0.1);
     }
 
     .cat-nav {
@@ -232,7 +235,7 @@
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.38);
+      color: rgba(26,24,20,0.38);
       background: transparent;
       border: none;
       border-bottom: 2px solid transparent;
@@ -242,7 +245,7 @@
     }
 
     .cat-nav-item:hover {
-      color: rgba(255,255,255,0.75);
+      color: rgba(26,24,20,0.75);
     }
 
     .cat-nav-item.active {
@@ -254,25 +257,26 @@
       font-family: var(--font-display);
       font-size: 0.75rem;
       font-weight: 300;
-      color: rgba(255,255,255,0.2);
+      color: rgba(26,24,20,0.2);
       transition: color 0.2s ease;
     }
 
     .cat-nav-item.active .cat-nav-num { color: var(--color-gold-light); }
 
-    /* ══════════════════════════════════════════════════════
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
        PRODUCT SECTIONS
-    ══════════════════════════════════════════════════════ */
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-    .product-section { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .product-section { border-bottom: 1px solid rgba(26,24,20,0.07); }
 
     /* ── Product Hero Banner ────────────────────────────── */
     .ps-hero {
       position: relative;
-      min-height: 480px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      background: #0f0e0c;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #faf8f5;
       overflow: hidden;
     }
 
@@ -281,33 +285,44 @@
       z-index: 2;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 5rem var(--container-padding) 5rem calc(var(--container-padding) + max(0px, (100vw - var(--container-max)) / 2));
+      align-items: center;
+      text-align: center;
+      padding: 3rem 3.5rem;
+      max-width: 640px;
+      width: 100%;
+      background: rgba(250,248,245,0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 4px;
+      margin: 2.5rem auto;
+      box-shadow: 0 4px 40px rgba(26,24,20,0.08);
     }
 
     .ps-hero-right {
-      position: relative;
-      overflow: hidden;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
     }
 
     .ps-hero-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.6;
+      opacity: 1;
       transition: transform 8s ease, opacity 0.4s ease;
       transform: scale(1.04);
+      filter: brightness(1.06) saturate(0.9);
     }
 
     .product-section:hover .ps-hero-img {
       transform: scale(1.0);
-      opacity: 0.72;
+      opacity: 1;
     }
 
     .ps-hero-right-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, #0f0e0c 0%, rgba(15,14,12,0.35) 40%, transparent 100%);
+      background: transparent;
     }
 
     .ps-counter {
@@ -325,12 +340,12 @@
 
     .ps-counter-sep {
       font-size: 1.2rem;
-      color: rgba(196,168,122,0.35);
+      color: rgba(196,168,122,0.4);
     }
 
     .ps-counter-total {
       font-size: 1.2rem;
-      color: rgba(196,168,122,0.35);
+      color: rgba(196,168,122,0.4);
     }
 
     .ps-eyebrow {
@@ -338,33 +353,34 @@
       font-weight: 600;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
+      color: rgba(26,24,20,0.38);
       margin-bottom: 0.75rem;
     }
 
     .ps-name {
       font-family: var(--font-display);
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-size: clamp(3rem, 5.5vw, 5rem);
       font-weight: 300;
-      line-height: 1.1;
-      color: var(--color-white);
+      line-height: 1.0;
+      color: var(--color-ink);
       margin-bottom: 0.75rem;
     }
 
     .ps-tagline {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 300;
-      color: rgba(255,255,255,0.5);
+      color: rgba(26,24,20,0.52);
       line-height: 1.65;
-      max-width: 360px;
-      margin-bottom: 2rem;
+      max-width: 480px;
+      margin-bottom: 1.5rem;
     }
 
     .ps-specs {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 0.5rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
       list-style: none;
       padding: 0;
     }
@@ -372,23 +388,22 @@
     .ps-spec {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
+      gap: 0.4rem;
       padding: 0.35rem 0.85rem;
-      border: 1px solid rgba(196,168,122,0.3);
+      border: 1px solid rgba(196,168,122,0.45);
       border-radius: 999px;
       font-size: 0.7rem;
       font-weight: 500;
       letter-spacing: 0.06em;
-      color: var(--color-gold-light);
+      color: #8a6c30;
+      background: rgba(196,168,122,0.08);
     }
 
-    .ps-spec::before {
-      content: '';
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--color-gold);
+    .ps-spec svg {
+      width: 12px;
+      height: 12px;
       flex-shrink: 0;
+      color: var(--color-gold);
     }
 
     .ps-cta {
@@ -405,7 +420,7 @@
       border-radius: 2px;
       text-decoration: none;
       transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-      align-self: flex-start;
+      align-self: center;
     }
 
     .ps-cta:hover {
@@ -419,7 +434,7 @@
     /* ── Product Gallery ────────────────────────────────── */
     .ps-gallery {
       background: var(--color-warm);
-      padding: 2.5rem 0 3.5rem;
+      padding: 1rem 0 2rem;
     }
 
     .ps-gallery-inner {
@@ -505,6 +520,87 @@
     }
 
     .photo-item-zoom svg { width: 15px; height: 15px; color: white; }
+
+    /* ── Gallery Strip (horizontal auto-scroll) ────────── */
+    .gallery-strip {
+      overflow: hidden;
+      width: 100%;
+      cursor: grab;
+      user-select: none;
+      position: relative;
+    }
+
+    .gallery-strip:active { cursor: grabbing; }
+
+    .gallery-track {
+      display: flex;
+      gap: 0.6rem;
+      width: max-content;
+      will-change: transform;
+    }
+
+    .gallery-strip.paused .gallery-track { animation-play-state: paused; }
+
+    .gallery-slide {
+      flex-shrink: 0;
+      width: 260px;
+      height: 340px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      background: var(--color-border);
+      border-radius: 3px;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-slide { width: 200px; height: 260px; }
+    }
+
+    .gallery-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s var(--ease-out-quart);
+      filter: brightness(1.04) saturate(0.95);
+    }
+
+    .gallery-slide:hover img { transform: scale(1.06); filter: brightness(1.08) saturate(1); }
+
+    .gallery-slide .photo-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(255,255,255,0.18) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+    }
+
+    .gallery-slide:hover .photo-item-overlay { opacity: 1; }
+
+    .gallery-slide .photo-item-zoom {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      transition: all 0.2s ease;
+    }
+
+    .gallery-slide:hover .photo-item-zoom {
+      background: var(--color-gold);
+      border-color: var(--color-gold);
+    }
+
+    .gallery-slide .photo-item-zoom svg { width: 15px; height: 15px; color: var(--color-ink); }
+    .gallery-slide:hover .photo-item-zoom svg { color: white; }
 
     /* ── Lightbox ───────────────────────────────────────── */
     .lightbox {
@@ -599,7 +695,7 @@
 
     /* ── CTA Section ────────────────────────────────────── */
     .cat-cta {
-      background: var(--color-ink);
+      background: #f3ede4;
       padding: 6rem 0;
       text-align: center;
     }
@@ -625,13 +721,13 @@
       font-size: clamp(2rem, 3.5vw, 3rem);
       font-weight: 300;
       line-height: 1.2;
-      color: var(--color-white);
+      color: var(--color-ink);
       margin-bottom: 1rem;
     }
 
     .cat-cta-sub {
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.45);
+      color: rgba(26,24,20,0.5);
       line-height: 1.75;
       margin-bottom: 2.5rem;
     }
@@ -653,24 +749,17 @@
     }
 
     @media (max-width: 768px) {
-      .ps-hero { grid-template-columns: 1fr; min-height: auto; }
+      .ps-hero { min-height: 240px; }
 
       .ps-hero-left {
-        padding: 3.5rem var(--container-padding);
-        order: 2;
+        padding: 2rem 1.5rem;
+        margin: 1.5rem 1rem;
+        max-width: 100%;
       }
 
-      .ps-hero-right {
-        order: 1;
-        height: 260px;
-      }
-
-      .ps-hero-right-overlay {
-        background: linear-gradient(to bottom, transparent 0%, #0f0e0c 90%);
-      }
-
-      .ps-counter { font-size: 2rem; margin-bottom: 0.75rem; }
-      .ps-name { font-size: 1.8rem; }
+      .ps-name { font-size: clamp(2rem, 7vw, 2.8rem); }
+      .ps-tagline { display: none; }
+      .ps-applications { display: none; }
 
       .photo-grid-3,
       .photo-grid-4 { grid-template-columns: repeat(2, 1fr); }
@@ -688,7 +777,7 @@
       /* ── Mobile scroll performance fixes ──────────────── */
       /* backdrop-filter + position:sticky = jank no iOS */
       .cat-nav-wrap {
-        background: rgba(13,13,13,0.98);
+        background: rgba(250,248,245,0.98);
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
       }
@@ -731,9 +820,10 @@
     .ps-applications {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
       gap: 0.4rem;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.25rem;
     }
 
     .ps-app-label {
@@ -741,30 +831,41 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.28);
+      color: rgba(26,24,20,0.32);
       margin-right: 0.2rem;
       white-space: nowrap;
     }
 
     .ps-app-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
       padding: 0.22rem 0.7rem;
-      border: 1px solid rgba(255,255,255,0.12);
+      border: 1px solid rgba(26,24,20,0.12);
       border-radius: 999px;
       font-size: 0.68rem;
       font-weight: 400;
-      color: rgba(255,255,255,0.45);
-      background: rgba(255,255,255,0.04);
+      color: rgba(26,24,20,0.5);
+      background: rgba(26,24,20,0.03);
       white-space: nowrap;
+    }
+
+    .ps-app-item svg {
+      width: 11px;
+      height: 11px;
+      flex-shrink: 0;
+      color: rgba(26,24,20,0.38);
     }
 
     /* ── Landing Page Trust Strip ───────────────────────── */
     .ps-trust {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 0.55rem 1.4rem;
-      margin-bottom: 2rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(26,24,20,0.08);
     }
 
     .ps-trust-item {
@@ -774,7 +875,7 @@
       font-size: 0.68rem;
       font-weight: 500;
       letter-spacing: 0.05em;
-      color: rgba(255,255,255,0.45);
+      color: rgba(26,24,20,0.5);
     }
 
     .ps-trust-item::before {
@@ -784,6 +885,15 @@
       font-size: 0.78rem;
       line-height: 1;
     }
+
+    /* ── Cores alternadas por seção ─────────────────────── */
+    #rolo-screen      { background: #faf8f5; }
+    #rolo-blackout    { background: #f5f3ef; }
+    #double-vision    { background: #faf8f5; }
+    #persiana-madeira { background: #f5f3ef; }
+    #persiana-aluminio{ background: #faf8f5; }
+    #persiana-romana  { background: #f5f3ef; }
+    #cortinas         { background: #faf8f5; }
 
     /* ── Ideal Para (landing page context) ──────────────── */
     .ps-ideal {
@@ -795,11 +905,11 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
+      color: rgba(26,24,20,0.3);
     }
 
     .ps-ideal strong {
-      color: rgba(255,255,255,0.55);
+      color: rgba(26,24,20,0.6);
       font-weight: 500;
       text-transform: none;
       letter-spacing: 0;
@@ -923,7 +1033,7 @@
       </nav>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
          PRODUCT SECTIONS — cada seção tem URL própria:
          portfolio.html#rolo-screen
          portfolio.html#rolo-blackout
@@ -932,28 +1042,27 @@
          portfolio.html#persiana-aluminio
          portfolio.html#persiana-romana
          portfolio.html#cortinas
-    ══════════════════════════════════════════════════════ -->
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 
     <!-- ── 01. ROLÔ TELA SOLAR SCREEN ────────────────── -->
     <section class="product-section" id="rolo-screen">
       <div class="ps-hero">
         <div class="ps-hero-left reveal">
-          <div class="ps-counter">01<span class="ps-counter-sep">/</span><span class="ps-counter-total">07</span></div>
-          <p class="ps-eyebrow" data-i18n="port-prod-eyebrow">Nosso Catálogo</p>
+
           <h2 class="ps-name" data-i18n="prod-screen-title">Rolô Tela Solar Screen</h2>
           <p class="ps-tagline" data-i18n="prod-screen-desc">Você enxerga o exterior. O sol não enxerga você. A Persiana Rolô Solar Screen é feita com tecido técnico perfurado que bloqueia raios UV e reduz a entrada de calor — sem eliminar a vista e sem escurecer o ambiente. O resultado é um espaço mais fresco, sem ofuscamento e com visual moderno. Disponível nas versões manual e motorizada.</p>
           <div class="ps-applications">
             <span class="ps-app-label" data-i18n="port-app-label">Ideal para:</span>
-            <span class="ps-app-item" data-i18n="prod-screen-app1">Escritórios</span>
-            <span class="ps-app-item" data-i18n="prod-screen-app2">Salas de reunião</span>
-            <span class="ps-app-item" data-i18n="prod-screen-app3">Fachadas envidraçadas</span>
-            <span class="ps-app-item" data-i18n="prod-screen-app4">Ambientes corporativos</span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span data-i18n="prod-screen-app1">Escritórios</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span data-i18n="prod-screen-app2">Salas de reunião</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span data-i18n="prod-screen-app3">Fachadas envidraçadas</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="1"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg><span data-i18n="prod-screen-app4">Ambientes corporativos</span></span>
           </div>
           <ul class="ps-specs" aria-label="Características">
-            <li class="ps-spec" data-i18n="prod-screen-spec1">Bloqueio de raios UV</li>
-            <li class="ps-spec" data-i18n="prod-screen-spec2">Redução de calor</li>
-            <li class="ps-spec" data-i18n="prod-screen-spec3">Visibilidade externa preservada</li>
-            <li class="ps-spec" data-i18n="prod-screen-spec4">Manual ou motorizado</li>
+            <li class="ps-spec" data-i18n="prod-screen-spec1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>Bloqueio de raios UV</li>
+            <li class="ps-spec" data-i18n="prod-screen-spec2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>Redução de calor</li>
+            <li class="ps-spec" data-i18n="prod-screen-spec3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Visibilidade externa preservada</li>
+            <li class="ps-spec" data-i18n="prod-screen-spec4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Manual ou motorizado</li>
           </ul>
           <div class="ps-trust" aria-label="Diferenciais">
             <span class="ps-trust-item" data-i18n="port-trust-measure">Sob medida</span>
@@ -974,11 +1083,17 @@
       <div class="ps-gallery">
         <div class="ps-gallery-inner">
           <p class="ps-gallery-label" data-i18n="prod-gallery-label">Galeria de projetos</p>
-          <div class="photo-grid photo-grid-3 reveal" data-lightbox-group="rolo-screen">
-            <div class="photo-item"><img src="assets/catalogo/Rolô Tela Solar Screen.webp" alt="Rolô Tela Solar Screen" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Rolô Tela Solar Screen (2).webp" alt="Rolô Tela Solar Screen vista 2" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Rolô Tela Solar Screen 3.webp" alt="Rolô Tela Solar Screen vista 3" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Rolô Tela Solar Screen 4.webp" alt="Rolô Tela Solar Screen vista 4" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+          <div class="gallery-strip reveal" data-lightbox-group="rolo-screen">
+            <div class="gallery-track">
+              <div class="gallery-slide"><img src="assets/catalogo/Rolô Tela Solar Screen.webp" alt="Rolô Tela Solar Screen" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Rolô Tela Solar Screen (2).webp" alt="Rolô Tela Solar Screen vista 2" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Rolô Tela Solar Screen 3.webp" alt="Rolô Tela Solar Screen vista 3" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Rolô Tela Solar Screen 4.webp" alt="Rolô Tela Solar Screen vista 4" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/rolo_solar.webp" alt="Rolô Tela Solar Screen vista 5" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/rolo_solar_2.webp" alt="Rolô Tela Solar Screen vista 6" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/rolo_solar_3.webp" alt="Rolô Tela Solar Screen vista 7" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/escritorio/projetos corporativos/Fator de abertura das tela solar screen.png" alt="Fator de abertura tela solar screen" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -988,22 +1103,21 @@
     <section class="product-section" id="rolo-blackout">
       <div class="ps-hero">
         <div class="ps-hero-left reveal">
-          <div class="ps-counter">02<span class="ps-counter-sep">/</span><span class="ps-counter-total">07</span></div>
-          <p class="ps-eyebrow" data-i18n="port-prod-eyebrow">Nosso Catálogo</p>
+
           <h2 class="ps-name" data-i18n="prod-blackout-title">Rolô Blackout</h2>
           <p class="ps-tagline" data-i18n="prod-blackout-desc">Quando a escuridão importa, não há meio-termo. A Persiana Rolô Blackout utiliza tecido 100% vedante que impede a passagem de qualquer quantidade de luz — sem frestas nas laterais ou na base. Além do bloqueio total, o tecido contribui para o isolamento térmico do ambiente, tornando o espaço mais confortável. Perfeita para quem precisa dormir de dia, montar um home theater ou garantir privacidade real. Disponível nas versões manual e motorizada.</p>
           <div class="ps-applications">
             <span class="ps-app-label" data-i18n="port-app-label">Ideal para:</span>
-            <span class="ps-app-item" data-i18n="prod-blackout-app1">Quartos e suítes</span>
-            <span class="ps-app-item" data-i18n="prod-blackout-app2">Home theater</span>
-            <span class="ps-app-item" data-i18n="prod-blackout-app3">Quartos de bebê</span>
-            <span class="ps-app-item" data-i18n="prod-blackout-app4">Salas de apresentação</span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span data-i18n="prod-blackout-app1">Quartos e suítes</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span data-i18n="prod-blackout-app2">Home theater</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span data-i18n="prod-blackout-app3">Quartos de bebê</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg><span data-i18n="prod-blackout-app4">Salas de apresentação</span></span>
           </div>
           <ul class="ps-specs" aria-label="Características">
-            <li class="ps-spec" data-i18n="prod-blackout-spec1">Tecido 100% vedante</li>
-            <li class="ps-spec" data-i18n="prod-blackout-spec2">Bloqueio total de luz</li>
-            <li class="ps-spec" data-i18n="prod-blackout-spec3">Isolamento térmico</li>
-            <li class="ps-spec" data-i18n="prod-blackout-spec4">Manual ou motorizado</li>
+            <li class="ps-spec" data-i18n="prod-blackout-spec1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Tecido 100% vedante</li>
+            <li class="ps-spec" data-i18n="prod-blackout-spec2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>Bloqueio total de luz</li>
+            <li class="ps-spec" data-i18n="prod-blackout-spec3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>Isolamento térmico</li>
+            <li class="ps-spec" data-i18n="prod-blackout-spec4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Manual ou motorizado</li>
           </ul>
           <div class="ps-trust" aria-label="Diferenciais">
             <span class="ps-trust-item" data-i18n="port-trust-measure">Sob medida</span>
@@ -1024,13 +1138,19 @@
       <div class="ps-gallery">
         <div class="ps-gallery-inner">
           <p class="ps-gallery-label" data-i18n="prod-gallery-label">Galeria de projetos</p>
-          <div class="photo-grid photo-grid-4 reveal" data-lightbox-group="rolo-blackout">
-            <div class="photo-item"><img src="assets/catalogo/Rolô Blackout.webp" alt="Rolô Blackout" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Rolô-Blackout-_2_.webp" alt="Rolô Blackout vista 2" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Rolô-Blackout-3.webp" alt="Rolô Blackout vista 3" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Rolô-Blackout-4.webp" alt="Rolô Blackout vista 4" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Rolô-Blackout-5.webp" alt="Rolô Blackout vista 5" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Rolô Blackout 6.webp" alt="Rolô Blackout vista 6" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+          <div class="gallery-strip reveal" data-lightbox-group="rolo-blackout">
+            <div class="gallery-track">
+              <div class="gallery-slide"><img src="assets/catalogo/Rolô Blackout.webp" alt="Rolô Blackout" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Rolô-Blackout-_2_.webp" alt="Rolô Blackout vista 2" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Rolô-Blackout-3.webp" alt="Rolô Blackout vista 3" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Rolô-Blackout-4.webp" alt="Rolô Blackout vista 4" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Rolô-Blackout-5.webp" alt="Rolô Blackout vista 5" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Rolô Blackout 6.webp" alt="Rolô Blackout vista 6" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Rolô Blackout 7.webp" alt="Rolô Blackout vista 7" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/blackout.webp" alt="Rolô Blackout vista 8" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/blackout.png" alt="Rolô Blackout vista 9" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/blackout_3.png" alt="Rolô Blackout vista 10" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1040,22 +1160,20 @@
     <section class="product-section" id="double-vision">
       <div class="ps-hero">
         <div class="ps-hero-left reveal">
-          <div class="ps-counter">03<span class="ps-counter-sep">/</span><span class="ps-counter-total">07</span></div>
-          <p class="ps-eyebrow" data-i18n="port-prod-eyebrow">Nosso Catálogo</p>
           <h2 class="ps-name" data-i18n="prod-double-title">Double Vision</h2>
           <p class="ps-tagline" data-i18n="prod-double-desc">Uma persiana. Dois comportamentos. A Double Vision funciona com faixas alternadas — translúcidas e opacas — que se alinham ou desalinham conforme o acionamento. Isso permite ajustar a entrada de luz de forma gradual e precisa: do ambiente totalmente iluminado ao completamente privado, com um único movimento. Design contemporâneo que combina funcionalidade e sofisticação. Disponível nas versões manual e motorizada.</p>
           <div class="ps-applications">
             <span class="ps-app-label" data-i18n="port-app-label">Ideal para:</span>
-            <span class="ps-app-item" data-i18n="prod-double-app1">Salas de estar</span>
-            <span class="ps-app-item" data-i18n="prod-double-app2">Quartos</span>
-            <span class="ps-app-item" data-i18n="prod-double-app3">Escritórios</span>
-            <span class="ps-app-item" data-i18n="prod-double-app4">Ambientes de alto padrão</span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span data-i18n="prod-double-app1">Salas de estar</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span data-i18n="prod-double-app2">Quartos</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span data-i18n="prod-double-app3">Escritórios</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span data-i18n="prod-double-app4">Ambientes de alto padrão</span></span>
           </div>
           <ul class="ps-specs" aria-label="Características">
-            <li class="ps-spec" data-i18n="prod-double-spec1">Faixas alternadas translúcidas e opacas</li>
-            <li class="ps-spec" data-i18n="prod-double-spec2">Ajuste dinâmico de luz</li>
-            <li class="ps-spec" data-i18n="prod-double-spec3">Design contemporâneo</li>
-            <li class="ps-spec" data-i18n="prod-double-spec4">Manual ou motorizado</li>
+            <li class="ps-spec" data-i18n="prod-double-spec1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Faixas alternadas translúcidas e opacas</li>
+            <li class="ps-spec" data-i18n="prod-double-spec2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>Ajuste dinâmico de luz</li>
+            <li class="ps-spec" data-i18n="prod-double-spec3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Design contemporâneo</li>
+            <li class="ps-spec" data-i18n="prod-double-spec4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Manual ou motorizado</li>
           </ul>
           <div class="ps-trust" aria-label="Diferenciais">
             <span class="ps-trust-item" data-i18n="port-trust-measure">Sob medida</span>
@@ -1076,10 +1194,15 @@
       <div class="ps-gallery">
         <div class="ps-gallery-inner">
           <p class="ps-gallery-label" data-i18n="prod-gallery-label">Galeria de projetos</p>
-          <div class="photo-grid photo-grid-3 reveal" data-lightbox-group="double-vision">
-            <div class="photo-item"><img src="assets/catalogo/Persiana Double Vision.webp" alt="Double Vision" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Persiana Double Vision 1.webp" alt="Double Vision vista 2" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Persiana Double Vision (2).webp" alt="Double Vision vista 3" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+          <div class="gallery-strip reveal" data-lightbox-group="double-vision">
+            <div class="gallery-track">
+              <div class="gallery-slide"><img src="assets/catalogo/Persiana Double Vision.webp" alt="Double Vision" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Persiana Double Vision 1.webp" alt="Double Vision vista 2" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Persiana Double Vision (2).webp" alt="Double Vision vista 3" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Persiana Double Vision 3.webp" alt="Double Vision vista 4" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Persiana Double Vision 4.webp" alt="Double Vision vista 5" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/rolo_double_vision.webp" alt="Double Vision vista 6" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1089,22 +1212,20 @@
     <section class="product-section" id="persiana-madeira">
       <div class="ps-hero">
         <div class="ps-hero-left reveal">
-          <div class="ps-counter">04<span class="ps-counter-sep">/</span><span class="ps-counter-total">07</span></div>
-          <p class="ps-eyebrow" data-i18n="port-prod-eyebrow">Nosso Catálogo</p>
           <h2 class="ps-name" data-i18n="prod-madeira-title">Persiana de Madeira</h2>
           <p class="ps-tagline" data-i18n="prod-madeira-desc">Nenhum material aquece um ambiente como a madeira. A Persiana Horizontal de Madeira traz lâminas naturais que combinam beleza e funcionalidade — com controle de luz por inclinação e isolamento térmico. Disponível em madeira natural, madeira sintética ou bambu, adaptando-se a diferentes estilos e necessidades de manutenção. Uma escolha atemporal para ambientes que pedem sofisticação. Disponível nas versões manual e motorizada.</p>
           <div class="ps-applications">
             <span class="ps-app-label" data-i18n="port-app-label">Ideal para:</span>
-            <span class="ps-app-item" data-i18n="prod-madeira-app1">Escritórios executivos</span>
-            <span class="ps-app-item" data-i18n="prod-madeira-app2">Salas de estar</span>
-            <span class="ps-app-item" data-i18n="prod-madeira-app3">Quartos</span>
-            <span class="ps-app-item" data-i18n="prod-madeira-app4">Ambientes com decoração especial</span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span data-i18n="prod-madeira-app1">Escritórios executivos</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span data-i18n="prod-madeira-app2">Salas de estar</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span data-i18n="prod-madeira-app3">Quartos</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="prod-madeira-app4">Ambientes com decoração especial</span></span>
           </div>
           <ul class="ps-specs" aria-label="Características">
-            <li class="ps-spec" data-i18n="prod-madeira-spec1">Madeira natural, sintética ou bambu</li>
-            <li class="ps-spec" data-i18n="prod-madeira-spec2">Isolamento térmico</li>
-            <li class="ps-spec" data-i18n="prod-madeira-spec3">Lâminas reguláveis</li>
-            <li class="ps-spec" data-i18n="prod-madeira-spec4">Manual ou motorizado</li>
+            <li class="ps-spec" data-i18n="prod-madeira-spec1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8c0 6-8 11-8 11s-4-3-4-8a8 8 0 0 1 16 0z"/><circle cx="9" cy="11" r="1" fill="currentColor" stroke="none"/></svg>Madeira natural, sintética ou bambu</li>
+            <li class="ps-spec" data-i18n="prod-madeira-spec2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>Isolamento térmico</li>
+            <li class="ps-spec" data-i18n="prod-madeira-spec3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>Lâminas reguláveis</li>
+            <li class="ps-spec" data-i18n="prod-madeira-spec4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Manual ou motorizado</li>
           </ul>
           <div class="ps-trust" aria-label="Diferenciais">
             <span class="ps-trust-item" data-i18n="port-trust-measure">Sob medida</span>
@@ -1125,12 +1246,17 @@
       <div class="ps-gallery">
         <div class="ps-gallery-inner">
           <p class="ps-gallery-label" data-i18n="prod-gallery-label">Galeria de projetos</p>
-          <div class="photo-grid photo-grid-4 reveal" data-lightbox-group="persiana-madeira">
-            <div class="photo-item"><img src="assets/catalogo/Persiana-Horizontal-de-Madeira.webp" alt="Persiana de Madeira" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Persiana Horizontal de Madeira (2).webp" alt="Persiana de Madeira vista 2" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Persiana Horizontal de Madeira 2.webp" alt="Persiana de Madeira vista 3" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Persiana Horizontal de Madeira 3.webp" alt="Persiana de Madeira vista 4" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Persiana-Horizontal-de-Madeira-4.webp" alt="Persiana de Madeira vista 5" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+          <div class="gallery-strip reveal" data-lightbox-group="persiana-madeira">
+            <div class="gallery-track">
+              <div class="gallery-slide"><img src="assets/catalogo/Persiana-Horizontal-de-Madeira.webp" alt="Persiana de Madeira" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Persiana Horizontal de Madeira (2).webp" alt="Persiana de Madeira vista 2" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Persiana Horizontal de Madeira 2.webp" alt="Persiana de Madeira vista 3" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Persiana Horizontal de Madeira 3.webp" alt="Persiana de Madeira vista 4" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Persiana-Horizontal-de-Madeira-4.webp" alt="Persiana de Madeira vista 5" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/persiana_madeira_4.webp" alt="Persiana de Madeira vista 6" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/persiana_mandeira_5.webp" alt="Persiana de Madeira vista 7" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/persiana de madeira 6.webp" alt="Persiana de Madeira vista 8" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1140,22 +1266,20 @@
     <section class="product-section" id="persiana-aluminio">
       <div class="ps-hero">
         <div class="ps-hero-left reveal">
-          <div class="ps-counter">05<span class="ps-counter-sep">/</span><span class="ps-counter-total">07</span></div>
-          <p class="ps-eyebrow" data-i18n="port-prod-eyebrow">Nosso Catálogo</p>
           <h2 class="ps-name" data-i18n="prod-aluminio-title">Persiana de Alumínio</h2>
           <p class="ps-tagline" data-i18n="prod-aluminio-desc">Quando o critério é durabilidade, o alumínio é a resposta. A Persiana Horizontal de Alumínio possui lâminas resistentes, de fácil higienização e com excelente resistência à umidade — o que a torna especialmente indicada para ambientes úmidos e de uso intenso. Visual funcional e discreto que não compete com a decoração, apenas a complementa. Disponível nas versões manual e motorizada.</p>
           <div class="ps-applications">
             <span class="ps-app-label" data-i18n="port-app-label">Ideal para:</span>
-            <span class="ps-app-item" data-i18n="prod-aluminio-app1">Escritórios corporativos</span>
-            <span class="ps-app-item" data-i18n="prod-aluminio-app2">Clínicas e consultórios</span>
-            <span class="ps-app-item" data-i18n="prod-aluminio-app3">Comércios</span>
-            <span class="ps-app-item" data-i18n="prod-aluminio-app4">Cozinhas e áreas úmidas</span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="1"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg><span data-i18n="prod-aluminio-app1">Escritórios corporativos</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span data-i18n="prod-aluminio-app2">Clínicas e consultórios</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span data-i18n="prod-aluminio-app3">Comércios</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg><span data-i18n="prod-aluminio-app4">Cozinhas e áreas úmidas</span></span>
           </div>
           <ul class="ps-specs" aria-label="Características">
-            <li class="ps-spec" data-i18n="prod-aluminio-spec1">Lâminas resistentes à umidade</li>
-            <li class="ps-spec" data-i18n="prod-aluminio-spec2">Alta durabilidade</li>
-            <li class="ps-spec" data-i18n="prod-aluminio-spec3">Fácil higienização</li>
-            <li class="ps-spec" data-i18n="prod-aluminio-spec4">Manual ou motorizado</li>
+            <li class="ps-spec" data-i18n="prod-aluminio-spec1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>Lâminas resistentes à umidade</li>
+            <li class="ps-spec" data-i18n="prod-aluminio-spec2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Alta durabilidade</li>
+            <li class="ps-spec" data-i18n="prod-aluminio-spec3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Fácil higienização</li>
+            <li class="ps-spec" data-i18n="prod-aluminio-spec4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Manual ou motorizado</li>
           </ul>
           <div class="ps-trust" aria-label="Diferenciais">
             <span class="ps-trust-item" data-i18n="port-trust-measure">Sob medida</span>
@@ -1176,10 +1300,12 @@
       <div class="ps-gallery">
         <div class="ps-gallery-inner">
           <p class="ps-gallery-label" data-i18n="prod-gallery-label">Galeria de projetos</p>
-          <div class="photo-grid photo-grid-3 reveal" data-lightbox-group="persiana-aluminio">
-            <div class="photo-item"><img src="assets/catalogo/Persiana Horizontal de Alumínio.webp" alt="Persiana de Alumínio" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Persiana Horizontal de Alumínio 2.webp" alt="Persiana de Alumínio vista 2" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Persiana Horizontal de Alumínio 3.webp" alt="Persiana de Alumínio vista 3" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+          <div class="gallery-strip reveal" data-lightbox-group="persiana-aluminio">
+            <div class="gallery-track">
+              <div class="gallery-slide"><img src="assets/catalogo/Persiana Horizontal de Alumínio.webp" alt="Persiana de Alumínio" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Persiana Horizontal de Alumínio 2.webp" alt="Persiana de Alumínio vista 2" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Persiana Horizontal de Alumínio 3.webp" alt="Persiana de Alumínio vista 3" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1189,22 +1315,20 @@
     <section class="product-section" id="persiana-romana">
       <div class="ps-hero">
         <div class="ps-hero-left reveal">
-          <div class="ps-counter">06<span class="ps-counter-sep">/</span><span class="ps-counter-total">07</span></div>
-          <p class="ps-eyebrow" data-i18n="port-prod-eyebrow">Nosso Catálogo</p>
           <h2 class="ps-name" data-i18n="prod-romana-title">Persiana Romana</h2>
           <p class="ps-tagline" data-i18n="prod-romana-desc">A Persiana Romana une funcionalidade e decoração em uma única peça. O tecido se recolhe em gomos horizontais uniformes, criando dobras elegantes que adicionam textura e sofisticação à janela. Disponível em versão translúcida — que filtra a luz com suavidade — ou em tecido blackout para controle total. Cada projeto é confeccionado sob medida, com tecidos selecionados para o ambiente. Disponível nas versões manual e motorizada.</p>
           <div class="ps-applications">
             <span class="ps-app-label" data-i18n="port-app-label">Ideal para:</span>
-            <span class="ps-app-item" data-i18n="prod-romana-app1">Salas de estar</span>
-            <span class="ps-app-item" data-i18n="prod-romana-app2">Quartos de casal</span>
-            <span class="ps-app-item" data-i18n="prod-romana-app3">Escritórios boutique</span>
-            <span class="ps-app-item" data-i18n="prod-romana-app4">Ambientes decorados</span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span data-i18n="prod-romana-app1">Salas de estar</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span data-i18n="prod-romana-app2">Quartos de casal</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg><span data-i18n="prod-romana-app3">Escritórios boutique</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span data-i18n="prod-romana-app4">Ambientes decorados</span></span>
           </div>
           <ul class="ps-specs" aria-label="Características">
-            <li class="ps-spec" data-i18n="prod-romana-spec1">Recolhimento em gomos</li>
-            <li class="ps-spec" data-i18n="prod-romana-spec2">Translúcida ou blackout</li>
-            <li class="ps-spec" data-i18n="prod-romana-spec3">Tecidos selecionados</li>
-            <li class="ps-spec" data-i18n="prod-romana-spec4">Manual ou motorizado</li>
+            <li class="ps-spec" data-i18n="prod-romana-spec1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Recolhimento em gomos</li>
+            <li class="ps-spec" data-i18n="prod-romana-spec2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Translúcida ou blackout</li>
+            <li class="ps-spec" data-i18n="prod-romana-spec3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Tecidos selecionados</li>
+            <li class="ps-spec" data-i18n="prod-romana-spec4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Manual ou motorizado</li>
           </ul>
           <div class="ps-trust" aria-label="Diferenciais">
             <span class="ps-trust-item" data-i18n="port-trust-measure">Sob medida</span>
@@ -1225,10 +1349,12 @@
       <div class="ps-gallery">
         <div class="ps-gallery-inner">
           <p class="ps-gallery-label" data-i18n="prod-gallery-label">Galeria de projetos</p>
-          <div class="photo-grid photo-grid-3 reveal" data-lightbox-group="persiana-romana">
-            <div class="photo-item"><img src="assets/catalogo/Persiana-Romana.webp" alt="Persiana Romana" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Persiana-Romana-branca-2.webp" alt="Persiana Romana branca" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/residencial/Persiana-Romana.webp" alt="Persiana Romana em ambiente residencial" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+          <div class="gallery-strip reveal" data-lightbox-group="persiana-romana">
+            <div class="gallery-track">
+              <div class="gallery-slide"><img src="assets/catalogo/Persiana-Romana.webp" alt="Persiana Romana" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Persiana-Romana-branca-2.webp" alt="Persiana Romana branca" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/residencial/Persiana-Romana.webp" alt="Persiana Romana em ambiente residencial" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1238,22 +1364,20 @@
     <section class="product-section" id="cortinas">
       <div class="ps-hero">
         <div class="ps-hero-left reveal">
-          <div class="ps-counter">07<span class="ps-counter-sep">/</span><span class="ps-counter-total">07</span></div>
-          <p class="ps-eyebrow" data-i18n="port-prod-eyebrow">Nosso Catálogo</p>
           <h2 class="ps-name" data-i18n="prod-cortina-title">Cortinas de Tecido</h2>
           <p class="ps-tagline" data-i18n="prod-cortina-desc">Cortinas que são feitas para o seu espaço — não o contrário. As Cortinas de Tecido Atiye são confeccionadas em três modelagens: Wave (ondas contínuas), Franzida (volume e movimento) e Prega Macho (caimento estruturado). A ampla seleção de tecidos vai dos sheers translúcidos, que filtram a luz com leveza, até o blackout completo. Cada peça é produzida sob medida, com instalação inclusa. Disponível nas versões manual e motorizada.</p>
           <div class="ps-applications">
             <span class="ps-app-label" data-i18n="port-app-label">Ideal para:</span>
-            <span class="ps-app-item" data-i18n="prod-cortina-app1">Salas de estar</span>
-            <span class="ps-app-item" data-i18n="prod-cortina-app2">Quartos</span>
-            <span class="ps-app-item" data-i18n="prod-cortina-app3">Recepções e lobbies</span>
-            <span class="ps-app-item" data-i18n="prod-cortina-app4">Ambientes residenciais e corporativos</span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span data-i18n="prod-cortina-app1">Salas de estar</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span data-i18n="prod-cortina-app2">Quartos</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><rect x="6" y="3" width="12" height="18" rx="1"/><circle cx="15" cy="12" r="1" fill="currentColor" stroke="none"/></svg><span data-i18n="prod-cortina-app3">Recepções e lobbies</span></span>
+            <span class="ps-app-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="1"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg><span data-i18n="prod-cortina-app4">Ambientes residenciais e corporativos</span></span>
           </div>
           <ul class="ps-specs" aria-label="Características">
-            <li class="ps-spec" data-i18n="prod-cortina-spec1">Modelos Wave, Franzida e Prega Macho</li>
-            <li class="ps-spec" data-i18n="prod-cortina-spec2">Do sheer translúcido ao blackout</li>
-            <li class="ps-spec" data-i18n="prod-cortina-spec3">Ampla seleção de tecidos</li>
-            <li class="ps-spec" data-i18n="prod-cortina-spec4">Manual ou motorizado</li>
+            <li class="ps-spec" data-i18n="prod-cortina-spec1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8c.5 2 1.5 3 2.5 4S9 14 9 16"/><path d="M9 8c.5 2 1.5 3 2.5 4s1.5 2 1.5 4"/><path d="M13 8c.5 2 1.5 3 2.5 4s1.5 2 1.5 4"/><path d="M17 8c.5 2 1.5 3 2.5 4s1.5 2 1.5 4"/><line x1="3" y1="6" x2="21" y2="6"/></svg>Modelos Wave, Franzida e Prega Macho</li>
+            <li class="ps-spec" data-i18n="prod-cortina-spec2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>Do sheer translúcido ao blackout</li>
+            <li class="ps-spec" data-i18n="prod-cortina-spec3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Ampla seleção de tecidos</li>
+            <li class="ps-spec" data-i18n="prod-cortina-spec4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Manual ou motorizado</li>
           </ul>
           <div class="ps-trust" aria-label="Diferenciais">
             <span class="ps-trust-item" data-i18n="port-trust-measure">Sob medida</span>
@@ -1274,12 +1398,19 @@
       <div class="ps-gallery">
         <div class="ps-gallery-inner">
           <p class="ps-gallery-label" data-i18n="prod-gallery-label">Galeria de projetos</p>
-          <div class="photo-grid photo-grid-4 reveal" data-lightbox-group="cortinas">
-            <div class="photo-item"><img src="assets/catalogo/cortina.webp" alt="Cortina de Tecido" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/cortina 2.webp" alt="Cortina de Tecido vista 2" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/cortina 3.webp" alt="Cortina de Tecido vista 3" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Cortina 4.webp" alt="Cortina de Tecido vista 4" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
-            <div class="photo-item"><img src="assets/catalogo/Cortina 7.webp" alt="Cortina de Tecido vista 5" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+          <div class="gallery-strip reveal" data-lightbox-group="cortinas">
+            <div class="gallery-track">
+              <div class="gallery-slide"><img src="assets/catalogo/cortina.webp" alt="Cortina de Tecido" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/cortina 2.webp" alt="Cortina de Tecido vista 2" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/cortina 3.webp" alt="Cortina de Tecido vista 3" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Cortina 4.webp" alt="Cortina de Tecido vista 4" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Cortina 7.webp" alt="Cortina de Tecido vista 5" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Cortina 8.webp" alt="Cortina de Tecido vista 6" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Cortina 9.webp" alt="Cortina de Tecido vista 7" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/Cortina 10.webp" alt="Cortina de Tecido vista 8" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/cortina_3.webp" alt="Cortina de Tecido vista 9" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+              <div class="gallery-slide"><img src="assets/catalogo/cortina_4.webp" alt="Cortina de Tecido vista 10" loading="lazy"/><div class="photo-item-overlay"><div class="photo-item-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg></div></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -1479,11 +1610,82 @@
         showImage(currentIndex);
       }
 
-      document.querySelectorAll('[data-lightbox-group]').forEach(function (grid) {
-        var items = Array.from(grid.querySelectorAll('.photo-item img'));
-        grid.querySelectorAll('.photo-item').forEach(function (item, idx) {
-          item.addEventListener('click', function () { openLightbox(items, idx); });
+      document.querySelectorAll('[data-lightbox-group]').forEach(function (strip) {
+        var slides = Array.from(strip.querySelectorAll('.gallery-slide'));
+        var imgs   = slides.map(function (s) { return s.querySelector('img'); });
+        slides.forEach(function (slide, idx) {
+          slide.addEventListener('click', function () { openLightbox(imgs, idx); });
         });
+      });
+
+      /* ── Gallery auto-scroll ───────────────────────────── */
+      document.querySelectorAll('.gallery-strip').forEach(function (strip) {
+        var track    = strip.querySelector('.gallery-track');
+        var speed    = 0.5;        /* px per frame */
+        var pos      = 0;
+        var paused   = false;
+        var raf;
+
+        /* Duplicate slides for seamless loop */
+        var origSlides = Array.from(track.children);
+        origSlides.forEach(function (slide) {
+          var clone = slide.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          /* clone clicks should map to original index */
+          var idx = origSlides.indexOf(slide);
+          var imgs = Array.from(strip.querySelectorAll('.gallery-slide:not([aria-hidden]) img'));
+          clone.addEventListener('click', function () { openLightbox(imgs, idx); });
+          track.appendChild(clone);
+        });
+
+        var halfWidth = 0;
+
+        function getHalfWidth() {
+          return track.scrollWidth / 2;
+        }
+
+        function tick() {
+          if (!paused) {
+            pos += speed;
+            halfWidth = getHalfWidth();
+            if (halfWidth > 0 && pos >= halfWidth) pos -= halfWidth;
+            track.style.transform = 'translateX(-' + pos + 'px)';
+          }
+          raf = requestAnimationFrame(tick);
+        }
+
+        /* Pause on hover */
+        strip.addEventListener('mouseenter', function () { paused = true; });
+        strip.addEventListener('mouseleave', function () { paused = false; });
+
+        /* Drag to scroll */
+        var dragging = false;
+        var dragStartX = 0;
+        var dragStartPos = 0;
+
+        strip.addEventListener('mousedown', function (e) {
+          dragging   = true;
+          paused     = true;
+          dragStartX = e.clientX;
+          dragStartPos = pos;
+          strip.style.cursor = 'grabbing';
+        });
+
+        window.addEventListener('mousemove', function (e) {
+          if (!dragging) return;
+          var delta = dragStartX - e.clientX;
+          pos = (dragStartPos + delta + halfWidth) % halfWidth;
+          track.style.transform = 'translateX(-' + pos + 'px)';
+        });
+
+        window.addEventListener('mouseup', function () {
+          if (!dragging) return;
+          dragging = false;
+          paused   = false;
+          strip.style.cursor = 'grab';
+        });
+
+        raf = requestAnimationFrame(tick);
       });
 
       document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
@@ -1583,3 +1785,8 @@
   </script>
 </body>
 </html>
+
+
+
+
+

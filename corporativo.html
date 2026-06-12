@@ -21,9 +21,8 @@
       scroll-snap-type: y proximity;
     }
     #hero {
-      position: sticky;
-      top: 0;
-      z-index: 0;
+      position: relative;
+      z-index: 1;
       height: 100svh;
       scroll-snap-align: start;
     }
@@ -172,111 +171,204 @@
       .trust-strip p { font-size: 0.82rem; }
     }
 
-    /* ── Produtos scroll reveal ── */
-    #produtos { background: #0a0a0a; }
+    /* ── Atuação: tags + galeria ── */
+    #especialistas {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #especialistas::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 55%;
+      background: linear-gradient(to top, #ffffff 0%, rgba(255,255,255,0.85) 40%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    #especialistas .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .corp-amb-tag {
+      display: inline-block;
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-ink, #1a1814);
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(196,168,122,0.5);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    }
+
+    /* ── Galeria escritório ── */
+    .esp-gallery {
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+      width: 100%;
+      margin-top: 9rem;
+      padding-bottom: 0;
+    }
+
+    .esp-gallery-track {
+      display: flex;
+      gap: 0.35rem;
+      width: max-content;
+      will-change: transform;
+    }
+
+    .esp-gallery-slide {
+      flex-shrink: 0;
+      width: 420px;
+      height: 280px;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 10px 32px rgba(0,0,0,0.28);
+      cursor: pointer;
+    }
+
+    .esp-gallery-slide img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .esp-gallery-slide:hover img { transform: scale(1.04); }
+
+    @media (max-width: 768px) {
+      .esp-gallery-slide { width: 280px; height: 188px; }
+    }
+
+    /* ── Lightbox galeria escritório ── */
+    #esp-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.92);
+      align-items: center;
+      justify-content: center;
+    }
+    #esp-lightbox.open { display: flex; }
+
+    #esp-lightbox img {
+      max-width: 90vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.7);
+      user-select: none;
+    }
+
+    #esp-lb-close {
+      position: absolute;
+      top: 1.2rem; right: 1.5rem;
+      background: none; border: none;
+      color: #fff; font-size: 2rem;
+      cursor: pointer; line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    #esp-lb-close:hover { opacity: 1; }
+
+    #esp-lb-prev, #esp-lb-next {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff; font-size: 1.5rem;
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    #esp-lb-prev:hover, #esp-lb-next:hover { background: rgba(255,255,255,0.25); }
+    #esp-lb-prev { left: 1.5rem; }
+    #esp-lb-next { right: 1.5rem; }
+
+    /* ── Produtos ── */
+    #produtos {
+      position: relative;
+      z-index: 2;
+      padding: 5rem 5vw;
+      background: #faf8f5;
+    }
 
     .prod-section-header {
       text-align: center;
-      padding: 5rem var(--container-padding, 5vw) 3rem;
-      background: var(--color-warm, #f5f1ec);
+      margin-bottom: 3.5rem;
     }
 
-    /* Stage pinado pelo GSAP */
-    #prod-stage {
+    .prod-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+      max-width: 1280px;
+      margin: 0 auto 3rem;
+    }
+
+    .prod-card {
       position: relative;
-      width: 100%;
-      height: 100svh;
+      aspect-ratio: 3/4;
       overflow: hidden;
+      border-radius: 4px;
+      display: block;
+      text-decoration: none;
     }
 
-    /* Backgrounds empilhados */
-    .prod-bg {
+    .prod-card img {
       position: absolute; inset: 0;
       width: 100%; height: 100%;
       object-fit: cover;
-      border-radius: 0 !important;
-      display: block;
-      z-index: 0;
+      opacity: 0;
+      transition: opacity 1s ease;
     }
 
-    /* Info: título esquerda + desc direita, base da tela */
-    .prod-info-block {
+    .prod-card img.active { opacity: 1; }
+
+    .prod-card::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.72) 100%);
+    }
+
+    .prod-card-body {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      z-index: 15;
-      padding: 6rem 6vw 4rem;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 3rem;
-      background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
-      pointer-events: none;
-    }
-    .prod-info-block h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 4.5vw, 5rem);
-      font-weight: 300;
-      color: #fff;
-      margin: 0;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      text-shadow: 0 2px 16px rgba(0,0,0,0.4);
-    }
-    .prod-info-block p {
-      font-size: clamp(0.82rem, 1vw, 1rem);
-      color: rgba(255,255,255,0.78);
-      line-height: 1.75;
-      margin: 0;
-      max-width: 340px;
-      text-align: right;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.4);
-      flex-shrink: 0;
+      z-index: 2;
+      padding: 1.6rem 1.4rem;
     }
 
-    /* Cards flutuantes — landscape, centrados */
-    .prod-float-card {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      width: clamp(300px, 62vw, 900px);
-      aspect-ratio: 16/9;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 28px 70px rgba(0,0,0,0.65);
-      z-index: 10;
-      will-change: transform;
-    }
-    .prod-float-card img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      border-radius: 0 !important;
-    }
-
-    @media (max-width: 768px) {
-      .prod-float-card { width: 88vw; }
-      .prod-info-block { flex-direction: column; gap: 1rem; }
-      .prod-info-block p { text-align: left; }
-      .prod-info-block h2 { font-size: clamp(1.8rem, 8vw, 3rem); }
-    }
-
-    .prod-counter-cur {
-      color: #fff;
+    .prod-card-body h3 {
+      font-size: 0.9rem;
       font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
     }
 
-    @media (max-width: 768px) {
-      .prod-info {
-        padding: 0 5vw;
-        max-width: 55vw;
-      }
-      .prod-num { font-size: 3.5rem; }
-      .prod-name { font-size: 1.5rem; }
-      .prod-desc { display: none; }
-      .prod-cards-wrap {
-        width: 72vw;
-        height: 50vh;
-      }
+    .prod-card-body p { font-size: 0.8rem; color: rgba(255,255,255,0.85); line-height: 1.55; }
+
+    .prod-cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+
+    @media (max-width: 900px) {
+      .prod-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .prod-grid { grid-template-columns: 1fr; }
     }
 
     /* ── Scroll indicator animado ── */
@@ -409,11 +501,10 @@
     </section>
 
     <!-- ── ESPECIALISTAS ─────────────────────────────────── -->
-    <section class="landing-stats" id="especialistas">
+    <section class="landing-stats" id="especialistas" style="background-image:url('assets/escritorio/fundo_persiana.webp');background-size:cover;background-position:center;background-color:var(--color-ink);">
       <div class="container">
         <div class="section-header center reveal" style="margin-bottom:2rem;">
-          <span class="section-eyebrow" style="color:rgba(255,255,255,0.7);" data-i18n="corp-spec-label">Atuação</span>
-          <h2 class="section-title" style="color:#fff;" data-i18n="corp-spec-title">Especialistas em Ambientes Corporativos</h2>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5.5vw,5.5rem);font-weight:400;color:#fff;line-height:1.1;margin:0 0 1.5rem;letter-spacing:-0.02em;text-shadow:0 2px 20px rgba(0,0,0,0.6),0 4px 40px rgba(0,0,0,0.4);" data-i18n="corp-spec-title">Especialistas em Ambientes Corporativos</h2>
         </div>
         <div class="corp-ambientes-tags reveal" style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.65rem 1rem;">
           <span class="corp-amb-tag" data-i18n="corp-amb-1">Escritórios Corporativos</span>
@@ -428,6 +519,59 @@
           <span class="corp-amb-tag" data-i18n="corp-amb-10">Projetos Fit Out</span>
         </div>
       </div>
+
+      <!-- Galeria infinita de fotos de escritório -->
+      <div class="esp-gallery" id="esp-gallery">
+        <div class="esp-gallery-track" id="esp-gallery-track">
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1870.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1892.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1893.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1928.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1936.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1938.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1939.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1947.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1949.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1950.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1955.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1964.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1967.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1968.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1969.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1970.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_1971.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2029.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2050.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2171.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2172.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2182.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2183.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2220.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2222.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2223.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2224.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2225.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2227.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2228.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2230.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2231.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2232.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2239.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_2242.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_3155.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/IMG_3181.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/3a391607-f491-4137-a099-6d59eac80887.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/5e247b68-34d2-4d2b-86fb-14c63a4b8e27.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/0057485b-fc23-409e-ac2b-ed0236296d49.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/458392b1-80c7-4165-a900-673dd91f1be2.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/c9a91d89-c246-472a-ae31-58e032eefe11.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/cfb7ed8c-6e58-45ff-853d-5e68de0dc8f1.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/d7e8cfd1-d5bf-492d-8a98-cdcdaaf22774.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/e6f52a9b-a9dc-4e0f-a1fe-d61cbae47f89.webp" alt="Projeto corporativo" loading="lazy"/></div>
+          <div class="esp-gallery-slide"><img src="assets/escritorio/f1472ee5-40f8-4fb7-b637-e3aba6fb83c4.webp" alt="Projeto corporativo" loading="lazy"/></div>
+        </div>
+      </div>
+
     </section>
 
     <!-- ── PERSIANAS IDEAIS ───────────────────────────────── -->
@@ -438,32 +582,54 @@
         <h2 class="section-title" data-i18n="corp-prod-title">Persianas Ideais para Obras Corporativas</h2>
       </div>
 
-      <div id="prod-showcase">
-        <div id="prod-stage">
+      <div class="prod-grid">
 
-          <!-- Backgrounds empilhados -->
-          <img class="prod-bg" id="prod-bg-1" src="assets/catalogo/Rolô Tela Solar Screen 4.webp" alt="Rolô Tela Solar Screen" loading="eager" />
-          <img class="prod-bg" id="prod-bg-2" src="assets/catalogo/Rolô Blackout 6.webp" alt="Rolô Blackout" loading="lazy" style="opacity:0;" />
-
-          <!-- Info Solar Screen -->
-          <div class="prod-info-block" id="prod-info-1">
-            <h2 data-i18n="corp-screen-title">Rolô Tela Solar Screen</h2>
-            <p data-i18n="corp-screen-desc">Controle solar eficiente mantendo a entrada de luz natural. Redução do calor, conforto visual, economia de energia e visual moderno.</p>
+        <a href="portfolio.html#rolo-screen" class="prod-card">
+          <img src="assets/catalogo/Rolô Tela Solar Screen.webp" alt="Rolô Tela Solar Screen" loading="lazy" class="active" />
+          <img src="assets/catalogo/Rolô Tela Solar Screen (2).webp" alt="Rolô Tela Solar Screen" loading="lazy" />
+          <img src="assets/catalogo/Rolô Tela Solar Screen 4.webp" alt="Rolô Tela Solar Screen" loading="lazy" />
+          <img src="assets/escritorio/projetos corporativos/Fator de abertura das tela solar screen.png" alt="Fator de abertura tela solar screen" loading="lazy" />
+          <div class="prod-card-body">
+            <h3 data-i18n="corp-screen-title">Rolô Tela<br>Solar Screen</h3>
+            <p data-i18n="corp-screen-desc">Controle solar com entrada de luz natural.</p>
           </div>
+        </a>
 
-          <!-- Info Blackout -->
-          <div class="prod-info-block" id="prod-info-2" style="opacity:0;">
-            <h2 data-i18n="corp-blackout-title">Rolô Blackout</h2>
-            <p data-i18n="corp-blackout-desc">Privacidade e bloqueio luminoso para salas de reunião, auditórios, salas de treinamento e áreas multimídia.</p>
+        <a href="portfolio.html#rolo-blackout" class="prod-card">
+          <img src="assets/catalogo/Rolô Blackout.webp" alt="Rolô Blackout" loading="lazy" class="active" />
+          <img src="assets/catalogo/Rolô-Blackout-3.webp" alt="Rolô Blackout" loading="lazy" />
+          <img src="assets/catalogo/Rolô Blackout 6.webp" alt="Rolô Blackout" loading="lazy" />
+          <div class="prod-card-body">
+            <h3 data-i18n="corp-blackout-title">Rolô<br>Blackout</h3>
+            <p data-i18n="corp-blackout-desc">Privacidade e bloqueio total para auditórios e reuniões.</p>
           </div>
+        </a>
 
-          <!-- Cards landscape que passam pela tela -->
-          <div class="prod-float-card" id="pc-s1"><img src="assets/catalogo/Rolô Tela Solar Screen.webp" alt="Solar Screen 1" loading="lazy" /></div>
-          <div class="prod-float-card" id="pc-s2"><img src="assets/catalogo/Rolô Tela Solar Screen (2).webp" alt="Solar Screen 2" loading="lazy" /></div>
-          <div class="prod-float-card" id="pc-b1"><img src="assets/catalogo/Rolô-Blackout-3.webp" alt="Blackout 1" loading="lazy" /></div>
-          <div class="prod-float-card" id="pc-b2"><img src="assets/catalogo/Rolô Blackout.webp" alt="Blackout 2" loading="lazy" /></div>
+        <a href="portfolio.html#double-vision" class="prod-card">
+          <img src="assets/catalogo/Persiana Double Vision 1.webp" alt="Double Vision" loading="lazy" class="active" />
+          <img src="assets/catalogo/Persiana Double Vision (2).webp" alt="Double Vision" loading="lazy" />
+          <img src="assets/catalogo/Persiana Double Vision 3.webp" alt="Double Vision" loading="lazy" />
+          <div class="prod-card-body">
+            <h3>Double<br>Vision</h3>
+            <p>Ajuste gradual de luz com design sofisticado.</p>
+          </div>
+        </a>
 
-        </div>
+        <a href="portfolio.html#persiana-aluminio" class="prod-card">
+          <img src="assets/catalogo/Persiana Horizontal de Alumínio.webp" alt="Persiana de Alumínio" loading="lazy" class="active" />
+          <img src="assets/catalogo/Persiana Horizontal de Alumínio 2.webp" alt="Persiana de Alumínio" loading="lazy" />
+          <img src="assets/catalogo/Persiana Horizontal de Alumínio 3.webp" alt="Persiana de Alumínio" loading="lazy" />
+          <div class="prod-card-body">
+            <h3>Persiana de<br>Alumínio</h3>
+            <p>Durabilidade e fácil higienização para ambientes de uso intenso.</p>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="prod-cta">
+        <a href="portfolio.html" class="cta-button outline">Ver todos os produtos</a>
+        <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20solicitar%20um%20orçamento%20para%20um%20projeto%20corporativo" class="cta-button" target="_blank" rel="noopener">Solicitar orçamento</a>
       </div>
 
     </section>
@@ -766,6 +932,14 @@
       </div><!-- /cc-grid -->
 
       <!-- ── Project Detail Modal ─────────────────────────── -->
+      <!-- Lightbox galeria Atuação -->
+      <div id="esp-lightbox" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+        <button id="esp-lb-close" aria-label="Fechar">&#x2715;</button>
+        <button id="esp-lb-prev" aria-label="Anterior">&#8249;</button>
+        <img id="esp-lb-img" src="" alt="" />
+        <button id="esp-lb-next" aria-label="Próximo">&#8250;</button>
+      </div>
+
       <div class="cc-modal" id="cc-modal" aria-hidden="true">
         <div class="cc-modal-backdrop" id="cc-modal-backdrop"></div>
         <div class="cc-modal-wrap">
@@ -976,66 +1150,6 @@
   }());
   </script>
 
-  <!-- ── Produtos scroll-reveal GSAP ──────────────────────── -->
-  <script>
-  (function () {
-    if (typeof gsap === "undefined") return;
-    gsap.registerPlugin(ScrollTrigger);
-
-    var showcase = document.getElementById("prod-showcase");
-    var stage    = document.getElementById("prod-stage");
-    var bg1      = document.getElementById("prod-bg-1");
-    var bg2      = document.getElementById("prod-bg-2");
-    var info1    = document.getElementById("prod-info-1");
-    var info2    = document.getElementById("prod-info-2");
-    var cards    = ["pc-s1","pc-s2","pc-b1","pc-b2"].map(function(id){ return document.getElementById(id); });
-    if (!stage || !cards[0]) return;
-
-    var H = stage.offsetHeight;          /* viewport height */
-    var cardH = cards[0].offsetHeight || H * 0.35;
-
-    /* Posição inicial de todos os cards: abaixo da tela, centrado em X */
-    cards.forEach(function(c) {
-      gsap.set(c, { xPercent: -50, y: H + 20, opacity: 0 });
-    });
-
-    var scrollLen = H * 5.5; /* distância total de scroll */
-
-    var tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: showcase,
-        start: "top top",
-        end: "+=" + scrollLen,
-        pin: stage,
-        scrub: 1.2,
-        anticipatePin: 1
-      }
-    });
-
-    /* ── Fase 1: card Solar 1 entra e sai pelo topo ── */
-    tl.to(cards[0], { y: H * 0.28, opacity: 1, ease: "none", duration: 0.8 }, 0);
-    tl.to(cards[0], { y: -cardH - 40, opacity: 1, ease: "none", duration: 0.9 }, 0.8);
-
-    /* ── Fase 2: card Solar 2 entra e sai ── */
-    tl.to(cards[1], { y: H * 0.28, opacity: 1, ease: "none", duration: 0.8 }, 1.1);
-    tl.to(cards[1], { y: -cardH - 40, opacity: 1, ease: "none", duration: 0.9 }, 1.9);
-
-    /* ── Transição: bg1 esmaece, bg2 revela; info1→info2 ── */
-    tl.to(bg1,   { opacity: 0, duration: 0.7 }, 2.4);
-    tl.to(bg2,   { opacity: 1, duration: 0.7 }, 2.4);
-    tl.to(info1, { opacity: 0, duration: 0.4 }, 2.4);
-    tl.to(info2, { opacity: 1, duration: 0.4 }, 2.7);
-
-    /* ── Fase 3: card Blackout 1 entra e sai ── */
-    tl.to(cards[2], { y: H * 0.28, opacity: 1, ease: "none", duration: 0.8 }, 3.1);
-    tl.to(cards[2], { y: -cardH - 40, opacity: 1, ease: "none", duration: 0.9 }, 3.9);
-
-    /* ── Fase 4: card Blackout 2 entra e sai ── */
-    tl.to(cards[3], { y: H * 0.28, opacity: 1, ease: "none", duration: 0.8 }, 4.2);
-    tl.to(cards[3], { y: -cardH - 40, opacity: 1, ease: "none", duration: 0.9 }, 5.0);
-
-  }());
-  </script>
 
   <!-- ── Parceiros card scroll-over GSAP ─────────────────── -->
   <script>
@@ -1414,6 +1528,123 @@
     }
 
   }());
+  </script>
+
+  <script>
+    /* ── Galeria Atuação — scroll infinito ── */
+    /* ── Lightbox galeria Atuação ── */
+    (function () {
+      var lb      = document.getElementById('esp-lightbox');
+      var lbImg   = document.getElementById('esp-lb-img');
+      var lbClose = document.getElementById('esp-lb-close');
+      var lbPrev  = document.getElementById('esp-lb-prev');
+      var lbNext  = document.getElementById('esp-lb-next');
+      if (!lb) return;
+
+      var images = [];   /* apenas slides originais (sem clones) */
+      var current = 0;
+
+      function open(idx) {
+        current = idx;
+        lbImg.src = images[current];
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      function go(delta) {
+        current = (current + delta + images.length) % images.length;
+        lbImg.src = images[current];
+      }
+
+      /* Coletar imagens e atribuir click apenas nos slides originais */
+      var origSlides = Array.from(
+        document.querySelectorAll('#esp-gallery-track .esp-gallery-slide:not([aria-hidden])')
+      );
+      origSlides.forEach(function (slide, idx) {
+        var src = slide.querySelector('img').src;
+        images.push(src);
+        slide.addEventListener('click', function () { open(idx); });
+      });
+
+      lbClose.addEventListener('click', close);
+      lbPrev.addEventListener('click', function () { go(-1); });
+      lbNext.addEventListener('click', function () { go(1); });
+      lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape')     close();
+        if (e.key === 'ArrowLeft')  go(-1);
+        if (e.key === 'ArrowRight') go(1);
+      });
+    }());
+
+    /* ── Galeria Atuação — scroll infinito ── */
+    (function () {
+      var strip = document.getElementById('esp-gallery');
+      var track = document.getElementById('esp-gallery-track');
+      if (!strip || !track) return;
+
+      var origSlides = Array.from(track.children);
+      origSlides.forEach(function (s) {
+        var clone = s.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+      });
+
+      var pos = 0;
+      var paused = false;
+      var speed = 0.6;
+
+      function halfWidth() { return track.scrollWidth / 2; }
+
+      function tick() {
+        if (!paused) {
+          pos += speed;
+          var hw = halfWidth();
+          if (hw > 0 && pos >= hw) pos -= hw;
+          track.style.transform = 'translateX(-' + pos + 'px)';
+        }
+        requestAnimationFrame(tick);
+      }
+
+      strip.addEventListener('mouseenter', function () { paused = true; });
+      strip.addEventListener('mouseleave', function () { paused = false; });
+
+      var dragging = false, dragStartX = 0, dragStartPos = 0;
+      strip.addEventListener('mousedown', function (e) {
+        dragging = true; paused = true;
+        dragStartX = e.clientX; dragStartPos = pos;
+        strip.style.cursor = 'grabbing';
+      });
+      window.addEventListener('mousemove', function (e) {
+        if (!dragging) return;
+        var delta = dragStartX - e.clientX;
+        var hw = halfWidth();
+        pos = (dragStartPos + delta + hw) % hw;
+        track.style.transform = 'translateX(-' + pos + 'px)';
+      });
+      window.addEventListener('mouseup', function () {
+        if (!dragging) return;
+        dragging = false; paused = false;
+        strip.style.cursor = '';
+      });
+
+      requestAnimationFrame(tick);
+    }());
+
+    document.querySelectorAll('.prod-card').forEach(function (card) {
+      var imgs = card.querySelectorAll('img');
+      if (imgs.length < 2) return;
+      var current = 0;
+      setInterval(function () {
+        imgs[current].classList.remove('active');
+        current = (current + 1) % imgs.length;
+        imgs[current].classList.add('active');
+      }, 3500);
+    });
   </script>
 </body>
 </html>
