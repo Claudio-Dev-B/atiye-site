@@ -15,6 +15,62 @@
 
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="styles-landing.css" />
+  <style>
+    /* ── Before / After Slider ── */
+    .ba-section { background: var(--color-white, #fff); }
+    .ba-section .section-subtitle {
+      margin-top: 0.75rem; font-size: 0.78rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--color-muted, #888);
+    }
+    .ba-slider {
+      position: relative; overflow: hidden;
+      max-width: 860px; margin: 2.5rem auto 0;
+      border-radius: 8px; box-shadow: 0 12px 48px rgba(0,0,0,0.12);
+      cursor: ew-resize; user-select: none; touch-action: pan-y;
+    }
+    .ba-base { display: block; }
+    .ba-base img { width: 100%; height: auto; display: block; pointer-events: none; }
+    .ba-overlay {
+      position: absolute; inset: 0;
+      clip-path: inset(0 50% 0 0);
+    }
+    .ba-overlay img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+    .ba-divider {
+      position: absolute; top: 0; bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 3px; background: #fff; z-index: 10; pointer-events: none;
+    }
+    .ba-handle {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 52px; height: 52px; border-radius: 50%;
+      background: #fff; display: flex; align-items: center; justify-content: center; gap: 2px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.28);
+    }
+    .ba-handle svg { color: var(--color-ink, #0d0d0d); flex-shrink: 0; }
+    .ba-label {
+      position: absolute; bottom: 1.2rem;
+      padding: 0.35rem 1.1rem; font-size: 0.62rem; letter-spacing: 0.18em;
+      text-transform: uppercase; background: rgba(0,0,0,0.48); color: #fff;
+      border-radius: 100px; pointer-events: none;
+    }
+    .ba-label--before { left: 1.2rem; }
+    .ba-label--after { right: 1.2rem; }
+
+    /* Tooltip */
+    .ba-tooltip {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 20; pointer-events: none;
+      background: rgba(0,0,0,0.62); color: #fff; backdrop-filter: blur(4px);
+      padding: 0.55rem 1.4rem; border-radius: 100px;
+      font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+      transition: opacity 0.4s ease;
+      white-space: nowrap;
+    }
+    .ba-tooltip::before { content: '↔\00a0'; }
+    .ba-tooltip.hidden { opacity: 0; }
+  </style>
 </head>
 <body class="landing-page">
 
@@ -49,6 +105,14 @@
     </div>
   </header>
 
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a>
+    <a href="residencial.html" data-i18n="nav-residential">Residencial</a>
+    <a href="portfolio.html" data-i18n="nav-portfolio">Portfólio</a>
+    <a href="lavagem.html" class="active" data-i18n="nav-cleaning">Higienização</a>
+    <a href="#contato" data-i18n="nav-contact">Contato</a>
+  </nav>
+
   <main>
 
     <!-- ── HERO ──────────────────────────────────────────── -->
@@ -72,7 +136,7 @@
         <p class="hero-description" data-i18n="lav-hero-desc">
           A Atiye faz a remoção completa sem danificar o material.
         </p>
-        <a href="#contato" class="cta-button hero-cta" data-i18n="lav-hero-cta">Agendar higienização</a>
+        <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20agendar%20a%20higienização%20das%20minhas%20persianas" class="cta-button hero-cta" target="_blank" rel="noopener" data-i18n="lav-hero-cta">Agendar higienização</a>
       </div>
       <div class="hero-scroll">
         <div class="scroll-line"></div>
@@ -84,7 +148,6 @@
     <section class="section problem-section" id="problema">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow" data-i18n="lav-prob-eyebrow">O problema</span>
           <h2 class="section-title" data-i18n="lav-prob-title">O que se acumula ao longo do tempo</h2>
         </div>
         <div class="problems-grid reveal">
@@ -116,8 +179,49 @@
             <h3 data-i18n="lav-p3-title">Degradação silenciosa</h3>
             <p data-i18n="lav-p3-text">Aparência que se deteriora lentamente. Tecido perdendo estrutura. Material comprometido antes do prazo esperado.</p>
           </div>
+          <div class="problem-item">
+            <div class="problem-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+              </svg>
+            </div>
+            <h3 data-i18n="lav-p4-title">Ácaros e alérgenos</h3>
+            <p data-i18n="lav-p4-text">Agentes microscópicos que se instalam nos tecidos e provocam reações alérgicas, especialmente em crianças e pessoas sensíveis.</p>
+          </div>
         </div>
         <p class="problem-conclusion" data-i18n="lav-prob-concl">Limpeza doméstica não alcança isso. Precisa de processo técnico.</p>
+      </div>
+    </section>
+
+    <!-- ── ANTES & DEPOIS ─────────────────────────────────── -->
+    <section class="section ba-section" id="antes-depois">
+      <div class="container">
+        <div class="section-header center reveal">
+          <h2 class="section-title" data-i18n="lav-ba-title">Antes e depois</h2>
+          <p class="section-subtitle" data-i18n="lav-ba-sub">Arraste a linha para comparar</p>
+        </div>
+        <div class="ba-slider" id="baSlider">
+          <div class="ba-tooltip" id="baTooltip" data-i18n="lav-ba-tooltip">Arraste para revelar</div>
+          <div class="ba-base">
+            <img src="assets/antes.webp" alt="Persiana antes da higienização" draggable="false" />
+            <span class="ba-label ba-label--before" data-i18n="lav-ba-before">Antes</span>
+          </div>
+          <div class="ba-overlay" id="baOverlay">
+            <img src="assets/depois.webp" alt="Persiana depois da higienização" draggable="false" />
+            <span class="ba-label ba-label--after" data-i18n="lav-ba-after">Depois</span>
+          </div>
+          <div class="ba-divider" id="baDivider">
+            <div class="ba-handle">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -125,7 +229,6 @@
     <section class="section solution-section" id="processo">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow" data-i18n="lav-proc-eyebrow">Como funciona</span>
           <h2 class="section-title" data-i18n="lav-proc-title">Lavagem técnica com preservação total</h2>
         </div>
         <div class="solution-steps reveal">
@@ -165,7 +268,6 @@
     <section class="section" id="diferenciais" style="background: var(--color-warm);">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow" data-i18n="lav-diff-eyebrow">Por que a Atiye</span>
           <h2 class="section-title" data-i18n="lav-diff-title">Mais do que lavar</h2>
         </div>
         <div class="split-content reveal">
@@ -308,5 +410,39 @@
 
   <script src="translations.js"></script>
   <script src="script-landing.js"></script>
+  <script>
+  (function () {
+    var slider  = document.getElementById('baSlider');
+    var overlay = document.getElementById('baOverlay');
+    var divider = document.getElementById('baDivider');
+    var tooltip = document.getElementById('baTooltip');
+    if (!slider) return;
+
+    var dragging = false;
+    var interacted = false;
+
+    function hideTooltip() {
+      if (!interacted && tooltip) {
+        interacted = true;
+        tooltip.classList.add('hidden');
+      }
+    }
+
+    function setPosition(clientX) {
+      var rect = slider.getBoundingClientRect();
+      var pct  = Math.min(Math.max((clientX - rect.left) / rect.width * 100, 0), 100);
+      overlay.style.clipPath = 'inset(0 ' + (100 - pct).toFixed(2) + '% 0 0)';
+      divider.style.left = pct.toFixed(2) + '%';
+    }
+
+    slider.addEventListener('mousedown', function (e) { dragging = true; hideTooltip(); setPosition(e.clientX); });
+    window.addEventListener('mousemove', function (e) { if (dragging) setPosition(e.clientX); });
+    window.addEventListener('mouseup',   function ()  { dragging = false; });
+
+    slider.addEventListener('touchstart', function (e) { dragging = true; hideTooltip(); setPosition(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchmove',  function (e) { if (dragging) setPosition(e.touches[0].clientX); },  { passive: true });
+    window.addEventListener('touchend',   function ()  { dragging = false; });
+  })();
+  </script>
 </body>
 </html>

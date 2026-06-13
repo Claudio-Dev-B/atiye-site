@@ -473,7 +473,16 @@
       'lav-p2-text':      'Cheiros que permeiam o ambiente sem origem aparente. Com frequência, a persiana é o foco e não é percebida.',
       'lav-p3-title':     'Degradação silenciosa',
       'lav-p3-text':      'Aparência que se deteriora lentamente. Tecido perdendo estrutura. Material comprometido antes do prazo esperado.',
+      'lav-p4-title':     'Ácaros e alérgenos',
+      'lav-p4-text':      'Agentes microscópicos que se instalam nos tecidos e provocam reações alérgicas, especialmente em crianças e pessoas sensíveis.',
       'lav-prob-concl':   'Limpeza doméstica não alcança isso. Precisa de processo técnico.',
+
+      'lav-ba-eyebrow':  'Resultado',
+      'lav-ba-title':    'Antes e depois',
+      'lav-ba-sub':      'Arraste a linha para comparar',
+      'lav-ba-tooltip':  'Arraste para revelar',
+      'lav-ba-before':   'Antes',
+      'lav-ba-after':    'Depois',
 
       'lav-proc-eyebrow': 'Como funciona',
       'lav-proc-title':   'Lavagem técnica com preservação total',
@@ -1063,7 +1072,16 @@
       'lav-p2-text':      'Smells that permeate the space without an obvious source. Often, the blind is the culprit and goes unnoticed.',
       'lav-p3-title':     'Silent degradation',
       'lav-p3-text':      'Appearance that slowly deteriorates. Fabric losing structure. Material compromised before its expected lifespan.',
+      'lav-p4-title':     'Mites and allergens',
+      'lav-p4-text':      'Microscopic agents that settle in the fabric and trigger allergic reactions, especially in children and sensitive individuals.',
       'lav-prob-concl':   'Household cleaning cannot reach this. It requires a technical process.',
+
+      'lav-ba-eyebrow':  'Results',
+      'lav-ba-title':    'Before & after',
+      'lav-ba-sub':      'Drag the line to compare',
+      'lav-ba-tooltip':  'Drag to reveal',
+      'lav-ba-before':   'Before',
+      'lav-ba-after':    'After',
 
       'lav-proc-eyebrow': 'How it works',
       'lav-proc-title':   'Technical washing with total preservation',

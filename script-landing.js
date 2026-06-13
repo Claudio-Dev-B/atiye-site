@@ -110,23 +110,38 @@
   /* ── Mobile Menu ─────────────────────────────────────── */
   const nav = $("#nav");
   const menuToggle = $("#menu-toggle");
+  const mobileNav  = $("#mobileNav");
 
-  if (menuToggle && nav) {
-    menuToggle.addEventListener("click", function () {
-      const open = nav.classList.toggle("active");
-      menuToggle.classList.toggle("active", open);
-      menuToggle.setAttribute("aria-expanded", String(open));
-      document.body.style.overflow = open ? "hidden" : "";
-    });
-
-    $$(".nav-list a", nav).forEach(function (link) {
-      link.addEventListener("click", function () {
-        nav.classList.remove("active");
-        menuToggle.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
+  if (menuToggle) {
+    if (mobileNav) {
+      menuToggle.addEventListener("click", function () {
+        const open = mobileNav.classList.toggle("open");
+        menuToggle.classList.toggle("active", open);
+        menuToggle.setAttribute("aria-expanded", String(open));
       });
-    });
+      mobileNav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          mobileNav.classList.remove("open");
+          menuToggle.classList.remove("active");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    } else if (nav) {
+      menuToggle.addEventListener("click", function () {
+        const open = nav.classList.toggle("active");
+        menuToggle.classList.toggle("active", open);
+        menuToggle.setAttribute("aria-expanded", String(open));
+        document.body.style.overflow = open ? "hidden" : "";
+      });
+      $$(".nav-list a", nav).forEach(function (link) {
+        link.addEventListener("click", function () {
+          nav.classList.remove("active");
+          menuToggle.classList.remove("active");
+          menuToggle.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        });
+      });
+    }
   }
 
   /* ── Gallery Tabs ────────────────────────────────────── */

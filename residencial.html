@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; font-size: 16px; }
@@ -51,55 +52,6 @@
     .pill-btn.outline:hover { background: var(--ink); color: #fff; }
     .pill-btn.outline-light { border: 1px solid rgba(255,255,255,0.7); color: #fff; background: transparent; }
     .pill-btn.outline-light:hover { background: #fff; color: var(--ink); }
-
-    /* ── HEADER ── */
-    .site-header {
-      position: sticky; top: 0; z-index: 200;
-      background: #fff; border-bottom: 1px solid var(--border);
-      padding: 0.9rem 3.5vw;
-      display: flex; justify-content: space-between; align-items: center; gap: 2rem;
-    }
-    .header-logo img { width: 110px; height: auto; filter: brightness(0); }
-    .header-nav { display: flex; align-items: center; gap: 2.2rem; }
-    .header-nav a {
-      font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--text); padding-bottom: 0.3rem; border-bottom: 1px solid transparent;
-      transition: color 0.3s, border-color 0.3s;
-    }
-    .header-nav a:hover { color: var(--ink); }
-    .header-nav a.active { color: var(--ink); border-bottom-color: var(--gold); }
-    .header-right { display: flex; align-items: center; gap: 1.2rem; }
-    .header-wa {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      border: 1px solid var(--gold); border-radius: 100px;
-      padding: 0.5rem 1.3rem; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--ink); transition: background 0.3s, color 0.3s;
-    }
-    .header-wa svg { width: 14px; height: 14px; fill: var(--gold); transition: fill 0.3s; }
-    .header-wa:hover { background: var(--gold); color: #fff; }
-    .header-wa:hover svg { fill: #fff; }
-    .lang-toggle {
-      display: inline-flex; align-items: center; gap: 0.2rem;
-      padding: 0.35rem 0.6rem; font-size: 0.7rem; font-weight: 600;
-      letter-spacing: 0.08em; color: rgba(0,0,0,0.5);
-      border: 1px solid rgba(0,0,0,0.2); border-radius: 2px;
-      transition: border-color 0.25s ease, color 0.25s ease; cursor: pointer;
-      background: none; white-space: nowrap;
-    }
-    .lang-toggle:hover { border-color: rgba(0,0,0,0.5); color: var(--ink); }
-    .lang-toggle .lang-sep { opacity: 0.35; margin: 0 0.1rem; }
-    .lang-toggle .lang-active { color: var(--gold); font-weight: 700; }
-    .menu-btn {
-      display: none; font-size: 0.7rem; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--ink);
-    }
-    .mobile-nav { display: none; background: #fff; border-bottom: 1px solid var(--border); }
-    .mobile-nav.open { display: block; }
-    .mobile-nav a {
-      display: block; padding: 1rem 5vw; font-size: 0.72rem;
-      letter-spacing: 0.16em; text-transform: uppercase; color: var(--text);
-      border-top: 1px solid var(--border);
-    }
 
     /* ── HERO — fixa, conteúdo rola por cima ── */
     .hero {
@@ -396,28 +348,29 @@
 </head>
 <body>
 
-  <header class="site-header" id="header">
-    <a href="index.html" class="header-logo">
-      <img src="assets/logo_atiye_fundo_branco.png" alt="Atiye" width="90" height="36" />
-    </a>
-    <nav class="header-nav">
-      <a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a>
-      <a href="residencial.html" class="active" data-i18n="nav-residential">Residencial</a>
-      <a href="portfolio.html" data-i18n="nav-portfolio">Portfólio</a>
-      <a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a>
-      <a href="https://wa.me/5511986793247" target="_blank" rel="noopener" data-i18n="nav-contact">Contato</a>
-    </nav>
-    <div class="header-right">
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="Atiye Home">
+        <img src="assets/logo_atiye_fundo_branco.png" alt="Atiye" width="100" height="40" />
+      </a>
+      <nav class="header-nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a></li>
+          <li><a href="residencial.html" class="active" data-i18n="nav-residential">Residencial</a></li>
+          <li><a href="portfolio.html" data-i18n="nav-portfolio">Portfólio</a></li>
+          <li><a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a></li>
+          <li><a href="https://wa.me/5511986793247" target="_blank" rel="noopener" data-i18n="nav-contact">Contato</a></li>
+        </ul>
+      </nav>
+      <a href="https://wa.me/5511986793247" class="cta-button header-cta" target="_blank" rel="noopener">WhatsApp</a>
       <button class="lang-toggle" id="lang-toggle" aria-label="Alternar idioma">
         <span class="lang-pt lang-active">PT</span>
         <span class="lang-sep">|</span>
         <span class="lang-en">EN</span>
       </button>
-      <a href="https://wa.me/5511986793247" class="header-wa" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span>WhatsApp</span>
-      </a>
-      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">MENU</button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -753,14 +706,20 @@
   (function () {
     'use strict';
 
-    var menuBtn   = document.getElementById('menuBtn');
-    var mobileNav = document.getElementById('mobileNav');
+    var menuToggle = document.getElementById('menu-toggle');
+    var mobileNav  = document.getElementById('mobileNav');
 
-    menuBtn.addEventListener('click', function () {
-      mobileNav.classList.toggle('open');
+    menuToggle.addEventListener('click', function () {
+      var open = mobileNav.classList.toggle('open');
+      menuToggle.classList.toggle('active', open);
+      menuToggle.setAttribute('aria-expanded', String(open));
     });
     mobileNav.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { mobileNav.classList.remove('open'); });
+      a.addEventListener('click', function () {
+        mobileNav.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
     });
 
     var heroImgs = document.querySelectorAll('.hero-bg');

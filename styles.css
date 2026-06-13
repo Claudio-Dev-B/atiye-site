@@ -451,6 +451,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   z-index: 1001;
 }
 
+.mobile-nav { display: none; }
+
 .menu-toggle span {
   display: block;
   width: 22px; height: 1.5px;
@@ -2179,6 +2181,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
   .header-cta { display: none; }
   .menu-toggle { display: flex; }
+
+  /* Mobile nav dropdown */
+  .mobile-nav {
+    display: none;
+    position: fixed; top: var(--header-height, 64px); left: 0; right: 0;
+    z-index: 198;
+    background: #fff; border-bottom: 1px solid var(--color-border, #e6e2db);
+  }
+  .mobile-nav.open { display: block; }
+  .mobile-nav a {
+    display: block; padding: 1rem 5vw; font-size: 0.72rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-text, #3a3a3a);
+    border-top: 1px solid var(--color-border, #e6e2db);
+  }
 
   /* Hero */
   .hero-content { padding-bottom: 10vh; }
