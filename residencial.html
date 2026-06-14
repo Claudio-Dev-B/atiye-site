@@ -70,7 +70,7 @@
     .hero-content {
       position: relative; z-index: 1; height: 100%;
       display: flex; flex-direction: column; justify-content: center;
-      align-items: flex-start; padding: 0 5vw; max-width: 760px;
+      align-items: flex-start; padding: var(--header-height, 80px) 5vw 0; max-width: 760px;
     }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
@@ -135,7 +135,7 @@
     .produtos { background: var(--surface); padding: 7rem 5vw; }
     .prod-header { text-align: center; margin-bottom: 3.5rem; }
     .prod-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
       max-width: 1280px; margin: 0 auto 3rem;
     }
     .prod-card { position: relative; aspect-ratio: 3/4; overflow: hidden; border-radius: 4px; display: block; }
@@ -348,7 +348,7 @@
 </head>
 <body>
 
-  <header class="header" id="header">
+  <header class="header header--transparent" id="header">
     <div class="header-container">
       <a href="index.html" class="logo" aria-label="Atiye Home">
         <img src="assets/logo_atiye_fundo_branco.png" alt="Atiye" width="100" height="40" />
@@ -447,32 +447,22 @@
         <div class="gold-line"></div>
       </div>
       <div class="prod-grid">
-        <a href="portfolio.html#persiana-romana" class="prod-card">
-          <img src="assets/residencial/Persiana-Romana.webp" alt="Persiana Rolô" loading="lazy" class="active" />
-          <img src="assets/residencial/persiana_rolo.webp" alt="Persiana Rolô" loading="lazy" />
-          <img src="assets/residencial/persiana_rolo_2.webp" alt="Persiana Rolô" loading="lazy" />
-          <div class="prod-card-body">
-            <h3 data-i18n-html="res2-prod1-title-html">Persiana<br>Rolô</h3>
-            <p data-i18n="res2-prod1-desc">Moderna, elegante e fácil de operar.</p>
-          </div>
-        </a>
         <a href="portfolio.html#rolo-screen" class="prod-card">
-          <img src="assets/residencial/rolo_solar.webp" alt="Persiana Tela Solar" loading="lazy" class="active" />
-          <img src="assets/residencial/rolo_solar_2.webp" alt="Persiana Tela Solar" loading="lazy" />
-          <img src="assets/residencial/rolo_solar_3.webp" alt="Persiana Tela Solar" loading="lazy" />
-          <img src="assets/residencial/rolo_double_vision.webp" alt="Persiana Tela Solar Double Vision" loading="lazy" />
+          <img src="assets/residencial/rolo_solar.webp" alt="Persiana Rolô Tela Solar Screen" loading="lazy" class="active" />
+          <img src="assets/residencial/rolo_solar_2.webp" alt="Persiana Rolô Tela Solar Screen" loading="lazy" />
+          <img src="assets/residencial/rolo_solar_3.webp" alt="Persiana Rolô Tela Solar Screen" loading="lazy" />
           <img src="assets/escritorio/projetos corporativos/Fator de abertura das tela solar screen.png" alt="Fator de abertura tela solar screen" loading="lazy" />
           <div class="prod-card-body">
-            <h3 data-i18n-html="res2-prod2-title-html">Persiana<br>Tela Solar</h3>
+            <h3 data-i18n-html="res2-prod2-title-html">Persiana Rolô<br>Tela Solar Screen</h3>
             <p data-i18n="res2-prod2-desc">Reduz o calor e mantém a vista externa.</p>
           </div>
         </a>
         <a href="portfolio.html#rolo-blackout" class="prod-card">
-          <img src="assets/residencial/Rolô-Blackout-_2_.webp" alt="Persiana Blackout" loading="lazy" class="active" />
-          <img src="assets/residencial/Persiana_Blackout.webp" alt="Persiana Blackout" loading="lazy" />
-          <img src="assets/residencial/blackout_3.png" alt="Persiana Blackout" loading="lazy" />
+          <img src="assets/residencial/Rolô-Blackout-_2_.webp" alt="Persiana Rolô Blackout" loading="lazy" class="active" />
+          <img src="assets/residencial/Persiana_Blackout.webp" alt="Persiana Rolô Blackout" loading="lazy" />
+          <img src="assets/residencial/blackout_3.png" alt="Persiana Rolô Blackout" loading="lazy" />
           <div class="prod-card-body">
-            <h3 data-i18n-html="res2-prod3-title-html">Persiana<br>Blackout</h3>
+            <h3 data-i18n-html="res2-prod3-title-html">Persiana Rolô<br>Blackout</h3>
             <p data-i18n="res2-prod3-desc">Bloqueia 100% da luminosidade</p>
           </div>
         </a>
@@ -480,10 +470,46 @@
           <img src="assets/residencial/cortina.webp" alt="Cortinas Sob Medida" loading="lazy" class="active" />
           <img src="assets/residencial/cortina_2.webp" alt="Cortinas Sob Medida" loading="lazy" />
           <img src="assets/residencial/cortina_3.webp" alt="Cortinas Sob Medida" loading="lazy" />
-          <img src="assets/residencial/cortina_4.webp" alt="Cortinas Sob Medida" loading="lazy" />
+          <img src="assets/residencial/cortina_5.webp" alt="Cortinas Sob Medida" loading="lazy" />
+          <img src="assets/residencial/cortina_6.webp" alt="Cortinas Sob Medida" loading="lazy" />
           <div class="prod-card-body">
             <h3 data-i18n-html="res2-prod4-title-html">Cortinas<br>Sob Medida</h3>
             <p data-i18n="res2-prod4-desc">Elegância e aconchego para qualquer ambiente.</p>
+          </div>
+        </a>
+        <a href="portfolio.html#double-vision" class="prod-card">
+          <img src="assets/residencial/Persiana Double Vision.webp" alt="Double Vision" loading="lazy" class="active" />
+          <img src="assets/residencial/Persiana Double Vision 1.webp" alt="Double Vision" loading="lazy" />
+          <img src="assets/residencial/Persiana Double Vision 3.webp" alt="Double Vision" loading="lazy" />
+          <img src="assets/residencial/Persiana Double Vision 4.webp" alt="Double Vision" loading="lazy" />
+          <img src="assets/residencial/rolo_double_vision.webp" alt="Double Vision" loading="lazy" />
+          <div class="prod-card-body">
+            <h3 data-i18n-html="res2-prod5-title-html">Double<br>Vision</h3>
+            <p data-i18n="res2-prod5-desc">Controle dinâmico da luz com design moderno e elegante.</p>
+          </div>
+        </a>
+        <a href="portfolio.html#persiana-madeira" class="prod-card">
+          <img src="assets/residencial/persiana_madeira.webp" alt="Persiana de Madeira" loading="lazy" class="active" />
+          <img src="assets/residencial/persiana_madeira_2.webp" alt="Persiana de Madeira" loading="lazy" />
+          <img src="assets/residencial/persiana_madeira_3.webp" alt="Persiana de Madeira" loading="lazy" />
+          <img src="assets/residencial/persiana_madeira_4.webp" alt="Persiana de Madeira" loading="lazy" />
+          <img src="assets/residencial/persiana_madeira_6.webp" alt="Persiana de Madeira" loading="lazy" />
+          <img src="assets/residencial/persiana_madeira_7.webp" alt="Persiana de Madeira" loading="lazy" />
+          <div class="prod-card-body">
+            <h3 data-i18n-html="res2-prod7-title-html">Persiana<br>de Madeira</h3>
+            <p data-i18n="res2-prod7-desc">A sofisticação da matéria natural aliada ao controle preciso da luz.</p>
+          </div>
+        </a>
+        <a href="portfolio.html#persiana-romana" class="prod-card">
+          <img src="assets/residencial/Persiana-Romana.webp" alt="Persiana Romana" loading="lazy" class="active" />
+          <img src="assets/residencial/persiana-romana 2.webp" alt="Persiana Romana" loading="lazy" />
+          <img src="assets/residencial/romana 3.webp" alt="Persiana Romana" loading="lazy" />
+          <img src="assets/residencial/romana 4.webp" alt="Persiana Romana" loading="lazy" />
+          <img src="assets/residencial/romana_detalhe.webp" alt="Persiana Romana" loading="lazy" />
+          <img src="assets/residencial/roana_5.webp" alt="Persiana Romana" loading="lazy" />
+          <div class="prod-card-body">
+            <h3 data-i18n-html="res2-prod6-title-html">Persiana<br>Romana</h3>
+            <p data-i18n="res2-prod6-desc">Elegância em cada dobra, com um toque de exclusividade.</p>
           </div>
         </a>
       </div>
@@ -550,13 +576,13 @@
           <img src="assets/residencial/IMG_3184.webp" alt="Projeto residencial" loading="lazy" />
           <img src="assets/residencial/rolo_solar.webp" alt="Projeto residencial" loading="lazy" />
           <img src="assets/residencial/IMG_3160.webp" alt="Projeto residencial" loading="lazy" />
-          <img src="assets/residencial/IMG_3162.webp" alt="Projeto residencial" loading="lazy" />
           <img src="assets/residencial/cortina_2.webp" alt="Projeto residencial" loading="lazy" />
           <img src="assets/residencial/persiana_rolo.webp" alt="Projeto residencial" loading="lazy" />
-          <img src="assets/residencial/persiana_rolo_2.webp" alt="Projeto residencial" loading="lazy" />
+          <img src="assets/residencial/Persiana Double Vision.webp" alt="Projeto residencial" loading="lazy" />
           <img src="assets/residencial/IMG_3468.webp" alt="Projeto residencial" loading="lazy" />
-          <img src="assets/residencial/IMG_3168.webp" alt="Projeto residencial" loading="lazy" />
+          <img src="assets/residencial/romana_detalhe.webp" alt="Projeto residencial" loading="lazy" />
           <img src="assets/residencial/IMG_3169.webp" alt="Projeto residencial" loading="lazy" />
+          <img src="assets/residencial/cortina_5.webp" alt="Projeto residencial" loading="lazy" />
           <img src="assets/residencial/IMG_3152.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/rolo_solar_2.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/cortina.webp" alt="" aria-hidden="true" loading="lazy" />
@@ -565,13 +591,13 @@
           <img src="assets/residencial/IMG_3184.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/rolo_solar.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/IMG_3160.webp" alt="" aria-hidden="true" loading="lazy" />
-          <img src="assets/residencial/IMG_3162.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/cortina_2.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/persiana_rolo.webp" alt="" aria-hidden="true" loading="lazy" />
-          <img src="assets/residencial/persiana_rolo_2.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img src="assets/residencial/Persiana Double Vision.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/IMG_3468.webp" alt="" aria-hidden="true" loading="lazy" />
-          <img src="assets/residencial/IMG_3168.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img src="assets/residencial/romana_detalhe.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/IMG_3169.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img src="assets/residencial/cortina_5.webp" alt="" aria-hidden="true" loading="lazy" />
         </div>
       </div>
       <div class="gal-marquee">
@@ -582,13 +608,16 @@
           <img src="assets/residencial/cortina_4.webp" alt="Projeto residencial" loading="lazy" />
           <img src="assets/residencial/IMG_3465.webp" alt="Projeto residencial" loading="lazy" />
           <img src="assets/residencial/persiana_madeira_3.webp" alt="Projeto residencial" loading="lazy" />
-          <img src="assets/residencial/IMG_3174.webp" alt="Projeto residencial" loading="lazy" />
-          <img src="assets/residencial/IMG_3176.webp" alt="Projeto residencial" loading="lazy" />
-          <img src="assets/residencial/IMG_3177.webp" alt="Projeto residencial" loading="lazy" />
+          <img src="assets/residencial/Persiana Double Vision 1.webp" alt="Projeto residencial" loading="lazy" />
+          <img src="assets/residencial/romana 3.webp" alt="Projeto residencial" loading="lazy" />
+          <img src="assets/residencial/persiana_aluminio.webp" alt="Projeto residencial" loading="lazy" />
           <img src="assets/residencial/persiana_madeira_4.webp" alt="Projeto residencial" loading="lazy" />
           <img src="assets/residencial/IMG_3185.webp" alt="Projeto residencial" loading="lazy" />
           <img src="assets/residencial/IMG_3464.webp" alt="Projeto residencial" loading="lazy" />
           <img src="assets/residencial/IMG_3469.webp" alt="Projeto residencial" loading="lazy" />
+          <img src="assets/residencial/cortina_6.webp" alt="Projeto residencial" loading="lazy" />
+          <img src="assets/residencial/persiana_madeira_7.webp" alt="Projeto residencial" loading="lazy" />
+          <img src="assets/residencial/roana_5.webp" alt="Projeto residencial" loading="lazy" />
           <img src="assets/residencial/IMG_1792.webp" alt="Projeto residencial" loading="lazy" />
           <img src="assets/residencial/Persiana_Blackout.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/persiana_madeira_2.webp" alt="" aria-hidden="true" loading="lazy" />
@@ -596,13 +625,16 @@
           <img src="assets/residencial/cortina_4.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/IMG_3465.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/persiana_madeira_3.webp" alt="" aria-hidden="true" loading="lazy" />
-          <img src="assets/residencial/IMG_3174.webp" alt="" aria-hidden="true" loading="lazy" />
-          <img src="assets/residencial/IMG_3176.webp" alt="" aria-hidden="true" loading="lazy" />
-          <img src="assets/residencial/IMG_3177.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img src="assets/residencial/Persiana Double Vision 1.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img src="assets/residencial/romana 3.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img src="assets/residencial/persiana_aluminio.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/persiana_madeira_4.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/IMG_3185.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/IMG_3464.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/IMG_3469.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img src="assets/residencial/cortina_6.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img src="assets/residencial/persiana_madeira_7.webp" alt="" aria-hidden="true" loading="lazy" />
+          <img src="assets/residencial/roana_5.webp" alt="" aria-hidden="true" loading="lazy" />
           <img src="assets/residencial/IMG_1792.webp" alt="" aria-hidden="true" loading="lazy" />
         </div>
       </div>
@@ -705,6 +737,20 @@
   <script>
   (function () {
     'use strict';
+
+    var header = document.getElementById('header');
+    var scrollTicking = false;
+    window.addEventListener('scroll', function () {
+      if (!scrollTicking) {
+        scrollTicking = true;
+        requestAnimationFrame(function () {
+          var scrolled = window.scrollY > 60;
+          header.classList.toggle('scrolled', scrolled);
+          header.classList.toggle('header--transparent', !scrolled);
+          scrollTicking = false;
+        });
+      }
+    }, { passive: true });
 
     var menuToggle = document.getElementById('menu-toggle');
     var mobileNav  = document.getElementById('mobileNav');

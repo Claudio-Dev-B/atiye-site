@@ -46,129 +46,46 @@
       }
     }
 
-    /* ── Trust sticky-scroll ── */
-    .trust-section {
-      background: var(--color-warm, #f5f1ec);
-      padding: 4rem 3vw 3vh;
+    /* ── Faixa de diferenciais ── */
+    .dif-strip { background: #fff; border-bottom: 1px solid var(--color-border, #e8e2d9); padding: 2.25rem 3vw; }
+    .dif-strip-title { text-align: center; margin-bottom: 1.8rem; }
+    .dif-strip-title .section-title { font-size: clamp(1.4rem, 2.2vw, 1.9rem); }
+    .gold-line { width: 56px; height: 2px; background: var(--color-accent, #b8975a); margin: 0.8rem auto 0; }
+    .dif-strip-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      max-width: 1280px; margin: 0 auto;
+    }
+    .dif-item {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0.5rem 1.5rem;
+      border-left: 1px solid var(--color-border, #e8e2d9);
+    }
+    .dif-item:first-child { border-left: none; }
+    .dif-item svg { width: 34px; height: 34px; flex-shrink: 0; stroke: var(--color-accent, #b8975a); fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+    .dif-item h3 {
+      font-size: 0.74rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--color-ink, #1a1814); line-height: 1.5;
     }
 
-    .trust-pre-heading {
-      text-align: center;
-      padding: 0 8vw 2.5rem;
+    @media (max-width: 1024px) {
+      .dif-strip-grid { grid-template-columns: repeat(3, 1fr); row-gap: 2rem; }
+      .dif-item:nth-child(4) { border-left: none; }
     }
-    .trust-pre-heading h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.6rem, 2.8vw, 2.8rem);
-      font-weight: 400;
-      color: var(--color-text, #1a1a1a);
-      line-height: 1.3;
-      margin: 0;
-    }
-
-    .trust-scene {
-      position: relative;
-      /* height calculada por JS (GSAP pinSpacing) */
-    }
-
-    .trust-stage {
-      position: relative;
-      height: 82vh;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow:
-        0 30px 100px rgba(0,0,0,0.8),
-        0 0 0 1px rgba(255,255,255,0.06);
-      will-change: transform;
-    }
-
-    /* Backgrounds */
-    .trust-bgs { position: absolute; inset: 0; }
-    .trust-bg  {
-      position: absolute; inset: 0;
-      opacity: 0;
-      transition: none;
-    }
-    .trust-bg:first-child { opacity: 1; }
-    .trust-bg img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      border-radius: 0 !important;
-      display: block;
-    }
-
-    .trust-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.60) 0%,
-        rgba(0,0,0,0.18) 35%,
-        rgba(0,0,0,0.18) 60%,
-        rgba(0,0,0,0.65) 100%
-      );
-      z-index: 1;
-    }
-
-    /* Centro: itens */
-    .trust-center {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      z-index: 2;
-    }
-    .trust-item {
-      position: absolute;
-      display: flex; flex-direction: column;
-      align-items: center; gap: 0.3rem;
-      text-align: center;
-      padding: 0 6vw;
-      opacity: 0;
-      will-change: opacity, transform;
-      pointer-events: none;
-    }
-    .trust-item:first-child { opacity: 1; }
-
-.trust-label {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 7vw, 7.5rem);
-      font-weight: 300;
-      color: #fff;
-      line-height: 1.05;
-      letter-spacing: -0.025em;
-      display: block;
-    }
-
-    /* Faixa inferior */
-    .trust-strip {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      z-index: 3;
-      background: rgba(8,8,8,0.78);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 2.2rem 8vw 2.4rem;
-      display: flex; gap: 4rem; align-items: flex-start;
-      transform: translateY(100%);
-      will-change: transform;
-    }
-    .trust-strip p {
-      color: rgba(255,255,255,0.72);
-      font-size: 0.88rem;
-      line-height: 1.75;
-      margin: 0; flex: 1;
-    }
-    .trust-strip-quote {
-      font-weight: 500 !important;
-      color: rgba(255,255,255,0.92) !important;
-      border-left: 2px solid var(--color-accent, #b8975a);
-      padding-left: 1.2rem !important;
-    }
-
-    @media (max-width: 768px) {
-      .trust-section { padding: 2vh 2vw; }
-      .trust-stage   { height: 78vh; border-radius: 10px; }
-      .trust-label   { font-size: clamp(2rem, 10vw, 4rem); }
-      .trust-strip   { flex-direction: column; gap: 1rem; padding: 1.6rem 5vw; }
-      .trust-strip p { font-size: 0.82rem; }
+    @media (max-width: 640px) {
+      .dif-strip-grid {
+        display: flex; flex-direction: row; overflow-x: auto;
+        gap: 0.75rem; padding: 0 1rem 0.5rem; scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+      .dif-strip-grid::-webkit-scrollbar { display: none; }
+      .dif-item {
+        flex: 0 0 auto; min-width: 130px; max-width: 150px;
+        flex-direction: column; align-items: center; text-align: center;
+        border-left: none; border: 1px solid var(--color-border, #e8e2d9); border-radius: 6px;
+        padding: 1.2rem 0.75rem; gap: 0.6rem;
+        scroll-snap-align: start; background: #fff;
+      }
+      .dif-item:first-child { border: 1px solid var(--color-border, #e8e2d9); }
     }
 
     /* ── Atuação: tags + galeria ── */
@@ -458,54 +375,34 @@
       </div>
     </section>
 
-    <!-- ── CONFIANÇA / CHECKLIST STICKY ─────────────────────── -->
-    <section id="realidade" class="trust-section">
-
-      <!-- Heading FORA do card -->
-      <div class="trust-pre-heading">
-        <h2 data-i18n="corp-trust-title">Sua obra precisa de fornecedores que entregam no prazo.</h2>
+    <!-- ── DIFERENCIAIS ─────────────────────────────────────── -->
+    <section id="realidade" class="dif-strip">
+      <div class="dif-strip-title">
+        <h2 class="section-title" data-i18n="corp-trust-title">Sua obra precisa de fornecedores que entregam no prazo.</h2>
+        <div class="gold-line"></div>
       </div>
-
-      <div class="trust-scene" id="trust-scene">
-        <div class="trust-stage" id="trust-stage">
-
-          <!-- Backgrounds empilhados (5 imagens) -->
-          <div class="trust-bgs">
-            <div class="trust-bg"><img src="assets/1.webp" alt="Medição técnica" loading="eager" /></div>
-            <div class="trust-bg"><img src="assets/2.webp" alt="Fabricação sob medida" loading="lazy" /></div>
-            <div class="trust-bg"><img src="assets/3.webp" alt="Instalação profissional" loading="lazy" /></div>
-            <div class="trust-bg"><img src="assets/4.webp" alt="Cronograma alinhado" loading="lazy" /></div>
-            <div class="trust-bg"><img src="assets/5.webp" alt="Garantia e pós-venda" loading="lazy" /></div>
-          </div>
-          <div class="trust-overlay"></div>
-
-          <!-- Itens centralizados (grandes) -->
-          <div class="trust-center">
-            <div class="trust-item">
-<span class="trust-label" data-i18n="corp-hero-check1">Medição Técnica</span>
-            </div>
-            <div class="trust-item">
-<span class="trust-label" data-i18n="corp-hero-check2">Fabricação Sob Medida</span>
-            </div>
-            <div class="trust-item">
-<span class="trust-label" data-i18n="corp-hero-check3">Instalação Profissional</span>
-            </div>
-            <div class="trust-item">
-<span class="trust-label" data-i18n="corp-hero-check4">Cronograma Alinhado à Obra</span>
-            </div>
-            <div class="trust-item">
-<span class="trust-label" data-i18n="corp-hero-check5">Garantia e Pós-venda</span>
-            </div>
-          </div>
-
-          <!-- Faixa inferior (entra com GSAP no último slide) -->
-          <div class="trust-strip" id="trust-strip">
-            <p data-i18n="corp-trust-p1">Sabemos que atrasos impactam todo o cronograma da obra. Por isso a ATIYE atua com foco em planejamento, agilidade, comunicação transparente, instalação limpa e organizada e cumprimento de cronogramas.</p>
-            <p class="trust-strip-quote" data-i18n="corp-trust-quote">Enquanto outros fornecedores entregam apenas persianas, nós entregamos tranquilidade para sua equipe de obra.</p>
-          </div>
-
-        </div><!-- /.trust-stage -->
-      </div><!-- /.trust-scene -->
+      <div class="dif-strip-grid">
+        <div class="dif-item">
+          <svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-10"/><path d="M15 3h6v6"/></svg>
+          <h3 data-i18n="corp-hero-check1">Medição<br>Técnica</h3>
+        </div>
+        <div class="dif-item">
+          <svg viewBox="0 0 24 24"><path d="M3 17l14-14 4 4-14 14H3z"/><path d="M7 13l2 2M10 10l2 2M13 7l2 2"/></svg>
+          <h3 data-i18n="corp-hero-check2">Fabricação<br>Sob Medida</h3>
+        </div>
+        <div class="dif-item">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 005.4-5.4L15 12l-3-3z"/></svg>
+          <h3 data-i18n="corp-hero-check3">Instalação<br>Profissional</h3>
+        </div>
+        <div class="dif-item">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h2M14 14h2M8 18h2M14 18h2"/></svg>
+          <h3 data-i18n="corp-hero-check4">Cronograma<br>Alinhado à Obra</h3>
+        </div>
+        <div class="dif-item">
+          <svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.5 8-8 9-4.5-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3 data-i18n="corp-hero-check5">Garantia<br>e Pós-venda</h3>
+        </div>
+      </div>
     </section>
 
     <!-- ── ESPECIALISTAS ─────────────────────────────────── -->
@@ -1099,64 +996,6 @@
   <script src="translations.js"></script>
   <script src="script-landing.js"></script>
 
-  <!-- ── Trust sticky-scroll GSAP ────────────────────────── -->
-  <script>
-  (function () {
-    if (typeof gsap === "undefined") return;
-    gsap.registerPlugin(ScrollTrigger);
-
-    var scene = document.getElementById("trust-scene");
-    var stage = document.getElementById("trust-stage");
-    if (!scene || !stage) return;
-
-    var bgs   = stage.querySelectorAll(".trust-bg");
-    var items = stage.querySelectorAll(".trust-item");
-    var strip = document.getElementById("trust-strip");
-    var N     = items.length; // 5
-    var PX    = 750;          // px de scroll por slide
-
-    // Estado inicial
-    gsap.set(bgs,   { opacity: 0 });
-    gsap.set(bgs[0],{ opacity: 1 });
-    gsap.set(items, { opacity: 0, y: 50 });
-    gsap.set(items[0], { opacity: 1, y: 0 });
-    if (strip) gsap.set(strip, { yPercent: 100 });
-
-    var tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: scene,
-        start: "center center",
-        end: "+=" + ((N - 1) * PX),
-        pin: stage,
-        pinSpacing: true,
-        scrub: 0.9,
-        anticipatePin: 1
-      }
-    });
-
-    // Slide 0→1, 1→2 ... (N-1) slides
-    for (var i = 0; i < N - 1; i++) {
-      var t = i; // posição na timeline
-      // fade out item atual
-      tl.to(items[i], { opacity: 0, y: -40, duration: 0.4 }, t);
-      // fade out bg atual, fade in próximo
-      tl.to(bgs[i],   { opacity: 0, duration: 0.5 }, t + 0.1);
-      tl.to(bgs[i+1], { opacity: 1, duration: 0.5 }, t + 0.1);
-      // fade in próximo item
-      tl.fromTo(items[i+1],
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 0.5 },
-        t + 0.3
-      );
-    }
-
-    // Último slide → strip sobe por cima da última imagem
-    var last = N - 1;
-    if (strip) {
-      tl.to(strip, { yPercent: 0, duration: 0.3, ease: "power3.out" }, last - 0.6);
-    }
-  }());
-  </script>
 
 
   <!-- ── Parceiros card scroll-over GSAP ─────────────────── -->
