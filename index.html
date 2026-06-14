@@ -32,6 +32,25 @@
       opacity: 0.7;
     }
     .differential-icon svg { width: 24px; height: 24px; }
+
+    /* Título antes da imagem no mobile */
+    @media (max-width: 768px) {
+      .proof-content   { display: flex; flex-direction: column; }
+      .proof-text      { order: 1; }
+      .proof-visual    { order: 2; }
+
+      .blinds-section .split-layout,
+      .fabric-section .split-layout { display: flex; flex-direction: column; }
+      .blinds-section .split-visual,
+      .blinds-section .split-visual--grid,
+      .fabric-section .split-visual  { order: 2; }
+      .blinds-section .split-text,
+      .fabric-section .split-text    { order: 1; }
+
+      .wash-section .split-layout { display: flex; flex-direction: column; }
+      .wash-section .split-text   { order: 1; }
+      .wash-section .split-visual { order: 2; }
+    }
   </style>
 </head>
 <body class="has-hero-video">
