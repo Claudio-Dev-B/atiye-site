@@ -14,6 +14,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    @keyframes val-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .value-carousel-wrap:hover .value-carousel-track { animation-play-state: paused; }
+    @keyframes prob-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .differential-icon {
+      width: 52px; height: 52px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid currentColor; border-radius: 50%;
+      margin: 0 auto 1rem;
+      opacity: 0.7;
+    }
+    .differential-icon svg { width: 24px; height: 24px; }
+  </style>
 </head>
 <body class="has-hero-video">
 
@@ -87,7 +106,7 @@
           <a href="residencial.html" class="hero-tag-link" data-i18n="hero-tag-1">Projetos Residenciais</a>
           <a href="corporativo.html" class="hero-tag-link" data-i18n="hero-tag-2">Projetos Corporativos</a>
         </div>
-        <a href="#contato" class="cta-button hero-cta" data-i18n="hero-cta">Solicitar orçamento</a>
+        <a href="https://wa.me/5511986793247" class="cta-button hero-cta" target="_blank" rel="noopener" data-i18n="hero-cta">Solicitar orçamento</a>
       </div>
 
       <div class="hero-scroll">
@@ -104,222 +123,84 @@
           <h2 class="section-title value-title" data-i18n="val-title">Soluções completas em controle de luz e conforto térmico</h2>
           <p class="section-subtitle value-subtitle" data-i18n="val-subtitle">Produtos que aliam tecnologia, estética e eficiência para cada tipo de ambiente.</p>
         </div>
-        <div class="value-split reveal">
-          <div class="value-image-col">
-            <div class="value-image-rotator" id="val-rotator" style="position:relative;overflow:hidden;border-radius:2px;cursor:pointer;" title="Clique para ver a próxima">
-              <img src="assets/escritorio/IMG_3181.webp"         alt="Projeto corporativo Atiye" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 0.7s ease;" />
-              <img src="assets/escritorio/IMG_3155.webp"         alt="Projeto corporativo Atiye" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.7s ease;" loading="lazy" />
-              <img src="assets/escritorio/IMG_2239.webp"         alt="Projeto corporativo Atiye" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.7s ease;" loading="lazy" />
-              <img src="assets/residencial/persiana_madeira_3.webp" alt="Persiana de madeira Atiye" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.7s ease;" loading="lazy" />
-              <img src="assets/residencial/persiana_rolo.webp"   alt="Rolô Atiye"                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.7s ease;" loading="lazy" />
-              <!-- placeholder para manter a altura do container -->
-              <img src="assets/escritorio/IMG_3181.webp" alt="" style="width:100%;height:100%;object-fit:cover;visibility:hidden;" aria-hidden="true" />
+        <!-- Ícones descritivos em linha -->
+        <div class="value-benefits-row reveal" style="display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;justify-content:center;margin:2rem 0 2rem;">
+          <div style="display:flex;align-items:center;gap:0.75rem;flex:1;min-width:200px;">
+            <div class="value-benefit-icon" style="flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <div>
+              <h3 style="margin:0 0 0.15rem;" data-i18n="val-b1-title">Apelo Visual e Decorativo</h3>
+              <p style="margin:0;font-size:0.85rem;opacity:0.75;" data-i18n="val-b1-text">Cada persiana ou cortina é pensada como elemento de decoração. Design, textura e acabamento que transformam o ambiente em um espaço sofisticado.</p>
             </div>
           </div>
-          <div class="value-benefits">
-            <div class="value-benefit">
-              <div class="value-benefit-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                  <path d="M9 12l2 2 4-4"/>
-                </svg>
-              </div>
-              <div>
-                <h3 data-i18n="val-b1-title">Apelo Visual e Decorativo</h3>
-                <p data-i18n="val-b1-text">Cada persiana ou cortina é pensada como elemento de decoração. Design, textura e acabamento que transformam o ambiente em um espaço sofisticado.</p>
-              </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;flex:1;min-width:200px;">
+            <div class="value-benefit-icon" style="flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"/>
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+              </svg>
             </div>
-            <div class="value-benefit">
-              <div class="value-benefit-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="5"/>
-                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                </svg>
-              </div>
-              <div>
-                <h3 data-i18n="val-b2-title">Conforto Térmico</h3>
-                <p data-i18n="val-b2-text">Redução de até 80% do ganho térmico solar. Ambientes mais frescos, mais confortáveis, sem abrir mão da luz natural.</p>
-              </div>
+            <div>
+              <h3 style="margin:0 0 0.15rem;" data-i18n="val-b2-title">Conforto Térmico</h3>
+              <p style="margin:0;font-size:0.85rem;opacity:0.75;" data-i18n="val-b2-text">Redução de até 80% do ganho térmico solar. Ambientes mais frescos, mais confortáveis, sem abrir mão da luz natural.</p>
             </div>
-            <div class="value-benefit">
-              <div class="value-benefit-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="1" x2="12" y2="23"/>
-                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
-                </svg>
-              </div>
-              <div>
-                <h3 data-i18n="val-b3-title">Redução de Custos com AC</h3>
-                <p data-i18n="val-b3-text">Com o calor controlado na fonte, o ar-condicionado trabalha menos. Menos energia, menos desgaste, mais economia no longo prazo.</p>
-              </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;flex:1;min-width:200px;">
+            <div class="value-benefit-icon" style="flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+              </svg>
             </div>
-            <div class="value-benefit">
-              <div class="value-benefit-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-                  <polyline points="9 22 9 12 15 12 15 22"/>
-                </svg>
-              </div>
-              <div>
-                <h3 data-i18n="val-b4-title">Ambiente Agradável</h3>
-                <p data-i18n="val-b4-text">Sem reflexo, sem calor excessivo, sem privacidade comprometida. Um espaço que funciona bem para quem trabalha, vive e se relaciona nele.</p>
-              </div>
+            <div>
+              <h3 style="margin:0 0 0.15rem;" data-i18n="val-b3-title">Redução de Custos com AC</h3>
+              <p style="margin:0;font-size:0.85rem;opacity:0.75;" data-i18n="val-b3-text">Com o calor controlado na fonte, o ar-condicionado trabalha menos. Menos energia, menos desgaste, mais economia no longo prazo.</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;flex:1;min-width:200px;">
+            <div class="value-benefit-icon" style="flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <div>
+              <h3 style="margin:0 0 0.15rem;" data-i18n="val-b4-title">Ambiente Agradável</h3>
+              <p style="margin:0;font-size:0.85rem;opacity:0.75;" data-i18n="val-b4-text">Sem reflexo, sem calor excessivo, sem privacidade comprometida. Um espaço que funciona bem para quem trabalha, vive e se relaciona nele.</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ── STATS ──────────────────────────────────────────── -->
-    <section class="stats-section" id="numeros">
-      <div class="container">
-        <div class="stats-grid reveal">
-          <div class="stat-item">
-            <div class="stat-number-wrap">
-              <span class="stat-number" data-target="500">0</span>
-              <span class="stat-suffix">+</span>
-            </div>
-            <span class="stat-label" data-i18n="stat-projects">Projetos entregues</span>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number-wrap">
-              <span class="stat-number" data-target="15000">0</span>
-              <span class="stat-suffix">m²</span>
-            </div>
-            <span class="stat-label" data-i18n="stat-area">Instalados</span>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number-wrap">
-              <span class="stat-number" data-target="2">0</span>
-              <span class="stat-suffix" data-i18n="stat-warranty-suffix">anos</span>
-            </div>
-            <span class="stat-label" data-i18n="stat-warranty">Garantia real</span>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number-wrap">
-              <span class="stat-number" data-target="100">0</span>
-              <span class="stat-suffix">%</span>
-            </div>
-            <span class="stat-label" data-i18n="stat-satisfaction">Satisfação</span>
+        <!-- Carrossel contínuo de imagens (dimensões uniformes) -->
+        <div class="value-carousel-wrap reveal" style="overflow:hidden;width:100%;margin:0 0 0.5rem;">
+          <div class="value-carousel-track" style="display:flex;gap:1rem;width:max-content;animation:val-scroll 50s linear infinite;">
+            <img src="assets/escritorio/IMG_3181.webp"            alt="Projeto Atiye" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+            <img src="assets/escritorio/IMG_3155.webp"            alt="Projeto Atiye" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+            <img src="assets/escritorio/IMG_2239.webp"            alt="Projeto Atiye" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+            <img src="assets/residencial/IMG_3152.webp"           alt="Projeto Atiye" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+            <img src="assets/residencial/persiana_madeira_3.webp" alt="Projeto Atiye" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+            <img src="assets/escritorio/IMG_1892.webp"            alt="Projeto Atiye" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+            <img src="assets/escritorio/IMG_2182.webp"            alt="Projeto Atiye" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+            <img src="assets/escritorio/IMG_1964.webp"            alt="Projeto Atiye" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+            <img src="assets/residencial/cortina.webp"            alt="Projeto Atiye" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+            <img src="assets/catalogo/Persiana-Romana.webp"       alt="Projeto Atiye" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+            <!-- duplicado para loop sem costura -->
+            <img src="assets/escritorio/IMG_3181.webp"            alt="" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+            <img src="assets/escritorio/IMG_3155.webp"            alt="" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+            <img src="assets/escritorio/IMG_2239.webp"            alt="" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+            <img src="assets/residencial/IMG_3152.webp"           alt="" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+            <img src="assets/residencial/persiana_madeira_3.webp" alt="" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+            <img src="assets/escritorio/IMG_1892.webp"            alt="" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+            <img src="assets/escritorio/IMG_2182.webp"            alt="" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+            <img src="assets/escritorio/IMG_1964.webp"            alt="" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+            <img src="assets/residencial/cortina.webp"            alt="" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+            <img src="assets/catalogo/Persiana-Romana.webp"       alt="" style="height:340px;width:510px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ── PROBLEMA ───────────────────────────────────────── -->
-    <section class="section problem-section" id="problemas">
-      <div class="container">
-        <div class="problem-content">
-          <div class="problem-text reveal">
-            <h2 class="problem-lead" data-i18n="prob-lead">Você se ajustou ao problema. Sem perceber.</h2>
-            <ul class="problem-list">
-              <li data-i18n="prob-li-1">Mudar de posição para evitar reflexo na tela</li>
-              <li data-i18n="prob-li-2">Ligar o ar-condicionado mais cedo pelo calor da tarde</li>
-              <li data-i18n="prob-li-3">Acordar antes da hora por causa da luz entrando no quarto</li>
-              <li data-i18n="prob-li-4">Móveis e superfícies perdendo cor gradualmente</li>
-            </ul>
-            <p class="problem-conclusion" data-i18n-html="prob-conclusion-html">
-              Isso não é rotina. É desgaste acumulado.<br>
-              E tem <strong>solução técnica</strong>.
-            </p>
-          </div>
-          <div class="problem-visual reveal reveal-delay-2">
-            <img src="assets/escritorio/IMG_1938.webp" alt="Ambiente com controle de luz" loading="lazy" width="600" height="520" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── POSICIONAMENTO (3 variáveis) ───────────────────── -->
-    <section class="section positioning-section" id="posicionamento">
-      <div class="container">
-        <div class="section-header center reveal">
-          <span class="section-eyebrow" data-i18n="pos-eyebrow">A abordagem</span>
-          <h2 class="section-title" data-i18n="pos-title">Ajustar a luz é ajustar o ambiente inteiro</h2>
-          <p class="section-subtitle" data-i18n="pos-subtitle">Cada projeto equilibra quatro variáveis ao mesmo tempo.</p>
-        </div>
-        <div class="factors-grid reveal">
-          <div class="factor-card">
-            <div class="factor-num">01</div>
-            <h3 data-i18n="pos-f1-title">Luminosidade</h3>
-            <p data-i18n="pos-f1-text">Controle preciso da entrada de luz em cada horário e ambiente, eliminando reflexos e excesso.</p>
-          </div>
-          <div class="factor-card">
-            <div class="factor-num">02</div>
-            <h3 data-i18n="pos-f2-title">Temperatura</h3>
-            <p data-i18n="pos-f2-text">Redução de até 80% do ganho térmico solar sem bloquear a visão ou comprometer a claridade.</p>
-          </div>
-          <div class="factor-card">
-            <div class="factor-num">03</div>
-            <h3 data-i18n="pos-f3-title">Privacidade</h3>
-            <p data-i18n="pos-f3-text">Proteção visual que funciona de dia e de noite, sem perder a sensação de conexão com o exterior.</p>
-          </div>
-          <div class="factor-card">
-            <div class="factor-num">04</div>
-            <h3 data-i18n="pos-f4-title">Estética</h3>
-            <p data-i18n="pos-f4-text">Eficiência e beleza em harmonia. Cada solução valoriza o ambiente com sofisticação, com o controle de luz como elemento de decoração e identidade visual.</p>
-          </div>
-        </div>
-        <p class="positioning-outro" data-i18n="pos-outro">Cada decisão de material, abertura e instalação parte desse equilíbrio.</p>
-      </div>
-    </section>
-
-    <!-- ── PROCESSO ───────────────────────────────────────── -->
-    <section class="section process-section" id="processo">
-      <div class="container">
-        <div class="section-header center reveal">
-          <span class="section-eyebrow" data-i18n="proc-eyebrow">Como trabalhamos</span>
-          <h2 class="section-title" data-i18n="proc-title">Do diagnóstico à garantia</h2>
-        </div>
-        <div class="process-grid reveal">
-          <div class="process-step">
-            <div class="process-dot">01</div>
-            <h3 data-i18n="proc-1-title">Diagnóstico</h3>
-            <p data-i18n="proc-1-text">Análise do ambiente, exposição solar, horários críticos e necessidades específicas do espaço.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-dot">02</div>
-            <h3 data-i18n="proc-2-title">Projeto</h3>
-            <p data-i18n="proc-2-text">Especificação técnica de materiais, texturas, níveis de abertura e sistemas de fixação.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-dot">03</div>
-            <h3 data-i18n="proc-3-title">Instalação</h3>
-            <p data-i18n="proc-3-text">Execução precisa, sem interrupção da rotina e alinhada ao cronograma da obra ou reforma.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-dot">04</div>
-            <h3 data-i18n="proc-4-title">Garantia</h3>
-            <p data-i18n="proc-4-text">Suporte ativo por 2 anos. Garantia que funciona na prática, não apenas no contrato.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── FEATURED (Residencial / Corporativo) ───────────── -->
-    <section class="featured-section" id="projetos">
-      <div class="section-header reveal">
-        <h2 class="section-title" data-i18n="feat-title">Cada ambiente tem uma demanda específica</h2>
-      </div>
-      <div class="featured-grid">
-        <a href="residencial.html" class="featured-item">
-          <img src="assets/residencial/IMG_3152.webp" alt="Projetos residenciais Atiye" loading="lazy" width="900" height="700" />
-          <div class="featured-overlay">
-            <span class="featured-label" data-i18n="feat-res-label">Residencial</span>
-            <h3 data-i18n="feat-res-title">Conforto no ritmo da sua vida</h3>
-            <p data-i18n="feat-res-text">Dormir melhor. Menos calor. Preservação que não aparece, mas está sempre presente.</p>
-            <span class="featured-cta" data-i18n="feat-res-cta">Ver projetos</span>
-          </div>
-        </a>
-        <a href="corporativo.html" class="featured-item">
-          <img src="assets/escritorio/IMG_2182.webp" alt="Projetos corporativos Atiye" loading="lazy" width="900" height="700" />
-          <div class="featured-overlay">
-            <span class="featured-label" data-i18n="feat-corp-label">Corporativo</span>
-            <h3 data-i18n="feat-corp-title">Ambientes que eliminam interferência</h3>
-            <p data-i18n="feat-corp-text">Sem reflexo. Sem calor excessivo. Performance que começa no espaço de trabalho.</p>
-            <span class="featured-cta" data-i18n="feat-corp-cta">Ver projetos</span>
-          </div>
-        </a>
       </div>
     </section>
 
@@ -397,8 +278,146 @@
           </a>
         </div>
         <div class="products-cta reveal">
-          <a href="portfolio.html" class="cta-button" data-i18n="prod-cta">Ver portfólio completo</a>
+          <a href="https://wa.me/5511986793247" class="cta-button" target="_blank" rel="noopener" data-i18n="prod-cta">Ver portfólio completo</a>
         </div>
+      </div>
+    </section>
+
+    <!-- ── STATS ──────────────────────────────────────────── -->
+    <section class="stats-section" id="numeros">
+      <div class="container">
+        <div class="stats-grid reveal">
+          <div class="stat-item">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="500">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label" data-i18n="stat-projects">Projetos entregues</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="15000">0</span>
+              <span class="stat-suffix">m²</span>
+            </div>
+            <span class="stat-label" data-i18n="stat-area">Instalados</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="2">0</span>
+              <span class="stat-suffix" data-i18n="stat-warranty-suffix">anos</span>
+            </div>
+            <span class="stat-label" data-i18n="stat-warranty">Garantia real</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="100">0</span>
+              <span class="stat-suffix">%</span>
+            </div>
+            <span class="stat-label" data-i18n="stat-satisfaction">Satisfação</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROBLEMA ───────────────────────────────────────── -->
+    <section class="section problem-section" id="problemas">
+      <div class="container">
+        <div class="problem-content">
+          <div class="problem-text reveal">
+            <h2 class="problem-lead" data-i18n="prob-lead">Você se ajustou ao problema. Sem perceber.</h2>
+            <ul class="problem-list">
+              <li data-i18n="prob-li-1">Mudar de posição para evitar reflexo na tela</li>
+              <li data-i18n="prob-li-2">Ligar o ar-condicionado mais cedo pelo calor da tarde</li>
+              <li data-i18n="prob-li-3">Acordar antes da hora por causa da luz entrando no quarto</li>
+              <li data-i18n="prob-li-4">Móveis e superfícies perdendo cor gradualmente</li>
+            </ul>
+            <p class="problem-conclusion" data-i18n-html="prob-conclusion-html">
+              Isso não é rotina. É desgaste acumulado.<br>
+              E tem <strong>solução técnica</strong>.
+            </p>
+          </div>
+          <div class="problem-visual reveal reveal-delay-2" style="overflow:hidden;border-radius:2px;">
+            <div style="display:flex;gap:0.75rem;width:max-content;animation:prob-scroll 40s linear infinite;">
+              <img src="assets/escritorio/IMG_1938.webp"   alt="Ambiente" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" />
+              <img src="assets/escritorio/IMG_1950.webp"   alt="Ambiente" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+              <img src="assets/residencial/IMG_3152.webp"  alt="Ambiente" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+              <img src="assets/escritorio/IMG_2182.webp"   alt="Ambiente" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+              <img src="assets/residencial/IMG_3169.webp"  alt="Ambiente" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+              <img src="assets/escritorio/IMG_1936.webp"   alt="Ambiente" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+              <img src="assets/residencial/IMG_3160.webp"  alt="Ambiente" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+              <img src="assets/escritorio/IMG_3155.webp"   alt="Ambiente" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" />
+              <!-- duplicado para loop sem costura -->
+              <img src="assets/escritorio/IMG_1938.webp"   alt="" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+              <img src="assets/escritorio/IMG_1950.webp"   alt="" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+              <img src="assets/residencial/IMG_3152.webp"  alt="" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+              <img src="assets/escritorio/IMG_2182.webp"   alt="" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+              <img src="assets/residencial/IMG_3169.webp"  alt="" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+              <img src="assets/escritorio/IMG_1936.webp"   alt="" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+              <img src="assets/residencial/IMG_3160.webp"  alt="" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+              <img src="assets/escritorio/IMG_3155.webp"   alt="" style="height:480px;width:360px;object-fit:cover;border-radius:2px;flex-shrink:0;" loading="lazy" aria-hidden="true" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── POSICIONAMENTO (3 variáveis) ───────────────────── -->
+    <section class="section positioning-section" id="posicionamento">
+      <div class="container">
+        <div class="section-header center reveal">
+          <h2 class="section-title" data-i18n="pos-title">Ajustar a luz é ajustar o ambiente inteiro</h2>
+          <p class="section-subtitle" data-i18n="pos-subtitle">Cada projeto equilibra quatro variáveis ao mesmo tempo.</p>
+        </div>
+        <div class="factors-grid reveal">
+          <div class="factor-card">
+            <div class="factor-num">01</div>
+            <h3 data-i18n="pos-f1-title">Luminosidade</h3>
+            <p data-i18n="pos-f1-text">Controle preciso da entrada de luz em cada horário e ambiente, eliminando reflexos e excesso.</p>
+          </div>
+          <div class="factor-card">
+            <div class="factor-num">02</div>
+            <h3 data-i18n="pos-f2-title">Temperatura</h3>
+            <p data-i18n="pos-f2-text">Redução de até 80% do ganho térmico solar sem bloquear a visão ou comprometer a claridade.</p>
+          </div>
+          <div class="factor-card">
+            <div class="factor-num">03</div>
+            <h3 data-i18n="pos-f3-title">Privacidade</h3>
+            <p data-i18n="pos-f3-text">Proteção visual que funciona de dia e de noite, sem perder a sensação de conexão com o exterior.</p>
+          </div>
+          <div class="factor-card">
+            <div class="factor-num">04</div>
+            <h3 data-i18n="pos-f4-title">Estética</h3>
+            <p data-i18n="pos-f4-text">Eficiência e beleza em harmonia. Cada solução valoriza o ambiente com sofisticação, com o controle de luz como elemento de decoração e identidade visual.</p>
+          </div>
+        </div>
+        <p class="positioning-outro" data-i18n="pos-outro">Cada decisão de material, abertura e instalação parte desse equilíbrio.</p>
+      </div>
+    </section>
+
+    <!-- ── FEATURED (Residencial / Corporativo) ───────────── -->
+    <section class="featured-section" id="projetos">
+      <div class="section-header reveal">
+        <h2 class="section-title" data-i18n="feat-title">Cada ambiente tem uma demanda específica</h2>
+      </div>
+      <div class="featured-grid">
+        <a href="residencial.html" class="featured-item">
+          <img src="assets/residencial/IMG_3152.webp" alt="Projetos residenciais Atiye" loading="lazy" width="900" height="700" />
+          <div class="featured-overlay">
+            <span class="featured-label" data-i18n="feat-res-label">Residencial</span>
+            <h3 data-i18n="feat-res-title">Conforto no ritmo da sua vida</h3>
+            <p data-i18n="feat-res-text">Dormir melhor. Menos calor. Preservação que não aparece, mas está sempre presente.</p>
+            <span class="featured-cta" data-i18n="feat-res-cta">Ver projetos</span>
+          </div>
+        </a>
+        <a href="corporativo.html" class="featured-item">
+          <img src="assets/escritorio/IMG_2182.webp" alt="Projetos corporativos Atiye" loading="lazy" width="900" height="700" />
+          <div class="featured-overlay">
+            <span class="featured-label" data-i18n="feat-corp-label">Corporativo</span>
+            <h3 data-i18n="feat-corp-title">Ambientes que eliminam interferência</h3>
+            <p data-i18n="feat-corp-text">Sem reflexo. Sem calor excessivo. Performance que começa no espaço de trabalho.</p>
+            <span class="featured-cta" data-i18n="feat-corp-cta">Ver projetos</span>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -413,8 +432,14 @@
             <p data-i18n="proof-p2">Indicada para fachadas expostas, salas de reunião e dormitórios com exposição direta ao sol.</p>
           </div>
           <div class="proof-visual reveal reveal-delay-2">
-            <img src="assets/escritorio/IMG_1892.webp" alt="Tela Solar Screen" loading="lazy" width="600" height="480" />
-            <img src="assets/catalogo/Rolô Tela Solar Screen (2).webp" alt="Rolô Tela Solar Screen" loading="lazy" width="600" height="300" style="margin-top:0.75rem; object-fit:cover;" />
+            <div id="tela-rotator" style="position:relative;overflow:hidden;border-radius:2px;width:100%;aspect-ratio:4/3;">
+              <img src="assets/escritorio/IMG_1892.webp"                                               alt="Tela Solar Screen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 0.9s ease;" />
+              <img src="assets/catalogo/Rolô Tela Solar Screen (2).webp"                               alt="Tela Solar Screen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
+              <img src="assets/catalogo/Rolô Tela Solar Screen 3.webp"                                 alt="Tela Solar Screen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
+              <img src="assets/catalogo/Rolô Tela Solar Screen 4.webp"                                 alt="Tela Solar Screen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
+              <img src="assets/catalogo/Rolô Tela Solar Screen.webp"                                   alt="Tela Solar Screen" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
+              <img src="assets/residencial/fator_abertura_solar.png"                                   alt="Fator de abertura tela solar" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#f5f3ef;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
+            </div>
           </div>
         </div>
       </div>
@@ -440,7 +465,7 @@
               <li data-i18n="blinds-li3">Persiana de Alumínio: robustez e praticidade</li>
               <li data-i18n="blinds-li4">Persiana Romana: elegância clássica em cada dobra</li>
             </ul>
-            <a href="portfolio.html" class="cta-button" target="_blank" rel="noopener" data-i18n="blinds-cta">Ver catálogo completo</a>
+            <a href="https://wa.me/5511986793247" class="cta-button" target="_blank" rel="noopener" data-i18n="blinds-cta">Ver catálogo completo</a>
           </div>
         </div>
       </div>
@@ -451,7 +476,19 @@
       <div class="container">
         <div class="split-layout">
           <div class="split-visual reveal reveal-delay-2">
-            <img src="assets/catalogo/Cortina 7.webp" alt="Cortinas de tecido sob medida" loading="lazy" width="600" height="520" />
+            <div id="cortina-rotator" style="position:relative;overflow:hidden;border-radius:2px;width:100%;aspect-ratio:3/4;">
+              <img src="assets/catalogo/Cortina 7.webp"        alt="Cortinas de tecido" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 0.9s ease;" />
+              <img src="assets/catalogo/Cortina 8.webp"        alt="Cortinas de tecido" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
+              <img src="assets/catalogo/Cortina 9.webp"        alt="Cortinas de tecido" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
+              <img src="assets/catalogo/Cortina 10.webp"       alt="Cortinas de tecido" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
+              <img src="assets/catalogo/cortina 2.webp"        alt="Cortinas de tecido" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
+              <img src="assets/catalogo/cortina 3.webp"        alt="Cortinas de tecido" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
+              <img src="assets/catalogo/Cortina 4.webp"        alt="Cortinas de tecido" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
+              <img src="assets/residencial/cortina_2.webp"     alt="Cortinas de tecido" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
+              <img src="assets/residencial/cortina_3.webp"     alt="Cortinas de tecido" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
+              <img src="assets/residencial/cortina_5.webp"     alt="Cortinas de tecido" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
+              <img src="assets/residencial/cortina_6.webp"     alt="Cortinas de tecido" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
+            </div>
           </div>
           <div class="split-text reveal">
             <h2 class="section-title" data-i18n="fabric-title">Cortinas de tecido sob medida</h2>
@@ -502,7 +539,7 @@
             <a href="https://wa.me/5511986793247" class="cta-button" target="_blank" rel="noopener" data-i18n="wash-cta">Solicitar higienização</a>
           </div>
           <div class="split-visual reveal reveal-delay-2">
-            <img src="assets/escritorio/IMG_2029.webp" alt="Higienização técnica de persianas" loading="lazy" width="600" height="520" />
+            <img src="assets/depois.webp" alt="Higienização técnica de persianas" loading="lazy" width="600" height="520" style="width:100%;height:100%;object-fit:cover;border-radius:2px;" />
           </div>
         </div>
       </div>
@@ -517,64 +554,41 @@
         </div>
         <div class="differential-grid reveal">
           <div class="differential-item">
-            <span class="differential-number">01</span>
+            <div class="differential-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
             <h3 data-i18n="diff-1-title">Prazo enxuto</h3>
             <p data-i18n="diff-1-text">que acompanha sua obra</p>
           </div>
           <div class="differential-item">
-            <span class="differential-number">02</span>
+            <div class="differential-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+              </svg>
+            </div>
             <h3 data-i18n="diff-2-title">Custo otimizado</h3>
             <p data-i18n="diff-2-text">para projetos em escala</p>
           </div>
           <div class="differential-item">
-            <span class="differential-number">03</span>
+            <div class="differential-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+              </svg>
+            </div>
             <h3 data-i18n="diff-3-title">Suporte ativo</h3>
             <p data-i18n="diff-3-text">depois da instalação</p>
           </div>
           <div class="differential-item">
-            <span class="differential-number">04</span>
+            <div class="differential-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
             <h3 data-i18n="diff-4-title">Garantia real</h3>
             <p data-i18n="diff-4-text">2 anos aplicados na prática</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── SOCIAL PROOF (Strip) ───────────────────────────── -->
-    <section class="social-proof-section">
-      <div class="proof-strip">
-        <div class="proof-item">
-          <p class="proof-quote" data-i18n="sp-q1">"Depois da instalação, o escritório ficou completamente diferente. Sem reflexo nas telas, sem calor. A equipe percebeu a diferença no mesmo dia."</p>
-          <span class="proof-author" data-i18n="sp-a1">Diretor de Operações, Empresa de Tecnologia</span>
-        </div>
-        <div class="proof-item">
-          <p class="proof-quote" data-i18n="sp-q2">"A Atiye não vendeu uma cortina. Resolveu um problema que eu tinha há anos. O quarto agora é um espaço de descanso de verdade."</p>
-          <span class="proof-author" data-i18n="sp-a2">Arquiteta, Projeto Residencial Alto Padrão</span>
-        </div>
-        <div class="proof-item">
-          <p class="proof-quote" data-i18n="sp-q3">"Instalação impecável, dentro do prazo, sem nenhuma intercorrência. Exatamente o que precisávamos para entregar o projeto no prazo."</p>
-          <span class="proof-author" data-i18n="sp-a3">Gerente de Facilities, Grupo Imobiliário</span>
-        </div>
-        <div class="proof-item">
-          <p class="proof-quote" data-i18n="sp-q4">"O nível técnico é diferente de tudo que encontrei. Antes de vender, entendem o problema. Isso muda tudo no resultado final."</p>
-          <span class="proof-author" data-i18n="sp-a4">Arquiteto, Escritório de Interiores SP</span>
-        </div>
-        <!-- Clone for seamless loop -->
-        <div class="proof-item">
-          <p class="proof-quote" data-i18n="sp-q1">"Depois da instalação, o escritório ficou completamente diferente. Sem reflexo nas telas, sem calor. A equipe percebeu a diferença no mesmo dia."</p>
-          <span class="proof-author" data-i18n="sp-a1">Diretor de Operações, Empresa de Tecnologia</span>
-        </div>
-        <div class="proof-item">
-          <p class="proof-quote" data-i18n="sp-q2">"A Atiye não vendeu uma cortina. Resolveu um problema que eu tinha há anos. O quarto agora é um espaço de descanso de verdade."</p>
-          <span class="proof-author" data-i18n="sp-a2">Arquiteta, Projeto Residencial Alto Padrão</span>
-        </div>
-        <div class="proof-item">
-          <p class="proof-quote" data-i18n="sp-q3">"Instalação impecável, dentro do prazo, sem nenhuma intercorrência. Exatamente o que precisávamos para entregar o projeto no prazo."</p>
-          <span class="proof-author" data-i18n="sp-a3">Gerente de Facilities, Grupo Imobiliário</span>
-        </div>
-        <div class="proof-item">
-          <p class="proof-quote" data-i18n="sp-q4">"O nível técnico é diferente de tudo que encontrei. Antes de vender, entendem o problema. Isso muda tudo no resultado final."</p>
-          <span class="proof-author" data-i18n="sp-a4">Arquiteto, Escritório de Interiores SP</span>
         </div>
       </div>
     </section>
@@ -636,11 +650,11 @@
             <div class="cg-slide"><img src="assets/residencial/IMG_3169.webp" alt="Quarto Principal" loading="lazy"/></div>
             <div class="cg-slide"><img src="assets/residencial/IMG_3160.webp" alt="Residência" loading="lazy"/></div>
             <div class="cg-slide"><img src="assets/residencial/IMG_3161.webp" alt="Varanda" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3162.webp" alt="Alto Padrão" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3163.webp" alt="Apartamento" loading="lazy"/></div>
-            <div class="cg-slide"><img src="assets/residencial/IMG_3168.webp" alt="Suite" loading="lazy"/></div>
             <div class="cg-slide"><img src="assets/residencial/IMG_3464.webp" alt="Residencial Alto Padrão" loading="lazy"/></div>
             <div class="cg-slide"><img src="assets/residencial/IMG_3469.webp" alt="Sala Integrada" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_3465.webp" alt="Residencial" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_3468.webp" alt="Residencial" loading="lazy"/></div>
+            <div class="cg-slide"><img src="assets/residencial/IMG_3185.webp" alt="Residencial" loading="lazy"/></div>
           </div>
         </div>
 
@@ -731,6 +745,38 @@
       </div>
     </section>
 
+    <!-- ── PROCESSO ───────────────────────────────────────── -->
+    <section class="section process-section" id="processo">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-eyebrow" data-i18n="proc-eyebrow">Como trabalhamos</span>
+          <h2 class="section-title" data-i18n="proc-title">Do diagnóstico à garantia</h2>
+        </div>
+        <div class="process-grid reveal">
+          <div class="process-step">
+            <div class="process-dot">01</div>
+            <h3 data-i18n="proc-1-title">Diagnóstico</h3>
+            <p data-i18n="proc-1-text">Análise do ambiente, exposição solar, horários críticos e necessidades específicas do espaço.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-dot">02</div>
+            <h3 data-i18n="proc-2-title">Projeto</h3>
+            <p data-i18n="proc-2-text">Especificação técnica de materiais, texturas, níveis de abertura e sistemas de fixação.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-dot">03</div>
+            <h3 data-i18n="proc-3-title">Instalação</h3>
+            <p data-i18n="proc-3-text">Execução precisa, sem interrupção da rotina e alinhada ao cronograma da obra ou reforma.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-dot">04</div>
+            <h3 data-i18n="proc-4-title">Garantia</h3>
+            <p data-i18n="proc-4-text">Suporte ativo por 2 anos. Garantia que funciona na prática, não apenas no contrato.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ── CTA FINAL ──────────────────────────────────────── -->
     <section class="section cta-section" id="contato">
       <div class="container">
@@ -791,30 +837,21 @@
   <script src="script.js"></script>
 
   <script>
-    /* ── Rotador de imagem — seção valor ── */
-    (function () {
-      var rotator = document.getElementById('val-rotator');
-      if (!rotator) return;
-      var imgs = Array.from(rotator.querySelectorAll('img:not([aria-hidden])'));
-      var current = 0;
-      var interval;
-
-      function goTo(idx) {
-        imgs[current].style.opacity = '0';
-        current = (idx + imgs.length) % imgs.length;
-        imgs[current].style.opacity = '1';
-      }
-
-      function next() { goTo(current + 1); }
-
-      rotator.addEventListener('click', function () {
-        next();
-        clearInterval(interval);
-        interval = setInterval(next, 4000);
-      });
-
-      interval = setInterval(next, 4000);
-    }());
+    /* ── Rotador genérico ── */
+    function makeRotator(id, delay) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var imgs = Array.from(el.querySelectorAll('img'));
+      var cur = 0;
+      setInterval(function () {
+        imgs[cur].style.opacity = '0';
+        cur = (cur + 1) % imgs.length;
+        imgs[cur].style.opacity = '1';
+      }, delay);
+    }
+    makeRotator('tela-rotator', 3500);
+    makeRotator('cortina-rotator', 3200);
+    makeRotator('problem-rotator', 4000);
   </script>
 </body>
 </html>
