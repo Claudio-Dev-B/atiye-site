@@ -33,23 +33,59 @@
     }
     .differential-icon svg { width: 24px; height: 24px; }
 
-    /* Título antes da imagem no mobile */
+    /* Layout desktop: 3 filhos com visual spanando 2 linhas */
+    .proof-content {
+      grid-template-rows: auto 1fr;
+      align-items: start;
+      row-gap: 0;
+    }
+    .proof-title  { grid-column: 1; grid-row: 1; }
+    .proof-body   { grid-column: 1; grid-row: 2; }
+    .proof-visual { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+
+    .blinds-section .split-layout,
+    .fabric-section .split-layout,
+    .wash-section  .split-layout {
+      grid-template-rows: auto 1fr;
+      align-items: start;
+      row-gap: 0;
+    }
+    .blinds-section .split-visual,
+    .fabric-section .split-visual { grid-column: 1; grid-row: 1 / 3; align-self: center; }
+    .blinds-section .split-title,
+    .fabric-section .split-title  { grid-column: 2; grid-row: 1; }
+    .blinds-section .split-body,
+    .fabric-section .split-body   { grid-column: 2; grid-row: 2; }
+
+    .wash-section .split-title  { grid-column: 1; grid-row: 1; }
+    .wash-section .split-body   { grid-column: 1; grid-row: 2; }
+    .wash-section .split-visual { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+
+    /* Título → Imagem → Descritivos no mobile */
     @media (max-width: 768px) {
-      .proof-content   { display: flex; flex-direction: column; }
-      .proof-text      { order: 1; }
-      .proof-visual    { order: 2; }
+      .proof-content { display: flex !important; flex-direction: column; }
+      .proof-title  { order: 1; }
+      .proof-visual { order: 2 !important; }
+      .proof-body   { order: 3; }
 
       .blinds-section .split-layout,
-      .fabric-section .split-layout { display: flex; flex-direction: column; }
+      .fabric-section .split-layout,
+      .wash-section  .split-layout { display: flex; flex-direction: column; }
+
+      .blinds-section .split-title,
+      .fabric-section .split-title,
+      .wash-section  .split-title { order: 1; }
+
       .blinds-section .split-visual,
       .blinds-section .split-visual--grid,
-      .fabric-section .split-visual  { order: 2; }
-      .blinds-section .split-text,
-      .fabric-section .split-text    { order: 1; }
+      .fabric-section .split-visual,
+      .wash-section  .split-visual { order: 2 !important; height: 280px; align-self: stretch; }
 
-      .wash-section .split-layout { display: flex; flex-direction: column; }
-      .wash-section .split-text   { order: 1; }
-      .wash-section .split-visual { order: 2; }
+      .proof-content .proof-visual { align-self: stretch; width: 100%; }
+
+      .blinds-section .split-body,
+      .fabric-section .split-body,
+      .wash-section  .split-body { order: 3; }
     }
   </style>
 </head>
@@ -444,8 +480,10 @@
     <section class="section proof-section" id="produto">
       <div class="container">
         <div class="proof-content">
-          <div class="proof-text reveal">
+          <div class="proof-title proof-text reveal">
             <h2 data-i18n-html="proof-title-html">Tela solar screen.<br>Não bloqueia. Controla.</h2>
+          </div>
+          <div class="proof-body reveal reveal-delay-2">
             <p data-i18n="proof-p1">Mantém a visão para o exterior enquanto filtra até 97% da radiação UV e reduz significativamente o ganho térmico.</p>
             <p class="proof-highlight" data-i18n="proof-highlight">O ambiente fica mais fresco. Sem escurecer. Sem perder a vista.</p>
             <p data-i18n="proof-p2">Indicada para fachadas expostas, salas de reunião e dormitórios com exposição direta ao sol.</p>
@@ -474,9 +512,11 @@
             <img src="assets/catalogo/Persiana-Romana.webp" alt="Persiana Romana" loading="lazy" />
             <img src="assets/catalogo/Persiana Horizontal de Alumínio.webp" alt="Persiana de Alumínio" loading="lazy" />
           </div>
-          <div class="split-text reveal reveal-delay-2">
+          <div class="split-title split-text reveal reveal-delay-2">
             <span class="section-eyebrow" data-i18n="blinds-eyebrow">Decoração e funcionalidade</span>
             <h2 class="section-title" data-i18n="blinds-title">Persianas que transformam o ambiente</h2>
+          </div>
+          <div class="split-body reveal reveal-delay-2">
             <p class="split-desc" data-i18n="blinds-desc">Do Double Vision à Persiana Romana, cada modelo é especificado para o espaço e o estilo do projeto, unindo controle técnico e sofisticação decorativa.</p>
             <ul class="split-list">
               <li data-i18n="blinds-li1">Double Vision: controle dinâmico e design contemporâneo</li>
@@ -509,8 +549,10 @@
               <img src="assets/residencial/cortina_6.webp"     alt="Cortinas de tecido" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.9s ease;" loading="lazy" />
             </div>
           </div>
-          <div class="split-text reveal">
+          <div class="split-title split-text reveal">
             <h2 class="section-title" data-i18n="fabric-title">Cortinas de tecido sob medida</h2>
+          </div>
+          <div class="split-body reveal">
             <p class="split-desc" data-i18n="fabric-desc">Cada peça é desenvolvida com medidas precisas e tecido especificado para o ambiente, garantindo caimento impecável, durabilidade e resultado fiel ao projeto.</p>
             <ul class="split-list">
               <li data-i18n="fabric-li1">Blackout e voil sob medida</li>
@@ -528,9 +570,11 @@
     <section class="section wash-section" id="higienizacao">
       <div class="container">
         <div class="split-layout">
-          <div class="split-text reveal">
+          <div class="split-title split-text reveal">
             <span class="section-eyebrow" data-i18n="wash-eyebrow">Manutenção técnica</span>
             <h2 class="section-title" data-i18n="wash-title">Lavagem técnica de persianas</h2>
+          </div>
+          <div class="split-body reveal">
             <p class="split-desc" data-i18n="wash-desc">Com o tempo, persianas acumulam sujeira invisível que compromete a qualidade do ar e a aparência do ambiente. A higienização técnica remove tudo sem danificar o material.</p>
             <div class="wash-steps">
               <div class="wash-step">
