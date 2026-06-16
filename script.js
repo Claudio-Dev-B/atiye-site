@@ -427,8 +427,14 @@
     btn.addEventListener("click", function () {
       const item = this.closest(".faq-item");
       const isOpen = item.classList.contains("open");
-      $$(".faq-item.open").forEach(function (i) { i.classList.remove("open"); });
-      if (!isOpen) item.classList.add("open");
+      $$(".faq-item.open").forEach(function (i) {
+        i.classList.remove("open");
+        i.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+      });
+      if (!isOpen) {
+        item.classList.add("open");
+        this.setAttribute("aria-expanded", "true");
+      }
     });
   });
 

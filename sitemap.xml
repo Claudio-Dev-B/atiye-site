@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://atiyepersianas.com.br/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://atiyepersianas.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://atiyepersianas.com.br/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://atiyepersianas.com.br/corporativo.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://atiyepersianas.com.br/corporativo.html"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://atiyepersianas.com.br/corporativo.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://atiyepersianas.com.br/residencial.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://atiyepersianas.com.br/residencial.html"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://atiyepersianas.com.br/residencial.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://atiyepersianas.com.br/portfolio.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://atiyepersianas.com.br/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://atiyepersianas.com.br/portfolio.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://atiyepersianas.com.br/lavagem.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://atiyepersianas.com.br/lavagem.html"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://atiyepersianas.com.br/lavagem.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
