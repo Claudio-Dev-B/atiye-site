@@ -27,6 +27,7 @@
     /* Header */
     if (header) {
       header.classList.toggle("scrolled", sy > 60);
+      header.classList.toggle("header--transparent", sy <= 60);
     }
 
     /* Page light drifts based on scroll progress */

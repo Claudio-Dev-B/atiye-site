@@ -191,6 +191,26 @@
       'cta-text':       'Resolver isso exige mais do que escolher um tecido. Exige diagnóstico, projeto e execução precisa.',
       'cta-btn':        'Falar com especialista',
 
+      /* ── Contact Form (shared) ────────────────────────── */
+      'contact-eyebrow':      'Contato',
+      'contact-title':        'Vamos conversar sobre o seu projeto',
+      'contact-options-text': 'Escolha como prefere falar com a gente: preencha o formulário abaixo e retornamos em breve, ou fale agora mesmo pelo WhatsApp.',
+      'form-name-label':      'Nome',
+      'form-name-ph':         'Seu nome',
+      'form-phone-label':     'Telefone',
+      'form-phone-ph':        '(11) 90000-0000',
+      'form-email-label':     'E-mail',
+      'form-email-ph':        'seu@email.com',
+      'form-message-label':   'Mensagem',
+      'form-message-ph':      'Como podemos ajudar?',
+      'form-submit':          'Enviar mensagem',
+      'form-sending':         'Enviando...',
+      'form-success':         'Mensagem enviada! Retornaremos em breve.',
+      'form-error':           'Algo deu errado. Tente novamente ou fale pelo WhatsApp.',
+      'form-or':              'ou',
+      'form-wa-btn':          'Falar no WhatsApp',
+      'contact-wa-text':      'Prefere uma conversa direta? Fale com nossa equipe agora mesmo pelo WhatsApp e tire suas dúvidas em tempo real.',
+
       /* ══════════════════════════════════════════════════════
          CORPORATIVO
          ══════════════════════════════════════════════════ */
@@ -466,7 +486,7 @@
          LAVAGEM
          ══════════════════════════════════════════════════ */
       'lav-hero-label':         'Higienização',
-      'lav-hero-title-html':    'Sua persiana não está limpa.<br><em>Só parece.</em>',
+      'lav-hero-title':         'Lavagem e Manutenção de Persianas',
       'lav-hero-subtitle':      'O que se acumula nas camadas do tecido não é visível no dia a dia. Mas está presente e piora com o tempo.',
       'lav-hero-desc':          'A Atiye faz a remoção completa sem danificar o material.',
       'lav-hero-cta':           'Agendar higienização',
@@ -802,6 +822,26 @@
       'cta-text':       'Fixing this requires more than choosing a fabric. It requires diagnosis, design, and precise execution.',
       'cta-btn':        'Talk to a specialist',
 
+      /* ── Contact Form (shared) ────────────────────────── */
+      'contact-eyebrow':      'Contact',
+      'contact-title':        "Let's talk about your project",
+      'contact-options-text': "Choose how you'd like to reach us: fill out the form below and we'll get back to you shortly, or chat with us right now on WhatsApp.",
+      'form-name-label':      'Name',
+      'form-name-ph':         'Your name',
+      'form-phone-label':     'Phone',
+      'form-phone-ph':        '+55 11 90000-0000',
+      'form-email-label':     'Email',
+      'form-email-ph':        'you@email.com',
+      'form-message-label':   'Message',
+      'form-message-ph':      'How can we help?',
+      'form-submit':          'Send message',
+      'form-sending':         'Sending...',
+      'form-success':         "Message sent! We'll get back to you soon.",
+      'form-error':           'Something went wrong. Please try again or reach us on WhatsApp.',
+      'form-or':              'or',
+      'form-wa-btn':          'Chat on WhatsApp',
+      'contact-wa-text':      'Prefer a direct conversation? Talk to our team right now on WhatsApp and get your questions answered in real time.',
+
       /* CORPORATIVO */
       'corp-hero-label':    'Corporate',
       'corp-hero-title':    'Corporate Blinds for Turnkey and Fit Out Projects',
@@ -1071,7 +1111,7 @@
 
       /* LAVAGEM */
       'lav-hero-label':         'Cleaning',
-      'lav-hero-title-html':    "Your blind isn't clean.<br><em>It just looks that way.</em>",
+      'lav-hero-title':         'Blind Washing & Maintenance',
       'lav-hero-subtitle':      "What accumulates in the fabric layers isn't visible day to day. But it's there and it gets worse over time.",
       'lav-hero-desc':          'Atiye performs complete removal without damaging the material.',
       'lav-hero-cta':           'Schedule cleaning',
@@ -1277,6 +1317,12 @@
       if (!val) return;
       resetSplit(el);
       el.innerHTML = val;
+    });
+
+    /* placeholder */
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+      var val = t(el.getAttribute('data-i18n-placeholder'));
+      if (val) el.setAttribute('placeholder', val);
     });
 
     /* meta description */

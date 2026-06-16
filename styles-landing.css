@@ -853,3 +853,9 @@
     font-size: 0.85rem;
   }
 }
+
+/* ── Landing hero: full-bleed image (no rounded corners, fills screen) ── */
+.landing-hero { min-height: 100vh; }
+.landing-hero .hero-visual,
+.landing-hero .hero-visual img { border-radius: 0; }
+.landing-hero .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
