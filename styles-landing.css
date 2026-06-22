@@ -739,6 +739,7 @@
   max-width: 110px;
   object-fit: contain;
   display: block;
+  mix-blend-mode: multiply;
 }
 
 /* ── Responsive: Corporate Cases ───────────────────────── */
