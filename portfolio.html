@@ -718,6 +718,17 @@
       letter-spacing: 0.1em;
     }
 
+    /* â”€â”€ Accessibility: visually hidden â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     /* â”€â”€ CTA Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     .cat-cta {
       background: #f3ede4;
@@ -1083,6 +1094,7 @@
 
     <!-- â”€â”€ 01. ROLÔ TELA SOLAR SCREEN â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <section class="product-section" id="rolo-screen">
+      <h1 class="sr-only">Persiana Rolô Tela Solar Screen Sob Medida</h1>
       <div class="ps-hero">
         <div class="ps-hero-left reveal">
 
@@ -1139,6 +1151,7 @@
 
     <!-- â”€â”€ 02. ROLÔ BLACKOUT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <section class="product-section" id="rolo-blackout">
+      <h1 class="sr-only">Persiana Rolô Blackout Sob Medida</h1>
       <div class="ps-hero">
         <div class="ps-hero-left reveal">
 
@@ -1196,6 +1209,7 @@
 
     <!-- â”€â”€ 03. DOUBLE VISION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <section class="product-section" id="double-vision">
+      <h1 class="sr-only">Persiana Double Vision Sob Medida</h1>
       <div class="ps-hero">
         <div class="ps-hero-left reveal">
           <h2 class="ps-name" data-i18n="prod-double-title">Double Vision</h2>
@@ -1248,6 +1262,7 @@
 
     <!-- â”€â”€ 04. PERSIANA DE MADEIRA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <section class="product-section" id="persiana-madeira">
+      <h1 class="sr-only">Persiana de Madeira Sob Medida</h1>
       <div class="ps-hero">
         <div class="ps-hero-left reveal">
           <h2 class="ps-name" data-i18n="prod-madeira-title">Persiana de Madeira</h2>
@@ -1302,6 +1317,7 @@
 
     <!-- â”€â”€ 05. PERSIANA DE ALUMÃNIO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <section class="product-section" id="persiana-aluminio">
+      <h1 class="sr-only">Persiana de Alumínio Sob Medida</h1>
       <div class="ps-hero">
         <div class="ps-hero-left reveal">
           <h2 class="ps-name" data-i18n="prod-aluminio-title">Persiana de Alumínio</h2>
@@ -1351,6 +1367,7 @@
 
     <!-- â”€â”€ 06. PERSIANA ROMANA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <section class="product-section" id="persiana-romana">
+      <h1 class="sr-only">Persiana Romana Sob Medida</h1>
       <div class="ps-hero">
         <div class="ps-hero-left reveal">
           <h2 class="ps-name" data-i18n="prod-romana-title">Persiana Romana</h2>
@@ -1405,6 +1422,7 @@
 
     <!-- â”€â”€ 07. CORTINAS DE TECIDO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <section class="product-section" id="cortinas">
+      <h1 class="sr-only">Cortinas de Tecido Sob Medida</h1>
       <div class="ps-hero">
         <div class="ps-hero-left reveal">
           <h2 class="ps-name" data-i18n="prod-cortina-title">Cortinas de Tecido</h2>
@@ -1882,6 +1900,51 @@
       revealEls.forEach(function (el) { revealObs.observe(el); });
 
     }());
+  </script>
+
+  <!-- SEO: title e meta description dinâmicos por âncora de produto -->
+  <script>
+  (function () {
+    var seoPorAncora = {
+      'rolo-screen': {
+        title: 'Persiana Rolô Tela Solar Screen Sob Medida em São Paulo | Atiye',
+        description: 'Persiana rolô tela solar screen sob medida com bloqueio de UV, redução de calor e visibilidade externa preservada. Instalação profissional em São Paulo. Manual ou motorizada.'
+      },
+      'rolo-blackout': {
+        title: 'Persiana Rolô Blackout Sob Medida em São Paulo | Atiye',
+        description: 'Persiana rolô blackout com bloqueio total de luminosidade, sob medida e instalação profissional em São Paulo. Ideal para quartos, home theater e ambientes com blackout total.'
+      },
+      'double-vision': {
+        title: 'Persiana Double Vision Sob Medida em São Paulo | Atiye',
+        description: 'Persiana Double Vision sob medida com ajuste dinâmico de luz, faixas alternadas translúcidas e opacas. Design contemporâneo com instalação profissional em São Paulo.'
+      },
+      'persiana-madeira': {
+        title: 'Persiana de Madeira Sob Medida em São Paulo | Atiye',
+        description: 'Persiana de madeira natural, sintética ou bambu, sob medida, com isolamento térmico e instalação profissional em São Paulo. Manual ou motorizada.'
+      },
+      'persiana-aluminio': {
+        title: 'Persiana de Alumínio Sob Medida em São Paulo | Atiye',
+        description: 'Persiana horizontal de alumínio sob medida, resistente à umidade e de fácil higienização. Instalação profissional em São Paulo. Ideal para escritórios, clínicas e cozinhas.'
+      },
+      'persiana-romana': {
+        title: 'Persiana Romana Sob Medida em São Paulo | Atiye',
+        description: 'Persiana romana sob medida com acabamento em dobras elegantes, disponível translúcida ou blackout. Instalação profissional e garantia de 2 anos em São Paulo.'
+      },
+      'cortinas': {
+        title: 'Cortinas de Tecido Sob Medida em São Paulo | Atiye',
+        description: 'Cortinas de tecido sob medida nos modelos Wave, Franzida e Prega Macho. Do sheer translúcido ao blackout, com instalação profissional em São Paulo.'
+      }
+    };
+
+    window.addEventListener('DOMContentLoaded', function () {
+      var hash = location.hash.replace('#', '');
+      if (seoPorAncora[hash]) {
+        document.title = seoPorAncora[hash].title;
+        var metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', seoPorAncora[hash].description);
+      }
+    });
+  }());
   </script>
 </body>
 </html>
