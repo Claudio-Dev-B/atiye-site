@@ -9,12 +9,12 @@
       /* ── Meta ─────────────────────────────────────────── */
       'index-title':        'Atiye | Controle de Luz',
       'index-meta':         'Atiye: Controle técnico da luz natural. Projetos sob medida para ambientes residenciais e corporativos que exigem precisão.',
-      'corp-title':         'Corporativo | Atiye',
-      'corp-meta':          'Atiye Corporativo: Controle técnico de luz para escritórios e empresas. Solução para reflexo, calor e desconforto em ambientes de trabalho.',
+      'corp-title':         'Corporativo | Atiye - Persianas e Cortinas para Escritórios em São Paulo',
+      'corp-meta':          'Atiye Corporativo: Persianas e cortinas para escritórios e empresas em São Paulo. Tela solar, rolô blackout, double vision e persiana motorizada — fornecimento e instalação para projetos corporativos.',
       'res-title':          'Residencial | Atiye',
       'res-meta':           'Atiye Residencial: Controle de luz para ambientes de alto padrão. Persianas e cortinas sob medida para quartos, salas e varandas.',
-      'lav-title':          'Higienização | Atiye',
-      'lav-meta':           'Atiye Higienização: Lavagem técnica de persianas sem danos ao material. Coleta, limpeza profunda e entrega com garantia.',
+      'lav-title':          'Lavagem e Higienização de Persianas e Cortinas | Atiye SP',
+      'lav-meta':           'Lavagem e higienização técnica de persianas e cortinas em São Paulo: rolô blackout, tela solar, double vision, madeira, alumínio, romana e tecido. Coleta domiciliar e reinstalação com garantia.',
 
       /* ── Nav ──────────────────────────────────────────── */
       'nav-corporate':   'Corporativo',
@@ -215,8 +215,8 @@
          CORPORATIVO
          ══════════════════════════════════════════════════ */
       'corp-hero-label':          'Corporativo',
-      'corp-hero-title':          'Persianas Corporativas para Obras Turnkey e Fit Out',
-      'corp-hero-subtitle':       'Soluções completas em Persianas Rolô Tela Solar e Blackout para escritórios, lajes corporativas e ambientes empresariais.',
+      'corp-hero-title':          'Persianas Corporativas para Escritórios em São Paulo',
+      'corp-hero-subtitle':       'Soluções completas em Persianas Rolô, Tela Solar e Blackout para obras turnkey, fit out, escritórios, lajes corporativas e ambientes empresariais.',
       'corp-hero-desc':           'Atendimento especializado para construtoras, gerenciadoras, arquitetos e empresas de engenharia.',
       'corp-hero-check1':         'Medição Técnica',
       'corp-hero-check2':         'Fabricação Sob Medida',
@@ -248,7 +248,7 @@
 
       'corp-screen-num':    '01',
       'corp-screen-title':  'Rolô Tela Solar Screen',
-      'corp-screen-desc':   'Controle solar eficiente mantendo a entrada de luz natural. Redução do calor, conforto visual, economia de energia e visual moderno.',
+      'corp-screen-desc':   'Tela solar para escritório: reduz calor e ofuscamento, preserva a vista externa. Redução de energia e visual moderno. Disponível manual ou motorizada.',
       'corp-screen-li1':    'Filtra até 97% da radiação UV',
       'corp-screen-li2':    'Mantém visibilidade para o exterior',
       'corp-screen-li3':    'Reduz o ganho térmico e o uso de ar-condicionado',
@@ -256,7 +256,7 @@
 
       'corp-blackout-num':   '02',
       'corp-blackout-title': 'Rolô Blackout',
-      'corp-blackout-desc':  'Privacidade e bloqueio luminoso para salas de reunião, auditórios, salas de treinamento e áreas multimídia.',
+      'corp-blackout-desc':  'Tela rolô blackout para escritório: bloqueio total de luz para salas de reunião, auditórios e áreas multimídia. Manual ou motorizada.',
       'corp-blackout-li1':   'Bloqueio total de luz para apresentações e projeções',
       'corp-blackout-li2':   'Privacidade completa em reuniões executivas',
       'corp-blackout-li3':   'Disponível em motorização e automação',
@@ -312,6 +312,10 @@
       'corp-faq-a4': 'Depende da escala. Projetos de até 200m² geralmente são concluídos em 3 a 5 dias úteis. Para projetos maiores, definimos um cronograma faseado que minimiza impacto na operação da empresa.',
       'corp-faq-q5': 'A tela solar screen prejudica a visibilidade para o exterior?',
       'corp-faq-a5': 'Não. Pelo contrário: a tela solar reduz o ofuscamento causado pela luz direta, o que melhora a visibilidade do interior para o exterior. A escolha do nível de abertura define o equilíbrio entre transparência e privacidade.',
+      'corp-faq-q6': 'Vale a pena investir em persiana motorizada para escritório?',
+      'corp-faq-a6': 'Sim, especialmente em ambientes com muitas janelas ou de difícil acesso. A persiana motorizada para escritório permite controle centralizado ou individual por controle remoto, aplicativo ou integração com automação predial — reduzindo o esforço operacional e melhorando o conforto dos colaboradores. O custo de instalação é compensado rapidamente pela praticidade e pela redução de consumo energético com ar-condicionado.',
+      'corp-faq-q7': 'A Atiye atua como fornecedor contínuo de persianas corporativas?',
+      'corp-faq-a7': 'Sim. Empresas que precisam repor ou ampliar instalações de persianas corporativas ao longo do tempo podem contar com a Atiye como fornecedor recorrente. Mantemos histórico de materiais e especificações de projetos anteriores, o que agiliza novas etapas sem necessidade de reemissão de projetos técnicos. Atendemos tanto a solicitação pontual por ambiente quanto contratos de fornecimento para múltiplos andares ou unidades.',
 
       'corp-cta-eyebrow':    'Solicite um Orçamento',
       'corp-cta-title':      'Envie seu projeto, memorial descritivo ou quantitativo.',
@@ -487,9 +491,10 @@
          LAVAGEM
          ══════════════════════════════════════════════════ */
       'lav-hero-label':         'Higienização',
-      'lav-hero-title':         'Lavagem e Manutenção de Persianas',
+      'lav-hero-title':         'Lavagem e Higienização Técnica de Persianas',
       'lav-hero-subtitle':      'O que se acumula nas camadas do tecido não é visível no dia a dia. Mas está presente e piora com o tempo.',
       'lav-hero-desc':          'A Atiye faz a remoção completa sem danificar o material.',
+      'lav-hero-local':         'Atendimento domiciliar em toda São Paulo — coletamos, lavamos e reinstalamos no seu endereço.',
       'lav-hero-cta':           'Agendar higienização',
 
       'lav-prob-eyebrow': 'O problema',
@@ -523,6 +528,15 @@
       'lav-step4-text':   'Devolvemos e reinstalamos no local. Persiana limpa, estrutura preservada, ambiente sem odores.',
 
       'lav-diff-eyebrow': 'Por que a Atiye',
+      'lav-prod-title':   'Atendemos todos os tipos de persiana e cortina',
+      'lav-prod-item1':   'Persiana Rolô Tela Solar Screen',
+      'lav-prod-item2':   'Persiana Rolô Blackout',
+      'lav-prod-item3':   'Persiana Double Vision',
+      'lav-prod-item4':   'Persiana de Madeira',
+      'lav-prod-item5':   'Persiana de Alumínio',
+      'lav-prod-item6':   'Persiana Romana',
+      'lav-prod-item7':   'Persiana Vertical',
+      'lav-prod-item8':   'Cortinas de Tecido',
       'lav-diff-title':   'Mais do que lavar',
       'lav-diff-sub':     'Quem instalou, sabe cuidar',
       'lav-diff-p1':      'A Atiye não é uma lavanderia. É uma empresa técnica que entende como cada material se comporta, porque trabalha com esse material todos os dias.',
@@ -539,7 +553,7 @@
       'lav-faq-q2': 'Vocês fazem a coleta?',
       'lav-faq-a2': 'Sim. Nossa equipe vai até o local, retira as persianas, realiza o processo técnico e faz a reinstalação. Sem necessidade de deslocamento por parte do cliente.',
       'lav-faq-q3': 'Todos os tipos de persiana podem ser lavados?',
-      'lav-faq-a3': 'A maioria dos tipos pode, mas o processo varia conforme o material. Telas solares, rolô em tecido, double vision e persianas verticais têm processos distintos. Na avaliação inicial identificamos o processo correto para cada peça.',
+      'lav-faq-a3': 'A maioria dos tipos pode, mas o processo varia conforme o material. Persiana rolô em tecido, tela solar, double vision, persiana de madeira, persiana de alumínio, persiana romana e persianas verticais têm processos distintos. Na avaliação inicial identificamos o processo correto para cada peça.',
       'lav-faq-q4': 'Qual é o prazo entre coleta e reinstalação?',
       'lav-faq-a4': 'Em até 7 dias úteis. Dependendo da quantidade de peças e do tipo de material, pode variar. Confirmamos o prazo exato no agendamento.',
 
@@ -656,12 +670,12 @@
     'en': {
       'index-title': 'Atiye | Light Control',
       'index-meta':  'Atiye: Technical natural light control. Custom solutions for residential and corporate spaces that demand precision.',
-      'corp-title':  'Corporate | Atiye',
-      'corp-meta':   'Atiye Corporate: Technical light control for offices and businesses. Solutions for glare, heat, and discomfort in work environments.',
+      'corp-title':  'Corporate | Atiye - Blinds & Curtains for Offices in São Paulo',
+      'corp-meta':   'Atiye Corporate: Blinds and curtains for offices and businesses in São Paulo. Solar screen, blackout roller, double vision and motorized blinds — supply and installation for corporate projects.',
       'res-title':   'Residential | Atiye',
       'res-meta':    'Atiye Residential: Light control for premium spaces. Custom blinds and curtains for bedrooms, living rooms, and balconies.',
-      'lav-title':   'Blind Cleaning | Atiye',
-      'lav-meta':    'Atiye Cleaning: Technical blind washing without material damage. Pickup, deep cleaning, and delivery with warranty.',
+      'lav-title':   'Blind & Curtain Washing and Cleaning | Atiye SP',
+      'lav-meta':    'Professional blind and curtain washing in São Paulo: blackout roller, solar screen, double vision, wood, aluminium, roman, and fabric. Home pickup and reinstallation with warranty.',
 
       'nav-corporate':   'Corporate',
       'nav-residential': 'Residential',
@@ -845,8 +859,8 @@
 
       /* CORPORATIVO */
       'corp-hero-label':    'Corporate',
-      'corp-hero-title':    'Corporate Blinds for Turnkey and Fit Out Projects',
-      'corp-hero-subtitle': 'Complete solutions in Solar Screen and Blackout Roller Blinds for offices, corporate floors, and business environments.',
+      'corp-hero-title':    'Corporate Blinds for Offices in São Paulo',
+      'corp-hero-subtitle': 'Complete solutions in Roller, Solar Screen and Blackout Blinds for turnkey projects, fit out, offices, corporate floors, and business environments.',
       'corp-hero-desc':     'Specialized service for construction companies, project managers, architects, and engineering firms.',
       'corp-hero-check1':   'Technical Measurement',
       'corp-hero-check2':   'Custom Manufacturing',
@@ -878,7 +892,7 @@
 
       'corp-screen-num':    '01',
       'corp-screen-title':  'Solar Screen Roller Blind',
-      'corp-screen-desc':   'Efficient solar control while maintaining natural light. Heat reduction, visual comfort, energy savings, and a modern look.',
+      'corp-screen-desc':   'Solar screen for offices: reduces heat and glare, preserves the outside view. Energy savings and modern look. Available manual or motorized.',
       'corp-screen-li1':    'Filters up to 97% of UV radiation',
       'corp-screen-li2':    'Maintains visibility to the outside',
       'corp-screen-li3':    'Reduces heat gain and air conditioning use',
@@ -886,7 +900,7 @@
 
       'corp-blackout-num':   '02',
       'corp-blackout-title': 'Blackout Roller Blind',
-      'corp-blackout-desc':  'Privacy and light blocking for meeting rooms, auditoriums, training rooms, and multimedia areas.',
+      'corp-blackout-desc':  'Blackout roller blind for offices: total light blocking for meeting rooms, auditoriums, and multimedia areas. Manual or motorized.',
       'corp-blackout-li1':   'Complete light blockage for presentations and projections',
       'corp-blackout-li2':   'Full privacy in executive meetings',
       'corp-blackout-li3':   'Available with motorization and automation',
@@ -942,6 +956,10 @@
       'corp-faq-a4': 'It depends on scale. Projects up to 200m² are typically completed in 3 to 5 business days. For larger projects, we define a phased schedule that minimizes impact on company operations.',
       'corp-faq-q5': 'Does solar screen fabric affect visibility to the outside?',
       'corp-faq-a5': "No. On the contrary: solar screen reduces the glare caused by direct light, which actually improves visibility from inside to outside. The choice of opening level defines the balance between transparency and privacy.",
+      'corp-faq-q6': 'Is it worth investing in motorized blinds for an office?',
+      'corp-faq-a6': 'Yes, especially in spaces with many windows or hard-to-reach areas. Motorized office blinds allow centralized or individual control via remote, app, or building automation — reducing operational effort and improving employee comfort. Installation costs are quickly offset by convenience and reduced air-conditioning energy consumption.',
+      'corp-faq-q7': 'Does Atiye act as an ongoing supplier of corporate blinds?',
+      'corp-faq-a7': 'Yes. Companies that need to replace or expand corporate blind installations over time can count on Atiye as a recurring supplier. We keep a record of materials and specifications from previous projects, speeding up new phases without the need for reissuing technical documents. We handle both one-off requests per room and supply contracts for multiple floors or units.',
 
       'corp-cta-eyebrow':  'Request a Quote',
       'corp-cta-title':    'Send your project, specifications, or quantities.',
@@ -1113,9 +1131,10 @@
 
       /* LAVAGEM */
       'lav-hero-label':         'Cleaning',
-      'lav-hero-title':         'Blind Washing & Maintenance',
+      'lav-hero-title':         'Blind Washing & Technical Cleaning',
       'lav-hero-subtitle':      "What accumulates in the fabric layers isn't visible day to day. But it's there and it gets worse over time.",
       'lav-hero-desc':          'Atiye performs complete removal without damaging the material.',
+      'lav-hero-local':         'Home service across São Paulo — we collect, wash, and reinstall at your address.',
       'lav-hero-cta':           'Schedule cleaning',
 
       'lav-prob-eyebrow': 'The problem',
@@ -1149,6 +1168,15 @@
       'lav-step4-text':   'We return and reinstall on-site. Clean blind, preserved structure, odor-free space.',
 
       'lav-diff-eyebrow': 'Why Atiye',
+      'lav-prod-title':   'We service all types of blinds and curtains',
+      'lav-prod-item1':   'Solar Screen Roller Blind',
+      'lav-prod-item2':   'Blackout Roller Blind',
+      'lav-prod-item3':   'Double Vision Blind',
+      'lav-prod-item4':   'Wood Blind',
+      'lav-prod-item5':   'Aluminium Blind',
+      'lav-prod-item6':   'Roman Blind',
+      'lav-prod-item7':   'Vertical Blind',
+      'lav-prod-item8':   'Fabric Curtains',
       'lav-diff-title':   'More than washing',
       'lav-diff-sub':     'The installer knows how to care for it',
       'lav-diff-p1':      "Atiye isn't a laundry service. It's a technical company that understands how each material behaves, because it works with that material every day.",
@@ -1165,7 +1193,7 @@
       'lav-faq-q2': 'Do you collect the blinds?',
       'lav-faq-a2': 'Yes. Our team goes to the location, removes the blinds, performs the technical process, and reinstalls them. No need for the client to travel anywhere.',
       'lav-faq-q3': 'Can all types of blinds be washed?',
-      'lav-faq-a3': 'Most types can, but the process varies by material. Solar screens, fabric rollers, double vision, and vertical blinds each have distinct processes. We identify the correct process for each piece in the initial assessment.',
+      'lav-faq-a3': 'Most types can, but the process varies by material. Fabric roller blinds, solar screens, double vision, wood blinds, aluminium blinds, roman blinds, and vertical blinds each have distinct processes. We identify the correct process for each piece in the initial assessment.',
       'lav-faq-q4': 'How long between collection and reinstallation?',
       'lav-faq-a4': 'Up to 7 business days. This may vary depending on the number of pieces and material type. We confirm the exact timeline at scheduling.',
 
