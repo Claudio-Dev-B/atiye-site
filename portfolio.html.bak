@@ -35,12 +35,9 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" /></noscript>
-  <link rel="preload" as="style" href="styles.css?v=20260629" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="styles.css?v=20260629" /></noscript>
-  <link rel="preload" as="style" href="styles-landing.css?v=20260629" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="styles-landing.css?v=20260629" /></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-landing.css" />
 
   <style>
     /* ââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Âââ€¢Â
@@ -1584,9 +1581,9 @@
     <div class="lightbox-counter" id="lightbox-counter"></div>
   </div>
 
-  <script src="translations.js?v=20260629" defer></script>
-  <script src="script-landing.js?v=20260629" defer></script>
-  <script src="contact-form.js?v=20260629" defer></script>
+  <script src="translations.js"></script>
+  <script src="script-landing.js"></script>
+  <script src="contact-form.js"></script>
 
   <script>
     (function () {

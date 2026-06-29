@@ -36,13 +36,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" /></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="preload" as="style" href="styles.css?v=20260629" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="styles.css?v=20260629" /></noscript>
-  <link rel="preload" as="style" href="styles-landing.css?v=20260629" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="styles-landing.css?v=20260629" /></noscript>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-landing.css" />
   <style>
     /* â”€â”€ Hero Scroll Snap + Sticky â”€â”€ */
     html {
@@ -1069,9 +1066,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-  <script src="translations.js?v=20260629" defer></script>
-  <script src="script-landing.js?v=20260629" defer></script>
-  <script src="contact-form.js?v=20260629" defer></script>
+  <script src="translations.js"></script>
+  <script src="script-landing.js"></script>
+  <script src="contact-form.js"></script>
 
 
 

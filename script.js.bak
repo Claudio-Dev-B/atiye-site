@@ -22,8 +22,8 @@
     initHeroAnimation();
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(hidePreloader, 400);
+  window.addEventListener("load", function () {
+    setTimeout(hidePreloader, 2000);
   });
 
   /* ── Hero Video — best-practice load ────────────────── */
@@ -106,7 +106,7 @@
       setTimeout(function () {
         el.style.opacity   = "1";
         el.style.transform = "translateY(0)";
-      }, item.delay + 50);
+      }, item.delay + 200);
     });
   }
 
