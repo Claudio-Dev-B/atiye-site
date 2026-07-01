@@ -191,6 +191,20 @@
       .blinds-section .split-body,
       .fabric-section .split-body,
       .wash-section  .split-body { order: 3; }
+
+      /* â”€â”€ Performance mobile: CLS/TBT (carrosséis val-scroll / prob-scroll) â”€â”€ */
+      .value-carousel-track {
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        animation-duration: 90s !important;
+      }
+      .gallery-offscreen { animation-play-state: paused !important; }
+      .value-carousel-wrap,
+      .problem-visual,
+      [class*="carousel"] { contain: layout style; overflow: hidden; }
+      @keyframes val-scroll  { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+      @keyframes prob-scroll { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
     }
   </style>
 </head>
@@ -442,7 +456,7 @@
           </a>
         </div>
         <div class="products-cta reveal">
-          <a href="https://wa.me/5511986793247" class="cta-button" target="_blank" rel="noopener" data-i18n="prod-cta" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Ver portfólio completo</a>
+          <a href="portfolio.html" class="cta-button" data-i18n="prod-cta">Ver portfólio completo</a>
         </div>
       </div>
     </section>
@@ -633,7 +647,7 @@
               <li data-i18n="blinds-li3">Persiana de Alumínio: robustez e praticidade</li>
               <li data-i18n="blinds-li4">Persiana Romana: elegância clássica em cada dobra</li>
             </ul>
-            <a href="https://wa.me/5511986793247" class="cta-button" target="_blank" rel="noopener" data-i18n="blinds-cta" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Ver catálogo completo</a>
+            <a href="portfolio.html" class="cta-button" data-i18n="blinds-cta">Ver catálogo completo</a>
           </div>
         </div>
       </div>
@@ -1056,6 +1070,22 @@
     makeRotator('tela-rotator', 3500);
     makeRotator('cortina-rotator', 3200);
     makeRotator('problem-rotator', 4000);
+  </script>
+
+  <script>
+  // Pausa animações de galeria quando fora do viewport em mobile (reduz TBT/CPU)
+  (function () {
+    if (window.innerWidth > 768) return;
+    if (!('IntersectionObserver' in window)) return;
+    var tracks = document.querySelectorAll('.gal-track, .value-carousel-track, .gallery-track, [class*="carousel-track"]');
+    if (!tracks.length) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        entry.target.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+      });
+    }, { threshold: 0.1 });
+    tracks.forEach(function (el) { observer.observe(el); });
+  })();
   </script>
 </body>
 </html>

@@ -10,7 +10,7 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Atiye Residencial: Persianas e cortinas sob medida para ambientes de alto padrão em São Paulo. Medição técnica, instalação profissional e 2 anos de garantia." />
+  <meta name="description" content="Cortinas e persianas sob medida para sala, quarto e varanda em São Paulo. Persiana rolo blackout, tela solar e cortina de tecido com instalação profissional e 2 anos de garantia. Orçamento pelo WhatsApp." />
   <title>Residencial | Atiye - Persianas e Cortinas Sob Medida SP</title>
   <link rel="canonical" href="https://atiyepersianas.com.br/residencial.html" />
   <link rel="alternate" hreflang="pt-BR" href="https://atiyepersianas.com.br/residencial.html" />
@@ -22,13 +22,13 @@
   <meta property="og:locale"      content="pt_BR" />
   <meta property="og:url"         content="https://atiyepersianas.com.br/residencial.html" />
   <meta property="og:title"       content="Residencial | Atiye - Persianas e Cortinas Sob Medida SP" />
-  <meta property="og:description" content="Persianas e cortinas sob medida para ambientes de alto padrão em São Paulo. Medição técnica, instalação profissional e 2 anos de garantia." />
+  <meta property="og:description" content="Cortinas e persianas sob medida para sala, quarto e varanda em São Paulo. Persiana rolo blackout, tela solar e cortina de tecido com instalação profissional e 2 anos de garantia. Orçamento pelo WhatsApp." />
   <meta property="og:image"       content="https://atiyepersianas.com.br/assets/residencial/IMG_3152.webp" />
   <meta property="og:image:alt"   content="Persianas residenciais Atiye em ambiente de alto padrão" />
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Residencial | Atiye - Persianas e Cortinas Sob Medida SP" />
-  <meta name="twitter:description" content="Persianas e cortinas sob medida para ambientes de alto padrão em São Paulo. Medição técnica, instalação profissional e 2 anos de garantia." />
+  <meta name="twitter:description" content="Cortinas e persianas sob medida para sala, quarto e varanda em São Paulo. Persiana rolo blackout, tela solar e cortina de tecido com instalação profissional e 2 anos de garantia. Orçamento pelo WhatsApp." />
   <meta name="twitter:image"       content="https://atiyepersianas.com.br/assets/residencial/IMG_3152.webp" />
   <link rel="icon" href="assets/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -226,6 +226,22 @@
     @media (max-width: 640px) {
       .gal-track img { width: 220px; height: 165px; }
     }
+    /* â”€â”€ Performance mobile: CLS/TBT (galeria marquee) â”€â”€ */
+    @media (max-width: 768px) {
+      .gal-track,
+      .gal-track.to-left,
+      .gal-track.to-right {
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+      }
+      .gal-track.to-left  { animation-duration: 120s !important; }
+      .gal-track.to-right { animation-duration: 120s !important; }
+      .gallery-offscreen { animation-play-state: paused !important; }
+      .gal-marquee, .galeria { contain: layout style; overflow: hidden; }
+      @keyframes gal-left  { from { transform: translate3d(0, 0, 0); }      to { transform: translate3d(-50%, 0, 0); } }
+      @keyframes gal-right { from { transform: translate3d(-50%, 0, 0); }   to { transform: translate3d(0, 0, 0); } }
+    }
 
     /* â”€â”€ RESULTADOS â”€â”€ */
     .resultados {
@@ -417,9 +433,9 @@
 
     <!-- 1. HERO -->
     <section class="hero" id="hero">
-      <img class="hero-bg active" src="assets/residencial/rolo_solar.webp" alt="Persianas residenciais Atiye" loading="eager" width="1672" height="941" />
-      <img class="hero-bg" src="assets/residencial/cortina_4.webp" alt="Cortinas sob medida Atiye" loading="eager" />
-      <img class="hero-bg" src="assets/residencial/blackout_3.webp" alt="Persiana blackout Atiye" loading="eager" />
+      <img class="hero-bg active" src="assets/residencial/rolo_solar.webp" alt="Persianas residenciais Atiye" loading="eager" fetchpriority="high" width="1672" height="941" />
+      <img class="hero-bg" src="assets/residencial/cortina_4.webp" alt="Cortinas sob medida Atiye" loading="eager" width="1672" height="941" />
+      <img class="hero-bg" src="assets/residencial/blackout_3.webp" alt="Persiana blackout Atiye" loading="eager" width="1672" height="941" />
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1 data-i18n="res2-hero-title">Persianas e Cortinas Sob Medida com Instalação Profissional</h1>
@@ -466,7 +482,7 @@
       <div class="ov-text">
         <h2 class="section-title" data-i18n="res2-ov-title">Mais Conforto e Elegância para o seu Ambiente</h2>
         <p data-i18n="res2-ov-body">As persianas certas podem transformar completamente seu ambiente, proporcionando controle da luminosidade, redução do calor interno, mais privacidade, proteção dos móveis e valorização do imóvel.</p>
-        <p data-i18n="res2-ov-ambientes">Soluções sob medida para todos os ambientes da sua casa: sala de estar, quarto, cozinha, varanda e home office, com controle de luz e privacidade personalizados para cada espaço.</p>
+        <p data-i18n="res2-ov-ambientes">Cortinas e persianas sob medida para todos os ambientes: cortina para sala de estar, persiana para quarto com blackout total, persiana rolo para varanda e tela solar para home office — tudo com medição técnica e instalação profissional em São Paulo, sem obras ou quebra-quebra.</p>
         <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20ambiente%20residencial" class="pill-btn outline-light" target="_blank" rel="noopener" data-i18n="res2-ov-cta" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Solicitar orçamento</a>
       </div>
     </section>
@@ -486,7 +502,7 @@
           <img src="assets/escritorio/projetos corporativos/Fator de abertura das tela solar screen.webp" alt="Fator de abertura tela solar screen" loading="lazy" />
           <div class="prod-card-body">
             <h3 data-i18n-html="res2-prod2-title-html">Persiana Rolô<br>Tela Solar Screen</h3>
-            <p data-i18n="res2-prod2-desc">Reduz o calor e mantém a vista externa.</p>
+            <p data-i18n="res2-prod2-desc">Persiana rolo tela solar para sala e varanda. Reduz calor em até 80%, mantém a vista e controla a luminosidade.</p>
           </div>
         </a>
         <a href="portfolio.html#rolo-blackout" class="prod-card">
@@ -495,7 +511,7 @@
           <img src="assets/residencial/blackout_3.webp" alt="Persiana Rolô Blackout" loading="lazy" />
           <div class="prod-card-body">
             <h3 data-i18n-html="res2-prod3-title-html">Persiana Rolô<br>Blackout</h3>
-            <p data-i18n="res2-prod3-desc">Bloqueia 100% da luminosidade</p>
+            <p data-i18n="res2-prod3-desc">Persiana rolo blackout sob medida para quarto, sala e home office. Bloqueia 100% da luminosidade com instalação inclusa.</p>
           </div>
         </a>
         <a href="portfolio.html#cortinas" class="prod-card">
@@ -506,7 +522,7 @@
           <img src="assets/residencial/cortina_6.webp" alt="Cortinas Sob Medida" loading="lazy" />
           <div class="prod-card-body">
             <h3 data-i18n-html="res2-prod4-title-html">Cortinas<br>Sob Medida</h3>
-            <p data-i18n="res2-prod4-desc">Elegância e aconchego para qualquer ambiente.</p>
+            <p data-i18n="res2-prod4-desc">Cortinas sob medida para sala, quarto e varanda. Tecidos blackout, linho e voil com instalação profissional em SP.</p>
           </div>
         </a>
         <a href="portfolio.html#double-vision" class="prod-card">
@@ -545,6 +561,53 @@
           </div>
         </a>
       </div>
+
+      <!-- NOVA SEÇÃO: Por Ambiente — melhora Ad Relevance para keywords de ambiente -->
+      <div style="width:100%;margin-top:3rem;">
+        <h3 style="font-size:1rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;text-align:center;">
+          Soluções por Ambiente
+        </h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;max-width:900px;margin:0 auto;">
+
+          <div style="background:var(--warm);border:1px solid var(--border);border-radius:12px;padding:1.25rem;">
+            <strong style="display:block;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">
+              Sala de Estar
+            </strong>
+            <p style="font-size:0.88rem;line-height:1.7;color:var(--text);margin:0;">
+              Persiana rolo tela solar ou Double Vision para controle de luz sem perder a vista. Cortinas de linho e tecido sob medida para ambientes integrados.
+            </p>
+          </div>
+
+          <div style="background:var(--warm);border:1px solid var(--border);border-radius:12px;padding:1.25rem;">
+            <strong style="display:block;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">
+              Quarto
+            </strong>
+            <p style="font-size:0.88rem;line-height:1.7;color:var(--text);margin:0;">
+              Persiana rolo blackout 100% ou cortina blackout sob medida para quarto. Escurecimento total, instalação sem obra e sem perfurar o teto.
+            </p>
+          </div>
+
+          <div style="background:var(--warm);border:1px solid var(--border);border-radius:12px;padding:1.25rem;">
+            <strong style="display:block;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">
+              Varanda e Sacada
+            </strong>
+            <p style="font-size:0.88rem;line-height:1.7;color:var(--text);margin:0;">
+              Persiana rolo para varanda de vidro, sacada e área externa. Proteção contra calor, chuva lateral e privacidade sem fechar o espaço.
+            </p>
+          </div>
+
+          <div style="background:var(--warm);border:1px solid var(--border);border-radius:12px;padding:1.25rem;">
+            <strong style="display:block;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">
+              Home Office
+            </strong>
+            <p style="font-size:0.88rem;line-height:1.7;color:var(--text);margin:0;">
+              Tela solar screen para eliminar reflexo na tela sem escurecer o ambiente. Persiana romana ou Double Vision para quem trabalha em casa.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
       <div class="prod-cta">
         <a href="portfolio.html" class="pill-btn outline" data-i18n="res2-prod-see-all">Ver todos os produtos</a>
         <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20ambiente%20residencial" class="pill-btn solid" target="_blank" rel="noopener" data-i18n="res2-prod-cta" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Solicitar orçamento</a>
@@ -757,6 +820,14 @@
             <button class="faq-q"><span data-i18n="res-faq-q5">Qual é a garantia dos produtos?</span><span class="faq-icon"></span></button>
             <div class="faq-ans"><p data-i18n="res-faq-a5">Oferecemos 2 anos de garantia real, com suporte ativo, visita técnica e reposição de peças sem custo adicional quando necessário.</p></div>
           </div>
+          <div class="faq-item">
+            <button class="faq-q"><span>Qual é a melhor persiana ou cortina para quarto?</span><span class="faq-icon"></span></button>
+            <div class="faq-ans"><p>Para quartos, a persiana rolo blackout bloqueia 100% da luz e garante sono sem interferência externa. Cortinas de tecido blackout sob medida são outra opção, com aparência mais clássica. Ambas são instaladas sem obras, sem furar teto ou parede.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span>Qual persiana ou cortina combina melhor com sala de estar?</span><span class="faq-icon"></span></button>
+            <div class="faq-ans"><p>Para sala, as opções mais populares são a persiana rolo tela solar (controla calor e mantém a vista), a Double Vision (combina privacidade com iluminação natural) e as cortinas de linho sob medida (elegância e leveza). Fazemos visita técnica para indicar a melhor opção para o seu ambiente específico.</p></div>
+          </div>
         </div>
       </div>
     </section>
@@ -863,6 +934,22 @@
         if (!wasOpen) item.classList.add('open');
       });
     });
+  })();
+  </script>
+
+  <script>
+  // Pausa animações de galeria quando fora do viewport em mobile (reduz TBT/CPU)
+  (function () {
+    if (window.innerWidth > 768) return;
+    if (!('IntersectionObserver' in window)) return;
+    var tracks = document.querySelectorAll('.gal-track, .value-carousel-track, .gallery-track, [class*="carousel-track"]');
+    if (!tracks.length) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        entry.target.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+      });
+    }, { threshold: 0.1 });
+    tracks.forEach(function (el) { observer.observe(el); });
   })();
   </script>
 

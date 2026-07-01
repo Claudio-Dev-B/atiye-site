@@ -191,6 +191,18 @@
 
     @media (max-width: 768px) {
       .esp-gallery-slide { width: 280px; height: 188px; }
+
+      /* â”€â”€ Performance mobile: CLS/TBT (galeria JS-driven) â”€â”€ */
+      .esp-gallery-track,
+      .clients-track {
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+      }
+      .esp-gallery,
+      .clients-marquee,
+      [class*="gallery"],
+      [class*="marquee"] { contain: layout style; overflow: hidden; }
     }
 
     /* â”€â”€ Lightbox galeria escritório â”€â”€ */
@@ -1596,6 +1608,22 @@
         imgs[current].classList.add('active');
       }, 3500);
     });
+  </script>
+
+  <script>
+  // Pausa animações de galeria (CSS) quando fora do viewport em mobile (reduz TBT/CPU)
+  (function () {
+    if (window.innerWidth > 768) return;
+    if (!('IntersectionObserver' in window)) return;
+    var tracks = document.querySelectorAll('.gal-track, .value-carousel-track, .gallery-track, [class*="carousel-track"]');
+    if (!tracks.length) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        entry.target.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+      });
+    }, { threshold: 0.1 });
+    tracks.forEach(function (el) { observer.observe(el); });
+  })();
   </script>
 </body>
 </html>

@@ -838,6 +838,16 @@
       /* Desativa hover zoom nas fotos no touch */
       .split-visual:hover img { transform: none; }
       .photo-item:hover img   { transform: none; }
+
+      /* â”€â”€ Performance mobile: CLS/TBT (galeria JS-driven) â”€â”€ */
+      .gallery-track {
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+      }
+      .gallery-offscreen { animation-play-state: paused !important; }
+      .gallery-strip,
+      [class*="gallery"] { contain: layout style; overflow: hidden; }
     }
 
     @media (max-width: 480px) {
@@ -1005,10 +1015,10 @@
     <!-- â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <section class="cat-hero" id="hero">
       <div class="cat-hero-grid" aria-hidden="true">
-        <img src="assets/catalogo/Rolô Tela Solar Screen.webp" alt="" class="cat-hero-grid-img" loading="eager" />
-        <img src="assets/catalogo/Persiana Double Vision 1.webp" alt="" class="cat-hero-grid-img" loading="eager" />
-        <img src="assets/catalogo/Persiana-Horizontal-de-Madeira.webp" alt="" class="cat-hero-grid-img" loading="eager" />
-        <img src="assets/catalogo/cortina 2.webp" alt="" class="cat-hero-grid-img" loading="eager" />
+        <img src="assets/catalogo/Rolô Tela Solar Screen.webp" alt="" class="cat-hero-grid-img" loading="eager" fetchpriority="high" width="637" height="850" />
+        <img src="assets/catalogo/Persiana Double Vision 1.webp" alt="" class="cat-hero-grid-img" loading="eager" width="1200" height="1600" />
+        <img src="assets/catalogo/Persiana-Horizontal-de-Madeira.webp" alt="" class="cat-hero-grid-img" loading="eager" width="1200" height="1600" />
+        <img src="assets/catalogo/cortina 2.webp" alt="" class="cat-hero-grid-img" loading="eager" width="1200" height="1600" />
       </div>
       <div class="cat-hero-overlay"></div>
       <div class="cat-hero-content">
@@ -1948,6 +1958,22 @@
       }
     });
   }());
+  </script>
+
+  <script>
+  // Pausa animações de galeria (CSS) quando fora do viewport em mobile (reduz TBT/CPU)
+  (function () {
+    if (window.innerWidth > 768) return;
+    if (!('IntersectionObserver' in window)) return;
+    var tracks = document.querySelectorAll('.gal-track, .value-carousel-track, .gallery-track, [class*="carousel-track"]');
+    if (!tracks.length) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        entry.target.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+      });
+    }, { threshold: 0.1 });
+    tracks.forEach(function (el) { observer.observe(el); });
+  })();
   </script>
 </body>
 </html>

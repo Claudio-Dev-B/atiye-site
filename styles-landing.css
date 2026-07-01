@@ -860,3 +860,9 @@
 .landing-hero .hero-visual,
 .landing-hero .hero-visual img { border-radius: 0; }
 .landing-hero .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
+
+/* WhatsApp: verde da marca no botão de header (vence estados do header landing) */
+.landing-page .header .header-cta[href*="wa.me"],
+.landing-page .header.scrolled .header-cta[href*="wa.me"]{background:#25D366;color:#fff;border-color:#25D366}
+.landing-page .header .header-cta[href*="wa.me"]:hover,
+.landing-page .header.scrolled .header-cta[href*="wa.me"]:hover{background:#20BA5A;color:#fff;border-color:#20BA5A}
