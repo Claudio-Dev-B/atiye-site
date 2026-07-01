@@ -160,6 +160,10 @@
 
     /* â”€â”€ PRODUTOS â”€â”€ */
     .produtos { background: var(--surface); padding: 7rem 5vw; }
+    /* Grid "Soluções por Ambiente" — 4 cards na mesma linha no desktop */
+    .amb-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; max-width: 1040px; margin: 0 auto; }
+    @media (max-width: 900px) { .amb-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .amb-grid { grid-template-columns: 1fr; } }
     .prod-header { text-align: center; margin-bottom: 3.5rem; }
     .prod-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
@@ -226,21 +230,30 @@
     @media (max-width: 640px) {
       .gal-track img { width: 220px; height: 165px; }
     }
-    /* â”€â”€ Performance mobile: CLS/TBT (galeria marquee) â”€â”€ */
+    /* â”€â”€ Mobile: galeria vira álbum deslizável (swipe), sem animação contínua â”€â”€
+       Desliga o marquee automático (elimina trabalho de composição constante = melhor
+       desempenho) e deixa o usuário arrastar para ver todas as imagens. */
     @media (max-width: 768px) {
+      .gal-marquee {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
+        scrollbar-width: none;
+        contain: layout style;
+      }
+      .gal-marquee::-webkit-scrollbar { display: none; }
       .gal-track,
       .gal-track.to-left,
       .gal-track.to-right {
-        will-change: transform;
-        transform: translateZ(0);
-        backface-visibility: hidden;
+        animation: none !important;
+        transform: none !important;
+        will-change: auto;
       }
-      .gal-track.to-left  { animation-duration: 120s !important; }
-      .gal-track.to-right { animation-duration: 120s !important; }
-      .gallery-offscreen { animation-play-state: paused !important; }
-      .gal-marquee, .galeria { contain: layout style; overflow: hidden; }
-      @keyframes gal-left  { from { transform: translate3d(0, 0, 0); }      to { transform: translate3d(-50%, 0, 0); } }
-      @keyframes gal-right { from { transform: translate3d(-50%, 0, 0); }   to { transform: translate3d(0, 0, 0); } }
+      /* Remove as duplicatas que existiam só para o loop infinito do marquee */
+      .gal-track img[aria-hidden="true"] { display: none; }
+      .gal-track img { scroll-snap-align: center; }
+      .galeria { contain: layout style; }
     }
 
     /* â”€â”€ RESULTADOS â”€â”€ */
@@ -567,7 +580,7 @@
         <h3 style="font-size:1rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;text-align:center;">
           Soluções por Ambiente
         </h3>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;max-width:900px;margin:0 auto;">
+        <div class="amb-grid">
 
           <div style="background:var(--warm);border:1px solid var(--border);border-radius:12px;padding:1.25rem;">
             <strong style="display:block;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">
@@ -583,7 +596,7 @@
               Quarto
             </strong>
             <p style="font-size:0.88rem;line-height:1.7;color:var(--text);margin:0;">
-              Persiana rolo blackout 100% ou cortina blackout sob medida para quarto. Escurecimento total, instalação sem obra e sem perfurar o teto.
+              Persiana rolo blackout 100% ou cortina blackout sob medida para quarto. Escurecimento total, com instalação profissional e sem reforma.
             </p>
           </div>
 
@@ -802,7 +815,7 @@
         <div class="faq-list">
           <div class="faq-item">
             <button class="faq-q"><span data-i18n="res-faq-q1">A instalação exige obras?</span><span class="faq-icon"></span></button>
-            <div class="faq-ans"><p data-i18n="res-faq-a1">Não. Toda a instalação da Atiye é feita sem quebrar paredes, tetos ou esquadrias. Utilizamos sistemas de fixação precisos que não causam danos ao imóvel.</p></div>
+            <div class="faq-ans"><p data-i18n="res-faq-a1">Não é preciso reforma nem quebra-quebra. A instalação é rápida e limpa, feita por nossa equipe técnica com sistemas de fixação adequados para cada tipo de parede, teto ou esquadria.</p></div>
           </div>
           <div class="faq-item">
             <button class="faq-q"><span data-i18n="res-faq-q2">Posso solicitar orçamento por ambiente?</span><span class="faq-icon"></span></button>
@@ -822,7 +835,7 @@
           </div>
           <div class="faq-item">
             <button class="faq-q"><span>Qual é a melhor persiana ou cortina para quarto?</span><span class="faq-icon"></span></button>
-            <div class="faq-ans"><p>Para quartos, a persiana rolo blackout bloqueia 100% da luz e garante sono sem interferência externa. Cortinas de tecido blackout sob medida são outra opção, com aparência mais clássica. Ambas são instaladas sem obras, sem furar teto ou parede.</p></div>
+            <div class="faq-ans"><p>Para quartos, a persiana rolo blackout bloqueia 100% da luz e garante sono sem interferência externa. Cortinas de tecido blackout sob medida são outra opção, com aparência mais clássica. Ambas têm instalação profissional, rápida e sem reforma.</p></div>
           </div>
           <div class="faq-item">
             <button class="faq-q"><span>Qual persiana ou cortina combina melhor com sala de estar?</span><span class="faq-icon"></span></button>
