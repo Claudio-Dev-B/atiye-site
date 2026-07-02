@@ -50,6 +50,8 @@ window._atiyeEN = {
       'prod-subtitle':          'From decoration to technical performance: solutions that transform any space.',
       'prod-screen-title':      'Solar Screen Roller',
       'prod-screen-desc':       'Natural light with intelligent control and minimalist aesthetics.',
+      'prod-screen-discount':   '18% off',
+      'prod-blackout-discount': '10% off',
       'prod-blackout-title':    'Blackout Roller',
       'prod-blackout-desc':     'Total privacy and absolute comfort with a sophisticated finish.',
       'prod-double-title':      'Double Vision',
@@ -100,7 +102,7 @@ window._atiyeEN = {
       'proc-3-title': 'Installation',
       'proc-3-text':  'Precise execution, without disrupting your routine, aligned with the construction schedule.',
       'proc-4-title': 'Warranty',
-      'proc-4-text':  'Active support for 2 years. A warranty that works in practice, not just on paper.',
+      'proc-4-text':  'Active support for 3 years. A warranty that works in practice, not just on paper.',
 
       'feat-title':      'Every space has specific demands',
       'feat-res-label':  'Residential',
@@ -127,7 +129,7 @@ window._atiyeEN = {
       'diff-3-title': 'Active support',
       'diff-3-text':  'after installation',
       'diff-4-title': 'Real warranty',
-      'diff-4-text':  '2 years applied in practice',
+      'diff-4-text':  '3 years applied in practice',
 
       'sp-q1': '"After installation, the office changed completely. No screen glare, no heat. The team noticed the difference that same day."',
       'sp-a1': 'Operations Director, Technology Company',
@@ -159,11 +161,13 @@ window._atiyeEN = {
       'faq-q3': 'Does solar screen fabric really reduce heat?',
       'faq-a3': 'Yes. Depending on the material and opening level, heat gain reduction can reach 80%. The fabric filters solar radiation before it heats the glass, unlike solutions that act afterward.',
       'faq-q4': 'How does the warranty work?',
-      'faq-a4': "We offer 2 years of real warranty, with active support, technical visits when needed, and free part replacement. It's not just a contract promise.",
+      'faq-a4': "We offer 3 years of real warranty, with active support, technical visits when needed, and free part replacement. It's not just a contract promise.",
       'faq-q5': 'Does Atiye serve projects outside São Paulo?',
       'faq-a5': 'We serve São Paulo and Greater SP. For large-scale corporate projects in other regions, contact our team via WhatsApp.',
       'faq-q6': 'Do you work with architects and construction firms?',
       'faq-a6': 'Yes. We have a dedicated service line for architects, designers, and construction companies with technical specifications, project-aligned execution, and volume discounts.',
+      'faq-q7': 'Do you match another company\'s quote?',
+      'faq-a7': 'Yes, we match any proven quote. Just present the quote on company letterhead, with the competitor\'s CNPJ (business registration number), as long as it\'s for the same type of product and technical specification (same material, size, and finish). Send it via WhatsApp and we\'ll review it and come back with our best offer.',
 
       'cta-eyebrow':    'Ready to start',
       'cta-title-html': "If the light is wrong,<br>the space will never feel right",
@@ -263,7 +267,7 @@ window._atiyeEN = {
       'corp-proc-3-title':   'Professional Installation',
       'corp-proc-3-text':    'Specialized team, clean and organized installation, no interference with the rest of the construction schedule.',
       'corp-proc-4-title':   'Warranty & After-sales',
-      'corp-proc-4-text':    'Active technical support after delivery. Zero rework, guaranteed satisfaction for contractor and end client.',
+      'corp-proc-4-text':    '3 years of real warranty, with active technical support after delivery. Zero rework, guaranteed satisfaction for contractor and end client.',
 
       'corp-auth-label':    'Direct technical service',
       'corp-auth-title':    'For those who make project decisions',
@@ -293,6 +297,8 @@ window._atiyeEN = {
       'corp-faq-a6': 'Yes, especially in spaces with many windows or hard-to-reach areas. Motorized office blinds allow centralized or individual control via remote, app, or building automation — reducing operational effort and improving employee comfort. Installation costs are quickly offset by convenience and reduced air-conditioning energy consumption.',
       'corp-faq-q7': 'Does Atiye act as an ongoing supplier of corporate blinds?',
       'corp-faq-a7': 'Yes. Companies that need to replace or expand corporate blind installations over time can count on Atiye as a recurring supplier. We keep a record of materials and specifications from previous projects, speeding up new phases without the need for reissuing technical documents. We handle both one-off requests per room and supply contracts for multiple floors or units.',
+      'corp-faq-q8': 'Do you match another supplier\'s quote?',
+      'corp-faq-a8': 'Yes, we match any proven quote. Just present the quote on company letterhead, with the competing supplier\'s CNPJ (business registration number), as long as it\'s for the same type of product and technical specification (same material, size, and finish). Send it via WhatsApp and we\'ll review it and come back with our best offer.',
 
       'corp-cta-eyebrow':  'Request a Quote',
       'corp-cta-title':    'Send your project, specifications, or quantities.',
@@ -385,7 +391,7 @@ window._atiyeEN = {
       'res-faq-q4': 'Does solar screen reduce the brightness of the space?',
       'res-faq-a4': 'It depends on the openness level chosen. With materials of 5% openness or more, the space maintains natural brightness while eliminating heat and glare. The choice is made according to the needs of each space.',
       'res-faq-q5': "What's the product warranty?",
-      'res-faq-a5': 'We offer 2 years of real warranty, with active support, technical visits, and free part replacement when needed.',
+      'res-faq-a5': 'We offer 3 years of real warranty, with active support, technical visits, and free part replacement when needed.',
 
       'res-design-eyebrow': 'Design & Decoration',
       'res-design-title':   'Every detail matters. The blind too.',
@@ -605,7 +611,7 @@ window._atiyeEN = {
       'port-app-label':     'Ideal for:',
       'port-trust-measure': 'Custom-made',
       'port-trust-install': 'Installation included',
-      'port-trust-warranty':'2-year warranty',
+      'port-trust-warranty':'3-year warranty',
 
       'prod-screen-app1':   'Offices',
       'prod-screen-app2':   'Meeting rooms',

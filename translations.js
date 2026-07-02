@@ -59,6 +59,8 @@
       'prod-subtitle':          'Da decoração ao desempenho técnico: soluções que transformam qualquer ambiente.',
       'prod-screen-title':      'Rolô Tela Solar Screen',
       'prod-screen-desc':       'Iluminação natural com controle inteligente e estética minimalista.',
+      'prod-screen-discount':   '18% de desconto',
+      'prod-blackout-discount': '10% de desconto',
       'prod-blackout-title':    'Rolô Blackout',
       'prod-blackout-desc':     'Privacidade total e conforto absoluto com um acabamento sofisticado.',
       'prod-double-title':      'Double Vision',
@@ -114,7 +116,7 @@
       'proc-3-title':    'Instalação',
       'proc-3-text':     'Execução precisa, sem interrupção da rotina e alinhada ao cronograma da obra ou reforma.',
       'proc-4-title':    'Garantia',
-      'proc-4-text':     'Suporte ativo por 2 anos. Garantia que funciona na prática, não apenas no contrato.',
+      'proc-4-text':     'Suporte ativo por 3 anos. Garantia que funciona na prática, não apenas no contrato.',
 
       /* ── INDEX — Featured ─────────────────────────────── */
       'feat-title':       'Cada ambiente tem uma demanda específica',
@@ -144,7 +146,7 @@
       'diff-3-title':  'Suporte ativo',
       'diff-3-text':   'depois da instalação',
       'diff-4-title':  'Garantia real',
-      'diff-4-text':   '2 anos aplicados na prática',
+      'diff-4-text':   '3 anos aplicados na prática',
 
       /* ── INDEX — Social Proof ─────────────────────────── */
       'sp-q1': '"Depois da instalação, o escritório ficou completamente diferente. Sem reflexo nas telas, sem calor. A equipe percebeu a diferença no mesmo dia."',
@@ -179,11 +181,13 @@
       'faq-q3': 'A tela solar screen realmente reduz o calor?',
       'faq-a3': 'Sim. Dependendo do material e abertura utilizada, a redução do ganho térmico pode chegar a 80%. A tela filtra a radiação solar antes que ela aquecesse o vidro, diferente de soluções que agem depois.',
       'faq-q4': 'Como funciona a garantia?',
-      'faq-a4': 'Oferecemos 2 anos de garantia real, com suporte ativo, visita técnica quando necessário e reposição de peças sem custo. Não é só uma promessa no contrato.',
+      'faq-a4': 'Oferecemos 3 anos de garantia real, com suporte ativo, visita técnica quando necessário e reposição de peças sem custo. Não é só uma promessa no contrato.',
       'faq-q5': 'A Atiye atende projetos fora de São Paulo?',
       'faq-a5': 'Atendemos São Paulo e São Sebastião. Para projetos corporativos de maior escala em outras regiões, consulte nossa equipe pelo WhatsApp.',
       'faq-q6': 'Vocês trabalham com arquitetos e construtoras?',
       'faq-a6': 'Sim. Temos uma linha de atendimento dedicada para arquitetos, designers e construtoras com especificação técnica, execução alinhada ao projeto e condições diferenciadas por volume.',
+      'faq-q7': 'Vocês cobrem o orçamento de outra empresa?',
+      'faq-a7': 'Sim, cobrimos qualquer orçamento comprovado. Basta apresentar o orçamento em papel timbrado, com CNPJ da empresa concorrente, desde que seja para o mesmo tipo de produto e especificação técnica (mesmo material, medida e acabamento). Envie pelo WhatsApp que fazemos a análise e retornamos com a nossa melhor condição.',
 
       /* ── INDEX — CTA ──────────────────────────────────── */
       'cta-eyebrow':    'Pronto para começar',
@@ -286,7 +290,7 @@
       'corp-proc-3-title':   'Instalação Profissional',
       'corp-proc-3-text':    'Equipe especializada, instalação limpa e organizada, sem interferência no cronograma das demais etapas.',
       'corp-proc-4-title':   'Garantia e Pós-venda',
-      'corp-proc-4-text':    'Suporte técnico ativo após a entrega. Retrabalho zero, satisfação garantida para construtora e cliente final.',
+      'corp-proc-4-text':    '3 anos de garantia real, com suporte técnico ativo após a entrega. Retrabalho zero, satisfação garantida para construtora e cliente final.',
 
       'corp-auth-label':    'Atendimento técnico direto',
       'corp-auth-title':    'Para quem decide o projeto',
@@ -316,6 +320,8 @@
       'corp-faq-a6': 'Sim, especialmente em ambientes com muitas janelas ou de difícil acesso. A persiana motorizada para escritório permite controle centralizado ou individual por controle remoto, aplicativo ou integração com automação predial — reduzindo o esforço operacional e melhorando o conforto dos colaboradores. O custo de instalação é compensado rapidamente pela praticidade e pela redução de consumo energético com ar-condicionado.',
       'corp-faq-q7': 'A Atiye atua como fornecedor contínuo de persianas corporativas?',
       'corp-faq-a7': 'Sim. Empresas que precisam repor ou ampliar instalações de persianas corporativas ao longo do tempo podem contar com a Atiye como fornecedor recorrente. Mantemos histórico de materiais e especificações de projetos anteriores, o que agiliza novas etapas sem necessidade de reemissão de projetos técnicos. Atendemos tanto a solicitação pontual por ambiente quanto contratos de fornecimento para múltiplos andares ou unidades.',
+      'corp-faq-q8': 'Vocês cobrem o orçamento de outro fornecedor?',
+      'corp-faq-a8': 'Sim, cobrimos qualquer orçamento comprovado. Basta apresentar o orçamento em papel timbrado, com CNPJ do fornecedor concorrente, desde que seja para o mesmo tipo de produto e especificação técnica (mesmo material, medida e acabamento). Envie pelo WhatsApp que analisamos e retornamos com a nossa melhor condição.',
 
       'corp-cta-eyebrow':    'Solicite um Orçamento',
       'corp-cta-title':      'Envie seu projeto, memorial descritivo ou quantitativo.',
@@ -410,7 +416,7 @@
       'res-faq-q4': 'A tela solar reduz a claridade do ambiente?',
       'res-faq-a4': 'Depende do nível de abertura escolhido. Com materiais de 5% de abertura ou mais, o ambiente mantém claridade natural enquanto elimina calor e reflexo. A escolha é feita de acordo com as necessidades de cada espaço.',
       'res-faq-q5': 'Qual é a garantia dos produtos?',
-      'res-faq-a5': 'Oferecemos 2 anos de garantia real, com suporte ativo, visita técnica e reposição de peças sem custo adicional quando necessário.',
+      'res-faq-a5': 'Oferecemos 3 anos de garantia real, com suporte ativo, visita técnica e reposição de peças sem custo adicional quando necessário.',
 
       'res-design-eyebrow': 'Design & Decoração',
       'res-design-title':   'Cada detalhe conta. A persiana também.',
@@ -632,7 +638,7 @@
       'port-app-label':     'Ideal para:',
       'port-trust-measure': 'Sob medida',
       'port-trust-install': 'Instalação inclusa',
-      'port-trust-warranty':'Garantia 2 anos',
+      'port-trust-warranty':'Garantia 3 anos',
 
       'prod-screen-app1':   'Escritórios',
       'prod-screen-app2':   'Salas de reunião',
