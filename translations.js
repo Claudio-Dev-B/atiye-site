@@ -686,7 +686,7 @@
       'bk-hero-title':   'Persiana Rolô Blackout Sob Medida em SP',
       'bk-hero-sub1':    'Controle total da luz. Instalação inclusa. 4 anos de garantia.',
       'bk-hero-sub2':    'A Persiana Rolô Blackout é a solução definitiva para quem quer controle total de luz, privacidade e conforto térmico — com projeto sob medida, instalação profissional e zero bagunça na sua casa.',
-      'bk-hero-cta':     'Agendar Visita Gratuita',
+      'bk-hero-cta':     'Fale com um Especialista',
 
       'bk-benef-eyebrow': 'Por que a Atiye',
       'bk-benef-title':   'Por que a Persiana Blackout da Atiye?',
