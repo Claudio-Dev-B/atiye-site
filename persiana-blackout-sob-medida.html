@@ -95,6 +95,8 @@
     @media (max-width: 768px) {
       .bk-card-scroller { -webkit-mask-image: none; mask-image: none; overflow: visible; }
       .bk-card-scroller-track { animation: none !important; flex-direction: column; width: 100%; }
+      /* sem rolagem infinita no mobile: esconde o conjunto duplicado usado só para o loop */
+      .bk-card-scroller-track > [aria-hidden="true"] { display: none; }
     }
 
     .bk-mq-card { flex: 0 0 300px; background: var(--color-white,#fff); border: 1px solid var(--color-border,#e6e2db);
