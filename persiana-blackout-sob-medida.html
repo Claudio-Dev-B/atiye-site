@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-i18n-title="bk-page-title" data-i18n-meta="bk-page-meta">
 <head>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -218,14 +218,19 @@
       </a>
       <nav class="header-nav" id="nav">
         <ul class="nav-list">
-          <li><a href="corporativo.html">Corporativo</a></li>
-          <li><a href="residencial.html">Residencial</a></li>
-          <li><a href="portfolio.html">Portfólio</a></li>
-          <li><a href="lavagem.html">Higienização</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a></li>
+          <li><a href="residencial.html" data-i18n="nav-residential">Residencial</a></li>
+          <li><a href="portfolio.html" data-i18n="nav-portfolio">Portfólio</a></li>
+          <li><a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a></li>
+          <li><a href="#contato" data-i18n="nav-contact">Contato</a></li>
         </ul>
       </nav>
       <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20orçamento%20de%20Persiana%20Blackout" class="cta-button header-cta" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">WhatsApp</a>
+      <button class="lang-toggle" id="lang-toggle" aria-label="Alternar idioma">
+        <span class="lang-pt lang-active">PT</span>
+        <span class="lang-sep">|</span>
+        <span class="lang-en">EN</span>
+      </button>
       <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -233,11 +238,11 @@
   </header>
 
   <nav class="mobile-nav" id="mobileNav">
-    <a href="corporativo.html">Corporativo</a>
-    <a href="residencial.html">Residencial</a>
-    <a href="portfolio.html">Portfólio</a>
-    <a href="lavagem.html">Higienização</a>
-    <a href="#contato">Contato</a>
+    <a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a>
+    <a href="residencial.html" data-i18n="nav-residential">Residencial</a>
+    <a href="portfolio.html" data-i18n="nav-portfolio">Portfólio</a>
+    <a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a>
+    <a href="#contato" data-i18n="nav-contact">Contato</a>
   </nav>
 
   <main>
@@ -256,11 +261,11 @@
       </div>
 
       <div class="hero-content">
-        <span class="hero-eyebrow">Persiana Rolô Blackout</span>
-        <h1 class="hero-title">Persiana Rolô Blackout Sob Medida em SP</h1>
-        <p class="hero-subtitle">Controle total da luz. Instalação inclusa. 4 anos de garantia.</p>
-        <p class="hero-subtitle">A Persiana Rolô Blackout é a solução definitiva para quem quer controle total de luz, privacidade e conforto térmico — com projeto sob medida, instalação profissional e zero bagunça na sua casa.</p>
-        <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20agendar%20uma%20visita%20gratuita%20para%20Persiana%20Blackout" class="cta-button hero-cta" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Agendar Visita Gratuita</a>
+        <span class="hero-eyebrow" data-i18n="bk-hero-eyebrow">Persiana Rolô Blackout</span>
+        <h1 class="hero-title" data-i18n="bk-hero-title">Persiana Rolô Blackout Sob Medida em SP</h1>
+        <p class="hero-subtitle" data-i18n="bk-hero-sub1">Controle total da luz. Instalação inclusa. 4 anos de garantia.</p>
+        <p class="hero-subtitle" data-i18n="bk-hero-sub2">A Persiana Rolô Blackout é a solução definitiva para quem quer controle total de luz, privacidade e conforto térmico — com projeto sob medida, instalação profissional e zero bagunça na sua casa.</p>
+        <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20agendar%20uma%20visita%20gratuita%20para%20Persiana%20Blackout" class="cta-button hero-cta" target="_blank" rel="noopener" data-i18n="bk-hero-cta" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Agendar Visita Gratuita</a>
       </div>
 
       <div class="hero-scroll">
@@ -273,8 +278,8 @@
     <section class="section" id="beneficios" style="background: var(--color-white);">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Por que a Atiye</span>
-          <h2 class="section-title">Por que a Persiana Blackout da Atiye?</h2>
+          <span class="section-eyebrow" data-i18n="bk-benef-eyebrow">Por que a Atiye</span>
+          <h2 class="section-title" data-i18n="bk-benef-title">Por que a Persiana Blackout da Atiye?</h2>
         </div>
 
         <div class="bk-video-card reveal">
@@ -287,60 +292,60 @@
           <div class="bk-card-scroller-track">
             <div class="bk-mq-card">
               <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.22 4.22l2.1 2.1M17.68 17.68l2.1 2.1M2 12h3M19 12h3M4.22 19.78l2.1-2.1M17.68 6.32l2.1-2.1"/></svg></div>
-              <h3>Bloqueio da luz 100%</h3>
-              <p>Tecido de alta performance que bloqueia completamente a entrada de luz externa. Ideal para quarto, home office e sala de estar.</p>
+              <h3 data-i18n="bk-benef1-title">Bloqueio da luz 100%</h3>
+              <p data-i18n="bk-benef1-desc">Tecido de alta performance que bloqueia completamente a entrada de luz externa. Ideal para quarto, home office e sala de estar.</p>
             </div>
             <div class="bk-mq-card">
               <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg></div>
-              <h3>Privacidade Total</h3>
-              <p>Quando fechada, impede qualquer visão externa — seu ambiente fica completamente protegido e reservado.</p>
+              <h3 data-i18n="bk-benef2-title">Privacidade Total</h3>
+              <p data-i18n="bk-benef2-desc">Quando fechada, impede qualquer visão externa — seu ambiente fica completamente protegido e reservado.</p>
             </div>
             <div class="bk-mq-card">
               <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2s6 6 6 12a6 6 0 01-12 0c0-6 6-12 6-12z"/></svg></div>
-              <h3>Conforto Térmico</h3>
-              <p>Além de bloquear a luz, a Persiana Blackout reduz significativamente a troca de calor entre o ambiente interno e externo.</p>
+              <h3 data-i18n="bk-benef3-title">Conforto Térmico</h3>
+              <p data-i18n="bk-benef3-desc">Além de bloquear a luz, a Persiana Blackout reduz significativamente a troca de calor entre o ambiente interno e externo.</p>
             </div>
             <div class="bk-mq-card">
               <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-6 9 6v11a1 1 0 01-1 1h-5v-7H9v7H4a1 1 0 01-1-1V9z"/></svg></div>
-              <h3>Design Sofisticado</h3>
-              <p>Visual contemporâneo e clean que se integra com elegância a qualquer decoração — do minimalista ao clássico.</p>
+              <h3 data-i18n="bk-benef4-title">Design Sofisticado</h3>
+              <p data-i18n="bk-benef4-desc">Visual contemporâneo e clean que se integra com elegância a qualquer decoração — do minimalista ao clássico.</p>
             </div>
             <div class="bk-mq-card">
               <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-              <h3>Durabilidade Comprovada</h3>
-              <p>Materiais selecionados e acabamento profissional com 4 anos de garantia real — não cobramos visita técnica durante o período.</p>
+              <h3 data-i18n="bk-benef5-title">Durabilidade Comprovada</h3>
+              <p data-i18n="bk-benef5-desc">Materiais selecionados e acabamento profissional com 4 anos de garantia real — não cobramos visita técnica durante o período.</p>
             </div>
             <!-- duplicado para loop contínuo -->
             <div class="bk-mq-card" aria-hidden="true">
               <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.22 4.22l2.1 2.1M17.68 17.68l2.1 2.1M2 12h3M19 12h3M4.22 19.78l2.1-2.1M17.68 6.32l2.1-2.1"/></svg></div>
-              <h3>Bloqueio da luz 100%</h3>
-              <p>Tecido de alta performance que bloqueia completamente a entrada de luz externa. Ideal para quarto, home office e sala de estar.</p>
+              <h3 data-i18n="bk-benef1-title">Bloqueio da luz 100%</h3>
+              <p data-i18n="bk-benef1-desc">Tecido de alta performance que bloqueia completamente a entrada de luz externa. Ideal para quarto, home office e sala de estar.</p>
             </div>
             <div class="bk-mq-card" aria-hidden="true">
               <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/><path d="M3 3l18 18"/></svg></div>
-              <h3>Privacidade Total</h3>
-              <p>Quando fechada, impede qualquer visão externa — seu ambiente fica completamente protegido e reservado.</p>
+              <h3 data-i18n="bk-benef2-title">Privacidade Total</h3>
+              <p data-i18n="bk-benef2-desc">Quando fechada, impede qualquer visão externa — seu ambiente fica completamente protegido e reservado.</p>
             </div>
             <div class="bk-mq-card" aria-hidden="true">
               <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2s6 6 6 12a6 6 0 01-12 0c0-6 6-12 6-12z"/></svg></div>
-              <h3>Conforto Térmico</h3>
-              <p>Além de bloquear a luz, a Persiana Blackout reduz significativamente a troca de calor entre o ambiente interno e externo.</p>
+              <h3 data-i18n="bk-benef3-title">Conforto Térmico</h3>
+              <p data-i18n="bk-benef3-desc">Além de bloquear a luz, a Persiana Blackout reduz significativamente a troca de calor entre o ambiente interno e externo.</p>
             </div>
             <div class="bk-mq-card" aria-hidden="true">
               <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-6 9 6v11a1 1 0 01-1 1h-5v-7H9v7H4a1 1 0 01-1-1V9z"/></svg></div>
-              <h3>Design Sofisticado</h3>
-              <p>Visual contemporâneo e clean que se integra com elegância a qualquer decoração — do minimalista ao clássico.</p>
+              <h3 data-i18n="bk-benef4-title">Design Sofisticado</h3>
+              <p data-i18n="bk-benef4-desc">Visual contemporâneo e clean que se integra com elegância a qualquer decoração — do minimalista ao clássico.</p>
             </div>
             <div class="bk-mq-card" aria-hidden="true">
               <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-              <h3>Durabilidade Comprovada</h3>
-              <p>Materiais selecionados e acabamento profissional com 4 anos de garantia real — não cobramos visita técnica durante o período.</p>
+              <h3 data-i18n="bk-benef5-title">Durabilidade Comprovada</h3>
+              <p data-i18n="bk-benef5-desc">Materiais selecionados e acabamento profissional com 4 anos de garantia real — não cobramos visita técnica durante o período.</p>
             </div>
           </div>
         </div>
 
         <div class="bk-section-cta reveal">
-          <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20orçamento%20de%20Persiana%20Blackout" class="cta-button" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Falar no WhatsApp</a>
+          <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20orçamento%20de%20Persiana%20Blackout" class="cta-button" target="_blank" rel="noopener" data-i18n="form-wa-btn" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Falar no WhatsApp</a>
         </div>
       </div>
     </section>
@@ -349,8 +354,8 @@
     <section class="section" id="ambientes" style="background: var(--color-warm);">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Cada espaço, sua solução</span>
-          <h2 class="section-title">Persiana Blackout para Cada Ambiente</h2>
+          <span class="section-eyebrow" data-i18n="bk-amb-eyebrow">Cada espaço, sua solução</span>
+          <h2 class="section-title" data-i18n="bk-amb-title">Persiana Blackout para Cada Ambiente</h2>
         </div>
 
         <div class="bk-card-scroller reveal">
@@ -358,79 +363,79 @@
             <div class="bk-amb-card">
               <img src="assets/residencial/blackout_quarto.webp" alt="Persiana Rolô Blackout instalada em quarto" loading="lazy" width="900" height="600" />
               <div class="bk-amb-card-body">
-                <h3>Quarto</h3>
-                <p>Elimina completamente a claridade das primeiras horas da manhã, garante privacidade total e contribui para um sono mais profundo. Disponível em acabamento manual ou motorizado.</p>
+                <h3 data-i18n="bk-amb1-title">Quarto</h3>
+                <p data-i18n="bk-amb1-desc">Elimina completamente a claridade das primeiras horas da manhã, garante privacidade total e contribui para um sono mais profundo. Disponível em acabamento manual ou motorizado.</p>
               </div>
             </div>
             <div class="bk-amb-card">
               <img src="assets/residencial/blackout_sala.webp" alt="Persiana Rolô Blackout em sala de estar" loading="lazy" width="900" height="600" />
               <div class="bk-amb-card-body">
-                <h3>Sala de Estar</h3>
-                <p>Controle total de luz para home theater e para tornar o ambiente mais aconchegante no fim do dia, com design sofisticado.</p>
+                <h3 data-i18n="bk-amb2-title">Sala de Estar</h3>
+                <p data-i18n="bk-amb2-desc">Controle total de luz para home theater e para tornar o ambiente mais aconchegante no fim do dia, com design sofisticado.</p>
               </div>
             </div>
             <div class="bk-amb-card">
               <img src="assets/residencial/blackout_homeoffice.webp" alt="Persiana Rolô Blackout em home office" loading="lazy" width="900" height="600" />
               <div class="bk-amb-card-body">
-                <h3>Home Office</h3>
-                <p>Elimine o reflexo na tela e o desconforto visual causado pela luz direta, com regulagem precisa de entrada de luz.</p>
+                <h3 data-i18n="bk-amb3-title">Home Office</h3>
+                <p data-i18n="bk-amb3-desc">Elimine o reflexo na tela e o desconforto visual causado pela luz direta, com regulagem precisa de entrada de luz.</p>
               </div>
             </div>
             <div class="bk-amb-card">
               <img src="assets/residencial/blackout_varanda.webp" alt="Persiana Rolô Blackout em varanda" loading="lazy" width="900" height="600" />
               <div class="bk-amb-card-body">
-                <h3>Varanda e Sacada</h3>
-                <p>Bloqueia o calor do sol direto, garante privacidade em andares baixos e transforma a varanda num espaço utilizável o dia todo.</p>
+                <h3 data-i18n="bk-amb4-title">Varanda e Sacada</h3>
+                <p data-i18n="bk-amb4-desc">Bloqueia o calor do sol direto, garante privacidade em andares baixos e transforma a varanda num espaço utilizável o dia todo.</p>
               </div>
             </div>
             <div class="bk-amb-card">
               <img src="assets/residencial/Rolô-Blackout-_2_.webp" alt="Persiana Blackout em apartamento em reforma" loading="lazy" width="1200" height="800" />
               <div class="bk-amb-card-body">
-                <h3>Apartamento em Reforma</h3>
-                <p>Fazemos o levantamento completo em uma única visita técnica — um consultor mede todos os ambientes e entrega um orçamento unificado com instalação coordenada.</p>
+                <h3 data-i18n="bk-amb5-title">Apartamento em Reforma</h3>
+                <p data-i18n="bk-amb5-desc">Fazemos o levantamento completo em uma única visita técnica — um consultor mede todos os ambientes e entrega um orçamento unificado com instalação coordenada.</p>
               </div>
             </div>
             <!-- duplicado para loop contínuo -->
             <div class="bk-amb-card" aria-hidden="true">
               <img src="assets/residencial/blackout_quarto.webp" alt="" loading="lazy" width="900" height="600" />
               <div class="bk-amb-card-body">
-                <h3>Quarto</h3>
-                <p>Elimina completamente a claridade das primeiras horas da manhã, garante privacidade total e contribui para um sono mais profundo. Disponível em acabamento manual ou motorizado.</p>
+                <h3 data-i18n="bk-amb1-title">Quarto</h3>
+                <p data-i18n="bk-amb1-desc">Elimina completamente a claridade das primeiras horas da manhã, garante privacidade total e contribui para um sono mais profundo. Disponível em acabamento manual ou motorizado.</p>
               </div>
             </div>
             <div class="bk-amb-card" aria-hidden="true">
               <img src="assets/residencial/blackout_sala.webp" alt="" loading="lazy" width="900" height="600" />
               <div class="bk-amb-card-body">
-                <h3>Sala de Estar</h3>
-                <p>Controle total de luz para home theater e para tornar o ambiente mais aconchegante no fim do dia, com design sofisticado.</p>
+                <h3 data-i18n="bk-amb2-title">Sala de Estar</h3>
+                <p data-i18n="bk-amb2-desc">Controle total de luz para home theater e para tornar o ambiente mais aconchegante no fim do dia, com design sofisticado.</p>
               </div>
             </div>
             <div class="bk-amb-card" aria-hidden="true">
               <img src="assets/residencial/blackout_homeoffice.webp" alt="" loading="lazy" width="900" height="600" />
               <div class="bk-amb-card-body">
-                <h3>Home Office</h3>
-                <p>Elimine o reflexo na tela e o desconforto visual causado pela luz direta, com regulagem precisa de entrada de luz.</p>
+                <h3 data-i18n="bk-amb3-title">Home Office</h3>
+                <p data-i18n="bk-amb3-desc">Elimine o reflexo na tela e o desconforto visual causado pela luz direta, com regulagem precisa de entrada de luz.</p>
               </div>
             </div>
             <div class="bk-amb-card" aria-hidden="true">
               <img src="assets/residencial/blackout_varanda.webp" alt="" loading="lazy" width="900" height="600" />
               <div class="bk-amb-card-body">
-                <h3>Varanda e Sacada</h3>
-                <p>Bloqueia o calor do sol direto, garante privacidade em andares baixos e transforma a varanda num espaço utilizável o dia todo.</p>
+                <h3 data-i18n="bk-amb4-title">Varanda e Sacada</h3>
+                <p data-i18n="bk-amb4-desc">Bloqueia o calor do sol direto, garante privacidade em andares baixos e transforma a varanda num espaço utilizável o dia todo.</p>
               </div>
             </div>
             <div class="bk-amb-card" aria-hidden="true">
               <img src="assets/residencial/Rolô-Blackout-_2_.webp" alt="" loading="lazy" width="1200" height="800" />
               <div class="bk-amb-card-body">
-                <h3>Apartamento em Reforma</h3>
-                <p>Fazemos o levantamento completo em uma única visita técnica — um consultor mede todos os ambientes e entrega um orçamento unificado com instalação coordenada.</p>
+                <h3 data-i18n="bk-amb5-title">Apartamento em Reforma</h3>
+                <p data-i18n="bk-amb5-desc">Fazemos o levantamento completo em uma única visita técnica — um consultor mede todos os ambientes e entrega um orçamento unificado com instalação coordenada.</p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="bk-section-cta reveal">
-          <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20orçamento%20de%20Persiana%20Blackout" class="cta-button" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Falar no WhatsApp</a>
+          <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20orçamento%20de%20Persiana%20Blackout" class="cta-button" target="_blank" rel="noopener" data-i18n="form-wa-btn" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Falar no WhatsApp</a>
         </div>
       </div>
     </section>
@@ -441,19 +446,19 @@
         <div class="bk-strip reveal">
           <div class="bk-strip-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2v4M16 2v4M3 9h18M5 4h14a2 2 0 012 2v13a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
-            <span>Visita sem Compromisso</span>
+            <span data-i18n="bk-strip1">Visita sem Compromisso</span>
           </div>
           <div class="bk-strip-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>
-            <span>Instalação Gratuita</span>
+            <span data-i18n="bk-strip2">Instalação Gratuita</span>
           </div>
           <div class="bk-strip-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-            <span>Projeto Pronto em 7 Dias</span>
+            <span data-i18n="bk-strip3">Projeto Pronto em 7 Dias</span>
           </div>
         </div>
         <div class="bk-section-cta reveal">
-          <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20orçamento%20de%20Persiana%20Blackout" class="cta-button" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Falar no WhatsApp</a>
+          <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20orçamento%20de%20Persiana%20Blackout" class="cta-button" target="_blank" rel="noopener" data-i18n="form-wa-btn" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Falar no WhatsApp</a>
         </div>
       </div>
     </section>
@@ -462,11 +467,11 @@
     <section class="section" id="cores" style="background: var(--color-warm);">
       <div class="container">
         <div class="section-header center reveal">
-          <h2 class="section-title">Cores e Acabamentos</h2>
-          <p class="section-subtitle">Ampla seleção de cores, texturas e acabamentos para o seu projeto. Nosso consultor leva amostras na visita e ajuda você a escolher a combinação ideal para cada ambiente.</p>
+          <h2 class="section-title" data-i18n="bk-cores-title">Cores e Acabamentos</h2>
+          <p class="section-subtitle" data-i18n="bk-cores-sub">Ampla seleção de cores, texturas e acabamentos para o seu projeto. Nosso consultor leva amostras na visita e ajuda você a escolher a combinação ideal para cada ambiente.</p>
         </div>
         <div class="bk-section-cta reveal">
-          <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20orçamento%20de%20Persiana%20Blackout" class="cta-button" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Falar no WhatsApp</a>
+          <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20orçamento%20de%20Persiana%20Blackout" class="cta-button" target="_blank" rel="noopener" data-i18n="form-wa-btn" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Falar no WhatsApp</a>
         </div>
       </div>
     </section>
@@ -475,23 +480,23 @@
     <section class="section" id="especificacoes">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Ficha técnica</span>
-          <h2 class="section-title">Especificações Técnicas</h2>
+          <span class="section-eyebrow" data-i18n="bk-specs-eyebrow">Ficha técnica</span>
+          <h2 class="section-title" data-i18n="bk-specs-title">Especificações Técnicas</h2>
         </div>
         <div class="bk-specs-wrap reveal">
           <table class="bk-specs-table">
             <tbody>
-              <tr><th scope="row">Visibilidade</th><td>Tecido com bloqueio total de luz e visão. Garante privacidade completa quando fechada.</td></tr>
-              <tr><th scope="row">Aplicação Residencial</th><td>Quartos, salas, home office, varandas e sacadas.</td></tr>
-              <tr><th scope="row">Aplicação Comercial</th><td>Consultórios, escritórios e estabelecimentos comerciais em geral.</td></tr>
-              <tr><th scope="row">Regulagem</th><td>Manual por corrente contínua ou Motorizada por controle remoto, assistente de voz ou automação residencial.</td></tr>
-              <tr><th scope="row">Controle Solar</th><td>Bloqueio total da radiação solar e luminosidade externa.</td></tr>
-              <tr><th scope="row">Composição</th><td>Opções em PVC + Fibra de Vidro, 100% Poliéster, Algodão + Poliéster e Poliéster + Linho — indicamos a composição ideal para cada ambiente na visita técnica.</td></tr>
-              <tr><th scope="row">Conservação</th><td>Limpeza com espanador, aspirador com bocal escova ou água morna com sabão neutro. Evitar produtos abrasivos, álcool e removedores.</td></tr>
-              <tr><th scope="row">Garantia</th><td>4 anos</td></tr>
-              <tr><th scope="row">Instalação</th><td>Parede ou teto — superfícies planas, vãos de portas e janelas.</td></tr>
-              <tr><th scope="row">Largura Máxima</th><td>Até 300 cm</td></tr>
-              <tr><th scope="row">Altura Máxima</th><td>Até 600 cm</td></tr>
+              <tr><th scope="row" data-i18n="bk-spec1-th">Visibilidade</th><td data-i18n="bk-spec1-td">Tecido com bloqueio total de luz e visão. Garante privacidade completa quando fechada.</td></tr>
+              <tr><th scope="row" data-i18n="bk-spec2-th">Aplicação Residencial</th><td data-i18n="bk-spec2-td">Quartos, salas, home office, varandas e sacadas.</td></tr>
+              <tr><th scope="row" data-i18n="bk-spec3-th">Aplicação Comercial</th><td data-i18n="bk-spec3-td">Consultórios, escritórios e estabelecimentos comerciais em geral.</td></tr>
+              <tr><th scope="row" data-i18n="bk-spec4-th">Regulagem</th><td data-i18n="bk-spec4-td">Manual por corrente contínua ou Motorizada por controle remoto, assistente de voz ou automação residencial.</td></tr>
+              <tr><th scope="row" data-i18n="bk-spec5-th">Controle Solar</th><td data-i18n="bk-spec5-td">Bloqueio total da radiação solar e luminosidade externa.</td></tr>
+              <tr><th scope="row" data-i18n="bk-spec6-th">Composição</th><td data-i18n="bk-spec6-td">Opções em PVC + Fibra de Vidro, 100% Poliéster, Algodão + Poliéster e Poliéster + Linho — indicamos a composição ideal para cada ambiente na visita técnica.</td></tr>
+              <tr><th scope="row" data-i18n="bk-spec7-th">Conservação</th><td data-i18n="bk-spec7-td">Limpeza com espanador, aspirador com bocal escova ou água morna com sabão neutro. Evitar produtos abrasivos, álcool e removedores.</td></tr>
+              <tr><th scope="row" data-i18n="bk-spec8-th">Garantia</th><td data-i18n="bk-spec8-td">4 anos</td></tr>
+              <tr><th scope="row" data-i18n="bk-spec9-th">Instalação</th><td data-i18n="bk-spec9-td">Parede ou teto — superfícies planas, vãos de portas e janelas.</td></tr>
+              <tr><th scope="row" data-i18n="bk-spec10-th">Largura Máxima</th><td data-i18n="bk-spec10-td">Até 300 cm</td></tr>
+              <tr><th scope="row" data-i18n="bk-spec11-th">Altura Máxima</th><td data-i18n="bk-spec11-td">Até 600 cm</td></tr>
             </tbody>
           </table>
         </div>
@@ -502,37 +507,37 @@
     <section class="section solution-section" id="como-funciona" style="background: var(--color-warm);">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Como funciona</span>
-          <h2 class="section-title">Nós Planejamos. Nós Medimos. Nós Instalamos. Você Aproveita.</h2>
+          <span class="section-eyebrow" data-i18n="bk-how-eyebrow">Como funciona</span>
+          <h2 class="section-title" data-i18n="bk-how-title">Nós Planejamos. Nós Medimos. Nós Instalamos. Você Aproveita.</h2>
         </div>
         <div class="bk-timeline">
           <div class="bk-timeline-line-fill" id="bkTimelineFill"></div>
           <div class="bk-t-item bk-t-right" data-bk-step>
             <div class="bk-t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
             <div class="bk-t-content">
-              <h3>Contato e Agendamento</h3>
-              <p>Preencha o formulário ou chame no WhatsApp. Um consultor entra em contato para agendar no melhor horário para você.</p>
+              <h3 data-i18n="bk-step1-title">Contato e Agendamento</h3>
+              <p data-i18n="bk-step1-desc">Preencha o formulário ou chame no WhatsApp. Um consultor entra em contato para agendar no melhor horário para você.</p>
             </div>
           </div>
           <div class="bk-t-item bk-t-left" data-bk-step>
             <div class="bk-t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c-4.4-3.6-8-6.9-8-10.5A5.5 5.5 0 0112 6a5.5 5.5 0 018 4.5c0 3.6-3.6 6.9-8 10.5z"/><circle cx="12" cy="10.5" r="2.2"/></svg></div>
             <div class="bk-t-content">
-              <h3>Visita Técnica Gratuita</h3>
-              <p>Nosso especialista vai até seu espaço, analisa o ambiente, apresenta amostras de tecido e acabamento, realiza as medições e indica a solução ideal — sem nenhum compromisso.</p>
+              <h3 data-i18n="bk-step2-title">Visita Técnica Gratuita</h3>
+              <p data-i18n="bk-step2-desc">Nosso especialista vai até seu espaço, analisa o ambiente, apresenta amostras de tecido e acabamento, realiza as medições e indica a solução ideal — sem nenhum compromisso.</p>
             </div>
           </div>
           <div class="bk-t-item bk-t-right" data-bk-step>
             <div class="bk-t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 14l2 2 4-4"/><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
             <div class="bk-t-content">
-              <h3>Orçamento e Aprovação</h3>
-              <p>Após definir o projeto, você recebe o orçamento completo e transparente. Aprovado, o pagamento é feito via cartão de crédito, débito ou PIX.</p>
+              <h3 data-i18n="bk-step3-title">Orçamento e Aprovação</h3>
+              <p data-i18n="bk-step3-desc">Após definir o projeto, você recebe o orçamento completo e transparente. Aprovado, o pagamento é feito via cartão de crédito, débito ou PIX.</p>
             </div>
           </div>
           <div class="bk-t-item bk-t-left" data-bk-step>
             <div class="bk-t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-6 9 6v11a1 1 0 01-1 1h-5v-7H9v7H4a1 1 0 01-1-1V9z"/></svg></div>
             <div class="bk-t-content">
-              <h3>Entrega e Instalação</h3>
-              <p>Sua Persiana Blackout sob medida é entregue e instalada com hora marcada. Instalação profissional, sem obra, sem sujeira, sem stress.</p>
+              <h3 data-i18n="bk-step4-title">Entrega e Instalação</h3>
+              <p data-i18n="bk-step4-desc">Sua Persiana Blackout sob medida é entregue e instalada com hora marcada. Instalação profissional, sem obra, sem sujeira, sem stress.</p>
             </div>
           </div>
         </div>
@@ -543,9 +548,9 @@
     <section class="section" id="cta-meio" style="padding-top:2.5rem;padding-bottom:2.5rem;">
       <div class="container">
         <div class="reveal" style="text-align:center;">
-          <p class="section-subtitle" style="max-width:640px;margin:0 auto 1.5rem;">Cuidamos de tudo — do primeiro contato até a instalação final. Você só precisa aproveitar o resultado.</p>
+          <p class="section-subtitle" style="max-width:640px;margin:0 auto 1.5rem;" data-i18n="bk-cta-mid-text">Cuidamos de tudo — do primeiro contato até a instalação final. Você só precisa aproveitar o resultado.</p>
           <div class="bk-section-cta" style="margin-top:0;">
-            <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20orçamento%20de%20Persiana%20Blackout" class="cta-button" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Falar no WhatsApp</a>
+            <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20orçamento%20de%20Persiana%20Blackout" class="cta-button" target="_blank" rel="noopener" data-i18n="form-wa-btn" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Falar no WhatsApp</a>
           </div>
         </div>
       </div>
@@ -555,80 +560,80 @@
     <section class="section faq-section" id="faq">
       <div class="container">
         <div class="section-header center reveal">
-          <span class="section-eyebrow">Dúvidas frequentes</span>
-          <h2 class="section-title">Perguntas Frequentes</h2>
+          <span class="section-eyebrow" data-i18n="bk-faq-eyebrow">Dúvidas frequentes</span>
+          <h2 class="section-title" data-i18n="bk-faq-title">Perguntas Frequentes</h2>
         </div>
         <div class="faq-list reveal">
           <div class="faq-item">
             <button class="faq-question">
-              <span>Como a Persiana Blackout bloqueia a luz completamente?</span>
+              <span data-i18n="bk-faq-q1">Como a Persiana Blackout bloqueia a luz completamente?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>O tecido blackout é especialmente desenvolvido para absorver e bloquear a passagem de luz, utilizando camadas densas que impedem qualquer claridade — mesmo em ambientes com exposição solar direta.</p>
+              <p data-i18n="bk-faq-a1">O tecido blackout é especialmente desenvolvido para absorver e bloquear a passagem de luz, utilizando camadas densas que impedem qualquer claridade — mesmo em ambientes com exposição solar direta.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              <span>A Persiana Blackout oferece isolamento térmico?</span>
+              <span data-i18n="bk-faq-q2">A Persiana Blackout oferece isolamento térmico?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Sim. Além do bloqueio de luz, o tecido cria uma barreira que reduz a troca de calor entre o ambiente interno e externo, contribuindo para um espaço mais fresco no verão e mais aquecido no inverno.</p>
+              <p data-i18n="bk-faq-a2">Sim. Além do bloqueio de luz, o tecido cria uma barreira que reduz a troca de calor entre o ambiente interno e externo, contribuindo para um espaço mais fresco no verão e mais aquecido no inverno.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              <span>Posso usar Persiana Blackout em qualquer ambiente?</span>
+              <span data-i18n="bk-faq-q3">Posso usar Persiana Blackout em qualquer ambiente?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Sim. Funciona em quartos, salas, home office, varandas e sacadas. Na visita técnica, indicamos a configuração ideal para cada espaço e orientação solar.</p>
+              <p data-i18n="bk-faq-a3">Sim. Funciona em quartos, salas, home office, varandas e sacadas. Na visita técnica, indicamos a configuração ideal para cada espaço e orientação solar.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              <span>A Persiana Blackout é durável?</span>
+              <span data-i18n="bk-faq-q4">A Persiana Blackout é durável?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Sim. Trabalhamos apenas com materiais de alta performance e oferecemos 4 anos de garantia com suporte ativo — incluindo visita técnica sem custo durante todo o período de garantia.</p>
+              <p data-i18n="bk-faq-a4">Sim. Trabalhamos apenas com materiais de alta performance e oferecemos 4 anos de garantia com suporte ativo — incluindo visita técnica sem custo durante todo o período de garantia.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              <span>É possível motorizar a Persiana Blackout?</span>
+              <span data-i18n="bk-faq-q5">É possível motorizar a Persiana Blackout?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Sim. Oferecemos opção motorizada com acionamento por controle remoto, assistentes de voz (Alexa, Google Home) ou integração com sistemas de automação residencial.</p>
+              <p data-i18n="bk-faq-a5">Sim. Oferecemos opção motorizada com acionamento por controle remoto, assistentes de voz (Alexa, Google Home) ou integração com sistemas de automação residencial.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              <span>Vocês fazem a instalação?</span>
+              <span data-i18n="bk-faq-q6">Vocês fazem a instalação?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Sim, sempre. A instalação profissional está inclusa em todos os projetos — não vendemos produto para auto-instalação. Medimos, fornecemos e instalamos com hora marcada.</p>
+              <p data-i18n="bk-faq-a6">Sim, sempre. A instalação profissional está inclusa em todos os projetos — não vendemos produto para auto-instalação. Medimos, fornecemos e instalamos com hora marcada.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              <span>Cobrimos qualquer orçamento?</span>
+              <span data-i18n="bk-faq-q7">Cobrimos qualquer orçamento?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Sim. Se você recebeu um orçamento de outro fornecedor para o mesmo produto e serviço, apresente com CNPJ e papel timbrado — a gente analisa e cobre. Nossa política de equiparação vale para projetos com o mesmo tipo de produto, instalação inclusa e mesmo padrão de serviço.</p>
+              <p data-i18n="bk-faq-a7">Sim. Se você recebeu um orçamento de outro fornecedor para o mesmo produto e serviço, apresente com CNPJ e papel timbrado — a gente analisa e cobre. Nossa política de equiparação vale para projetos com o mesmo tipo de produto, instalação inclusa e mesmo padrão de serviço.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question">
-              <span>Qual o prazo de entrega e instalação?</span>
+              <span data-i18n="bk-faq-q8">Qual o prazo de entrega e instalação?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-              <p>Após a aprovação do projeto e pagamento, sua persiana blackout sob medida fica pronta e instalada em até 7 dias úteis. Agendamos a instalação conforme sua disponibilidade.</p>
+              <p data-i18n="bk-faq-a8">Após a aprovação do projeto e pagamento, sua persiana blackout sob medida fica pronta e instalada em até 7 dias úteis. Agendamos a instalação conforme sua disponibilidade.</p>
             </div>
           </div>
         </div>
@@ -639,9 +644,9 @@
     <section class="contact-section" id="contato">
       <div class="container">
         <div class="contact-inner">
-          <span class="section-eyebrow">Contato</span>
-          <h2 class="contact-heading">Dúvidas? Fale com nossos consultores</h2>
-          <p class="contact-options-text">Escolha como prefere falar com a gente: preencha o formulário abaixo e retornamos em breve, ou fale agora mesmo pelo WhatsApp.</p>
+          <span class="section-eyebrow" data-i18n="contact-eyebrow">Contato</span>
+          <h2 class="contact-heading" data-i18n="bk-contact-heading">Dúvidas? Fale com nossos consultores</h2>
+          <p class="contact-options-text" data-i18n="contact-options-text">Escolha como prefere falar com a gente: preencha o formulário abaixo e retornamos em breve, ou fale agora mesmo pelo WhatsApp.</p>
 
           <div class="contact-layout">
             <form id="contatoForm" class="contato-form">
@@ -651,32 +656,36 @@
               <input type="checkbox" name="botcheck" class="form-honeypot" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
               <div class="form-field">
-                <label for="cf-name">Nome</label>
-                <input id="cf-name" type="text" name="name" required placeholder="Seu nome" />
+                <label for="cf-name" data-i18n="form-name-label">Nome</label>
+                <input id="cf-name" type="text" name="name" required placeholder="Seu nome" data-i18n-placeholder="form-name-ph" />
               </div>
               <div class="form-field">
-                <label for="cf-phone">Telefone</label>
-                <input id="cf-phone" type="tel" name="phone" required placeholder="(11) 90000-0000" />
+                <label for="cf-phone" data-i18n="form-phone-label">Telefone</label>
+                <input id="cf-phone" type="tel" name="phone" required placeholder="(11) 90000-0000" data-i18n-placeholder="form-phone-ph" />
               </div>
               <div class="form-field">
-                <label for="cf-ambiente">Ambiente</label>
+                <label for="cf-ambiente" data-i18n="bk-form-ambiente-label">Ambiente</label>
                 <select id="cf-ambiente" name="ambiente" required>
-                  <option value="" disabled selected>Selecione o ambiente</option>
-                  <option value="Quarto">Quarto</option>
-                  <option value="Sala">Sala</option>
-                  <option value="Home Office">Home Office</option>
-                  <option value="Varanda">Varanda</option>
-                  <option value="Apartamento completo">Apartamento completo</option>
+                  <option value="" disabled selected data-i18n="bk-form-ambiente-ph">Selecione o ambiente</option>
+                  <option value="Quarto" data-i18n="bk-amb1-title">Quarto</option>
+                  <option value="Sala" data-i18n="bk-form-opt-sala">Sala</option>
+                  <option value="Home Office" data-i18n="bk-amb3-title">Home Office</option>
+                  <option value="Varanda" data-i18n="bk-form-opt-varanda">Varanda</option>
+                  <option value="Apartamento completo" data-i18n="bk-form-opt-apto">Apartamento completo</option>
                 </select>
               </div>
-              <button type="submit" class="cta-button cta-main contato-submit">Agendar Visita Gratuita</button>
+              <div class="form-field">
+                <label for="cf-message" data-i18n="form-message-label">Mensagem</label>
+                <textarea id="cf-message" name="message" rows="4" placeholder="Conte um pouco mais sobre o seu projeto (opcional)" data-i18n-placeholder="bk-form-message-ph"></textarea>
+              </div>
+              <button type="submit" class="cta-button cta-main contato-submit" data-i18n="bk-form-submit">Solicitar Orçamento</button>
               <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
             </form>
 
             <div class="contact-alt">
-              <span class="contact-alt-or">ou</span>
-              <p class="contact-alt-text">Prefere uma conversa direta? Fale com nossa equipe agora mesmo pelo WhatsApp e tire suas dúvidas em tempo real.</p>
-              <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20orçamento%20de%20Persiana%20Blackout" class="cta-button" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Falar no WhatsApp</a>
+              <span class="contact-alt-or" data-i18n="form-or">ou</span>
+              <p class="contact-alt-text" data-i18n="contact-wa-text">Prefere uma conversa direta? Fale com nossa equipe agora mesmo pelo WhatsApp e tire suas dúvidas em tempo real.</p>
+              <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20orçamento%20de%20Persiana%20Blackout" class="cta-button" target="_blank" rel="noopener" data-i18n="form-wa-btn" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">Falar no WhatsApp</a>
             </div>
           </div>
         </div>
@@ -691,29 +700,29 @@
       <div class="footer-content">
         <div class="footer-brand">
           <img src="assets/logo_atiye_fundo_branco.webp" alt="Atiye" width="106" height="40" loading="lazy" />
-          <p>Controle técnico da luz natural para ambientes residenciais e corporativos que exigem precisão.</p>
+          <p data-i18n="footer-tagline">Controle técnico da luz natural para ambientes residenciais e corporativos que exigem precisão.</p>
         </div>
         <div class="footer-links">
-          <h3>Soluções</h3>
-          <a href="corporativo.html">Corporativo</a>
-          <a href="residencial.html">Residencial</a>
-          <a href="persiana-blackout-sob-medida.html">Persiana Blackout</a>
-          <a href="lavagem.html">Higienização</a>
+          <h3 data-i18n="footer-solutions">Soluções</h3>
+          <a href="corporativo.html" data-i18n="nav-corporate">Corporativo</a>
+          <a href="residencial.html" data-i18n="nav-residential">Residencial</a>
+          <a href="persiana-blackout-sob-medida.html" data-i18n="bk-footer-blackout">Persiana Blackout</a>
+          <a href="lavagem.html" data-i18n="nav-cleaning">Higienização</a>
         </div>
         <div class="footer-contact">
-          <h3>Contato</h3>
+          <h3 data-i18n="footer-contact">Contato</h3>
           <a href="tel:+5511986793247">11 9.8679-3247</a>
           <a href="https://wa.me/5511986793247" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">WhatsApp</a>
           <a href="mailto:atiyepersianas@gmail.com">atiyepersianas@gmail.com</a>
         </div>
         <div class="footer-social">
-          <h3>Redes</h3>
+          <h3 data-i18n="footer-social">Redes</h3>
           <a href="https://instagram.com/atiyecortinas" target="_blank" rel="noopener">Instagram</a>
           <a href="https://instagram.com/atiyecortinas" target="_blank" rel="noopener">@atiyecortinas</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Atiye. Todos os direitos reservados.</p>
+        <p data-i18n="footer-rights">&copy; 2026 Atiye. Todos os direitos reservados.</p>
         <a href="#">São Paulo, SP</a>
       </div>
     </div>
@@ -727,10 +736,11 @@
   </a>
 
   <!-- Mobile WhatsApp fixed CTA -->
-  <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20orçamento%20de%20Persiana%20Blackout" class="mobile-fixed-cta" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">
+  <a href="https://wa.me/5511986793247?text=Olá%2C%20gostaria%20de%20um%20orçamento%20de%20Persiana%20Blackout" class="mobile-fixed-cta" target="_blank" rel="noopener" data-i18n="bk-mobile-cta" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'whatsapp_click_manual'});">
     Solicitar Orçamento pelo WhatsApp
   </a>
 
+  <script src="translations.js?v=20260703" defer></script>
   <script src="script-landing.js?v=20260703" defer></script>
   <script src="contact-form.js?v=20260703" defer></script>
   <script>
