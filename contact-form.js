@@ -32,6 +32,14 @@
           status.className = 'form-status success';
           status.textContent = tr('form-success', 'Mensagem enviada! Retornaremos em breve.');
           form.reset();
+
+          var isCorporate = /corporativo\.html/.test(window.location.pathname);
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'generate_lead',
+            form_location: isCorporate ? 'corporativo' : 'outra',
+            lead_type: isCorporate ? 'corporate' : 'residential'
+          });
         } else {
           status.className = 'form-status error';
           status.textContent = tr('form-error', 'Algo deu errado. Tente novamente ou fale pelo WhatsApp.');

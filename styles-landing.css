@@ -866,3 +866,114 @@
 .landing-page .header.scrolled .header-cta[href*="wa.me"]{background:#25D366;color:#fff;border-color:#25D366}
 .landing-page .header .header-cta[href*="wa.me"]:hover,
 .landing-page .header.scrolled .header-cta[href*="wa.me"]:hover{background:#20BA5A;color:#fff;border-color:#20BA5A}
+
+/* ── Corporate "Por que a Atiye" cards ── */
+.corp-values-section {
+  background: var(--color-surface);
+  position: relative;
+  z-index: 1;
+}
+.corp-diff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+.corp-diff-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
+}
+.corp-diff-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  transition: transform 0.5s ease;
+}
+.corp-diff-card:hover img { transform: scale(1.05); }
+.corp-diff-card__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 35%, rgba(0, 0, 0, 0.72) 100%);
+}
+.corp-diff-card__foot {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.5rem 1.5rem 1.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.corp-diff-card__title {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+/* ── Parceiros scroll-over scene ── */
+#parceiros-scene {
+  position: relative;
+  z-index: 2;
+}
+#parceiros-card {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  border-radius: 0;
+  will-change: transform;
+}
+#parceiros-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+#parceiros-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.65) 100%);
+}
+#parceiros-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 8vw;
+}
+#parceiros-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 5.5vw, 5.5rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+#parceiros-subtitle {
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 640px;
+  line-height: 1.7;
+  margin: 0;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+#parceiros-spacer { height: 50vh; }
