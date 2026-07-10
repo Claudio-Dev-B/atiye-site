@@ -703,7 +703,7 @@ window._atiyeEN = {
       'bk-strip3': 'Ready Project in 7 Days',
 
       'bk-cores-title': 'Colors and Finishes',
-      'bk-cores-sub':   'A wide selection of colors, textures and finishes for your project. Our consultant brings samples to the visit and helps you choose the ideal combination for each space.',
+      'bk-cores-sub':   'A wide selection of colors, textures and finishes for your project. Talk to our consultants to help you choose the ideal combination for each space.',
 
       'bk-specs-eyebrow': 'Technical sheet',
       'bk-specs-title':   'Technical Specifications',

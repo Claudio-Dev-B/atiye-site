@@ -730,7 +730,7 @@
       'bk-strip3': 'Projeto Pronto em 7 Dias',
 
       'bk-cores-title': 'Cores e Acabamentos',
-      'bk-cores-sub':   'Ampla seleção de cores, texturas e acabamentos para o seu projeto. Nosso consultor leva amostras na visita e ajuda você a escolher a combinação ideal para cada ambiente.',
+      'bk-cores-sub':   'Ampla seleção de cores, texturas e acabamentos para o seu projeto. Fale com nossos consultores para auxiliar você a escolher a combinação ideal para cada ambiente.',
 
       'bk-specs-eyebrow': 'Ficha técnica',
       'bk-specs-title':   'Especificações Técnicas',
