@@ -691,18 +691,18 @@
 
       /* ── PERSIANA BLACKOUT SOB MEDIDA ─────────────────── */
       'bk-page-title':   'Persiana Rolô Blackout Sob Medida em SP | Atiye',
-      'bk-page-meta':    'Persiana Rolô Blackout sob medida em SP. Bloqueio total de luz, privacidade e conforto térmico. Instalação inclusa. 4 anos de garantia. Solicite orçamento.',
+      'bk-page-meta':    'Persiana Rolô Blackout sob medida para quarto, sala e home office em SP — também chamada de cortina blackout. Bloqueio total de luz, privacidade e conforto térmico. Instalação inclusa e 4 anos de garantia. Solicite orçamento.',
 
       'bk-hero-eyebrow': 'Persiana Rolô Blackout',
       'bk-hero-title':   'Persiana Rolô Blackout Sob Medida em SP',
       'bk-hero-sub1':    'Controle total da luz. Instalação inclusa. 4 anos de garantia.',
-      'bk-hero-sub2':    'A Persiana Rolô Blackout é a solução definitiva para quem quer controle total de luz, privacidade e conforto térmico — com projeto sob medida, instalação profissional e zero bagunça na sua casa.',
+      'bk-hero-sub2':    'A Persiana Rolô Blackout — também conhecida como cortina blackout ou blackout de rolo — é a solução definitiva sob medida para quarto, sala, home office e varanda: controle total de luz, privacidade e conforto térmico, com projeto sob medida, instalação profissional e zero bagunça na sua casa.',
       'bk-hero-cta':     'Fale com um Especialista',
 
       'bk-benef-eyebrow': 'Por que a Atiye',
       'bk-benef-title':   'Por que a Persiana Blackout da Atiye?',
       'bk-benef1-title':  'Bloqueio da luz 100%',
-      'bk-benef1-desc':   'Tecido de alta performance que bloqueia completamente a entrada de luz externa. Ideal para quarto, home office e sala de estar.',
+      'bk-benef1-desc':   'Tecido de alta performance que bloqueia completamente a entrada de luz externa. Ideal para persiana ou cortina blackout de quarto, home office e sala de estar.',
       'bk-benef2-title':  'Privacidade Total',
       'bk-benef2-desc':   'Quando fechada, impede qualquer visão externa — seu ambiente fica completamente protegido e reservado.',
       'bk-benef3-title':  'Conforto Térmico',
@@ -715,7 +715,7 @@
       'bk-amb-eyebrow': 'Cada espaço, sua solução',
       'bk-amb-title':   'Persiana Blackout para Cada Ambiente',
       'bk-amb1-title':  'Quarto',
-      'bk-amb1-desc':   'Elimina completamente a claridade das primeiras horas da manhã, garante privacidade total e contribui para um sono mais profundo. Disponível em acabamento manual ou motorizado.',
+      'bk-amb1-desc':   'Persiana blackout para quarto sob medida: elimina completamente a claridade das primeiras horas da manhã, garante privacidade total e contribui para um sono mais profundo. Disponível em acabamento manual ou motorizado, com projeto sob medida para cada dormitório.',
       'bk-amb2-title':  'Sala de Estar',
       'bk-amb2-desc':   'Controle total de luz para home theater e para tornar o ambiente mais aconchegante no fim do dia, com design sofisticado.',
       'bk-amb3-title':  'Home Office',
@@ -737,7 +737,7 @@
       'bk-spec1-th':  'Visibilidade',
       'bk-spec1-td':  'Tecido com bloqueio total de luz e visão. Garante privacidade completa quando fechada.',
       'bk-spec2-th':  'Aplicação Residencial',
-      'bk-spec2-td':  'Quartos, salas, home office, varandas e sacadas.',
+      'bk-spec2-td':  'Quartos (dormitórios), salas, home office, varandas e sacadas.',
       'bk-spec3-th':  'Aplicação Comercial',
       'bk-spec3-td':  'Consultórios, escritórios e estabelecimentos comerciais em geral.',
       'bk-spec4-th':  'Regulagem',
@@ -788,6 +788,8 @@
       'bk-faq-a7': 'Sim. Se você recebeu um orçamento de outro fornecedor para o mesmo produto e serviço, apresente com CNPJ e papel timbrado — a gente analisa e cobre. Nossa política de equiparação vale para projetos com o mesmo tipo de produto, instalação inclusa e mesmo padrão de serviço.',
       'bk-faq-q8': 'Qual o prazo de entrega e instalação?',
       'bk-faq-a8': 'Após a aprovação do projeto e pagamento, sua persiana blackout sob medida fica pronta e instalada em até 7 dias úteis. Agendamos a instalação conforme sua disponibilidade.',
+      'bk-faq-q9': 'Persiana rolô blackout e cortina blackout são a mesma coisa?',
+      'bk-faq-a9': 'Sim. "Persiana rolô blackout", "cortina blackout" e "blackout de rolo" são nomes populares usados para o mesmo produto: um tecido blackout enrolável, sob medida, que bloqueia 100% da luz. A Atiye projeta, fabrica e instala essa solução para quarto, sala, home office e varanda, sempre com o mesmo padrão de qualidade e 4 anos de garantia.',
 
       'bk-contact-heading':      'Dúvidas? Fale com nossos consultores',
       'bk-form-ambiente-label':  'Ambiente',
