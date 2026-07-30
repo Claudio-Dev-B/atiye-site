@@ -59,7 +59,8 @@
     }
 
     /* â”€â”€ Hero video â”€â”€ */
-    .hero-visual .hero-video {
+    .hero-visual .hero-video,
+    .hero-visual .hero-poster {
       position: absolute; inset: 0;
       width: 100%; height: 100%;
       object-fit: cover;
@@ -67,7 +68,8 @@
       border-radius: 0 !important;
     }
     @media (max-width: 768px) {
-      .hero-visual .hero-video {
+      .hero-visual .hero-video,
+      .hero-visual .hero-poster {
         object-position: left center;
       }
     }
@@ -377,6 +379,25 @@
       margin: 0;
     }
 
+    /* ── Form validation & trust microcopy ── */
+    .form-field-error {
+      display: none;
+      color: #c0392b;
+      font-size: 0.78rem;
+      margin-top: 0.35rem;
+    }
+    .form-field.has-error .form-field-error { display: block; }
+    .form-field.has-error input,
+    .form-field.has-error select,
+    .form-field.has-error textarea {
+      border-color: #c0392b;
+    }
+    .form-trust-note {
+      font-size: 0.82rem;
+      color: var(--color-muted, #7a7369);
+      margin: 0.25rem 0 1rem;
+    }
+
   </style>
 
   <script type="application/ld+json">
@@ -509,17 +530,26 @@
 
     <!-- â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
     <section class="hero landing-hero" id="hero">
-      <div class="hero-visual">
+      <div class="hero-visual" id="hero-visual">
+        <img
+          class="hero-poster"
+          id="hero-poster"
+          src="assets/escritorio/IMG_2182.webp"
+          alt=""
+          fetchpriority="high"
+          aria-hidden="true"
+        />
         <video
           class="hero-video"
-          src="assets/escritorio/hero_banner.mp4"
+          id="hero-video"
           poster="assets/escritorio/IMG_2182.webp"
-          autoplay
           muted
           loop
           playsinline
-          preload="metadata"
+          preload="none"
           aria-hidden="true"
+          style="display:none"
+          data-src="assets/escritorio/hero_banner.mp4"
         ></video>
         <div class="hero-overlay"></div>
       </div>
@@ -1113,14 +1143,15 @@
               <div class="form-field">
                 <label for="cf-name" data-i18n="form-name-label">Nome</label>
                 <input id="cf-name" type="text" name="name" required data-i18n-placeholder="form-name-ph" placeholder="Seu nome" />
+                <span class="form-field-error" id="cf-name-error" role="alert" aria-live="polite" data-i18n="form-name-required">Informe seu nome.</span>
               </div>
               <div class="form-field">
                 <label for="cf-company" data-i18n="form-company-label">Empresa</label>
-                <input id="cf-company" type="text" name="company" required data-i18n-placeholder="form-company-ph" placeholder="Nome da sua empresa" />
+                <input id="cf-company" type="text" name="company" data-i18n-placeholder="form-company-ph" placeholder="Nome da sua empresa" />
               </div>
               <div class="form-field">
                 <label for="cf-role" data-i18n="form-role-label">Você é</label>
-                <select id="cf-role" name="role" required>
+                <select id="cf-role" name="role">
                   <option value="" data-i18n="form-role-ph">Selecione…</option>
                   <option data-i18n="form-role-1">Arquiteto(a) / Designer</option>
                   <option data-i18n="form-role-2">Construtora / Gerenciadora</option>
@@ -1135,16 +1166,18 @@
               </div>
               <div class="form-field">
                 <label for="cf-phone" data-i18n="form-phone-label">Telefone</label>
-                <input id="cf-phone" type="tel" name="phone" required data-i18n-placeholder="form-phone-ph" placeholder="(11) 90000-0000" />
+                <input id="cf-phone" type="tel" name="phone" data-i18n-placeholder="form-phone-ph" placeholder="(11) 90000-0000" />
               </div>
               <div class="form-field">
                 <label for="cf-email" data-i18n="form-email-label">E-mail</label>
-                <input id="cf-email" type="email" name="email" required data-i18n-placeholder="form-email-ph" placeholder="seu@email.com" />
+                <input id="cf-email" type="email" name="email" data-i18n-placeholder="form-email-ph" placeholder="seu@email.com" />
+                <span class="form-field-error" id="cf-contact-error" role="alert" aria-live="polite" data-i18n="form-contact-required">Informe pelo menos telefone ou e-mail.</span>
               </div>
               <div class="form-field">
                 <label for="cf-message" data-i18n="form-message-label">Mensagem</label>
-                <textarea id="cf-message" name="message" rows="4" required data-i18n-placeholder="form-message-ph" placeholder="Como podemos ajudar?"></textarea>
+                <textarea id="cf-message" name="message" rows="4" data-i18n-placeholder="form-message-ph" placeholder="Como podemos ajudar?"></textarea>
               </div>
+              <p class="form-trust-note" data-i18n="form-trust-note">Retornamos em até 1 dia útil. Orçamento sem compromisso.</p>
               <button type="submit" class="cta-button cta-main contato-submit" data-i18n="form-submit">Enviar mensagem</button>
               <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
             </form>
@@ -1201,17 +1234,55 @@
     </svg>
   </a>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" defer></script>
   <script src="translations.js?v=20260629" defer></script>
   <script src="script-landing.js?v=20260629" defer></script>
   <script src="contact-form.js?v=20260629" defer></script>
 
+  <!-- â”€â”€ Hero vídeo: condicional (desktop-only, lazy-play) â”€â”€ -->
+  <script>
+  (function () {
+    var poster = document.getElementById('hero-poster');
+    var video  = document.getElementById('hero-video');
+    var visual = document.getElementById('hero-visual');
+    if (!video || !visual) return;
 
+    var isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
+    var saveData = navigator.connection && navigator.connection.saveData;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (isSmallScreen || saveData || reduceMotion) {
+      /* Mobile / economia de dados / reduced-motion: mantém apenas o poster, nunca baixa o vídeo */
+      return;
+    }
+
+    /* Desktop: carrega e reproduz o vídeo só quando o hero entra na viewport */
+    video.src = video.dataset.src;
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            video.style.display = '';
+            if (poster) poster.style.display = 'none';
+            video.play().catch(function () {});
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.1 });
+      observer.observe(visual);
+    } else {
+      video.style.display = '';
+      if (poster) poster.style.display = 'none';
+      video.play().catch(function () {});
+    }
+  }());
+  </script>
 
   <!-- â”€â”€ Parceiros card scroll-over GSAP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
-  <script>
+  <script defer>
+  window.addEventListener('load', function () {
   (function () {
     if (typeof gsap === "undefined") return;
     gsap.registerPlugin(ScrollTrigger);
@@ -1251,10 +1322,12 @@
       }
     );
   }());
+  });
   </script>
 
   <!-- â”€â”€ Hero scroll-to-next GSAP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
-  <script>
+  <script defer>
+  window.addEventListener('load', function () {
   (function () {
     if (typeof gsap === "undefined") return;
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -1301,10 +1374,12 @@
       });
     }
   }());
+  });
   </script>
 
   <!-- â”€â”€ Corporate Cases: GSAP + Modal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
-  <script>
+  <script defer>
+  window.addEventListener('load', function () {
   (function () {
     "use strict";
     if (typeof gsap === "undefined") return;
@@ -1587,6 +1662,7 @@
     }
 
   }());
+  });
   </script>
 
   <script>

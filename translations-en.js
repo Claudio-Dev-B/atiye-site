@@ -201,6 +201,9 @@ window._atiyeEN = {
       'form-sending':         'Sending...',
       'form-success':         "Message sent! We'll get back to you soon.",
       'form-error':           'Something went wrong. Please try again or reach us on WhatsApp.',
+      'form-trust-note':      "We reply within 1 business day. No-obligation quote.",
+      'form-contact-required':'Please provide a phone number or email.',
+      'form-name-required':   'Please enter your name.',
       'form-or':              'or',
       'form-wa-btn':          'Chat on WhatsApp',
       'contact-wa-text':      'Prefer a direct conversation? Talk to our team right now on WhatsApp and get your questions answered in real time.',
@@ -208,7 +211,7 @@ window._atiyeEN = {
       /* CORPORATIVO */
       'corp-hero-label':    'Corporate',
       'corp-hero-title':    'Office Blinds in São Paulo — Made to Measure',
-      'corp-hero-subtitle': 'Custom-made office blinds and curtains: solar screen, blackout roller, double vision and motorized blinds. Serving offices, corporate floors and businesses in São Paulo.',
+      'corp-hero-subtitle': 'Made-to-measure office blinds, office curtains and blackout curtains for offices in São Paulo (SP): solar screen, blackout roller, double vision and motorized blinds. Serving offices, corporate floors and businesses.',
       'corp-hero-desc':     'Specialized service for construction companies, project managers, architects, and engineering firms.',
       'corp-hero-check1':   'Technical Measurement',
       'corp-hero-check2':   'Custom Manufacturing',

@@ -222,6 +222,9 @@
       'form-sending':         'Enviando...',
       'form-success':         'Mensagem enviada! Retornaremos em breve.',
       'form-error':           'Algo deu errado. Tente novamente ou fale pelo WhatsApp.',
+      'form-trust-note':      'Retornamos em até 1 dia útil. Orçamento sem compromisso.',
+      'form-contact-required':'Informe pelo menos telefone ou e-mail.',
+      'form-name-required':   'Informe seu nome.',
       'form-or':              'ou',
       'form-wa-btn':          'Falar no WhatsApp',
       'contact-wa-text':      'Prefere uma conversa direta? Fale com nossa equipe agora mesmo pelo WhatsApp e tire suas dúvidas em tempo real.',
@@ -231,7 +234,7 @@
          ══════════════════════════════════════════════════ */
       'corp-hero-label':          'Corporativo',
       'corp-hero-title':          'Persiana para Escritório em São Paulo — Sob Medida',
-      'corp-hero-subtitle':       'Persiana e cortina para escritório com fabricação sob medida: tela solar, rolô blackout, double vision e persiana motorizada. Atendemos escritórios, lajes corporativas e empresas em São Paulo.',
+      'corp-hero-subtitle':       'Persiana para escritório, cortina para escritório e cortina blackout para escritório sob medida em São Paulo (SP): tela solar, rolô blackout, double vision e persiana motorizada. Atendemos escritórios, lajes corporativas e empresas.',
       'corp-hero-desc':           'Atendimento especializado para construtoras, gerenciadoras, arquitetos e empresas de engenharia.',
       'corp-hero-check1':         'Medição Técnica',
       'corp-hero-check2':         'Fabricação Sob Medida',
