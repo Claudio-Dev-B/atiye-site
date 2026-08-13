@@ -5,3 +5,50 @@ a.cta-button[href*="wa.me"]::after{background:rgba(255,255,255,0.12)}
 a.cta-button[href*="wa.me"]:hover,a.header-cta[href*="wa.me"]:hover,a.hero-cta[href*="wa.me"]:hover,a.pill-btn[href*="wa.me"]:hover,a.ps-cta[href*="wa.me"]:hover{background:#20BA5A;color:#fff;border-color:#20BA5A}
 .header--transparent .header-cta[href*="wa.me"],.header.scrolled .header-cta[href*="wa.me"]{background:#25D366;color:#fff;border-color:#25D366;backdrop-filter:none}
 .header--transparent .header-cta[href*="wa.me"]:hover,.header.scrolled .header-cta[href*="wa.me"]:hover{background:#20BA5A;color:#fff;border-color:#20BA5A}
+
+
+/* ═══════════════════════════════════════════════════════
+   ATIYE — Form UX (Fase 1: validação inline / loading / erro)
+   ═══════════════════════════════════════════════════════ */
+.form-field-error{
+  display:none;
+  font-size:.78rem;
+  color:#c0392b;
+  margin-top:.4rem;
+  line-height:1.4;
+}
+.form-field.has-error .form-field-error{ display:block; }
+.form-field.has-error input,
+.form-field.has-error textarea,
+.form-field.has-error select{
+  border-color:#c0392b !important;
+  box-shadow:0 0 0 1px rgba(192,57,43,.15);
+}
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus{
+  outline:none;
+  border-color:var(--color-gold);
+  box-shadow:0 0 0 3px rgba(196,168,122,.15);
+}
+.contato-submit{ position:relative; transition:opacity .2s ease,background .3s ease,transform .3s var(--ease-out-quart); }
+.contato-submit.is-loading{ opacity:.75; pointer-events:none; }
+.contato-submit.is-loading::after{
+  content:"";
+  position:absolute;
+  right:1rem;
+  top:50%;
+  width:14px;
+  height:14px;
+  margin-top:-7px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.35);
+  border-top-color:#fff;
+  animation:atiyeSpin .7s linear infinite;
+}
+@keyframes atiyeSpin{ to{ transform:rotate(360deg); } }
+.form-status{ min-height:1.4em; font-size:.85rem; margin-top:.9rem; transition:color .2s ease; }
+.form-status.error{ color:#c0392b; font-weight:600; }
+.form-status.success{ color:#1c7a3e; font-weight:600; }
+.form-status.is-loading{ color:var(--color-muted); }
+.form-trust-note{ font-size:.8rem; color:var(--color-muted); margin-top:.4rem; margin-bottom:1.2rem; }

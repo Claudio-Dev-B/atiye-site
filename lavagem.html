@@ -1,6 +1,7 @@
 ﻿<!doctype html>
 <html lang="pt-BR" data-i18n-title="lav-title" data-i18n-meta="lav-meta">
 <head>
+  <script src="canonical-redirect.js?v=20260813"></script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -99,6 +100,63 @@
     .ba-tooltip::before { content: '↔\00a0'; }
     .ba-tooltip.hidden { opacity: 0; }
   </style>
+
+  <!-- Schema.org: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://atiyepersianas.com.br/#business",
+    "name": "Atiye Persianas",
+    "image": "https://atiyepersianas.com.br/assets/logo_atiye_fundo_branco.webp",
+    "url": "https://atiyepersianas.com.br/lavagem.html",
+    "telephone": "+55-11-98679-3247",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "areaServed": { "@type": "City", "name": "São Paulo" },
+    "sameAs": ["https://instagram.com/atiyecortinas"]
+  }
+  </script>
+  <!-- Schema.org: Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Lavagem e higienização técnica de persianas e cortinas",
+    "provider": { "@id": "https://atiyepersianas.com.br/#business" },
+    "areaServed": { "@type": "City", "name": "São Paulo" },
+    "description": "Coleta domiciliar, limpeza profunda e reinstalação técnica de persianas e cortinas em São Paulo: rolô blackout, tela solar, double vision, madeira, alumínio, romana e tecido."
+  }
+  </script>
+  <!-- Schema.org: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Com que frequência devo higienizar as persianas?", "acceptedAnswer": { "@type": "Answer", "text": "Em ambientes residenciais normais, recomendamos higienização a cada 12 a 18 meses. Em ambientes com maior circulação de ar, próximos a vias movimentadas ou com animais, o ideal é a cada 6 a 12 meses." } },
+      { "@type": "Question", "name": "Vocês fazem a coleta?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Nossa equipe vai até o local, retira as persianas, realiza o processo técnico e faz a reinstalação. Sem necessidade de deslocamento por parte do cliente." } },
+      { "@type": "Question", "name": "Todos os tipos de persiana podem ser lavados?", "acceptedAnswer": { "@type": "Answer", "text": "A maioria dos tipos pode, mas o processo varia conforme o material. Persiana rolô em tecido, tela solar, double vision, madeira, alumínio, romana e persianas verticais têm processos distintos. Na avaliação inicial identificamos o processo correto para cada peça." } },
+      { "@type": "Question", "name": "Qual é o prazo entre coleta e reinstalação?", "acceptedAnswer": { "@type": "Answer", "text": "Em média de 3 a 5 dias úteis. Dependendo da quantidade de peças e do tipo de material, pode variar. Informamos o prazo exato no momento do agendamento." } }
+    ]
+  }
+  </script>
+  <!-- Schema.org: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://atiyepersianas.com.br/" },
+      { "@type": "ListItem", "position": 2, "name": "Higienização", "item": "https://atiyepersianas.com.br/lavagem.html" }
+    ]
+  }
+  </script>
 </head>
 <body class="landing-page">
   <!-- Google Tag Manager (noscript) -->
@@ -411,7 +469,7 @@
           <p class="contact-options-text" data-i18n="contact-options-text">Escolha como prefere falar com a gente: preencha o formulário abaixo e retornamos em breve, ou fale agora mesmo pelo WhatsApp.</p>
 
           <div class="contact-layout">
-            <form id="contatoForm" class="contato-form">
+            <form id="contatoForm" class="contato-form" novalidate>
               <input type="hidden" name="access_key" value="54486e0b-af7d-43ab-9697-4cdbe23b14bf" />
               <input type="hidden" name="subject" value="Novo contato pelo site Atiye" />
               <input type="hidden" name="from_name" value="Site Atiye" />
@@ -420,19 +478,23 @@
               <div class="form-field">
                 <label for="cf-name" data-i18n="form-name-label">Nome</label>
                 <input id="cf-name" type="text" name="name" required data-i18n-placeholder="form-name-ph" placeholder="Seu nome" />
+                <span class="form-field-error" role="alert" aria-live="polite" data-i18n="form-name-required">Informe seu nome.</span>
               </div>
               <div class="form-field">
                 <label for="cf-phone" data-i18n="form-phone-label">Telefone</label>
-                <input id="cf-phone" type="tel" name="phone" required data-i18n-placeholder="form-phone-ph" placeholder="(11) 90000-0000" />
+                <input id="cf-phone" type="tel" name="phone" required inputmode="tel" data-i18n-placeholder="form-phone-ph" placeholder="(11) 90000-0000" />
+                <span class="form-field-error" role="alert" aria-live="polite" data-i18n="form-phone-required">Informe seu telefone.</span>
               </div>
               <div class="form-field">
-                <label for="cf-email" data-i18n="form-email-label">E-mail</label>
-                <input id="cf-email" type="email" name="email" required data-i18n-placeholder="form-email-ph" placeholder="seu@email.com" />
+                <label for="cf-email" data-i18n="form-email-label">E-mail <span style="opacity:.5;font-weight:400" data-i18n="form-optional">(opcional)</span></label>
+                <input id="cf-email" type="email" name="email" data-i18n-placeholder="form-email-ph" placeholder="seu@email.com" />
+                <span class="form-field-error" role="alert" aria-live="polite" data-i18n="form-email-invalid">E-mail inválido. Confira e tente novamente.</span>
               </div>
               <div class="form-field">
-                <label for="cf-message" data-i18n="form-message-label">Mensagem</label>
-                <textarea id="cf-message" name="message" rows="4" required data-i18n-placeholder="form-message-ph" placeholder="Como podemos ajudar?"></textarea>
+                <label for="cf-message" data-i18n="form-message-label">Mensagem <span style="opacity:.5;font-weight:400" data-i18n="form-optional">(opcional)</span></label>
+                <textarea id="cf-message" name="message" rows="4" data-i18n-placeholder="form-message-ph" placeholder="Como podemos ajudar?"></textarea>
               </div>
+              <p class="form-trust-note" data-i18n="form-trust-note">Retornamos ainda hoje, no mesmo dia útil. Orçamento sem compromisso.</p>
               <button type="submit" class="cta-button cta-main contato-submit" data-i18n="form-submit">Enviar mensagem</button>
               <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
             </form>

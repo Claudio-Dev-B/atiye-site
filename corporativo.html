@@ -1,6 +1,7 @@
 ﻿<!doctype html>
 <html lang="pt-BR" data-i18n-title="corp-title" data-i18n-meta="corp-meta">
 <head>
+  <script src="canonical-redirect.js?v=20260813"></script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -10,10 +11,11 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Persiana para escritório em São Paulo: tela solar, rolô blackout, double vision e persiana motorizada sob medida. Fornecimento e instalação para escritórios, lajes corporativas e empresas." />
+  <meta name="description" content="Persiana para escritório em São Paulo: tela solar, rolô blackout, double vision e persiana motorizada sob medida. Fornecimento e instalação para retrofit corporativo, fit out, laje comercial, coworking e salas de reunião." />
   <title>Persiana para Escritório em São Paulo | Atiye Corporativo</title>
   <link rel="canonical" href="https://atiyepersianas.com.br/corporativo.html" />
   <link rel="alternate" hreflang="pt-BR" href="https://atiyepersianas.com.br/corporativo.html" />
+  <link rel="alternate" hreflang="en"    href="https://atiyepersianas.com.br/corporativo.html" />
   <link rel="alternate" hreflang="x-default" href="https://atiyepersianas.com.br/corporativo.html" />
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
@@ -21,13 +23,13 @@
   <meta property="og:locale"      content="pt_BR" />
   <meta property="og:url"         content="https://atiyepersianas.com.br/corporativo.html" />
   <meta property="og:title"       content="Persiana para Escritório em São Paulo | Atiye Corporativo" />
-  <meta property="og:description" content="Persiana para escritório em São Paulo: tela solar, rolô blackout, double vision e persiana motorizada sob medida. Fornecimento e instalação para escritórios, lajes corporativas e empresas." />
+  <meta property="og:description" content="Persiana para escritório em São Paulo: tela solar, rolô blackout, double vision e persiana motorizada sob medida. Fornecimento e instalação para retrofit corporativo, fit out, laje comercial, coworking e salas de reunião." />
   <meta property="og:image"       content="https://atiyepersianas.com.br/assets/escritorio/IMG_2182.webp" />
   <meta property="og:image:alt"   content="Persianas corporativas Atiye em escritório em São Paulo" />
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Persiana para Escritório em São Paulo | Atiye Corporativo" />
-  <meta name="twitter:description" content="Persiana para escritório em São Paulo: tela solar, rolô blackout, double vision e persiana motorizada sob medida. Fornecimento e instalação para escritórios, lajes corporativas e empresas." />
+  <meta name="twitter:description" content="Persiana para escritório em São Paulo: tela solar, rolô blackout, double vision e persiana motorizada sob medida. Fornecimento e instalação para retrofit corporativo, fit out, laje comercial, coworking e salas de reunião." />
   <meta name="twitter:image"       content="https://atiyepersianas.com.br/assets/escritorio/IMG_2182.webp" />
 
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -480,6 +482,17 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://atiyepersianas.com.br/" },
+      { "@type": "ListItem", "position": 2, "name": "Corporativo", "item": "https://atiyepersianas.com.br/corporativo.html" }
+    ]
+  }
+  </script>
 </head>
 <body class="landing-page">
   <!-- Google Tag Manager (noscript) -->
@@ -644,6 +657,7 @@
           <span class="corp-amb-tag" data-i18n="corp-amb-9">Projetos Turnkey</span>
           <span class="corp-amb-tag" data-i18n="corp-amb-10">Projetos Fit Out</span>
         </div>
+        <p class="corp-amb-desc reveal" style="max-width:760px;margin:1.5rem auto 0;text-align:center;color:rgba(255,255,255,0.55);font-size:0.92rem;line-height:1.75;" data-i18n="corp-amb-desc">Atuamos em projetos de retrofit corporativo e fit out comercial, fornecendo e instalando persianas para laje comercial nua ou já ocupada, sem interromper a operação do escritório. Da sala de reunião ao open space, do coworking à recepção, entregamos especificação técnica compatível com o cronograma da obra.</p>
       </div>
 
       <!-- Galeria infinita de fotos de escritório -->
@@ -1134,7 +1148,7 @@
           <p class="contact-options-text" data-i18n="contact-options-text">Escolha como prefere falar com a gente: preencha o formulário abaixo e retornamos em breve, ou fale agora mesmo pelo WhatsApp.</p>
 
           <div class="contact-layout">
-            <form id="contatoForm" class="contato-form">
+            <form id="contatoForm" class="contato-form" novalidate>
               <input type="hidden" name="access_key" value="54486e0b-af7d-43ab-9697-4cdbe23b14bf" />
               <input type="hidden" name="subject" value="🏢 NOVO LEAD CORPORATIVO — site Atiye" />
               <input type="hidden" name="from_name" value="Site Atiye" />
@@ -1166,18 +1180,19 @@
               </div>
               <div class="form-field">
                 <label for="cf-phone" data-i18n="form-phone-label">Telefone</label>
-                <input id="cf-phone" type="tel" name="phone" data-i18n-placeholder="form-phone-ph" placeholder="(11) 90000-0000" />
+                <input id="cf-phone" type="tel" name="phone" required inputmode="tel" data-i18n-placeholder="form-phone-ph" placeholder="(11) 90000-0000" />
+                <span class="form-field-error" role="alert" aria-live="polite" data-i18n="form-phone-required">Informe seu telefone.</span>
               </div>
               <div class="form-field">
-                <label for="cf-email" data-i18n="form-email-label">E-mail</label>
+                <label for="cf-email" data-i18n="form-email-label">E-mail <span style="opacity:.5;font-weight:400" data-i18n="form-optional">(opcional)</span></label>
                 <input id="cf-email" type="email" name="email" data-i18n-placeholder="form-email-ph" placeholder="seu@email.com" />
-                <span class="form-field-error" id="cf-contact-error" role="alert" aria-live="polite" data-i18n="form-contact-required">Informe pelo menos telefone ou e-mail.</span>
+                <span class="form-field-error" role="alert" aria-live="polite" data-i18n="form-email-invalid">E-mail inválido. Confira e tente novamente.</span>
               </div>
               <div class="form-field">
-                <label for="cf-message" data-i18n="form-message-label">Mensagem</label>
+                <label for="cf-message" data-i18n="form-message-label">Mensagem <span style="opacity:.5;font-weight:400" data-i18n="form-optional">(opcional)</span></label>
                 <textarea id="cf-message" name="message" rows="4" data-i18n-placeholder="form-message-ph" placeholder="Como podemos ajudar?"></textarea>
               </div>
-              <p class="form-trust-note" data-i18n="form-trust-note">Retornamos em até 1 dia útil. Orçamento sem compromisso.</p>
+              <p class="form-trust-note" data-i18n="form-trust-note">Retornamos ainda hoje, no mesmo dia útil. Orçamento sem compromisso.</p>
               <button type="submit" class="cta-button cta-main contato-submit" data-i18n="form-submit">Enviar mensagem</button>
               <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
             </form>

@@ -85,6 +85,7 @@
     }
   }, { passive: true });
 
+
   /* ── Hero Entry Animation ────────────────────────────── */
   function initHeroAnimation() {
     const ease = "cubic-bezier(0.16,1,0.3,1)";

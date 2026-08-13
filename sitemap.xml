@@ -6,6 +6,8 @@
     <loc>https://atiyepersianas.com.br/</loc>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://atiyepersianas.com.br/"/>
     <xhtml:link rel="alternate" hreflang="en"    href="https://atiyepersianas.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atiyepersianas.com.br/"/>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,6 +16,8 @@
     <loc>https://atiyepersianas.com.br/corporativo.html</loc>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://atiyepersianas.com.br/corporativo.html"/>
     <xhtml:link rel="alternate" hreflang="en"    href="https://atiyepersianas.com.br/corporativo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atiyepersianas.com.br/corporativo.html"/>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -22,14 +26,28 @@
     <loc>https://atiyepersianas.com.br/residencial.html</loc>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://atiyepersianas.com.br/residencial.html"/>
     <xhtml:link rel="alternate" hreflang="en"    href="https://atiyepersianas.com.br/residencial.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atiyepersianas.com.br/residencial.html"/>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://atiyepersianas.com.br/persiana-blackout-sob-medida.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://atiyepersianas.com.br/persiana-blackout-sob-medida.html"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://atiyepersianas.com.br/persiana-blackout-sob-medida.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atiyepersianas.com.br/persiana-blackout-sob-medida.html"/>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://atiyepersianas.com.br/portfolio.html</loc>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://atiyepersianas.com.br/portfolio.html"/>
     <xhtml:link rel="alternate" hreflang="en"    href="https://atiyepersianas.com.br/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atiyepersianas.com.br/portfolio.html"/>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -38,16 +56,10 @@
     <loc>https://atiyepersianas.com.br/lavagem.html</loc>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://atiyepersianas.com.br/lavagem.html"/>
     <xhtml:link rel="alternate" hreflang="en"    href="https://atiyepersianas.com.br/lavagem.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atiyepersianas.com.br/lavagem.html"/>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://atiyepersianas.com.br/persiana-blackout-sob-medida.html</loc>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://atiyepersianas.com.br/persiana-blackout-sob-medida.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://atiyepersianas.com.br/persiana-blackout-sob-medida.html"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
 
 </urlset>

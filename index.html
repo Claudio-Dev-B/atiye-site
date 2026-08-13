@@ -1,6 +1,7 @@
 ﻿<!doctype html>
 <html lang="pt-BR" data-i18n-title="index-title" data-i18n-meta="index-meta">
 <head>
+  <script src="canonical-redirect.js?v=20260813"></script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -212,6 +213,17 @@
       @keyframes prob-scroll { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
     }
   </style>
+
+  <!-- Schema.org: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://atiyepersianas.com.br/" }
+    ]
+  }
+  </script>
 </head>
 <body class="has-hero-video">
   <!-- Google Tag Manager (noscript) -->
@@ -406,7 +418,7 @@
               <p data-i18n="prod-screen-desc">Iluminação natural com controle inteligente e estética minimalista.</p>
             </div>
           </a>
-          <a href="portfolio.html#rolo-blackout" class="product-card">
+          <a href="persiana-blackout-sob-medida.html" class="product-card">
             <div class="product-card-img" style="position:relative;">
               <img src="assets/catalogo/Rolô Blackout.webp" alt="Rolô Blackout" loading="lazy" />
               <span data-i18n="prod-blackout-discount" style="position:absolute;top:0.8rem;right:0.8rem;z-index:2;background:var(--color-gold);color:#1a1814;font-size:0.68rem;font-weight:700;letter-spacing:0.04em;padding:0.3rem 0.7rem;border-radius:2px;text-transform:uppercase;">10% de desconto</span>
@@ -988,7 +1000,7 @@
           <p class="contact-options-text" data-i18n="contact-options-text">Escolha como prefere falar com a gente: preencha o formulário abaixo e retornamos em breve, ou fale agora mesmo pelo WhatsApp.</p>
 
           <div class="contact-layout">
-            <form id="contatoForm" class="contato-form">
+            <form id="contatoForm" class="contato-form" novalidate>
               <input type="hidden" name="access_key" value="54486e0b-af7d-43ab-9697-4cdbe23b14bf" />
               <input type="hidden" name="subject" value="Novo contato pelo site Atiye" />
               <input type="hidden" name="from_name" value="Site Atiye" />
@@ -997,19 +1009,23 @@
               <div class="form-field">
                 <label for="cf-name" data-i18n="form-name-label">Nome</label>
                 <input id="cf-name" type="text" name="name" required data-i18n-placeholder="form-name-ph" placeholder="Seu nome" />
+                <span class="form-field-error" role="alert" aria-live="polite" data-i18n="form-name-required">Informe seu nome.</span>
               </div>
               <div class="form-field">
                 <label for="cf-phone" data-i18n="form-phone-label">Telefone</label>
-                <input id="cf-phone" type="tel" name="phone" required data-i18n-placeholder="form-phone-ph" placeholder="(11) 90000-0000" />
+                <input id="cf-phone" type="tel" name="phone" required inputmode="tel" data-i18n-placeholder="form-phone-ph" placeholder="(11) 90000-0000" />
+                <span class="form-field-error" role="alert" aria-live="polite" data-i18n="form-phone-required">Informe seu telefone.</span>
               </div>
               <div class="form-field">
-                <label for="cf-email" data-i18n="form-email-label">E-mail</label>
-                <input id="cf-email" type="email" name="email" required data-i18n-placeholder="form-email-ph" placeholder="seu@email.com" />
+                <label for="cf-email" data-i18n="form-email-label">E-mail <span style="opacity:.5;font-weight:400" data-i18n="form-optional">(opcional)</span></label>
+                <input id="cf-email" type="email" name="email" data-i18n-placeholder="form-email-ph" placeholder="seu@email.com" />
+                <span class="form-field-error" role="alert" aria-live="polite" data-i18n="form-email-invalid">E-mail inválido. Confira e tente novamente.</span>
               </div>
               <div class="form-field">
-                <label for="cf-message" data-i18n="form-message-label">Mensagem</label>
-                <textarea id="cf-message" name="message" rows="4" required data-i18n-placeholder="form-message-ph" placeholder="Como podemos ajudar?"></textarea>
+                <label for="cf-message" data-i18n="form-message-label">Mensagem <span style="opacity:.5;font-weight:400" data-i18n="form-optional">(opcional)</span></label>
+                <textarea id="cf-message" name="message" rows="4" data-i18n-placeholder="form-message-ph" placeholder="Como podemos ajudar?"></textarea>
               </div>
+              <p class="form-trust-note" data-i18n="form-trust-note">Retornamos ainda hoje, no mesmo dia útil. Orçamento sem compromisso.</p>
               <button type="submit" class="cta-button cta-main contato-submit" data-i18n="form-submit">Enviar mensagem</button>
               <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
             </form>
